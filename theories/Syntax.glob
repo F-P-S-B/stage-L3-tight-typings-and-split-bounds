@@ -1,0 +1,301 @@
+DIGEST 911f922cbe33493b234bf244fe36a1cc
+FTTSB.Syntax
+R15:22 Coq.Arith.PeanoNat <> <> lib
+R40:44 Coq.Arith.Arith <> <> lib
+R71:82 Coq.Unicode.Utf8 <> <> lib
+ind 96:99 <> term
+constr 113:125 <> Trm_Bound_Var
+constr 145:151 <> Trm_App
+constr 180:186 <> Trm_Abs
+R132:135 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R129:131 Coq.Init.Datatypes <> nat ind
+R136:139 TTSB.Syntax <> term:1 ind
+R159:162 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R155:158 TTSB.Syntax <> term:1 ind
+R167:170 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R163:166 TTSB.Syntax <> term:1 ind
+R171:174 TTSB.Syntax <> term:1 ind
+R194:197 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R190:193 TTSB.Syntax <> term:1 ind
+R198:201 TTSB.Syntax <> term:1 ind
+scheme 96:99 <> term_rect
+scheme 96:99 <> term_ind
+scheme 96:99 <> term_rec
+scheme 96:99 <> term_sind
+not 243:243 <> :::'<{'_x_'}>'
+not 296:296 <> :term::'('_x_')'
+not 351:351 <> :term::x
+R431:443 TTSB.Syntax <> Trm_Bound_Var constr
+not 419:419 <> :term::'#'_x
+R496:502 TTSB.Syntax <> Trm_App constr
+not 486:486 <> :term::x_x
+R580:586 TTSB.Syntax <> Trm_Abs constr
+not 567:567 <> :term::'λ'_x
+not 686:686 <> :term::'`'_x_'`'
+R749:751 TTSB.Syntax <> :::'<{'_x_'}>' not
+R772:774 TTSB.Syntax <> :::'<{'_x_'}>' not
+R752:752 TTSB.Syntax <> :term::'('_x_')' not
+R761:761 TTSB.Syntax <> :term::'('_x_')' not
+R753:755 TTSB.Syntax <> :term::'λ'_x not
+R758:758 TTSB.Syntax <> :term::x_x not
+R756:756 TTSB.Syntax <> :term::'#'_x not
+R759:759 TTSB.Syntax <> :term::'#'_x not
+R762:762 TTSB.Syntax <> :term::'('_x_')' not
+R771:771 TTSB.Syntax <> :term::'('_x_')' not
+R763:765 TTSB.Syntax <> :term::'λ'_x not
+R768:768 TTSB.Syntax <> :term::x_x not
+R766:766 TTSB.Syntax <> :term::'#'_x not
+R769:769 TTSB.Syntax <> :term::'#'_x not
+R785:793 Coq.Arith.Compare_dec <> le_gt_dec def
+def 805:809 <> shift
+R816:818 Coq.Init.Datatypes <> nat ind
+binder 812:812 <> n:3
+R826:828 Coq.Init.Datatypes <> nat ind
+binder 822:822 <> k:4
+R836:839 TTSB.Syntax <> term ind
+binder 832:832 <> t:5
+R844:847 TTSB.Syntax <> term ind
+R861:861 TTSB.Syntax <> t:5 var
+R873:875 TTSB.Syntax <> :::'<{'_x_'}>' not
+R878:880 TTSB.Syntax <> :::'<{'_x_'}>' not
+R876:876 TTSB.Syntax <> :term::'#'_x not
+R896:904 Coq.Arith.Compare_dec <> le_gt_dec def
+R908:908 TTSB.Syntax <> k:4 var
+R922:925 Coq.Init.Specif <> left constr
+R937:937 TTSB.Syntax <> t:5 var
+R945:949 Coq.Init.Specif <> right constr
+R961:963 TTSB.Syntax <> :::'<{'_x_'}>' not
+R977:979 TTSB.Syntax <> :::'<{'_x_'}>' not
+R964:964 TTSB.Syntax <> :term::'#'_x not
+R965:965 TTSB.Syntax <> :term::'`'_x_'`' not
+R975:976 TTSB.Syntax <> :term::'`'_x_'`' not
+R971:973 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R967:969 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R970:970 TTSB.Syntax <> n:3 var
+R993:995 TTSB.Syntax <> :::'<{'_x_'}>' not
+R999:1001 TTSB.Syntax <> :::'<{'_x_'}>' not
+R997:997 TTSB.Syntax <> :term::x_x not
+R1006:1007 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1035:1036 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1021:1021 TTSB.Syntax <> :term::x_x not
+R1008:1008 TTSB.Syntax <> :term::'`'_x_'`' not
+R1020:1020 TTSB.Syntax <> :term::'`'_x_'`' not
+R1009:1013 TTSB.Syntax <> shift:6 def
+R1017:1017 TTSB.Syntax <> k:4 var
+R1015:1015 TTSB.Syntax <> n:3 var
+R1022:1022 TTSB.Syntax <> :term::'`'_x_'`' not
+R1034:1034 TTSB.Syntax <> :term::'`'_x_'`' not
+R1023:1027 TTSB.Syntax <> shift:6 def
+R1031:1031 TTSB.Syntax <> k:4 var
+R1029:1029 TTSB.Syntax <> n:3 var
+R1043:1045 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1050:1052 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1046:1048 TTSB.Syntax <> :term::'λ'_x not
+R1057:1059 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1082:1084 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1060:1062 TTSB.Syntax <> :term::'λ'_x not
+R1063:1063 TTSB.Syntax <> :term::'`'_x_'`' not
+R1081:1081 TTSB.Syntax <> :term::'`'_x_'`' not
+R1064:1068 TTSB.Syntax <> shift:6 def
+R1074:1076 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R1073:1073 TTSB.Syntax <> k:4 var
+R1070:1070 TTSB.Syntax <> n:3 var
+R1100:1111 Coq.Arith.Compare_dec <> lt_eq_lt_dec def
+def 1208:1212 <> subst
+R1219:1222 TTSB.Syntax <> term ind
+binder 1215:1215 <> t:8
+R1230:1232 Coq.Init.Datatypes <> nat ind
+binder 1226:1226 <> n:9
+R1240:1243 TTSB.Syntax <> term ind
+binder 1236:1236 <> s:10
+R1248:1251 TTSB.Syntax <> term ind
+R1502:1506 TTSB.Syntax <> subst:11 def
+R1265:1265 TTSB.Syntax <> t:8 var
+R1277:1279 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1282:1284 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1280:1280 TTSB.Syntax <> :term::'#'_x not
+R1300:1309 Coq.Arith.PeanoNat Nat eq_dec thm
+R1311:1311 TTSB.Syntax <> n:9 var
+R1327:1330 Coq.Init.Specif <> left constr
+R1338:1342 TTSB.Syntax <> shift def
+R1344:1344 TTSB.Syntax <> n:9 var
+R1348:1348 TTSB.Syntax <> s:10 var
+R1356:1360 Coq.Init.Specif <> right constr
+R1369:1369 TTSB.Syntax <> t:8 var
+R1383:1385 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1389:1391 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1387:1387 TTSB.Syntax <> :term::x_x not
+R1396:1397 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1421:1422 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1409:1409 TTSB.Syntax <> :term::x_x not
+R1398:1398 TTSB.Syntax <> :term::'('_x_')' not
+R1408:1408 TTSB.Syntax <> :term::'('_x_')' not
+R1400:1400 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1402:1405 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1407:1407 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1401:1401 TTSB.Syntax <> n:9 var
+R1406:1406 TTSB.Syntax <> s:10 var
+R1410:1410 TTSB.Syntax <> :term::'('_x_')' not
+R1420:1420 TTSB.Syntax <> :term::'('_x_')' not
+R1412:1412 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1414:1417 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1419:1419 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1413:1413 TTSB.Syntax <> n:9 var
+R1418:1418 TTSB.Syntax <> s:10 var
+R1428:1430 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1435:1437 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1431:1433 TTSB.Syntax <> :term::'λ'_x not
+R1442:1443 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1458:1459 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1444:1446 TTSB.Syntax <> :term::'λ'_x not
+R1448:1448 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1452:1455 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1457:1457 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1450:1450 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R1449:1449 TTSB.Syntax <> n:9 var
+R1456:1456 TTSB.Syntax <> s:10 var
+R1502:1506 TTSB.Syntax <> subst def
+not 1477:1477 <> :term::x_'['_x_'<-'_x_']'
+def 1543:1547 <> lower
+R1554:1556 Coq.Init.Datatypes <> nat ind
+binder 1550:1550 <> n:13
+R1564:1567 TTSB.Syntax <> term ind
+binder 1560:1560 <> t:14
+R1572:1575 TTSB.Syntax <> term ind
+R1589:1589 TTSB.Syntax <> t:14 var
+R1601:1602 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1605:1606 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1603:1603 TTSB.Syntax <> :term::'#'_x not
+R1621:1629 Coq.Arith.Compare_dec <> le_gt_dec def
+R1633:1633 TTSB.Syntax <> n:13 var
+R1647:1650 Coq.Init.Specif <> left constr
+R1662:1662 TTSB.Syntax <> t:14 var
+R1670:1674 Coq.Init.Specif <> right constr
+R1686:1687 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1694:1695 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1688:1688 TTSB.Syntax <> :term::'#'_x not
+R1689:1689 TTSB.Syntax <> :term::'`'_x_'`' not
+R1693:1693 TTSB.Syntax <> :term::'`'_x_'`' not
+R1691:1691 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R1709:1710 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1715:1716 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1711:1713 TTSB.Syntax <> :term::'λ'_x not
+R1721:1723 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1742:1744 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1724:1726 TTSB.Syntax <> :term::'λ'_x not
+R1727:1727 TTSB.Syntax <> :term::'`'_x_'`' not
+R1741:1741 TTSB.Syntax <> :term::'`'_x_'`' not
+R1728:1732 TTSB.Syntax <> lower:15 def
+R1740:1740 TTSB.Syntax <> t:14 var
+R1736:1736 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R1735:1735 TTSB.Syntax <> n:13 var
+R1750:1751 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1755:1756 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1753:1753 TTSB.Syntax <> :term::x_x not
+R1761:1763 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1787:1788 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1775:1775 TTSB.Syntax <> :term::x_x not
+R1764:1764 TTSB.Syntax <> :term::'`'_x_'`' not
+R1774:1774 TTSB.Syntax <> :term::'`'_x_'`' not
+R1765:1769 TTSB.Syntax <> lower:15 def
+R1773:1773 TTSB.Syntax <> t:14 var
+R1771:1771 TTSB.Syntax <> n:13 var
+R1776:1776 TTSB.Syntax <> :term::'`'_x_'`' not
+R1786:1786 TTSB.Syntax <> :term::'`'_x_'`' not
+R1777:1781 TTSB.Syntax <> lower:15 def
+R1783:1783 TTSB.Syntax <> n:13 var
+R1806:1808 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1831:1833 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1822:1822 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1824:1827 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1830:1830 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1809:1809 TTSB.Syntax <> :term::'('_x_')' not
+R1821:1821 TTSB.Syntax <> :term::'('_x_')' not
+R1810:1812 TTSB.Syntax <> :term::'λ'_x not
+R1818:1818 TTSB.Syntax <> :term::x_x not
+R1815:1815 TTSB.Syntax <> :term::x_x not
+R1813:1813 TTSB.Syntax <> :term::'#'_x not
+R1816:1816 TTSB.Syntax <> :term::'#'_x not
+R1819:1819 TTSB.Syntax <> :term::'#'_x not
+R1828:1828 TTSB.Syntax <> :term::'#'_x not
+R1865:1869 TTSB.Syntax <> subst def
+not 1847:1847 <> :term::x_'['_x_']'
+R1945:1947 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1977:1980 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1948:1950 TTSB.Syntax <> :term::'λ'_x not
+R1951:1953 TTSB.Syntax <> :term::'λ'_x not
+R1954:1954 TTSB.Syntax <> :term::'('_x_')' not
+R1976:1976 TTSB.Syntax <> :term::'('_x_')' not
+R1968:1968 TTSB.Syntax <> :term::x_x not
+R1955:1955 TTSB.Syntax <> :term::'('_x_')' not
+R1967:1967 TTSB.Syntax <> :term::'('_x_')' not
+R1956:1958 TTSB.Syntax <> :term::'λ'_x not
+R1964:1964 TTSB.Syntax <> :term::x_x not
+R1961:1961 TTSB.Syntax <> :term::x_x not
+R1959:1959 TTSB.Syntax <> :term::'#'_x not
+R1962:1962 TTSB.Syntax <> :term::'#'_x not
+R1965:1965 TTSB.Syntax <> :term::'#'_x not
+R1969:1969 TTSB.Syntax <> :term::'('_x_')' not
+R1975:1975 TTSB.Syntax <> :term::'('_x_')' not
+R1970:1972 TTSB.Syntax <> :term::'λ'_x not
+R1973:1973 TTSB.Syntax <> :term::'#'_x not
+R1992:1993 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2027:2028 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1994:1994 TTSB.Syntax <> :term::'('_x_')' not
+R2026:2026 TTSB.Syntax <> :term::'('_x_')' not
+R1995:1997 TTSB.Syntax <> :term::'λ'_x not
+R1998:2000 TTSB.Syntax <> :term::'λ'_x not
+R2001:2001 TTSB.Syntax <> :term::'('_x_')' not
+R2025:2025 TTSB.Syntax <> :term::'('_x_')' not
+R2012:2013 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R2015:2018 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R2024:2024 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R2002:2002 TTSB.Syntax <> :term::'('_x_')' not
+R2011:2011 TTSB.Syntax <> :term::'('_x_')' not
+R2008:2008 TTSB.Syntax <> :term::x_x not
+R2005:2005 TTSB.Syntax <> :term::x_x not
+R2003:2003 TTSB.Syntax <> :term::'#'_x not
+R2006:2006 TTSB.Syntax <> :term::'#'_x not
+R2009:2009 TTSB.Syntax <> :term::'#'_x not
+R2019:2021 TTSB.Syntax <> :term::'λ'_x not
+R2022:2022 TTSB.Syntax <> :term::'#'_x not
+R2047:2048 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2081:2082 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2049:2049 TTSB.Syntax <> :term::'('_x_')' not
+R2080:2080 TTSB.Syntax <> :term::'('_x_')' not
+R2050:2052 TTSB.Syntax <> :term::'λ'_x not
+R2053:2055 TTSB.Syntax <> :term::'λ'_x not
+R2056:2056 TTSB.Syntax <> :term::'('_x_')' not
+R2079:2079 TTSB.Syntax <> :term::'('_x_')' not
+R2067:2067 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R2069:2072 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R2078:2078 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R2057:2057 TTSB.Syntax <> :term::'('_x_')' not
+R2066:2066 TTSB.Syntax <> :term::'('_x_')' not
+R2063:2063 TTSB.Syntax <> :term::x_x not
+R2060:2060 TTSB.Syntax <> :term::x_x not
+R2058:2058 TTSB.Syntax <> :term::'#'_x not
+R2061:2061 TTSB.Syntax <> :term::'#'_x not
+R2064:2064 TTSB.Syntax <> :term::'#'_x not
+R2073:2075 TTSB.Syntax <> :term::'λ'_x not
+R2076:2076 TTSB.Syntax <> :term::'#'_x not
+R2101:2102 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2135:2136 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2123:2123 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R2125:2128 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R2134:2134 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R2103:2103 TTSB.Syntax <> :term::'('_x_')' not
+R2122:2122 TTSB.Syntax <> :term::'('_x_')' not
+R2104:2106 TTSB.Syntax <> :term::'λ'_x not
+R2107:2109 TTSB.Syntax <> :term::'λ'_x not
+R2110:2110 TTSB.Syntax <> :term::'('_x_')' not
+R2121:2121 TTSB.Syntax <> :term::'('_x_')' not
+R2111:2111 TTSB.Syntax <> :term::'('_x_')' not
+R2120:2120 TTSB.Syntax <> :term::'('_x_')' not
+R2117:2117 TTSB.Syntax <> :term::x_x not
+R2114:2114 TTSB.Syntax <> :term::x_x not
+R2112:2112 TTSB.Syntax <> :term::'#'_x not
+R2115:2115 TTSB.Syntax <> :term::'#'_x not
+R2118:2118 TTSB.Syntax <> :term::'#'_x not
+R2129:2131 TTSB.Syntax <> :term::'λ'_x not
+R2132:2132 TTSB.Syntax <> :term::'#'_x not
