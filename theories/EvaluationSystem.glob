@@ -1,0 +1,263 @@
+DIGEST d09af44a17450dff5178a7d7cd99e4c4
+FTTSB.EvaluationSystem
+R24:35 Coq.Unicode.Utf8 <> <> lib
+R54:61 TTSB.LogicSet <> <> lib
+def 77:89 <> deterministic
+binder 92:92 <> A:1
+R108:111 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R107:107 TTSB.EvaluationSystem <> A:1 var
+R113:116 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R112:112 TTSB.EvaluationSystem <> A:1 var
+binder 96:103 <> relation:2
+R133:137 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R153:155 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R152:152 TTSB.EvaluationSystem <> A:1 var
+binder 138:138 <> a:3
+R152:152 TTSB.EvaluationSystem <> A:1 var
+binder 140:143 <> a₁:4
+R152:152 TTSB.EvaluationSystem <> A:1 var
+binder 145:148 <> a₂:5
+R171:174 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R156:163 TTSB.EvaluationSystem <> relation:2 var
+R167:170 TTSB.EvaluationSystem <> a₁:4 var
+R165:165 TTSB.EvaluationSystem <> a:3 var
+R190:193 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R175:182 TTSB.EvaluationSystem <> relation:2 var
+R186:189 TTSB.EvaluationSystem <> a₂:5 var
+R184:184 TTSB.EvaluationSystem <> a:3 var
+R198:200 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R194:197 TTSB.EvaluationSystem <> a₁:4 var
+R201:204 TTSB.EvaluationSystem <> a₂:5 var
+def 220:229 <> rel_normal
+binder 232:232 <> A:6
+R248:251 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R247:247 TTSB.EvaluationSystem <> A:6 var
+R253:256 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R252:252 TTSB.EvaluationSystem <> A:6 var
+binder 236:243 <> relation:7
+R267:267 TTSB.EvaluationSystem <> A:6 var
+binder 263:263 <> a:8
+R282:282 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R323:327 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R283:288 TTSB.LogicSet <> ex_set ind
+R290:290 TTSB.EvaluationSystem <> A:6 var
+R303:303 TTSB.EvaluationSystem <> A:6 var
+binder 298:299 <> a':9
+R309:316 TTSB.EvaluationSystem <> relation:7 var
+R320:321 TTSB.EvaluationSystem <> a':9 var
+R318:318 TTSB.EvaluationSystem <> a:8 var
+R328:332 Coq.Init.Logic <> False ind
+sec 391:400 <> EvalSystem
+var 412:412 EvalSystem T
+var 430:437 EvalSystem relation
+R442:445 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R441:441 TTSB.EvaluationSystem <> EvalSystem.T var
+R447:450 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R446:446 TTSB.EvaluationSystem <> EvalSystem.T var
+var 466:471 EvalSystem normal
+var 473:479 EvalSystem neutral
+var 481:483 EvalSystem abs
+R488:491 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R487:487 TTSB.EvaluationSystem <> EvalSystem.T var
+def 510:526 <> evaluation_system
+R549:549 TTSB.LogicSet <> :::x_'∧a'_x not
+R572:587 TTSB.LogicSet <> :::x_'∧a'_x not
+R550:562 TTSB.EvaluationSystem <> deterministic def
+R564:571 TTSB.EvaluationSystem <> EvalSystem.relation var
+R588:588 TTSB.LogicSet <> :::x_'∧a'_x not
+R717:732 TTSB.LogicSet <> :::x_'∧a'_x not
+R889:889 TTSB.LogicSet <> :::x_'∧a'_x not
+R589:593 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R599:622 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R598:598 TTSB.EvaluationSystem <> EvalSystem.T var
+binder 594:594 <> t:15
+R623:623 TTSB.LogicSet <> :::x_'∧a'_x not
+R657:682 TTSB.LogicSet <> :::x_'∧a'_x not
+R716:716 TTSB.LogicSet <> :::x_'∧a'_x not
+R645:648 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R624:633 TTSB.EvaluationSystem <> rel_normal def
+R644:644 TTSB.EvaluationSystem <> t:15 var
+R635:642 TTSB.EvaluationSystem <> EvalSystem.relation var
+R649:654 TTSB.EvaluationSystem <> EvalSystem.normal var
+R656:656 TTSB.EvaluationSystem <> t:15 var
+R691:694 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R683:688 TTSB.EvaluationSystem <> EvalSystem.normal var
+R690:690 TTSB.EvaluationSystem <> t:15 var
+R695:704 TTSB.EvaluationSystem <> rel_normal def
+R715:715 TTSB.EvaluationSystem <> t:15 var
+R706:713 TTSB.EvaluationSystem <> EvalSystem.relation var
+R733:737 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R743:766 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R742:742 TTSB.EvaluationSystem <> EvalSystem.T var
+binder 738:738 <> t:16
+R767:767 TTSB.LogicSet <> :::x_'∧a'_x not
+R815:840 TTSB.LogicSet <> :::x_'∧a'_x not
+R888:888 TTSB.LogicSet <> :::x_'∧a'_x not
+R777:781 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R814:814 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R768:774 TTSB.EvaluationSystem <> EvalSystem.neutral var
+R776:776 TTSB.EvaluationSystem <> t:16 var
+R782:782 TTSB.LogicSet <> :::x_'∧a'_x not
+R791:798 TTSB.LogicSet <> :::x_'∧a'_x not
+R813:813 TTSB.LogicSet <> :::x_'∧a'_x not
+R783:788 TTSB.EvaluationSystem <> EvalSystem.normal var
+R790:790 TTSB.EvaluationSystem <> t:16 var
+R804:807 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R799:801 TTSB.EvaluationSystem <> EvalSystem.abs var
+R803:803 TTSB.EvaluationSystem <> t:16 var
+R808:812 Coq.Init.Logic <> False ind
+R841:841 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R874:878 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R842:842 TTSB.LogicSet <> :::x_'∧a'_x not
+R851:858 TTSB.LogicSet <> :::x_'∧a'_x not
+R873:873 TTSB.LogicSet <> :::x_'∧a'_x not
+R843:848 TTSB.EvaluationSystem <> EvalSystem.normal var
+R850:850 TTSB.EvaluationSystem <> t:16 var
+R864:867 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R859:861 TTSB.EvaluationSystem <> EvalSystem.abs var
+R863:863 TTSB.EvaluationSystem <> t:16 var
+R868:872 Coq.Init.Logic <> False ind
+R879:885 TTSB.EvaluationSystem <> EvalSystem.neutral var
+R887:887 TTSB.EvaluationSystem <> t:16 var
+R898:907 TTSB.EvaluationSystem EvalSystem <> sec
+R917:933 TTSB.EvaluationSystem <> evaluation_system def
+ind 947:963 <> reflexive_closure
+constr 1015:1021 <> RC_refl
+constr 1068:1074 <> RC_self
+binder 966:966 <> A:17
+R977:980 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R976:976 TTSB.EvaluationSystem <> A:17 var
+R982:985 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R981:981 TTSB.EvaluationSystem <> A:17 var
+binder 970:972 <> rel:18
+R994:997 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R999:1002 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1025:1029 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1035:1037 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1034:1034 TTSB.EvaluationSystem <> A:17 var
+binder 1030:1030 <> a:21
+R1038:1054 TTSB.EvaluationSystem <> reflexive_closure:19 ind
+R1062:1062 TTSB.EvaluationSystem <> a:21 var
+R1060:1060 TTSB.EvaluationSystem <> a:21 var
+R1056:1058 TTSB.EvaluationSystem <> rel:18 var
+R1078:1082 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1096:1102 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1095:1095 TTSB.EvaluationSystem <> A:17 var
+binder 1083:1086 <> a₁:22
+R1095:1095 TTSB.EvaluationSystem <> A:17 var
+binder 1088:1091 <> a₂:23
+R1116:1124 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1103:1105 TTSB.EvaluationSystem <> rel:18 var
+R1112:1115 TTSB.EvaluationSystem <> a₂:23 var
+R1107:1110 TTSB.EvaluationSystem <> a₁:22 var
+R1125:1141 TTSB.EvaluationSystem <> reflexive_closure:19 ind
+R1152:1155 TTSB.EvaluationSystem <> a₂:23 var
+R1147:1150 TTSB.EvaluationSystem <> a₁:22 var
+R1143:1145 TTSB.EvaluationSystem <> rel:18 var
+scheme 947:963 <> reflexive_closure_rect
+scheme 947:963 <> reflexive_closure_ind
+scheme 947:963 <> reflexive_closure_rec
+scheme 947:963 <> reflexive_closure_sind
+ind 1170:1187 <> transitive_closure
+constr 1240:1246 <> TC_self
+constr 1346:1353 <> TC_trans
+binder 1190:1190 <> A:24
+R1201:1204 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1200:1200 TTSB.EvaluationSystem <> A:24 var
+R1206:1209 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1205:1205 TTSB.EvaluationSystem <> A:24 var
+binder 1194:1196 <> rel:25
+R1218:1221 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1223:1226 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1258:1262 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1276:1284 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1275:1275 TTSB.EvaluationSystem <> A:24 var
+binder 1263:1266 <> a₁:28
+R1275:1275 TTSB.EvaluationSystem <> A:24 var
+binder 1268:1271 <> a₂:29
+R1298:1308 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1285:1287 TTSB.EvaluationSystem <> rel:25 var
+R1294:1297 TTSB.EvaluationSystem <> a₂:29 var
+R1289:1292 TTSB.EvaluationSystem <> a₁:28 var
+R1309:1326 TTSB.EvaluationSystem <> transitive_closure:26 ind
+R1337:1340 TTSB.EvaluationSystem <> a₂:29 var
+R1332:1335 TTSB.EvaluationSystem <> a₁:28 var
+R1328:1330 TTSB.EvaluationSystem <> rel:25 var
+R1363:1367 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1386:1395 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1385:1385 TTSB.EvaluationSystem <> A:24 var
+binder 1368:1371 <> a₁:30
+R1385:1385 TTSB.EvaluationSystem <> A:24 var
+binder 1373:1376 <> a₂:31
+R1385:1385 TTSB.EvaluationSystem <> A:24 var
+binder 1378:1381 <> a₃:32
+R1428:1437 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1396:1413 TTSB.EvaluationSystem <> transitive_closure:26 ind
+R1424:1427 TTSB.EvaluationSystem <> a₂:31 var
+R1419:1422 TTSB.EvaluationSystem <> a₁:30 var
+R1415:1417 TTSB.EvaluationSystem <> rel:25 var
+R1470:1479 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1438:1455 TTSB.EvaluationSystem <> transitive_closure:26 ind
+R1466:1469 TTSB.EvaluationSystem <> a₃:32 var
+R1461:1464 TTSB.EvaluationSystem <> a₂:31 var
+R1457:1459 TTSB.EvaluationSystem <> rel:25 var
+R1480:1497 TTSB.EvaluationSystem <> transitive_closure:26 ind
+R1508:1511 TTSB.EvaluationSystem <> a₃:32 var
+R1503:1506 TTSB.EvaluationSystem <> a₁:30 var
+R1499:1501 TTSB.EvaluationSystem <> rel:25 var
+scheme 1170:1187 <> transitive_closure_rect
+scheme 1170:1187 <> transitive_closure_ind
+scheme 1170:1187 <> transitive_closure_rec
+scheme 1170:1187 <> transitive_closure_sind
+ind 1526:1536 <> n_iteration
+constr 1596:1599 <> NI_O
+constr 1643:1647 <> NI_Sn
+binder 1539:1539 <> A:33
+R1550:1553 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1549:1549 TTSB.EvaluationSystem <> A:33 var
+R1555:1558 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1554:1554 TTSB.EvaluationSystem <> A:33 var
+binder 1543:1545 <> rel:34
+R1569:1572 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1566:1568 Coq.Init.Datatypes <> nat ind
+R1574:1577 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1579:1582 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1603:1607 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1613:1615 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1612:1612 TTSB.EvaluationSystem <> A:33 var
+binder 1608:1608 <> a:37
+R1616:1626 TTSB.EvaluationSystem <> n_iteration:35 ind
+R1636:1636 TTSB.EvaluationSystem <> a:37 var
+R1634:1634 TTSB.EvaluationSystem <> a:37 var
+R1632:1632 Coq.Init.Datatypes <> O constr
+R1628:1630 TTSB.EvaluationSystem <> rel:34 var
+R1658:1662 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1691:1700 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1667:1669 Coq.Init.Datatypes <> nat ind
+binder 1663:1663 <> n:38
+R1690:1690 TTSB.EvaluationSystem <> A:33 var
+binder 1673:1676 <> a₁:39
+R1690:1690 TTSB.EvaluationSystem <> A:33 var
+binder 1678:1681 <> a₂:40
+R1690:1690 TTSB.EvaluationSystem <> A:33 var
+binder 1683:1686 <> a₃:41
+R1714:1724 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1701:1703 TTSB.EvaluationSystem <> rel:34 var
+R1710:1713 TTSB.EvaluationSystem <> a₂:40 var
+R1705:1708 TTSB.EvaluationSystem <> a₁:39 var
+R1752:1761 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1725:1735 TTSB.EvaluationSystem <> n_iteration:35 ind
+R1748:1751 TTSB.EvaluationSystem <> a₃:41 var
+R1743:1746 TTSB.EvaluationSystem <> a₂:40 var
+R1741:1741 TTSB.EvaluationSystem <> n:38 var
+R1737:1739 TTSB.EvaluationSystem <> rel:34 var
+R1762:1772 TTSB.EvaluationSystem <> n_iteration:35 ind
+R1789:1792 TTSB.EvaluationSystem <> a₃:41 var
+R1784:1787 TTSB.EvaluationSystem <> a₁:39 var
+R1779:1779 Coq.Init.Datatypes <> S constr
+R1781:1781 TTSB.EvaluationSystem <> n:38 var
+R1774:1776 TTSB.EvaluationSystem <> rel:34 var
+scheme 1526:1536 <> n_iteration_rect
+scheme 1526:1536 <> n_iteration_ind
+scheme 1526:1536 <> n_iteration_rec
+scheme 1526:1536 <> n_iteration_sind

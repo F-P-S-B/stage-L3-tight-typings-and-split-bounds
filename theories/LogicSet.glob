@@ -1,0 +1,45 @@
+DIGEST b95c457630b9ab2b2f69df9327aa893b
+FTTSB.LogicSet
+R15:31 Coq.Unicode.Utf8_core <> <> lib
+ind 45:51 <> and_set
+constr 76:88 <> and_set_intro
+binder 54:54 <> A:1
+binder 56:56 <> B:2
+R93:96 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R92:92 TTSB.LogicSet <> A:1 var
+R98:101 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R97:97 TTSB.LogicSet <> B:2 var
+R102:108 TTSB.LogicSet <> and_set:3 ind
+R112:112 TTSB.LogicSet <> B:2 var
+R110:110 TTSB.LogicSet <> A:1 var
+scheme 45:51 <> and_set_rect
+scheme 45:51 <> and_set_ind
+scheme 45:51 <> and_set_rec
+scheme 45:51 <> and_set_sind
+ind 127:132 <> ex_set
+constr 172:183 <> ex_set_intro
+binder 135:135 <> A:5
+R151:154 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R150:150 TTSB.LogicSet <> A:5 var
+binder 146:146 <> P:6
+R187:190 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R196:197 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R195:195 TTSB.LogicSet <> A:5 var
+binder 191:191 <> x:9
+R201:204 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R198:198 TTSB.LogicSet <> P:6 var
+R200:200 TTSB.LogicSet <> x:9 var
+R205:210 TTSB.LogicSet <> ex_set:7 ind
+R215:215 TTSB.LogicSet <> P:6 var
+R212:212 TTSB.LogicSet <> A:5 var
+scheme 127:132 <> ex_set_rect
+scheme 127:132 <> ex_set_ind
+scheme 127:132 <> ex_set_rec
+scheme 127:132 <> ex_set_sind
+R244:250 TTSB.LogicSet <> and_set ind
+not 229:229 <> :::x_'∧a'_x
+R345:350 TTSB.LogicSet <> :::x_'∧a'_x not
+R345:350 TTSB.LogicSet <> :::x_'∧a'_x not
+R387:392 TTSB.LogicSet <> :::x_'∧a'_x not
+R387:392 TTSB.LogicSet <> :::x_'∧a'_x not
+R363:375 TTSB.LogicSet <> and_set_intro constr
