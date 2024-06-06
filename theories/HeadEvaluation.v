@@ -13,23 +13,22 @@ From Coq Require Import Unicode.Utf8.
 Require Import EvaluationSystem.
 Require Import Tactics.
 Require Import LogicSet.
-
 Require Import Syntax.
 
 
 
-Inductive neutral : term -> Set :=
+Inductive neutral : term -> Prop :=
 | Neutral_Var : ∀ (n : nat), neutral <{#n}>
 | Neutral_App : ∀ (t₁ t₂ : term), neutral t₁ -> neutral <{t₁ t₂}>
 .
-Inductive normal : term -> Set := 
+Inductive normal : term -> Prop := 
 | Normal_Neutral : ∀ (t : term), neutral t -> normal t 
 | Normal_Abs : ∀ (t : term), normal t -> normal <{λ t}> 
 .
 Hint Constructors neutral : core.
 Hint Constructors normal : core.
 
-Inductive abs : term -> Set := 
+Inductive abs : term -> Prop := 
 | Abs : ∀ (t : term), abs <{ λ t }>
 .
 Hint Constructors abs : core.
@@ -43,7 +42,7 @@ Ltac contra_neutral_abs :=
 
 
 Reserved Notation "a --> b" (at level 0).
-Inductive step : term -> term -> Set :=
+Inductive step : term -> term -> Prop :=
 | ST_Beta : 
     ∀ (u q : term), 
     <{ (λ u) q }> --> (lower 0 <{u[0 <- q]}>)
@@ -96,7 +95,7 @@ Qed.
 
 
 
-Lemma neutral_is_normal_not_abs : ∀ t, normal t ∧a (abs t -> False) -> neutral t.
+Lemma neutral_is_normal_not_abs : ∀ t, normal t /\ (¬ abs t) -> neutral t.
 Proof with myauto contra_neutral_abs.
   intros * [H_normal_t H_not_abs_t].
   inversion H_normal_t; subst...
@@ -118,16 +117,12 @@ Proof with myauto contra_neutral_abs.
         apply H_rel_normal.
         exists <{a' t2}>...
         apply ST_App...
-      * exfalso. apply H_rel_normal. eexists... 
     + apply Normal_Abs. apply IHt. intros [a' Hst]...
-      apply H_rel_normal. eexists...
   - intro.
     induction H as [t H_neutral | t H_norm IH].
     + induction H_neutral; intros [a Hst]; inversion Hst; subst...
-      apply IHH_neutral. eexists...
     + intros [a H_st].
       inversion H_st; subst... 
-      apply IH. eexists...
   - intro. inversion H; subst; inversion H0. 
 Qed.
 
@@ -151,7 +146,7 @@ Section HeadTypingSystem.
     Reserved Notation "Γ '|(' b ',' r ')-' t '∈' T" (at level 70).
     Reserved Notation "Γ '|(' b ',' r ')-' t '∈ₘ' T" (at level 70).
 
-    Inductive has_type : Ctx.t -> nat -> nat -> term -> type -> Set :=
+    Inductive has_type : Ctx.t -> nat -> nat -> term -> type -> Type :=
     | T_Ax0 :
         ∀ {A : type},
         [ {{ A ; nil }} ] |(0, 0)- <{ #0 }> ∈ A
@@ -190,7 +185,7 @@ Section HeadTypingSystem.
         Γ |(b, S r)- <{ t₁ t₂ }> ∈ Ty_Tight TC_Neutral
     where 
       "Γ '|(' b ',' r ')-' t '∈' T" := (has_type Γ b r t T)
-    with has_many_types : Ctx.t -> nat -> nat -> term -> multitype -> Set :=
+    with has_many_types : Ctx.t -> nat -> nat -> term -> multitype -> Type :=
     | ManyT_Singleton :
       ∀ {Γ : Ctx.t} {t : term} {A : type} {b r : nat},
         Γ |(b, r)- t ∈ A ->
@@ -244,9 +239,9 @@ Section HeadTypingSystem.
 
   Definition is_tight_derivation 
     {n b r : nat} {Γ : Ctx.t} {t : term} {T : type} 
-    (der : Γ |( b , r )- t ∈ T) : Set 
+    (der : Γ |( b , r )- t ∈ T) : Prop 
   := 
-    and_set (is_tight_type T)  (is_tight_context Γ).
+    (is_tight_type T) /\  (is_tight_context Γ).
     
     Check has_type_mut_ind.
 

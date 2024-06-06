@@ -9,6 +9,12 @@ From Coq Require Import List.
 Import ListNotations.
 Require Import LogicSet.
 
+Ltac split_and := 
+  match goal with 
+  | [ |- _ /\ _ ] => split
+  | [H : _ /\ _ |- _] => destruct H
+  end.
+
 Parameter AtomicType : Set.
 Parameter X : set AtomicType.
 Parameter eqₐ : AtomicType -> AtomicType -> Prop.
@@ -50,22 +56,22 @@ Fixpoint MT_Union (mt₁ mt₂ : multitype) : multitype :=
   end 
 .
 
-Fixpoint is_tight_type (t : type) : Set :=
+Fixpoint is_tight_type (t : type) : Prop :=
   match t with
   | Ty_Tight _ => True 
   | Ty_Atomic _ _ => False
   | Ty_Fun _ _ => False
   | Ty_Mult mt => is_tight_multitype mt
   end
-with is_tight_multitype (mt : multitype) : Set :=
+with is_tight_multitype (mt : multitype) : Prop :=
   match mt with 
   | MT_Empty => True
-  | MT_Cons t mt' => and_set (is_tight_type t) (is_tight_multitype mt')
+  | MT_Cons t mt' => (is_tight_type t) /\ (is_tight_multitype mt')
   end.
 
 Create HintDb permutation_hints.
 
-  Inductive permutationₜ : type -> type -> Set :=
+  Inductive permutationₜ : type -> type -> Prop :=
   | P_Tight : 
       ∀ (t : tight_constant), 
       permutationₜ (Ty_Tight t) (Ty_Tight t)
@@ -83,7 +89,7 @@ Create HintDb permutation_hints.
       ∀ (mt₁ mt₂ : multitype), 
       permutationₘ mt₁ mt₂ -> 
       permutationₜ (Ty_Mult mt₁) (Ty_Mult mt₂)
-  with permutationₘ : multitype -> multitype -> Set :=
+  with permutationₘ : multitype -> multitype -> Prop :=
   | P_MT_Empty : permutationₘ (MT_Empty) (MT_Empty)
   | P_MT_Cons : 
       ∀ (mt₁ mt₂ : multitype) (t₁ t₂ : type),
@@ -103,8 +109,8 @@ Create HintDb permutation_hints.
   .
   Hint Constructors permutationₜ : permutation_hints.
   Hint Constructors permutationₘ : permutation_hints.
-  Scheme permutationₜ_mut_ind := Induction for permutationₜ Sort Type
-  with permutationₘ_mut_ind := Induction for permutationₘ Sort Type.
+  Scheme permutationₜ_mut_ind := Induction for permutationₜ Sort Prop
+  with permutationₘ_mut_ind := Induction for permutationₘ Sort Prop.
 
   Check permutationₜ_mut_ind.
   Theorem permₜ_refl : ∀ (t : type), permutationₜ t t.
@@ -201,7 +207,7 @@ Create HintDb permutation_hints.
 
 Module Type MULTITYPE.
   Parameter T : Set.
-  Parameter eq : T -> T -> Set. 
+  Parameter eq : T -> T -> Prop. 
   Parameter union : T -> T -> T.
 
   Axiom eq_refl : ∀ (t : T), eq t t.
@@ -383,7 +389,7 @@ End Multitype.
 Module Context (MT : MULTITYPE).
   Definition t := list MT.T.
 
-  Inductive union : t -> t -> t -> Set :=
+  Inductive union : t -> t -> t -> Prop :=
   | Union_Nil : union [] [] [] 
   | Union_Cons : 
     ∀  Γ₁ Γ₂ Γᵣ mt₁ mt₂ mtu, 
@@ -393,11 +399,11 @@ Module Context (MT : MULTITYPE).
   .
   Hint Constructors union : core.
 
-  Fixpoint eq (Γ₁ Γ₂ : t) : Set :=
+  Fixpoint eq (Γ₁ Γ₂ : t) : Prop :=
     match Γ₁, Γ₂ with 
     | [], [] => True
     | [], _::_ | _::_, [] => False
-    | h₁::t₁, h₂::t₂ => and_set (MT.eq h₁ h₂) (eq t₁ t₂)
+    | h₁::t₁, h₂::t₂ => (MT.eq h₁ h₂) /\ (eq t₁ t₂)
     end.
   Hint Unfold eq : core.
 
@@ -417,16 +423,17 @@ Module Context (MT : MULTITYPE).
   Lemma eq_refl : ∀ Γ, eq Γ Γ.
   Proof with eauto.
     induction Γ; simpl...
-    apply and_set_intro...
+    split...
     apply MT.eq_refl.
   Qed.
+  
 
   Lemma eq_sym : 
     ∀ (Γ₁ Γ₂ : t),
     eq Γ₁ Γ₂ ->
     eq Γ₂ Γ₁.
   Proof with eauto.
-    induction Γ₁ as [| mt₁ Γ₁]; intros [| mt₂ Γ₂ ] H_eq; simpl in *; repeat split_and_set...
+    induction Γ₁ as [| mt₁ Γ₁]; intros [| mt₂ Γ₂ ] H_eq; simpl in *; repeat split_and...
     apply MT.eq_sym...
   Qed.
 
@@ -437,7 +444,7 @@ Module Context (MT : MULTITYPE).
     eq Γ₂ Γ₃ ->
     eq Γ₁ Γ₃.
   Proof with eauto.
-    induction Γ₁ as [| mt₁ Γ₁]; intros [| mt₂ Γ₂ ] [| mt₃ Γ₃ ] H_eq1 H_eq2; simpl in *; repeat split_and_set; try contradiction...
+    induction Γ₁ as [| mt₁ Γ₁]; intros [| mt₂ Γ₂ ] [| mt₃ Γ₃ ] H_eq1 H_eq2; simpl in *; repeat split_and; try contradiction...
     eapply MT.eq_trans...
   Qed.
 
@@ -449,12 +456,17 @@ Module Context (MT : MULTITYPE).
   Proof with eauto.
     intros * H_union_1. generalize dependent Γᵣ₂.
     induction H_union_1; intros * H_union_2; inversion H_union_2; subst; simpl...
-    apply and_set_intro...
+    split...
     eapply MT.eq_trans...
     apply MT.eq_sym.
     apply MT.eq_trans with (MT.union mt₁ mt₂)...
     apply MT.union_comm.
   Qed.
+
+  Ltac inversion_eq_list := 
+    match goal with 
+    | [H : _ :: _ = _ :: _ |- _] => inversion H; clear H; subst
+    end.
 
   Theorem union_assoc : 
     ∀ (Γ₁ Γ₂ Γ₃ Γ₁₂ Γ₁₂_₃ Γ₂₃ Γ₁_₂₃ : t),
@@ -472,9 +484,9 @@ Module Context (MT : MULTITYPE).
   generalize dependent Γ₁_₂₃.
   induction H_union_1_2; intros * H_union_12_3 H_union_2_3 H_union_1_23; inversion H_union_12_3; inversion H_union_2_3; inversion H_union_1_23; subst...
   simpl.
-  inversion H8; inversion H14; subst.
-  apply and_set_intro...
-  clear H1 H7 H8 H13 H14 H_union_1_23 H_union_12_3 H_union_2_3.
+  repeat inversion_eq_list.
+  (* inversion H8; inversion H14; subst. *)
+  split...
   apply MT.eq_trans with (MT.union mt₁ mtu1)...
   apply MT.eq_trans with (MT.union mtu mt₂0)...
   apply MT.eq_trans with (MT.union mt₁ (MT.union mt₂ mt₂0))...
@@ -489,7 +501,7 @@ Qed.
     union Γ₁' Γ₂ Γᵣ
     .
   Proof with eauto 6 using MT.eq_union, MT.eq_sym, MT.eq_refl, MT.eq_trans, Union_Cons with permutation_hints.
-    induction Γ₁ as [ | mt₁ Γ₁ IHΓ]; intros [| mt₁' Γ₁'] [ | mt₂ Γ₂] [| mtᵣ Γᵣ] H_eq H_u; inversion H_u; try inversion H_eq; subst; simpl; try split_and_set...
+    induction Γ₁ as [ | mt₁ Γ₁ IHΓ]; intros [| mt₁' Γ₁'] [ | mt₂ Γ₂] [| mtᵣ Γᵣ] H_eq H_u; inversion H_u; try inversion H_eq; subst; simpl...
   Qed.
 
   Lemma eq_union_right : 
@@ -499,7 +511,7 @@ Qed.
     union Γ₁ Γ₂' Γᵣ
     .
   Proof with eauto 6 using MT.eq_union, MT.eq_sym, MT.eq_refl, MT.eq_trans, Union_Cons with permutation_hints.
-    induction Γ₁ as [ | mt₁ Γ₁ IHΓ]; intros [| mt₂ Γ₂] [ | mt₂' Γ₂'] [| mtᵣ Γᵣ] H_eq H_u; inversion H_u; try inversion H_eq; subst; simpl; try split_and_set...
+    induction Γ₁ as [ | mt₁ Γ₁ IHΓ]; intros [| mt₂ Γ₂] [ | mt₂' Γ₂'] [| mtᵣ Γᵣ] H_eq H_u; inversion H_u; try inversion H_eq; subst; simpl...
   Qed.
 
   Lemma eq_union : 
@@ -517,10 +529,10 @@ End Context.
 Module Ctx := Context Multitype.
 
 
-Fixpoint is_tight_context(Γ : Ctx.t) : Set :=
+Fixpoint is_tight_context(Γ : Ctx.t) : Prop :=
   match Γ with 
   | [] => True 
-  | h::t => and_set (is_tight_multitype h) (is_tight_context t) 
+  | h::t => (is_tight_multitype h) /\ (is_tight_context t) 
   end.
 
 
@@ -540,16 +552,12 @@ Notation " t ; mt" := (MT_Cons t mt) (in custom multitype at level 90, mt custom
 Notation "mt |-> t" := (Ty_Fun mt t) (at level 99, right associativity).
 Notation "{{ mt }} |-> t" := (Ty_Fun mt t) (in custom multitype at level 80, right associativity).
 
-Inductive or_set (A B : Set) : Set :=
-| or_set_intro_l : A -> or_set A B 
-| or_set_intro_r : B -> or_set A B 
-.
 
 
-Fixpoint In (t : type) (mt : multitype) : Set :=
+Fixpoint In (t : type) (mt : multitype) : Prop :=
   match mt with 
   | {{ nil }} => False
-  | {{ h ; mt }} => or_set (permutationₜ t h) (In t mt)
+  | {{ h ; mt }} => (permutationₜ t h) \/ (In t mt)
   end.
 
 Lemma mt_eq_in : 
@@ -585,7 +593,7 @@ Lemma eq_tight :
 Proof with eauto using mt_eq_in with permutation_hints.
   intros * H_perm.
   pose (P0 (mt₁ mt₂ : multitype) (H_permₘ : permutationₘ mt₁ mt₂) := is_tight_multitype mt₁ -> is_tight_multitype mt₂).
-  permutationₜ_induction H_perm P0; try (intro H_tight; split; inversion H_tight as [H_tight_t H_tight_mt]; repeat apply and_set_intro; try inversion H_tight_mt; eauto using mt_eq_in with permutation_hints; fail)...
+  permutationₜ_induction H_perm P0; try (intro H_tight; split; inversion H_tight as [H_tight_t H_tight_mt]; try inversion H_tight_mt; eauto using mt_eq_in with permutation_hints; fail)...
 Qed.
 
 Lemma eq_tight_multitype : 
@@ -603,7 +611,7 @@ Qed.
 Lemma Ctx_eq_tight :
   ∀ (Γ₁ Γ₂ : Ctx.t), Ctx.eq Γ₁ Γ₂ -> is_tight_context Γ₁ -> is_tight_context Γ₂.
 Proof with eauto using mt_eq_in, eq_tight, eq_tight_multitype with permutation_hints.
-  induction Γ₁; intros; destruct Γ₂; simpl in *; destruct H, H0; try apply and_set_intro...
+  induction Γ₁; intros; destruct Γ₂; simpl in *; destruct H, H0...
 Qed.
 
 
@@ -611,7 +619,7 @@ Lemma mt_union_tight :
   ∀ (mt₁ mt₂ mt : multitype), 
     Multitype.eq (mt₁ ⊎ mt₂) mt -> 
     is_tight_multitype mt -> 
-    is_tight_multitype mt₁ ∧a is_tight_multitype mt₂.
+    is_tight_multitype mt₁ /\ is_tight_multitype mt₂.
 Proof with eauto using mt_eq_in, eq_tight, eq_tight_multitype with permutation_hints.
   induction mt₁; intros; simpl.
   - split...
@@ -625,18 +633,18 @@ Proof with eauto using mt_eq_in, eq_tight, eq_tight_multitype with permutation_h
         apply Multitype.eq_union_left.
         apply Multitype.union_comm.
     }
-    apply IHmt₁ in H1; repeat (split_and_set; simpl in *)...
+    apply IHmt₁ in H1; repeat (split_and; simpl in *)...
 Qed.
 
 
 
 
 Lemma Ctx_union_tight : 
-  ∀ (Γ₁ Γ₂ Δ : Ctx.t), Γ₁ ⊎c Γ₂ ≡ Δ -> is_tight_context Δ -> is_tight_context Γ₁ ∧a is_tight_context Γ₂.
+  ∀ (Γ₁ Γ₂ Δ : Ctx.t), Γ₁ ⊎c Γ₂ ≡ Δ -> is_tight_context Δ -> is_tight_context Γ₁ /\ is_tight_context Γ₂.
 Proof with eauto using mt_union_tight, mt_union_tight, mt_eq_in, eq_tight, eq_tight_multitype with permutation_hints.
   intros Γ₁ Γ₂ Δ.
   generalize dependent Γ₂.
   generalize dependent Γ₁.
-  induction Δ as [ | mt Δ IH]; intros * H_union H_tight; inversion H_union as [| Γ₁' Γ₂' H1 mt₁ mt₂ H2 H_union' H_eq H3 H4 H5 ]; subst; simpl in *; repeat split_and_set; try edestruct IH;
+  induction Δ as [ | mt Δ IH]; intros * H_union H_tight; inversion H_union as [| Γ₁' Γ₂' H1 mt₁ mt₂ H2 H_union' H_eq H3 H4 H5 ]; subst; simpl in *; repeat split_and; try edestruct IH;
   try destruct (mt_union_tight mt₁ mt₂ mt)...
 Qed.

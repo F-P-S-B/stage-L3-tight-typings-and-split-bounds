@@ -3,11 +3,11 @@ From Coq Require Import Unicode.Utf8.
 Require Import LogicSet.
 
 
-Definition deterministic {A} (relation : A -> A -> Set) : Set :=
+Definition deterministic {A} (relation : A -> A -> Prop) : Prop :=
   ∀ (a a₁ a₂ : A), relation a a₁ -> relation a a₂ -> a₁ = a₂. 
 
-Definition rel_normal {A} (relation : A -> A -> Set) (a : A) : Set := 
-  (ex_set A (fun (a' : A) => relation a a')) -> False.
+Definition rel_normal {A} (relation : A -> A -> Prop) (a : A) : Prop := 
+  (∃(a' : A), relation a a') -> False.
 
 (* 
   Definition 2.1 (Evaluation system)
@@ -16,17 +16,13 @@ Definition rel_normal {A} (relation : A -> A -> Set) (a : A) : Set :=
 
 Section EvalSystem.
 Variable T : Set.
-Variable relation : T -> T -> Set.
-Variable (normal neutral abs : T -> Set).
+Variable relation : T -> T -> Prop.
+Variable (normal neutral abs : T -> Prop).
 
-Definition evaluation_system : Set :=
+Definition evaluation_system : Type :=
             (deterministic relation)
-        ∧a  (∀ (t : T),
-                     (rel_normal relation t -> normal t)
-                  ∧a (normal t -> rel_normal relation t))
-        ∧a (∀ (t : T), 
-                    (neutral t -> ((normal t) ∧a (abs t -> False)))
-                  ∧a (((normal t) ∧a (abs t -> False)) -> neutral t))
+        /\  (∀ (t : T),(rel_normal relation t <-> normal t))
+        /\ (∀ (t : T), (neutral t <-> ((normal t) /\ (¬ abs t))))
 .
 
 End EvalSystem.

@@ -1,4 +1,4 @@
-DIGEST 1600f385b51d7fa6b0c55e37ddb57030
+DIGEST 2960b3bdd28089183940191f812a9d36
 FTTSB.Types
 R25:41 Coq.Unicode.Utf8_core <> <> lib
 R68:70 Coq.micromega.Lia <> <> lib
@@ -9,1362 +9,1347 @@ R192:210 Coq.Classes.Equivalence <> <> lib
 R237:240 Coq.Lists.List <> <> lib
 R250:262 Coq.Lists.List ListNotations <> mod
 R280:287 TTSB.LogicSet <> <> lib
-ax 301:310 <> AtomicType
-ax 329:329 <> X
-R333:335 Coq.Lists.ListSet <> set def
-R337:346 TTSB.Types <> AtomicType defax
-ax 359:363 <> eqₐ
-R377:380 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R367:376 TTSB.Types <> AtomicType defax
-R391:394 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R381:390 TTSB.Types <> AtomicType defax
-ax 411:419 <> eqₐ_dec
-R426:430 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R453:457 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R443:452 TTSB.Types <> AtomicType defax
-binder 431:434 <> t₁:4
-R443:452 TTSB.Types <> AtomicType defax
-binder 436:439 <> t₂:5
-R458:458 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
-R474:478 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
-R497:497 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
-R459:463 TTSB.Types <> eqₐ defax
-R465:468 TTSB.Types <> t₁:4 var
-R470:473 TTSB.Types <> t₂:5 var
-R479:481 Coq.Unicode.Utf8_core <> ::type_scope:'¬'_x not
-R482:486 TTSB.Types <> eqₐ defax
-R488:491 TTSB.Types <> t₁:4 var
-R493:496 TTSB.Types <> t₂:5 var
-ax 510:517 <> eqₐ_Eq
-R524:534 Coq.Classes.RelationClasses <> Equivalence class
-R536:540 TTSB.Types <> eqₐ defax
-R561:565 TTSB.Types <> eqₐ defax
-not 549:549 <> :::x_'≡ₐ'_x
-ind 592:605 <> tight_constant
-constr 613:622 <> TC_Neutral
-constr 643:648 <> TC_Abs
-R626:639 TTSB.Types <> tight_constant:8 ind
-R652:665 TTSB.Types <> tight_constant:8 ind
-scheme 592:605 <> tight_constant_rect
-scheme 592:605 <> tight_constant_ind
-scheme 592:605 <> tight_constant_rec
-scheme 592:605 <> tight_constant_sind
-ind 679:682 <> type
-constr 689:696 <> Ty_Tight
-constr 728:736 <> Ty_Atomic
-constr 780:785 <> Ty_Fun
-constr 818:824 <> Ty_Mult
-ind 851:859 <> multitype
-constr 866:873 <> MT_Empty
-constr 889:895 <> MT_Cons
-R703:716 TTSB.Types <> tight_constant ind
-binder 699:699 <> t:14
-R721:724 TTSB.Types <> type:10 ind
-R743:752 TTSB.Types <> AtomicType defax
-binder 739:739 <> t:15
-R757:757 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R768:772 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R758:763 Coq.Lists.ListSet <> set_In def
-R767:767 TTSB.Types <> X defax
-R765:765 TTSB.Types <> t:15 var
-R773:776 TTSB.Types <> type:10 ind
-R798:801 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R789:797 TTSB.Types <> multitype:11 ind
-R806:809 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R802:805 TTSB.Types <> type:10 ind
-R810:813 TTSB.Types <> type:10 ind
-R837:840 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R828:836 TTSB.Types <> multitype:11 ind
-R841:844 TTSB.Types <> type:10 ind
-R877:885 TTSB.Types <> multitype:11 ind
-R902:905 TTSB.Types <> type:10 ind
-binder 898:898 <> t:16
-R914:922 TTSB.Types <> multitype:11 ind
-binder 909:910 <> mt:17
-R927:935 TTSB.Types <> multitype:11 ind
-scheme 679:682 <> type_rect
-scheme 679:682 <> type_ind
-scheme 679:682 <> type_rec
-scheme 679:682 <> type_sind
-scheme 851:859 <> multitype_rect
-scheme 851:859 <> multitype_ind
-scheme 851:859 <> multitype_rec
-scheme 851:859 <> multitype_sind
-def 947:958 <> type_mut_ind
-def 997:1013 <> multitype_mut_ind
-R1032:1040 TTSB.Types <> multitype ind
-R977:980 TTSB.Types <> type ind
-def 1070:1077 <> MT_Union
-R1094:1102 TTSB.Types <> multitype ind
-binder 1080:1084 <> mt₁:18
-binder 1086:1090 <> mt₂:19
-R1107:1115 TTSB.Types <> multitype ind
-R1128:1132 TTSB.Types <> mt₁:18 var
-R1144:1151 TTSB.Types <> MT_Empty constr
-R1156:1160 TTSB.Types <> mt₂:19 var
-R1167:1173 TTSB.Types <> MT_Cons constr
-R1186:1192 TTSB.Types <> MT_Cons constr
-R1197:1204 TTSB.Types <> MT_Union:20 def
-R1212:1216 TTSB.Types <> mt₂:19 var
-R1206:1210 TTSB.Types <> mt₁:18 var
-def 1238:1250 <> is_tight_type
-def 1413:1430 <> is_tight_multitype
-R1257:1260 TTSB.Types <> type ind
-binder 1253:1253 <> t:22
-R1438:1446 TTSB.Types <> multitype ind
-binder 1433:1434 <> mt:23
-R1280:1280 TTSB.Types <> t:22 var
-R1291:1298 TTSB.Types <> Ty_Tight constr
-R1305:1308 Coq.Init.Logic <> True ind
-R1315:1323 TTSB.Types <> Ty_Atomic constr
-R1332:1336 Coq.Init.Logic <> False ind
-R1342:1347 TTSB.Types <> Ty_Fun constr
-R1356:1360 Coq.Init.Logic <> False ind
-R1366:1372 TTSB.Types <> Ty_Mult constr
-R1380:1397 TTSB.Types <> is_tight_multitype:25 def
-R1466:1467 TTSB.Types <> mt:23 var
-R1479:1486 TTSB.Types <> MT_Empty constr
-R1491:1494 Coq.Init.Logic <> True ind
-R1500:1506 TTSB.Types <> MT_Cons constr
-R1517:1523 TTSB.LogicSet <> and_set ind
-R1526:1538 TTSB.Types <> is_tight_type:24 def
-R1544:1561 TTSB.Types <> is_tight_multitype:25 def
-ind 1622:1635 <> permutationₜ
-constr 1666:1672 <> P_Tight
-constr 1761:1768 <> P_Atomic
-constr 1966:1970 <> P_Fun
-constr 2168:2173 <> P_Mult
-ind 2313:2326 <> permutationₘ
-constr 2367:2376 <> P_MT_Empty
-constr 2421:2429 <> P_MT_Cons
-constr 2629:2637 <> P_MT_Swap
-constr 2803:2812 <> P_MT_Trans
-R1643:1646 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R1639:1642 TTSB.Types <> type ind
-R1651:1654 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R1647:1650 TTSB.Types <> type ind
-R2339:2342 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2330:2338 TTSB.Types <> multitype ind
-R2352:2355 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2343:2351 TTSB.Types <> multitype ind
-R1683:1687 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R1706:1715 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R1692:1705 TTSB.Types <> tight_constant ind
-binder 1688:1688 <> t:32
-R1716:1729 TTSB.Types <> permutationₜ:28 ind
-R1745:1752 TTSB.Types <> Ty_Tight constr
-R1754:1754 TTSB.Types <> t:32 var
-R1732:1739 TTSB.Types <> Ty_Tight constr
-R1741:1741 TTSB.Types <> t:32 var
-R1778:1782 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R1864:1872 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R1795:1804 TTSB.Types <> AtomicType defax
-binder 1783:1786 <> t₁:33
-R1795:1804 TTSB.Types <> AtomicType defax
-binder 1788:1791 <> t₂:34
-R1826:1831 Coq.Lists.ListSet <> set_In def
-R1838:1838 TTSB.Types <> X defax
-R1833:1836 TTSB.Types <> t₁:33 var
-binder 1817:1822 <> prf₁:35
-R1851:1856 Coq.Lists.ListSet <> set_In def
-R1863:1863 TTSB.Types <> X defax
-R1858:1861 TTSB.Types <> t₂:34 var
-binder 1842:1847 <> prf₂:36
-R1888:1898 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R1873:1877 TTSB.Types <> eqₐ defax
-R1879:1882 TTSB.Types <> t₁:33 var
-R1884:1887 TTSB.Types <> t₂:34 var
-R1899:1912 TTSB.Types <> permutationₜ:28 ind
-R1939:1947 TTSB.Types <> Ty_Atomic constr
-R1949:1952 TTSB.Types <> t₂:34 var
-R1954:1959 TTSB.Types <> prf₂:36 var
-R1915:1923 TTSB.Types <> Ty_Atomic constr
-R1925:1928 TTSB.Types <> t₁:33 var
-R1930:1935 TTSB.Types <> prf₁:35 var
-R1981:1985 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R2028:2036 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R2000:2008 TTSB.Types <> multitype ind
-binder 1986:1990 <> mt₁:37
-R2000:2008 TTSB.Types <> multitype ind
-binder 1992:1996 <> mt₂:38
-R2024:2027 TTSB.Types <> type ind
-binder 2012:2015 <> t₁:39
-R2024:2027 TTSB.Types <> type ind
-binder 2017:2020 <> t₂:40
-R2063:2073 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2037:2050 TTSB.Types <> permutationₘ:29 ind
-R2058:2062 TTSB.Types <> mt₂:38 var
-R2052:2056 TTSB.Types <> mt₁:37 var
-R2098:2108 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2074:2087 TTSB.Types <> permutationₜ:28 ind
-R2094:2097 TTSB.Types <> t₂:40 var
-R2089:2092 TTSB.Types <> t₁:39 var
-R2109:2122 TTSB.Types <> permutationₜ:28 ind
-R2145:2150 TTSB.Types <> Ty_Fun constr
-R2152:2156 TTSB.Types <> mt₂:38 var
-R2158:2161 TTSB.Types <> t₂:40 var
-R2125:2130 TTSB.Types <> Ty_Fun constr
-R2132:2136 TTSB.Types <> mt₁:37 var
-R2138:2141 TTSB.Types <> t₁:39 var
-R2184:2188 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R2212:2221 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R2203:2211 TTSB.Types <> multitype ind
-binder 2189:2193 <> mt₁:41
-R2203:2211 TTSB.Types <> multitype ind
-binder 2195:2199 <> mt₂:42
-R2248:2258 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2222:2235 TTSB.Types <> permutationₘ:29 ind
-R2243:2247 TTSB.Types <> mt₂:42 var
-R2237:2241 TTSB.Types <> mt₁:41 var
-R2259:2272 TTSB.Types <> permutationₜ:28 ind
-R2291:2297 TTSB.Types <> Ty_Mult constr
-R2299:2303 TTSB.Types <> mt₂:42 var
-R2275:2281 TTSB.Types <> Ty_Mult constr
-R2283:2287 TTSB.Types <> mt₁:41 var
-R2380:2393 TTSB.Types <> permutationₘ:29 ind
-R2407:2414 TTSB.Types <> MT_Empty constr
-R2396:2403 TTSB.Types <> MT_Empty constr
-R2440:2444 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R2487:2495 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R2459:2467 TTSB.Types <> multitype ind
-binder 2445:2449 <> mt₁:43
-R2459:2467 TTSB.Types <> multitype ind
-binder 2451:2455 <> mt₂:44
-R2483:2486 TTSB.Types <> type ind
-binder 2471:2474 <> t₁:45
-R2483:2486 TTSB.Types <> type ind
-binder 2476:2479 <> t₂:46
-R2520:2530 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2496:2509 TTSB.Types <> permutationₜ:28 ind
-R2516:2519 TTSB.Types <> t₂:46 var
-R2511:2514 TTSB.Types <> t₁:45 var
-R2557:2567 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2531:2544 TTSB.Types <> permutationₘ:29 ind
-R2552:2556 TTSB.Types <> mt₂:44 var
-R2546:2550 TTSB.Types <> mt₁:43 var
-R2568:2581 TTSB.Types <> permutationₘ:29 ind
-R2605:2611 TTSB.Types <> MT_Cons constr
-R2613:2616 TTSB.Types <> t₂:46 var
-R2618:2622 TTSB.Types <> mt₂:44 var
-R2584:2590 TTSB.Types <> MT_Cons constr
-R2592:2595 TTSB.Types <> t₁:45 var
-R2597:2601 TTSB.Types <> mt₁:43 var
-R2648:2652 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R2686:2696 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R2665:2668 TTSB.Types <> type ind
-binder 2653:2656 <> t₁:47
-R2665:2668 TTSB.Types <> type ind
-binder 2658:2661 <> t₂:48
-R2677:2685 TTSB.Types <> multitype ind
-binder 2672:2673 <> mt:49
-R2697:2710 TTSB.Types <> permutationₘ:29 ind
-R2767:2773 TTSB.Types <> MT_Cons constr
-R2775:2778 TTSB.Types <> t₂:48 var
-R2781:2787 TTSB.Types <> MT_Cons constr
-R2789:2792 TTSB.Types <> t₁:47 var
-R2794:2795 TTSB.Types <> mt:49 var
-R2724:2730 TTSB.Types <> MT_Cons constr
-R2732:2735 TTSB.Types <> t₁:47 var
-R2738:2744 TTSB.Types <> MT_Cons constr
-R2746:2749 TTSB.Types <> t₂:48 var
-R2751:2752 TTSB.Types <> mt:49 var
-R2822:2826 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R2856:2864 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R2847:2855 TTSB.Types <> multitype ind
-binder 2827:2831 <> mt₁:50
-R2847:2855 TTSB.Types <> multitype ind
-binder 2833:2837 <> mt₂:51
-R2847:2855 TTSB.Types <> multitype ind
-binder 2839:2843 <> mt₃:52
-R2891:2900 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2865:2878 TTSB.Types <> permutationₘ:29 ind
-R2886:2890 TTSB.Types <> mt₂:51 var
-R2880:2884 TTSB.Types <> mt₁:50 var
-R2927:2936 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2901:2914 TTSB.Types <> permutationₘ:29 ind
-R2922:2926 TTSB.Types <> mt₃:52 var
-R2916:2920 TTSB.Types <> mt₂:51 var
-R2937:2950 TTSB.Types <> permutationₘ:29 ind
-R2958:2962 TTSB.Types <> mt₃:52 var
-R2952:2956 TTSB.Types <> mt₁:50 var
-scheme 1622:1635 <> permutationₜ_rect
-scheme 1622:1635 <> permutationₜ_ind
-scheme 1622:1635 <> permutationₜ_rec
-scheme 1622:1635 <> permutationₜ_sind
-scheme 2313:2326 <> permutationₘ_rect
-scheme 2313:2326 <> permutationₘ_ind
-scheme 2313:2326 <> permutationₘ_rec
-scheme 2313:2326 <> permutationₘ_sind
-R2988:3001 TTSB.Types <> permutationₜ ind
-R3044:3057 TTSB.Types <> permutationₘ ind
-def 3089:3110 <> permutationₜ_mut_ind
-def 3161:3182 <> permutationₘ_mut_ind
-R3201:3214 TTSB.Types <> permutationₘ ind
-R3129:3142 TTSB.Types <> permutationₜ ind
-R3236:3257 TTSB.Types <> permutationₜ_mut_ind scheme
-prf 3270:3281 <> permₜ_refl
-R3285:3289 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R3298:3300 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R3294:3297 TTSB.Types <> type ind
-binder 3290:3290 <> t:53
-R3301:3314 TTSB.Types <> permutationₜ ind
-R3316:3316 TTSB.Types <> t:53 var
-R3318:3318 TTSB.Types <> t:53 var
-R3377:3384 TTSB.Types <> eqₐ_Eq defax
-binder 3461:3462 <> mt:54
-R3467:3480 TTSB.Types <> permutationₘ ind
-R3482:3483 TTSB.Types <> mt:54 var
-R3485:3486 TTSB.Types <> mt:54 var
-R3425:3436 TTSB.Types <> type_mut_ind scheme
-binder 3461:3462 <> mt:55
-R3467:3480 TTSB.Types <> permutationₘ ind
-R3482:3483 TTSB.Types <> mt:55 var
-R3485:3486 TTSB.Types <> mt:55 var
-R3425:3436 TTSB.Types <> type_mut_ind scheme
-prf 3510:3521 <> permₘ_refl
-R3525:3529 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R3544:3546 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R3535:3543 TTSB.Types <> multitype ind
-binder 3530:3531 <> mt:56
-R3547:3560 TTSB.Types <> permutationₘ ind
-R3562:3563 TTSB.Types <> mt:56 var
-R3565:3566 TTSB.Types <> mt:56 var
-R3625:3632 TTSB.Types <> eqₐ_Eq defax
-binder 3699:3699 <> t:57
-R3704:3717 TTSB.Types <> permutationₜ ind
-R3719:3719 TTSB.Types <> t:57 var
-R3721:3721 TTSB.Types <> t:57 var
-R3666:3682 TTSB.Types <> multitype_mut_ind scheme
-binder 3699:3699 <> t:58
-R3704:3717 TTSB.Types <> permutationₜ ind
-R3719:3719 TTSB.Types <> t:58 var
-R3721:3721 TTSB.Types <> t:58 var
-R3666:3682 TTSB.Types <> multitype_mut_ind scheme
-prf 3745:3755 <> permₜ_sym
-R3764:3768 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R3785:3792 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R3781:3784 TTSB.Types <> type ind
-binder 3769:3772 <> t₁:59
-R3781:3784 TTSB.Types <> type ind
-binder 3774:3777 <> t₂:60
-R3817:3824 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3793:3806 TTSB.Types <> permutationₜ ind
-R3808:3811 TTSB.Types <> t₁:59 var
-R3813:3816 TTSB.Types <> t₂:60 var
-R3825:3838 TTSB.Types <> permutationₜ ind
-R3840:3843 TTSB.Types <> t₂:60 var
-R3845:3848 TTSB.Types <> t₁:59 var
-R3928:3935 TTSB.Types <> eqₐ_Eq defax
-R3973:3981 TTSB.Types <> multitype ind
-binder 3959:3963 <> mt₁:61
-binder 3965:3969 <> mt₂:62
-R3995:4008 TTSB.Types <> permutationₘ ind
-R4010:4014 TTSB.Types <> mt₁:61 var
-R4016:4020 TTSB.Types <> mt₂:62 var
-binder 3986:3991 <> H_perm:63
-R4033:4046 TTSB.Types <> permutationₘ ind
-R4048:4052 TTSB.Types <> mt₂:62 var
-R4054:4058 TTSB.Types <> mt₁:61 var
-R3973:3981 TTSB.Types <> multitype ind
-binder 3959:3963 <> mt₁:64
-binder 3965:3969 <> mt₂:65
-R3995:4008 TTSB.Types <> permutationₘ ind
-R4010:4014 TTSB.Types <> mt₁:64 var
-R4016:4020 TTSB.Types <> mt₂:65 var
-binder 3986:3991 <> H_perm:66
-R4033:4046 TTSB.Types <> permutationₘ ind
-R4048:4052 TTSB.Types <> mt₂:65 var
-R4054:4058 TTSB.Types <> mt₁:64 var
-R4102:4123 TTSB.Types <> permutationₜ_mut_ind scheme
-R4102:4123 TTSB.Types <> permutationₜ_mut_ind scheme
-prf 4179:4189 <> permₘ_sym
-R4198:4202 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R4226:4233 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R4217:4225 TTSB.Types <> multitype ind
-binder 4203:4207 <> mt₁:67
-R4217:4225 TTSB.Types <> multitype ind
-binder 4209:4213 <> mt₂:68
-R4260:4267 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R4234:4247 TTSB.Types <> permutationₘ ind
-R4249:4253 TTSB.Types <> mt₁:67 var
-R4255:4259 TTSB.Types <> mt₂:68 var
-R4268:4281 TTSB.Types <> permutationₘ ind
-R4283:4287 TTSB.Types <> mt₂:68 var
-R4289:4293 TTSB.Types <> mt₁:67 var
-R4373:4380 TTSB.Types <> eqₐ_Eq defax
-R4415:4418 TTSB.Types <> type ind
-binder 4403:4406 <> t₁:69
-binder 4408:4411 <> t₂:70
-R4432:4445 TTSB.Types <> permutationₜ ind
-R4447:4450 TTSB.Types <> t₁:69 var
-R4452:4455 TTSB.Types <> t₂:70 var
-binder 4423:4428 <> H_perm:71
-R4461:4474 TTSB.Types <> permutationₜ ind
-R4476:4479 TTSB.Types <> t₂:70 var
-R4481:4484 TTSB.Types <> t₁:69 var
-R4415:4418 TTSB.Types <> type ind
-binder 4403:4406 <> t₁:72
-binder 4408:4411 <> t₂:73
-R4432:4445 TTSB.Types <> permutationₜ ind
-R4447:4450 TTSB.Types <> t₁:72 var
-R4452:4455 TTSB.Types <> t₂:73 var
-binder 4423:4428 <> H_perm:74
-R4461:4474 TTSB.Types <> permutationₜ ind
-R4476:4479 TTSB.Types <> t₂:73 var
-R4481:4484 TTSB.Types <> t₁:72 var
-R4528:4549 TTSB.Types <> permutationₘ_mut_ind scheme
-R4528:4549 TTSB.Types <> permutationₘ_mut_ind scheme
-prf 4603:4615 <> permₜ_trans
-R4624:4628 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R4650:4657 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R4646:4649 TTSB.Types <> type ind
-binder 4629:4632 <> t₁:75
-R4646:4649 TTSB.Types <> type ind
-binder 4634:4637 <> t₂:76
-R4646:4649 TTSB.Types <> type ind
-binder 4639:4642 <> t₃:77
-R4682:4690 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R4658:4671 TTSB.Types <> permutationₜ ind
-R4673:4676 TTSB.Types <> t₁:75 var
-R4678:4681 TTSB.Types <> t₂:76 var
-R4715:4723 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R4691:4704 TTSB.Types <> permutationₜ ind
-R4706:4709 TTSB.Types <> t₂:76 var
-R4711:4714 TTSB.Types <> t₃:77 var
-R4724:4737 TTSB.Types <> permutationₜ ind
-R4739:4742 TTSB.Types <> t₁:75 var
-R4744:4747 TTSB.Types <> t₃:77 var
-R4806:4813 TTSB.Types <> eqₐ_Eq defax
-R4904:4912 TTSB.Types <> multitype ind
-binder 4890:4894 <> mt₁:78
-binder 4896:4900 <> mt₂:79
-R4925:4938 TTSB.Types <> permutationₘ ind
-R4940:4944 TTSB.Types <> mt₁:78 var
-R4946:4950 TTSB.Types <> mt₂:79 var
-binder 4916:4921 <> H_perm:80
-R4964:4968 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R4986:4988 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R4977:4985 TTSB.Types <> multitype ind
-binder 4969:4973 <> mt₃:81
-R5015:5018 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R4989:5002 TTSB.Types <> permutationₘ ind
-R5004:5008 TTSB.Types <> mt₂:79 var
-R5010:5014 TTSB.Types <> mt₃:81 var
-R5019:5032 TTSB.Types <> permutationₘ ind
-R5034:5038 TTSB.Types <> mt₁:78 var
-R5040:5044 TTSB.Types <> mt₃:81 var
-R4904:4912 TTSB.Types <> multitype ind
-binder 4890:4894 <> mt₁:82
-binder 4896:4900 <> mt₂:83
-R4925:4938 TTSB.Types <> permutationₘ ind
-R4940:4944 TTSB.Types <> mt₁:82 var
-R4946:4950 TTSB.Types <> mt₂:83 var
-binder 4916:4921 <> H_perm:84
-R4964:4968 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R4986:4988 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R4977:4985 TTSB.Types <> multitype ind
-binder 4969:4973 <> mt₃:85
-R5015:5018 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R4989:5002 TTSB.Types <> permutationₘ ind
-R5004:5008 TTSB.Types <> mt₂:83 var
-R5010:5014 TTSB.Types <> mt₃:85 var
-R5019:5032 TTSB.Types <> permutationₘ ind
-R5034:5038 TTSB.Types <> mt₁:82 var
-R5040:5044 TTSB.Types <> mt₃:85 var
-R5088:5109 TTSB.Types <> permutationₜ_mut_ind scheme
-R5088:5109 TTSB.Types <> permutationₜ_mut_ind scheme
-prf 5288:5300 <> permₘ_trans
-R5309:5313 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R5343:5350 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R5334:5342 TTSB.Types <> multitype ind
-binder 5314:5318 <> mt₁:86
-R5334:5342 TTSB.Types <> multitype ind
-binder 5320:5324 <> mt₂:87
-R5334:5342 TTSB.Types <> multitype ind
-binder 5326:5330 <> mt₃:88
-R5377:5385 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R5351:5364 TTSB.Types <> permutationₘ ind
-R5366:5370 TTSB.Types <> mt₁:86 var
-R5372:5376 TTSB.Types <> mt₂:87 var
-R5412:5420 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R5386:5399 TTSB.Types <> permutationₘ ind
-R5401:5405 TTSB.Types <> mt₂:87 var
-R5407:5411 TTSB.Types <> mt₃:88 var
-R5421:5434 TTSB.Types <> permutationₘ ind
-R5436:5440 TTSB.Types <> mt₁:86 var
-R5442:5446 TTSB.Types <> mt₃:88 var
-R5505:5512 TTSB.Types <> eqₐ_Eq defax
-R5601:5604 TTSB.Types <> type ind
-binder 5589:5592 <> t₁:89
-binder 5594:5597 <> t₂:90
-R5617:5630 TTSB.Types <> permutationₜ ind
-R5632:5635 TTSB.Types <> t₁:89 var
-R5637:5640 TTSB.Types <> t₂:90 var
-binder 5608:5613 <> H_perm:91
-R5654:5658 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R5670:5672 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R5666:5669 TTSB.Types <> type ind
-binder 5659:5662 <> t₃:92
-R5697:5700 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R5673:5686 TTSB.Types <> permutationₜ ind
-R5688:5691 TTSB.Types <> t₂:90 var
-R5693:5696 TTSB.Types <> t₃:92 var
-R5701:5714 TTSB.Types <> permutationₜ ind
-R5716:5719 TTSB.Types <> t₁:89 var
-R5721:5724 TTSB.Types <> t₃:92 var
-R5601:5604 TTSB.Types <> type ind
-binder 5589:5592 <> t₁:93
-binder 5594:5597 <> t₂:94
-R5617:5630 TTSB.Types <> permutationₜ ind
-R5632:5635 TTSB.Types <> t₁:93 var
-R5637:5640 TTSB.Types <> t₂:94 var
-binder 5608:5613 <> H_perm:95
-R5654:5658 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R5670:5672 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R5666:5669 TTSB.Types <> type ind
-binder 5659:5662 <> t₃:96
-R5697:5700 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R5673:5686 TTSB.Types <> permutationₜ ind
-R5688:5691 TTSB.Types <> t₂:94 var
-R5693:5696 TTSB.Types <> t₃:96 var
-R5701:5714 TTSB.Types <> permutationₜ ind
-R5716:5719 TTSB.Types <> t₁:93 var
-R5721:5724 TTSB.Types <> t₃:96 var
-R5768:5789 TTSB.Types <> permutationₘ_mut_ind scheme
-R5768:5789 TTSB.Types <> permutationₘ_mut_ind scheme
-modtype 6100:6108 <> MULTITYPE
-ax 6123:6123 MULTITYPE T
-ax 6144:6145 MULTITYPE eq
-R6150:6153 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6149:6149 TTSB.Types MULTITYPE T defax
-R6155:6158 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6154:6154 TTSB.Types MULTITYPE T defax
-ax 6177:6181 MULTITYPE union
-R6186:6189 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6185:6185 TTSB.Types MULTITYPE T defax
-R6191:6194 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6190:6190 TTSB.Types MULTITYPE T defax
-R6195:6195 TTSB.Types MULTITYPE T defax
-ax 6207:6213 MULTITYPE eq_refl
-R6217:6221 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R6227:6229 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R6226:6226 TTSB.Types MULTITYPE T defax
-binder 6222:6222 <> t:100
-R6230:6231 TTSB.Types MULTITYPE eq defax
-R6233:6233 TTSB.Types <> t:100 var
-R6235:6235 TTSB.Types <> t:100 var
-ax 6246:6251 MULTITYPE eq_sym
-R6255:6259 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R6273:6275 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R6272:6272 TTSB.Types MULTITYPE T defax
-binder 6260:6263 <> t₁:102
-R6272:6272 TTSB.Types MULTITYPE T defax
-binder 6265:6268 <> t₂:103
-R6288:6291 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6276:6277 TTSB.Types MULTITYPE eq defax
-R6279:6282 TTSB.Types <> t₁:102 var
-R6284:6287 TTSB.Types <> t₂:103 var
-R6292:6293 TTSB.Types MULTITYPE eq defax
-R6295:6298 TTSB.Types <> t₂:103 var
-R6300:6303 TTSB.Types <> t₁:102 var
-ax 6314:6321 MULTITYPE eq_trans
-R6325:6329 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R6348:6350 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R6347:6347 TTSB.Types MULTITYPE T defax
-binder 6330:6333 <> t₁:105
-R6347:6347 TTSB.Types MULTITYPE T defax
-binder 6335:6338 <> t₂:106
-R6347:6347 TTSB.Types MULTITYPE T defax
-binder 6340:6343 <> t₃:107
-R6363:6366 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6351:6352 TTSB.Types MULTITYPE eq defax
-R6354:6357 TTSB.Types <> t₁:105 var
-R6359:6362 TTSB.Types <> t₂:106 var
-R6379:6382 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6367:6368 TTSB.Types MULTITYPE eq defax
-R6370:6373 TTSB.Types <> t₂:106 var
-R6375:6378 TTSB.Types <> t₃:107 var
-R6383:6384 TTSB.Types MULTITYPE eq defax
-R6386:6389 TTSB.Types <> t₁:105 var
-R6391:6394 TTSB.Types <> t₃:107 var
-ax 6405:6414 MULTITYPE union_comm
-R6418:6421 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R6433:6434 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 6422:6426 <> mt₁:109
-binder 6428:6432 <> mt₂:110
-R6435:6436 TTSB.Types MULTITYPE eq defax
-R6439:6443 TTSB.Types MULTITYPE union defax
-R6445:6449 TTSB.Types <> mt₁:109 var
-R6451:6455 TTSB.Types <> mt₂:110 var
-R6459:6463 TTSB.Types MULTITYPE union defax
-R6465:6469 TTSB.Types <> mt₂:110 var
-R6471:6475 TTSB.Types <> mt₁:109 var
-ax 6487:6497 MULTITYPE union_assoc
-R6506:6509 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R6527:6533 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 6510:6514 <> mt₁:112
-binder 6516:6520 <> mt₂:113
-binder 6522:6526 <> mt₃:114
-R6534:6535 TTSB.Types MULTITYPE eq defax
-R6545:6549 TTSB.Types MULTITYPE union defax
-R6552:6556 TTSB.Types MULTITYPE union defax
-R6558:6562 TTSB.Types <> mt₁:112 var
-R6564:6568 TTSB.Types <> mt₂:113 var
-R6571:6575 TTSB.Types <> mt₃:114 var
-R6586:6590 TTSB.Types MULTITYPE union defax
-R6592:6596 TTSB.Types <> mt₁:112 var
-R6599:6603 TTSB.Types MULTITYPE union defax
-R6605:6609 TTSB.Types <> mt₂:113 var
-R6611:6615 TTSB.Types <> mt₃:114 var
-ax 6632:6639 MULTITYPE eq_union
-R6648:6651 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R6673:6679 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 6652:6655 <> t₁:116
-binder 6657:6661 <> t₁':117
-binder 6663:6666 <> t₂:118
-binder 6668:6672 <> t₂':119
-R6693:6701 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6680:6681 TTSB.Types MULTITYPE eq defax
-R6683:6686 TTSB.Types <> t₁:116 var
-R6688:6692 TTSB.Types <> t₁':117 var
-R6715:6723 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6702:6703 TTSB.Types MULTITYPE eq defax
-R6705:6708 TTSB.Types <> t₂:118 var
-R6710:6714 TTSB.Types <> t₂':119 var
-R6724:6725 TTSB.Types MULTITYPE eq defax
-R6728:6732 TTSB.Types MULTITYPE union defax
-R6734:6737 TTSB.Types <> t₁:116 var
-R6739:6742 TTSB.Types <> t₂:118 var
-R6746:6750 TTSB.Types MULTITYPE union defax
-R6752:6756 TTSB.Types <> t₁':117 var
-R6758:6762 TTSB.Types <> t₂':119 var
-R6775:6783 TTSB.Types MULTITYPE <> modtype
-R6808:6816 TTSB.Types MULTITYPE <> mod
-mod 6795:6803 <> Multitype
-def 6832:6832 Multitype T
-R6837:6845 TTSB.Types <> multitype ind
-def 6861:6862 Multitype eq
-R6867:6880 TTSB.Types <> permutationₘ ind
-def 6896:6900 Multitype union
-R6905:6912 TTSB.Types <> MT_Union def
-prf 6930:6936 Multitype eq_refl
-R6940:6944 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R6950:6952 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R6949:6949 TTSB.Types Multitype T def
-binder 6945:6945 <> t:121
-R6953:6954 TTSB.Types Multitype eq def
-R6956:6956 TTSB.Types <> t:121 var
-R6958:6958 TTSB.Types <> t:121 var
-R6983:6984 TTSB.Types Multitype eq def
-prf 7039:7044 Multitype eq_sym
-R7048:7052 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R7066:7068 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R7065:7065 TTSB.Types Multitype T def
-binder 7053:7056 <> t₁:122
-R7065:7065 TTSB.Types Multitype T def
-binder 7058:7061 <> t₂:123
-R7081:7084 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R7069:7070 TTSB.Types Multitype eq def
-R7072:7075 TTSB.Types <> t₁:122 var
-R7077:7080 TTSB.Types <> t₂:123 var
-R7085:7086 TTSB.Types Multitype eq def
-R7088:7091 TTSB.Types <> t₂:123 var
-R7093:7096 TTSB.Types <> t₁:122 var
-R7120:7121 TTSB.Types Multitype eq def
-prf 7176:7183 Multitype eq_trans
-R7187:7191 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R7210:7212 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R7209:7209 TTSB.Types Multitype T def
-binder 7192:7195 <> t₁:124
-R7209:7209 TTSB.Types Multitype T def
-binder 7197:7200 <> t₂:125
-R7209:7209 TTSB.Types Multitype T def
-binder 7202:7205 <> t₃:126
-R7225:7228 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R7213:7214 TTSB.Types Multitype eq def
-R7216:7219 TTSB.Types <> t₁:124 var
-R7221:7224 TTSB.Types <> t₂:125 var
-R7241:7244 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R339:342 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R339:342 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R366:369 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R366:369 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+ax 410:419 <> AtomicType
+ax 438:438 <> X
+R442:444 Coq.Lists.ListSet <> set def
+R446:455 TTSB.Types <> AtomicType defax
+ax 468:472 <> eqₐ
+R486:489 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R476:485 TTSB.Types <> AtomicType defax
+R500:503 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R490:499 TTSB.Types <> AtomicType defax
+ax 520:528 <> eqₐ_dec
+R535:539 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R562:566 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R552:561 TTSB.Types <> AtomicType defax
+binder 540:543 <> t₁:4
+R552:561 TTSB.Types <> AtomicType defax
+binder 545:548 <> t₂:5
+R567:567 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R583:587 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R606:606 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R568:572 TTSB.Types <> eqₐ defax
+R574:577 TTSB.Types <> t₁:4 var
+R579:582 TTSB.Types <> t₂:5 var
+R588:590 Coq.Unicode.Utf8_core <> ::type_scope:'¬'_x not
+R591:595 TTSB.Types <> eqₐ defax
+R597:600 TTSB.Types <> t₁:4 var
+R602:605 TTSB.Types <> t₂:5 var
+ax 619:626 <> eqₐ_Eq
+R633:643 Coq.Classes.RelationClasses <> Equivalence class
+R645:649 TTSB.Types <> eqₐ defax
+R670:674 TTSB.Types <> eqₐ defax
+not 658:658 <> :::x_'≡ₐ'_x
+ind 701:714 <> tight_constant
+constr 722:731 <> TC_Neutral
+constr 752:757 <> TC_Abs
+R735:748 TTSB.Types <> tight_constant:8 ind
+R761:774 TTSB.Types <> tight_constant:8 ind
+scheme 701:714 <> tight_constant_rect
+scheme 701:714 <> tight_constant_ind
+scheme 701:714 <> tight_constant_rec
+scheme 701:714 <> tight_constant_sind
+ind 788:791 <> type
+constr 798:805 <> Ty_Tight
+constr 837:845 <> Ty_Atomic
+constr 889:894 <> Ty_Fun
+constr 927:933 <> Ty_Mult
+ind 960:968 <> multitype
+constr 975:982 <> MT_Empty
+constr 998:1004 <> MT_Cons
+R812:825 TTSB.Types <> tight_constant ind
+binder 808:808 <> t:14
+R830:833 TTSB.Types <> type:10 ind
+R852:861 TTSB.Types <> AtomicType defax
+binder 848:848 <> t:15
+R866:866 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R877:881 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R867:872 Coq.Lists.ListSet <> set_In def
+R876:876 TTSB.Types <> X defax
+R874:874 TTSB.Types <> t:15 var
+R882:885 TTSB.Types <> type:10 ind
+R907:910 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R898:906 TTSB.Types <> multitype:11 ind
+R915:918 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R911:914 TTSB.Types <> type:10 ind
+R919:922 TTSB.Types <> type:10 ind
+R946:949 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R937:945 TTSB.Types <> multitype:11 ind
+R950:953 TTSB.Types <> type:10 ind
+R986:994 TTSB.Types <> multitype:11 ind
+R1011:1014 TTSB.Types <> type:10 ind
+binder 1007:1007 <> t:16
+R1023:1031 TTSB.Types <> multitype:11 ind
+binder 1018:1019 <> mt:17
+R1036:1044 TTSB.Types <> multitype:11 ind
+scheme 788:791 <> type_rect
+scheme 788:791 <> type_ind
+scheme 788:791 <> type_rec
+scheme 788:791 <> type_sind
+scheme 960:968 <> multitype_rect
+scheme 960:968 <> multitype_ind
+scheme 960:968 <> multitype_rec
+scheme 960:968 <> multitype_sind
+def 1056:1067 <> type_mut_ind
+def 1106:1122 <> multitype_mut_ind
+R1141:1149 TTSB.Types <> multitype ind
+R1086:1089 TTSB.Types <> type ind
+def 1179:1186 <> MT_Union
+R1203:1211 TTSB.Types <> multitype ind
+binder 1189:1193 <> mt₁:18
+binder 1195:1199 <> mt₂:19
+R1216:1224 TTSB.Types <> multitype ind
+R1237:1241 TTSB.Types <> mt₁:18 var
+R1253:1260 TTSB.Types <> MT_Empty constr
+R1265:1269 TTSB.Types <> mt₂:19 var
+R1276:1282 TTSB.Types <> MT_Cons constr
+R1295:1301 TTSB.Types <> MT_Cons constr
+R1306:1313 TTSB.Types <> MT_Union:20 def
+R1321:1325 TTSB.Types <> mt₂:19 var
+R1315:1319 TTSB.Types <> mt₁:18 var
+def 1347:1359 <> is_tight_type
+def 1523:1540 <> is_tight_multitype
+R1366:1369 TTSB.Types <> type ind
+binder 1362:1362 <> t:22
+R1548:1556 TTSB.Types <> multitype ind
+binder 1543:1544 <> mt:23
+R1390:1390 TTSB.Types <> t:22 var
+R1401:1408 TTSB.Types <> Ty_Tight constr
+R1415:1418 Coq.Init.Logic <> True ind
+R1425:1433 TTSB.Types <> Ty_Atomic constr
+R1442:1446 Coq.Init.Logic <> False ind
+R1452:1457 TTSB.Types <> Ty_Fun constr
+R1466:1470 Coq.Init.Logic <> False ind
+R1476:1482 TTSB.Types <> Ty_Mult constr
+R1490:1507 TTSB.Types <> is_tight_multitype:25 def
+R1577:1578 TTSB.Types <> mt:23 var
+R1590:1597 TTSB.Types <> MT_Empty constr
+R1602:1605 Coq.Init.Logic <> True ind
+R1611:1617 TTSB.Types <> MT_Cons constr
+R1628:1628 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1644:1649 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1672:1672 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1629:1641 TTSB.Types <> is_tight_type:24 def
+R1650:1667 TTSB.Types <> is_tight_multitype:25 def
+ind 1728:1741 <> permutationₜ
+constr 1773:1779 <> P_Tight
+constr 1868:1875 <> P_Atomic
+constr 2073:2077 <> P_Fun
+constr 2275:2280 <> P_Mult
+ind 2420:2433 <> permutationₘ
+constr 2475:2484 <> P_MT_Empty
+constr 2529:2537 <> P_MT_Cons
+constr 2737:2745 <> P_MT_Swap
+constr 2911:2920 <> P_MT_Trans
+R1749:1752 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1745:1748 TTSB.Types <> type ind
+R1757:1760 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1753:1756 TTSB.Types <> type ind
+R2446:2449 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2437:2445 TTSB.Types <> multitype ind
+R2459:2462 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2450:2458 TTSB.Types <> multitype ind
+R1790:1794 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1813:1822 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1799:1812 TTSB.Types <> tight_constant ind
+binder 1795:1795 <> t:32
+R1823:1836 TTSB.Types <> permutationₜ:28 ind
+R1852:1859 TTSB.Types <> Ty_Tight constr
+R1861:1861 TTSB.Types <> t:32 var
+R1839:1846 TTSB.Types <> Ty_Tight constr
+R1848:1848 TTSB.Types <> t:32 var
+R1885:1889 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1971:1979 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1902:1911 TTSB.Types <> AtomicType defax
+binder 1890:1893 <> t₁:33
+R1902:1911 TTSB.Types <> AtomicType defax
+binder 1895:1898 <> t₂:34
+R1933:1938 Coq.Lists.ListSet <> set_In def
+R1945:1945 TTSB.Types <> X defax
+R1940:1943 TTSB.Types <> t₁:33 var
+binder 1924:1929 <> prf₁:35
+R1958:1963 Coq.Lists.ListSet <> set_In def
+R1970:1970 TTSB.Types <> X defax
+R1965:1968 TTSB.Types <> t₂:34 var
+binder 1949:1954 <> prf₂:36
+R1995:2005 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1980:1984 TTSB.Types <> eqₐ defax
+R1986:1989 TTSB.Types <> t₁:33 var
+R1991:1994 TTSB.Types <> t₂:34 var
+R2006:2019 TTSB.Types <> permutationₜ:28 ind
+R2046:2054 TTSB.Types <> Ty_Atomic constr
+R2056:2059 TTSB.Types <> t₂:34 var
+R2061:2066 TTSB.Types <> prf₂:36 var
+R2022:2030 TTSB.Types <> Ty_Atomic constr
+R2032:2035 TTSB.Types <> t₁:33 var
+R2037:2042 TTSB.Types <> prf₁:35 var
+R2088:2092 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R2135:2143 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R2107:2115 TTSB.Types <> multitype ind
+binder 2093:2097 <> mt₁:37
+R2107:2115 TTSB.Types <> multitype ind
+binder 2099:2103 <> mt₂:38
+R2131:2134 TTSB.Types <> type ind
+binder 2119:2122 <> t₁:39
+R2131:2134 TTSB.Types <> type ind
+binder 2124:2127 <> t₂:40
+R2170:2180 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2144:2157 TTSB.Types <> permutationₘ:29 ind
+R2165:2169 TTSB.Types <> mt₂:38 var
+R2159:2163 TTSB.Types <> mt₁:37 var
+R2205:2215 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2181:2194 TTSB.Types <> permutationₜ:28 ind
+R2201:2204 TTSB.Types <> t₂:40 var
+R2196:2199 TTSB.Types <> t₁:39 var
+R2216:2229 TTSB.Types <> permutationₜ:28 ind
+R2252:2257 TTSB.Types <> Ty_Fun constr
+R2259:2263 TTSB.Types <> mt₂:38 var
+R2265:2268 TTSB.Types <> t₂:40 var
+R2232:2237 TTSB.Types <> Ty_Fun constr
+R2239:2243 TTSB.Types <> mt₁:37 var
+R2245:2248 TTSB.Types <> t₁:39 var
+R2291:2295 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R2319:2328 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R2310:2318 TTSB.Types <> multitype ind
+binder 2296:2300 <> mt₁:41
+R2310:2318 TTSB.Types <> multitype ind
+binder 2302:2306 <> mt₂:42
+R2355:2365 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2329:2342 TTSB.Types <> permutationₘ:29 ind
+R2350:2354 TTSB.Types <> mt₂:42 var
+R2344:2348 TTSB.Types <> mt₁:41 var
+R2366:2379 TTSB.Types <> permutationₜ:28 ind
+R2398:2404 TTSB.Types <> Ty_Mult constr
+R2406:2410 TTSB.Types <> mt₂:42 var
+R2382:2388 TTSB.Types <> Ty_Mult constr
+R2390:2394 TTSB.Types <> mt₁:41 var
+R2488:2501 TTSB.Types <> permutationₘ:29 ind
+R2515:2522 TTSB.Types <> MT_Empty constr
+R2504:2511 TTSB.Types <> MT_Empty constr
+R2548:2552 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R2595:2603 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R2567:2575 TTSB.Types <> multitype ind
+binder 2553:2557 <> mt₁:43
+R2567:2575 TTSB.Types <> multitype ind
+binder 2559:2563 <> mt₂:44
+R2591:2594 TTSB.Types <> type ind
+binder 2579:2582 <> t₁:45
+R2591:2594 TTSB.Types <> type ind
+binder 2584:2587 <> t₂:46
+R2628:2638 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2604:2617 TTSB.Types <> permutationₜ:28 ind
+R2624:2627 TTSB.Types <> t₂:46 var
+R2619:2622 TTSB.Types <> t₁:45 var
+R2665:2675 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2639:2652 TTSB.Types <> permutationₘ:29 ind
+R2660:2664 TTSB.Types <> mt₂:44 var
+R2654:2658 TTSB.Types <> mt₁:43 var
+R2676:2689 TTSB.Types <> permutationₘ:29 ind
+R2713:2719 TTSB.Types <> MT_Cons constr
+R2721:2724 TTSB.Types <> t₂:46 var
+R2726:2730 TTSB.Types <> mt₂:44 var
+R2692:2698 TTSB.Types <> MT_Cons constr
+R2700:2703 TTSB.Types <> t₁:45 var
+R2705:2709 TTSB.Types <> mt₁:43 var
+R2756:2760 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R2794:2804 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R2773:2776 TTSB.Types <> type ind
+binder 2761:2764 <> t₁:47
+R2773:2776 TTSB.Types <> type ind
+binder 2766:2769 <> t₂:48
+R2785:2793 TTSB.Types <> multitype ind
+binder 2780:2781 <> mt:49
+R2805:2818 TTSB.Types <> permutationₘ:29 ind
+R2875:2881 TTSB.Types <> MT_Cons constr
+R2883:2886 TTSB.Types <> t₂:48 var
+R2889:2895 TTSB.Types <> MT_Cons constr
+R2897:2900 TTSB.Types <> t₁:47 var
+R2902:2903 TTSB.Types <> mt:49 var
+R2832:2838 TTSB.Types <> MT_Cons constr
+R2840:2843 TTSB.Types <> t₁:47 var
+R2846:2852 TTSB.Types <> MT_Cons constr
+R2854:2857 TTSB.Types <> t₂:48 var
+R2859:2860 TTSB.Types <> mt:49 var
+R2930:2934 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R2964:2972 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R2955:2963 TTSB.Types <> multitype ind
+binder 2935:2939 <> mt₁:50
+R2955:2963 TTSB.Types <> multitype ind
+binder 2941:2945 <> mt₂:51
+R2955:2963 TTSB.Types <> multitype ind
+binder 2947:2951 <> mt₃:52
+R2999:3008 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2973:2986 TTSB.Types <> permutationₘ:29 ind
+R2994:2998 TTSB.Types <> mt₂:51 var
+R2988:2992 TTSB.Types <> mt₁:50 var
+R3035:3044 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3009:3022 TTSB.Types <> permutationₘ:29 ind
+R3030:3034 TTSB.Types <> mt₃:52 var
+R3024:3028 TTSB.Types <> mt₂:51 var
+R3045:3058 TTSB.Types <> permutationₘ:29 ind
+R3066:3070 TTSB.Types <> mt₃:52 var
+R3060:3064 TTSB.Types <> mt₁:50 var
+scheme 1728:1741 <> permutationₜ_ind
+scheme 1728:1741 <> permutationₜ_sind
+scheme 2420:2433 <> permutationₘ_ind
+scheme 2420:2433 <> permutationₘ_sind
+R3096:3109 TTSB.Types <> permutationₜ ind
+R3152:3165 TTSB.Types <> permutationₘ ind
+def 3197:3218 <> permutationₜ_mut_ind
+def 3269:3290 <> permutationₘ_mut_ind
+R3309:3322 TTSB.Types <> permutationₘ ind
+R3237:3250 TTSB.Types <> permutationₜ ind
+R3344:3365 TTSB.Types <> permutationₜ_mut_ind scheme
+prf 3378:3389 <> permₜ_refl
+R3393:3397 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R3406:3408 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R3402:3405 TTSB.Types <> type ind
+binder 3398:3398 <> t:53
+R3409:3422 TTSB.Types <> permutationₜ ind
+R3424:3424 TTSB.Types <> t:53 var
+R3426:3426 TTSB.Types <> t:53 var
+R3485:3492 TTSB.Types <> eqₐ_Eq defax
+binder 3569:3570 <> mt:54
+R3575:3588 TTSB.Types <> permutationₘ ind
+R3590:3591 TTSB.Types <> mt:54 var
+R3593:3594 TTSB.Types <> mt:54 var
+R3533:3544 TTSB.Types <> type_mut_ind scheme
+binder 3569:3570 <> mt:55
+R3575:3588 TTSB.Types <> permutationₘ ind
+R3590:3591 TTSB.Types <> mt:55 var
+R3593:3594 TTSB.Types <> mt:55 var
+R3533:3544 TTSB.Types <> type_mut_ind scheme
+prf 3618:3629 <> permₘ_refl
+R3633:3637 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R3652:3654 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R3643:3651 TTSB.Types <> multitype ind
+binder 3638:3639 <> mt:56
+R3655:3668 TTSB.Types <> permutationₘ ind
+R3670:3671 TTSB.Types <> mt:56 var
+R3673:3674 TTSB.Types <> mt:56 var
+R3733:3740 TTSB.Types <> eqₐ_Eq defax
+binder 3807:3807 <> t:57
+R3812:3825 TTSB.Types <> permutationₜ ind
+R3827:3827 TTSB.Types <> t:57 var
+R3829:3829 TTSB.Types <> t:57 var
+R3774:3790 TTSB.Types <> multitype_mut_ind scheme
+binder 3807:3807 <> t:58
+R3812:3825 TTSB.Types <> permutationₜ ind
+R3827:3827 TTSB.Types <> t:58 var
+R3829:3829 TTSB.Types <> t:58 var
+R3774:3790 TTSB.Types <> multitype_mut_ind scheme
+prf 3853:3863 <> permₜ_sym
+R3872:3876 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R3893:3900 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R3889:3892 TTSB.Types <> type ind
+binder 3877:3880 <> t₁:59
+R3889:3892 TTSB.Types <> type ind
+binder 3882:3885 <> t₂:60
+R3925:3932 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3901:3914 TTSB.Types <> permutationₜ ind
+R3916:3919 TTSB.Types <> t₁:59 var
+R3921:3924 TTSB.Types <> t₂:60 var
+R3933:3946 TTSB.Types <> permutationₜ ind
+R3948:3951 TTSB.Types <> t₂:60 var
+R3953:3956 TTSB.Types <> t₁:59 var
+R4036:4043 TTSB.Types <> eqₐ_Eq defax
+R4081:4089 TTSB.Types <> multitype ind
+binder 4067:4071 <> mt₁:61
+binder 4073:4077 <> mt₂:62
+R4103:4116 TTSB.Types <> permutationₘ ind
+R4118:4122 TTSB.Types <> mt₁:61 var
+R4124:4128 TTSB.Types <> mt₂:62 var
+binder 4094:4099 <> H_perm:63
+R4141:4154 TTSB.Types <> permutationₘ ind
+R4156:4160 TTSB.Types <> mt₂:62 var
+R4162:4166 TTSB.Types <> mt₁:61 var
+R4081:4089 TTSB.Types <> multitype ind
+binder 4067:4071 <> mt₁:64
+binder 4073:4077 <> mt₂:65
+R4103:4116 TTSB.Types <> permutationₘ ind
+R4118:4122 TTSB.Types <> mt₁:64 var
+R4124:4128 TTSB.Types <> mt₂:65 var
+binder 4094:4099 <> H_perm:66
+R4141:4154 TTSB.Types <> permutationₘ ind
+R4156:4160 TTSB.Types <> mt₂:65 var
+R4162:4166 TTSB.Types <> mt₁:64 var
+R4210:4231 TTSB.Types <> permutationₜ_mut_ind scheme
+R4210:4231 TTSB.Types <> permutationₜ_mut_ind scheme
+prf 4287:4297 <> permₘ_sym
+R4306:4310 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R4334:4341 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R4325:4333 TTSB.Types <> multitype ind
+binder 4311:4315 <> mt₁:67
+R4325:4333 TTSB.Types <> multitype ind
+binder 4317:4321 <> mt₂:68
+R4368:4375 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4342:4355 TTSB.Types <> permutationₘ ind
+R4357:4361 TTSB.Types <> mt₁:67 var
+R4363:4367 TTSB.Types <> mt₂:68 var
+R4376:4389 TTSB.Types <> permutationₘ ind
+R4391:4395 TTSB.Types <> mt₂:68 var
+R4397:4401 TTSB.Types <> mt₁:67 var
+R4481:4488 TTSB.Types <> eqₐ_Eq defax
+R4523:4526 TTSB.Types <> type ind
+binder 4511:4514 <> t₁:69
+binder 4516:4519 <> t₂:70
+R4540:4553 TTSB.Types <> permutationₜ ind
+R4555:4558 TTSB.Types <> t₁:69 var
+R4560:4563 TTSB.Types <> t₂:70 var
+binder 4531:4536 <> H_perm:71
+R4569:4582 TTSB.Types <> permutationₜ ind
+R4584:4587 TTSB.Types <> t₂:70 var
+R4589:4592 TTSB.Types <> t₁:69 var
+R4523:4526 TTSB.Types <> type ind
+binder 4511:4514 <> t₁:72
+binder 4516:4519 <> t₂:73
+R4540:4553 TTSB.Types <> permutationₜ ind
+R4555:4558 TTSB.Types <> t₁:72 var
+R4560:4563 TTSB.Types <> t₂:73 var
+binder 4531:4536 <> H_perm:74
+R4569:4582 TTSB.Types <> permutationₜ ind
+R4584:4587 TTSB.Types <> t₂:73 var
+R4589:4592 TTSB.Types <> t₁:72 var
+R4636:4657 TTSB.Types <> permutationₘ_mut_ind scheme
+R4636:4657 TTSB.Types <> permutationₘ_mut_ind scheme
+prf 4711:4723 <> permₜ_trans
+R4732:4736 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R4758:4765 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R4754:4757 TTSB.Types <> type ind
+binder 4737:4740 <> t₁:75
+R4754:4757 TTSB.Types <> type ind
+binder 4742:4745 <> t₂:76
+R4754:4757 TTSB.Types <> type ind
+binder 4747:4750 <> t₃:77
+R4790:4798 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4766:4779 TTSB.Types <> permutationₜ ind
+R4781:4784 TTSB.Types <> t₁:75 var
+R4786:4789 TTSB.Types <> t₂:76 var
+R4823:4831 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4799:4812 TTSB.Types <> permutationₜ ind
+R4814:4817 TTSB.Types <> t₂:76 var
+R4819:4822 TTSB.Types <> t₃:77 var
+R4832:4845 TTSB.Types <> permutationₜ ind
+R4847:4850 TTSB.Types <> t₁:75 var
+R4852:4855 TTSB.Types <> t₃:77 var
+R4914:4921 TTSB.Types <> eqₐ_Eq defax
+R5012:5020 TTSB.Types <> multitype ind
+binder 4998:5002 <> mt₁:78
+binder 5004:5008 <> mt₂:79
+R5033:5046 TTSB.Types <> permutationₘ ind
+R5048:5052 TTSB.Types <> mt₁:78 var
+R5054:5058 TTSB.Types <> mt₂:79 var
+binder 5024:5029 <> H_perm:80
+R5072:5076 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5094:5096 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5085:5093 TTSB.Types <> multitype ind
+binder 5077:5081 <> mt₃:81
+R5123:5126 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5097:5110 TTSB.Types <> permutationₘ ind
+R5112:5116 TTSB.Types <> mt₂:79 var
+R5118:5122 TTSB.Types <> mt₃:81 var
+R5127:5140 TTSB.Types <> permutationₘ ind
+R5142:5146 TTSB.Types <> mt₁:78 var
+R5148:5152 TTSB.Types <> mt₃:81 var
+R5012:5020 TTSB.Types <> multitype ind
+binder 4998:5002 <> mt₁:82
+binder 5004:5008 <> mt₂:83
+R5033:5046 TTSB.Types <> permutationₘ ind
+R5048:5052 TTSB.Types <> mt₁:82 var
+R5054:5058 TTSB.Types <> mt₂:83 var
+binder 5024:5029 <> H_perm:84
+R5072:5076 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5094:5096 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5085:5093 TTSB.Types <> multitype ind
+binder 5077:5081 <> mt₃:85
+R5123:5126 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5097:5110 TTSB.Types <> permutationₘ ind
+R5112:5116 TTSB.Types <> mt₂:83 var
+R5118:5122 TTSB.Types <> mt₃:85 var
+R5127:5140 TTSB.Types <> permutationₘ ind
+R5142:5146 TTSB.Types <> mt₁:82 var
+R5148:5152 TTSB.Types <> mt₃:85 var
+R5196:5217 TTSB.Types <> permutationₜ_mut_ind scheme
+R5196:5217 TTSB.Types <> permutationₜ_mut_ind scheme
+prf 5396:5408 <> permₘ_trans
+R5417:5421 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5451:5458 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5442:5450 TTSB.Types <> multitype ind
+binder 5422:5426 <> mt₁:86
+R5442:5450 TTSB.Types <> multitype ind
+binder 5428:5432 <> mt₂:87
+R5442:5450 TTSB.Types <> multitype ind
+binder 5434:5438 <> mt₃:88
+R5485:5493 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5459:5472 TTSB.Types <> permutationₘ ind
+R5474:5478 TTSB.Types <> mt₁:86 var
+R5480:5484 TTSB.Types <> mt₂:87 var
+R5520:5528 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5494:5507 TTSB.Types <> permutationₘ ind
+R5509:5513 TTSB.Types <> mt₂:87 var
+R5515:5519 TTSB.Types <> mt₃:88 var
+R5529:5542 TTSB.Types <> permutationₘ ind
+R5544:5548 TTSB.Types <> mt₁:86 var
+R5550:5554 TTSB.Types <> mt₃:88 var
+R5613:5620 TTSB.Types <> eqₐ_Eq defax
+R5709:5712 TTSB.Types <> type ind
+binder 5697:5700 <> t₁:89
+binder 5702:5705 <> t₂:90
+R5725:5738 TTSB.Types <> permutationₜ ind
+R5740:5743 TTSB.Types <> t₁:89 var
+R5745:5748 TTSB.Types <> t₂:90 var
+binder 5716:5721 <> H_perm:91
+R5762:5766 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5778:5780 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5774:5777 TTSB.Types <> type ind
+binder 5767:5770 <> t₃:92
+R5805:5808 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5781:5794 TTSB.Types <> permutationₜ ind
+R5796:5799 TTSB.Types <> t₂:90 var
+R5801:5804 TTSB.Types <> t₃:92 var
+R5809:5822 TTSB.Types <> permutationₜ ind
+R5824:5827 TTSB.Types <> t₁:89 var
+R5829:5832 TTSB.Types <> t₃:92 var
+R5709:5712 TTSB.Types <> type ind
+binder 5697:5700 <> t₁:93
+binder 5702:5705 <> t₂:94
+R5725:5738 TTSB.Types <> permutationₜ ind
+R5740:5743 TTSB.Types <> t₁:93 var
+R5745:5748 TTSB.Types <> t₂:94 var
+binder 5716:5721 <> H_perm:95
+R5762:5766 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5778:5780 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5774:5777 TTSB.Types <> type ind
+binder 5767:5770 <> t₃:96
+R5805:5808 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5781:5794 TTSB.Types <> permutationₜ ind
+R5796:5799 TTSB.Types <> t₂:94 var
+R5801:5804 TTSB.Types <> t₃:96 var
+R5809:5822 TTSB.Types <> permutationₜ ind
+R5824:5827 TTSB.Types <> t₁:93 var
+R5829:5832 TTSB.Types <> t₃:96 var
+R5876:5897 TTSB.Types <> permutationₘ_mut_ind scheme
+R5876:5897 TTSB.Types <> permutationₘ_mut_ind scheme
+modtype 6208:6216 <> MULTITYPE
+ax 6231:6231 MULTITYPE T
+ax 6252:6253 MULTITYPE eq
+R6258:6261 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6257:6257 TTSB.Types MULTITYPE T defax
+R6263:6266 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6262:6262 TTSB.Types MULTITYPE T defax
+ax 6286:6290 MULTITYPE union
+R6295:6298 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6294:6294 TTSB.Types MULTITYPE T defax
+R6300:6303 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6299:6299 TTSB.Types MULTITYPE T defax
+R6304:6304 TTSB.Types MULTITYPE T defax
+ax 6316:6322 MULTITYPE eq_refl
+R6326:6330 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6336:6338 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6335:6335 TTSB.Types MULTITYPE T defax
+binder 6331:6331 <> t:100
+R6339:6340 TTSB.Types MULTITYPE eq defax
+R6342:6342 TTSB.Types <> t:100 var
+R6344:6344 TTSB.Types <> t:100 var
+ax 6355:6360 MULTITYPE eq_sym
+R6364:6368 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6382:6384 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6381:6381 TTSB.Types MULTITYPE T defax
+binder 6369:6372 <> t₁:102
+R6381:6381 TTSB.Types MULTITYPE T defax
+binder 6374:6377 <> t₂:103
+R6397:6400 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6385:6386 TTSB.Types MULTITYPE eq defax
+R6388:6391 TTSB.Types <> t₁:102 var
+R6393:6396 TTSB.Types <> t₂:103 var
+R6401:6402 TTSB.Types MULTITYPE eq defax
+R6404:6407 TTSB.Types <> t₂:103 var
+R6409:6412 TTSB.Types <> t₁:102 var
+ax 6423:6430 MULTITYPE eq_trans
+R6434:6438 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6457:6459 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6456:6456 TTSB.Types MULTITYPE T defax
+binder 6439:6442 <> t₁:105
+R6456:6456 TTSB.Types MULTITYPE T defax
+binder 6444:6447 <> t₂:106
+R6456:6456 TTSB.Types MULTITYPE T defax
+binder 6449:6452 <> t₃:107
+R6472:6475 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6460:6461 TTSB.Types MULTITYPE eq defax
+R6463:6466 TTSB.Types <> t₁:105 var
+R6468:6471 TTSB.Types <> t₂:106 var
+R6488:6491 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6476:6477 TTSB.Types MULTITYPE eq defax
+R6479:6482 TTSB.Types <> t₂:106 var
+R6484:6487 TTSB.Types <> t₃:107 var
+R6492:6493 TTSB.Types MULTITYPE eq defax
+R6495:6498 TTSB.Types <> t₁:105 var
+R6500:6503 TTSB.Types <> t₃:107 var
+ax 6514:6523 MULTITYPE union_comm
+R6527:6530 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6542:6543 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 6531:6535 <> mt₁:109
+binder 6537:6541 <> mt₂:110
+R6544:6545 TTSB.Types MULTITYPE eq defax
+R6548:6552 TTSB.Types MULTITYPE union defax
+R6554:6558 TTSB.Types <> mt₁:109 var
+R6560:6564 TTSB.Types <> mt₂:110 var
+R6568:6572 TTSB.Types MULTITYPE union defax
+R6574:6578 TTSB.Types <> mt₂:110 var
+R6580:6584 TTSB.Types <> mt₁:109 var
+ax 6596:6606 MULTITYPE union_assoc
+R6615:6618 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6636:6642 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 6619:6623 <> mt₁:112
+binder 6625:6629 <> mt₂:113
+binder 6631:6635 <> mt₃:114
+R6643:6644 TTSB.Types MULTITYPE eq defax
+R6654:6658 TTSB.Types MULTITYPE union defax
+R6661:6665 TTSB.Types MULTITYPE union defax
+R6667:6671 TTSB.Types <> mt₁:112 var
+R6673:6677 TTSB.Types <> mt₂:113 var
+R6680:6684 TTSB.Types <> mt₃:114 var
+R6695:6699 TTSB.Types MULTITYPE union defax
+R6701:6705 TTSB.Types <> mt₁:112 var
+R6708:6712 TTSB.Types MULTITYPE union defax
+R6714:6718 TTSB.Types <> mt₂:113 var
+R6720:6724 TTSB.Types <> mt₃:114 var
+ax 6741:6748 MULTITYPE eq_union
+R6757:6760 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6782:6788 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 6761:6764 <> t₁:116
+binder 6766:6770 <> t₁':117
+binder 6772:6775 <> t₂:118
+binder 6777:6781 <> t₂':119
+R6802:6810 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6789:6790 TTSB.Types MULTITYPE eq defax
+R6792:6795 TTSB.Types <> t₁:116 var
+R6797:6801 TTSB.Types <> t₁':117 var
+R6824:6832 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6811:6812 TTSB.Types MULTITYPE eq defax
+R6814:6817 TTSB.Types <> t₂:118 var
+R6819:6823 TTSB.Types <> t₂':119 var
+R6833:6834 TTSB.Types MULTITYPE eq defax
+R6837:6841 TTSB.Types MULTITYPE union defax
+R6843:6846 TTSB.Types <> t₁:116 var
+R6848:6851 TTSB.Types <> t₂:118 var
+R6855:6859 TTSB.Types MULTITYPE union defax
+R6861:6865 TTSB.Types <> t₁':117 var
+R6867:6871 TTSB.Types <> t₂':119 var
+R6884:6892 TTSB.Types MULTITYPE <> modtype
+R6917:6925 TTSB.Types MULTITYPE <> mod
+mod 6904:6912 <> Multitype
+def 6941:6941 Multitype T
+R6946:6954 TTSB.Types <> multitype ind
+def 6970:6971 Multitype eq
+R6976:6989 TTSB.Types <> permutationₘ ind
+def 7005:7009 Multitype union
+R7014:7021 TTSB.Types <> MT_Union def
+prf 7039:7045 Multitype eq_refl
+R7049:7053 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7059:7061 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7058:7058 TTSB.Types Multitype T def
+binder 7054:7054 <> t:121
+R7062:7063 TTSB.Types Multitype eq def
+R7065:7065 TTSB.Types <> t:121 var
+R7067:7067 TTSB.Types <> t:121 var
+R7092:7093 TTSB.Types Multitype eq def
+prf 7148:7153 Multitype eq_sym
+R7157:7161 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7175:7177 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7174:7174 TTSB.Types Multitype T def
+binder 7162:7165 <> t₁:122
+R7174:7174 TTSB.Types Multitype T def
+binder 7167:7170 <> t₂:123
+R7190:7193 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7178:7179 TTSB.Types Multitype eq def
+R7181:7184 TTSB.Types <> t₁:122 var
+R7186:7189 TTSB.Types <> t₂:123 var
+R7194:7195 TTSB.Types Multitype eq def
+R7197:7200 TTSB.Types <> t₂:123 var
+R7202:7205 TTSB.Types <> t₁:122 var
 R7229:7230 TTSB.Types Multitype eq def
-R7232:7235 TTSB.Types <> t₂:125 var
-R7237:7240 TTSB.Types <> t₃:126 var
-R7245:7246 TTSB.Types Multitype eq def
-R7248:7251 TTSB.Types <> t₁:124 var
-R7253:7256 TTSB.Types <> t₃:126 var
-R7280:7281 TTSB.Types Multitype eq def
-prf 7337:7349 Multitype union_empty_r
-R7358:7362 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R7377:7385 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R7368:7376 TTSB.Types <> multitype ind
-binder 7363:7364 <> mt:127
-R7386:7386 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R7404:7407 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R7387:7391 TTSB.Types Multitype union def
-R7393:7394 TTSB.Types <> mt:127 var
-R7396:7403 TTSB.Types <> MT_Empty constr
-R7408:7409 TTSB.Types <> mt:127 var
-R7466:7467 TTSB.Types Multitype eq def
-prf 7533:7547 Multitype union_perm_tail
-R7556:7560 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R7590:7597 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R7581:7589 TTSB.Types <> multitype ind
-binder 7561:7565 <> mt₁:128
-R7581:7589 TTSB.Types <> multitype ind
-binder 7567:7571 <> mt₂:129
-R7581:7589 TTSB.Types <> multitype ind
-binder 7573:7578 <> mt₂':130
-R7613:7621 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R7598:7599 TTSB.Types Multitype eq def
-R7601:7605 TTSB.Types <> mt₂:129 var
-R7607:7612 TTSB.Types <> mt₂':130 var
-R7622:7623 TTSB.Types Multitype eq def
-R7626:7630 TTSB.Types Multitype union def
-R7632:7636 TTSB.Types <> mt₁:128 var
-R7638:7642 TTSB.Types <> mt₂:129 var
-R7646:7650 TTSB.Types Multitype union def
-R7652:7656 TTSB.Types <> mt₁:128 var
-R7658:7663 TTSB.Types <> mt₂':130 var
-R7721:7722 TTSB.Types Multitype eq def
-prf 7764:7778 Multitype union_perm_head
-R7787:7791 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R7822:7828 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R7813:7821 TTSB.Types <> multitype ind
-binder 7792:7796 <> mt₁:131
-R7813:7821 TTSB.Types <> multitype ind
-binder 7798:7803 <> mt₁':132
-R7813:7821 TTSB.Types <> multitype ind
-binder 7805:7809 <> mt₂:133
-R7844:7852 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R7829:7830 TTSB.Types Multitype eq def
-R7832:7836 TTSB.Types <> mt₁:131 var
-R7838:7843 TTSB.Types <> mt₁':132 var
-R7853:7854 TTSB.Types Multitype eq def
-R7857:7861 TTSB.Types Multitype union def
-R7863:7867 TTSB.Types <> mt₁:131 var
-R7869:7873 TTSB.Types <> mt₂:133 var
-R7877:7881 TTSB.Types Multitype union def
-R7883:7888 TTSB.Types <> mt₁':132 var
-R7890:7894 TTSB.Types <> mt₂:133 var
-R7952:7953 TTSB.Types Multitype eq def
-prf 8018:8031 Multitype union_perm_app
-R8040:8044 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R8082:8088 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R8073:8081 TTSB.Types <> multitype ind
-binder 8045:8049 <> mt₁:134
-R8073:8081 TTSB.Types <> multitype ind
-binder 8051:8056 <> mt₁':135
-R8073:8081 TTSB.Types <> multitype ind
-binder 8058:8062 <> mt₂:136
-R8073:8081 TTSB.Types <> multitype ind
-binder 8064:8069 <> mt₂':137
-R8104:8111 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R8089:8090 TTSB.Types Multitype eq def
-R8092:8096 TTSB.Types <> mt₁:134 var
-R8098:8103 TTSB.Types <> mt₁':135 var
-R8127:8134 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R8112:8113 TTSB.Types Multitype eq def
-R8115:8119 TTSB.Types <> mt₂:136 var
-R8121:8126 TTSB.Types <> mt₂':137 var
-R8135:8136 TTSB.Types Multitype eq def
-R8139:8143 TTSB.Types Multitype union def
-R8145:8149 TTSB.Types <> mt₁:134 var
-R8151:8155 TTSB.Types <> mt₂:136 var
-R8159:8163 TTSB.Types Multitype union def
-R8165:8170 TTSB.Types <> mt₁':135 var
-R8172:8177 TTSB.Types <> mt₂':137 var
-R8201:8202 TTSB.Types Multitype eq def
-R8258:8270 TTSB.Types <> permₘ_trans thm
-R8258:8270 TTSB.Types <> permₘ_trans thm
-R8285:8299 TTSB.Types Multitype union_perm_head thm
-R8285:8299 TTSB.Types Multitype union_perm_head thm
-R8316:8330 TTSB.Types Multitype union_perm_tail thm
-R8316:8330 TTSB.Types Multitype union_perm_tail thm
-prf 8352:8363 Multitype union_insert
-R8372:8376 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R8428:8434 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R8405:8413 TTSB.Types <> multitype ind
-binder 8377:8381 <> mt₁:138
-R8405:8413 TTSB.Types <> multitype ind
-binder 8383:8388 <> mt₁':139
-R8405:8413 TTSB.Types <> multitype ind
-binder 8390:8394 <> mt₂:140
-R8405:8413 TTSB.Types <> multitype ind
-binder 8396:8401 <> mt₂':141
-R8424:8427 TTSB.Types <> type ind
-binder 8417:8417 <> t:142
-R8424:8427 TTSB.Types <> type ind
-binder 8419:8420 <> t':143
-R8450:8458 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R8435:8436 TTSB.Types Multitype eq def
-R8438:8442 TTSB.Types <> mt₁:138 var
-R8444:8449 TTSB.Types <> mt₁':139 var
-R8474:8482 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R8459:8460 TTSB.Types Multitype eq def
-R8462:8466 TTSB.Types <> mt₂:140 var
-R8468:8473 TTSB.Types <> mt₂':141 var
-R8502:8510 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R8483:8496 TTSB.Types <> permutationₜ ind
-R8498:8498 TTSB.Types <> t:142 var
-R8500:8501 TTSB.Types <> t':143 var
-R8511:8512 TTSB.Types Multitype eq def
-R8522:8526 TTSB.Types Multitype union def
-R8528:8532 TTSB.Types <> mt₁:138 var
-R8535:8541 TTSB.Types <> MT_Cons constr
-R8543:8543 TTSB.Types <> t:142 var
-R8545:8549 TTSB.Types <> mt₂:140 var
-R8560:8564 TTSB.Types Multitype union def
-R8566:8571 TTSB.Types <> mt₁':139 var
-R8574:8580 TTSB.Types <> MT_Cons constr
-R8582:8583 TTSB.Types <> t':143 var
-R8585:8590 TTSB.Types <> mt₂':141 var
+prf 7285:7292 Multitype eq_trans
+R7296:7300 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7319:7321 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7318:7318 TTSB.Types Multitype T def
+binder 7301:7304 <> t₁:124
+R7318:7318 TTSB.Types Multitype T def
+binder 7306:7309 <> t₂:125
+R7318:7318 TTSB.Types Multitype T def
+binder 7311:7314 <> t₃:126
+R7334:7337 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7322:7323 TTSB.Types Multitype eq def
+R7325:7328 TTSB.Types <> t₁:124 var
+R7330:7333 TTSB.Types <> t₂:125 var
+R7350:7353 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7338:7339 TTSB.Types Multitype eq def
+R7341:7344 TTSB.Types <> t₂:125 var
+R7346:7349 TTSB.Types <> t₃:126 var
+R7354:7355 TTSB.Types Multitype eq def
+R7357:7360 TTSB.Types <> t₁:124 var
+R7362:7365 TTSB.Types <> t₃:126 var
+R7389:7390 TTSB.Types Multitype eq def
+prf 7446:7458 Multitype union_empty_r
+R7467:7471 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7486:7494 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7477:7485 TTSB.Types <> multitype ind
+binder 7472:7473 <> mt:127
+R7495:7495 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7513:7516 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7496:7500 TTSB.Types Multitype union def
+R7502:7503 TTSB.Types <> mt:127 var
+R7505:7512 TTSB.Types <> MT_Empty constr
+R7517:7518 TTSB.Types <> mt:127 var
+R7575:7576 TTSB.Types Multitype eq def
+prf 7642:7656 Multitype union_perm_tail
+R7665:7669 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7699:7706 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7690:7698 TTSB.Types <> multitype ind
+binder 7670:7674 <> mt₁:128
+R7690:7698 TTSB.Types <> multitype ind
+binder 7676:7680 <> mt₂:129
+R7690:7698 TTSB.Types <> multitype ind
+binder 7682:7687 <> mt₂':130
+R7722:7730 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7707:7708 TTSB.Types Multitype eq def
+R7710:7714 TTSB.Types <> mt₂:129 var
+R7716:7721 TTSB.Types <> mt₂':130 var
+R7731:7732 TTSB.Types Multitype eq def
+R7735:7739 TTSB.Types Multitype union def
+R7741:7745 TTSB.Types <> mt₁:128 var
+R7747:7751 TTSB.Types <> mt₂:129 var
+R7755:7759 TTSB.Types Multitype union def
+R7761:7765 TTSB.Types <> mt₁:128 var
+R7767:7772 TTSB.Types <> mt₂':130 var
+R7830:7831 TTSB.Types Multitype eq def
+prf 7873:7887 Multitype union_perm_head
+R7896:7900 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7931:7937 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7922:7930 TTSB.Types <> multitype ind
+binder 7901:7905 <> mt₁:131
+R7922:7930 TTSB.Types <> multitype ind
+binder 7907:7912 <> mt₁':132
+R7922:7930 TTSB.Types <> multitype ind
+binder 7914:7918 <> mt₂:133
+R7953:7961 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7938:7939 TTSB.Types Multitype eq def
+R7941:7945 TTSB.Types <> mt₁:131 var
+R7947:7952 TTSB.Types <> mt₁':132 var
+R7962:7963 TTSB.Types Multitype eq def
+R7966:7970 TTSB.Types Multitype union def
+R7972:7976 TTSB.Types <> mt₁:131 var
+R7978:7982 TTSB.Types <> mt₂:133 var
+R7986:7990 TTSB.Types Multitype union def
+R7992:7997 TTSB.Types <> mt₁':132 var
+R7999:8003 TTSB.Types <> mt₂:133 var
+R8061:8062 TTSB.Types Multitype eq def
+prf 8127:8140 Multitype union_perm_app
+R8149:8153 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R8191:8197 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R8182:8190 TTSB.Types <> multitype ind
+binder 8154:8158 <> mt₁:134
+R8182:8190 TTSB.Types <> multitype ind
+binder 8160:8165 <> mt₁':135
+R8182:8190 TTSB.Types <> multitype ind
+binder 8167:8171 <> mt₂:136
+R8182:8190 TTSB.Types <> multitype ind
+binder 8173:8178 <> mt₂':137
+R8213:8220 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8198:8199 TTSB.Types Multitype eq def
+R8201:8205 TTSB.Types <> mt₁:134 var
+R8207:8212 TTSB.Types <> mt₁':135 var
+R8236:8243 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8221:8222 TTSB.Types Multitype eq def
+R8224:8228 TTSB.Types <> mt₂:136 var
+R8230:8235 TTSB.Types <> mt₂':137 var
+R8244:8245 TTSB.Types Multitype eq def
+R8248:8252 TTSB.Types Multitype union def
+R8254:8258 TTSB.Types <> mt₁:134 var
+R8260:8264 TTSB.Types <> mt₂:136 var
+R8268:8272 TTSB.Types Multitype union def
+R8274:8279 TTSB.Types <> mt₁':135 var
+R8281:8286 TTSB.Types <> mt₂':137 var
+R8310:8311 TTSB.Types Multitype eq def
+R8367:8379 TTSB.Types <> permₘ_trans thm
+R8367:8379 TTSB.Types <> permₘ_trans thm
+R8394:8408 TTSB.Types Multitype union_perm_head thm
+R8394:8408 TTSB.Types Multitype union_perm_head thm
+R8425:8439 TTSB.Types Multitype union_perm_tail thm
+R8425:8439 TTSB.Types Multitype union_perm_tail thm
+prf 8461:8472 Multitype union_insert
+R8481:8485 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R8537:8543 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R8514:8522 TTSB.Types <> multitype ind
+binder 8486:8490 <> mt₁:138
+R8514:8522 TTSB.Types <> multitype ind
+binder 8492:8497 <> mt₁':139
+R8514:8522 TTSB.Types <> multitype ind
+binder 8499:8503 <> mt₂:140
+R8514:8522 TTSB.Types <> multitype ind
+binder 8505:8510 <> mt₂':141
+R8533:8536 TTSB.Types <> type ind
+binder 8526:8526 <> t:142
+R8533:8536 TTSB.Types <> type ind
+binder 8528:8529 <> t':143
+R8559:8567 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8544:8545 TTSB.Types Multitype eq def
+R8547:8551 TTSB.Types <> mt₁:138 var
+R8553:8558 TTSB.Types <> mt₁':139 var
+R8583:8591 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8568:8569 TTSB.Types Multitype eq def
+R8571:8575 TTSB.Types <> mt₂:140 var
+R8577:8582 TTSB.Types <> mt₂':141 var
+R8611:8619 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8592:8605 TTSB.Types <> permutationₜ ind
+R8607:8607 TTSB.Types <> t:142 var
+R8609:8610 TTSB.Types <> t':143 var
 R8620:8621 TTSB.Types Multitype eq def
-R8667:8668 TTSB.Types Multitype eq def
-R8734:8747 TTSB.Types Multitype union_perm_app thm
-R8734:8747 TTSB.Types Multitype union_perm_app thm
-R8734:8747 TTSB.Types Multitype union_perm_app thm
-R8734:8747 TTSB.Types Multitype union_perm_app thm
-R8734:8747 TTSB.Types Multitype union_perm_app thm
-prf 8768:8777 Multitype union_cons
-R8786:8790 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R8816:8822 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R8796:8804 TTSB.Types <> multitype ind
-binder 8791:8792 <> mt:144
-R8812:8815 TTSB.Types <> type ind
-binder 8808:8808 <> t:145
-R8823:8824 TTSB.Types Multitype eq def
-R8827:8833 TTSB.Types <> MT_Cons constr
-R8835:8835 TTSB.Types <> t:145 var
-R8837:8838 TTSB.Types <> mt:144 var
-R8842:8846 TTSB.Types Multitype union def
-R8848:8849 TTSB.Types <> mt:144 var
-R8852:8858 TTSB.Types <> MT_Cons constr
-R8860:8860 TTSB.Types <> t:145 var
-R8862:8869 TTSB.Types <> MT_Empty constr
-R8894:8895 TTSB.Types Multitype eq def
-prf 8979:8989 Multitype union_assoc
-R8998:9002 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R9032:9038 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R9023:9031 TTSB.Types <> multitype ind
-binder 9003:9007 <> mt₁:146
-R9023:9031 TTSB.Types <> multitype ind
-binder 9009:9013 <> mt₂:147
-R9023:9031 TTSB.Types <> multitype ind
-binder 9015:9019 <> mt₃:148
-R9039:9040 TTSB.Types Multitype eq def
-R9050:9054 TTSB.Types Multitype union def
-R9057:9061 TTSB.Types Multitype union def
-R9063:9067 TTSB.Types <> mt₁:146 var
-R9069:9073 TTSB.Types <> mt₂:147 var
-R9076:9080 TTSB.Types <> mt₃:148 var
-R9090:9094 TTSB.Types Multitype union def
-R9096:9100 TTSB.Types <> mt₁:146 var
-R9103:9107 TTSB.Types Multitype union def
-R9109:9113 TTSB.Types <> mt₂:147 var
-R9115:9119 TTSB.Types <> mt₃:148 var
-R9178:9179 TTSB.Types Multitype eq def
-prf 9236:9245 Multitype union_comm
-R9249:9252 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R9264:9265 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 9253:9257 <> mt₁:149
-binder 9259:9263 <> mt₂:150
-R9266:9267 TTSB.Types Multitype eq def
-R9270:9274 TTSB.Types Multitype union def
-R9276:9280 TTSB.Types <> mt₁:149 var
-R9282:9286 TTSB.Types <> mt₂:150 var
-R9290:9294 TTSB.Types Multitype union def
-R9296:9300 TTSB.Types <> mt₂:150 var
-R9302:9306 TTSB.Types <> mt₁:149 var
-R9351:9356 TTSB.Types Multitype eq_sym thm
-R9359:9366 TTSB.Types Multitype eq_trans thm
-R9369:9375 TTSB.Types Multitype eq_refl thm
-R9384:9396 TTSB.Types Multitype union_empty_r thm
-R9399:9409 TTSB.Types Multitype union_assoc thm
-R9412:9421 TTSB.Types Multitype union_cons thm
-R9430:9444 TTSB.Types Multitype union_perm_head thm
-R9485:9486 TTSB.Types Multitype eq def
-R9562:9567 TTSB.Types Multitype eq_sym thm
-R9562:9567 TTSB.Types Multitype eq_sym thm
-R9578:9590 TTSB.Types Multitype union_empty_r thm
-R9578:9590 TTSB.Types Multitype union_empty_r thm
-R9578:9590 TTSB.Types Multitype union_empty_r thm
-R9623:9629 TTSB.Types <> MT_Cons constr
-R9637:9641 TTSB.Types Multitype union def
-R9608:9615 TTSB.Types Multitype eq_trans thm
-R9623:9629 TTSB.Types <> MT_Cons constr
-R9637:9641 TTSB.Types Multitype union def
-R9608:9615 TTSB.Types Multitype eq_trans thm
-R9675:9683 TTSB.Types <> P_MT_Cons constr
-R9675:9683 TTSB.Types <> P_MT_Cons constr
-R9717:9721 TTSB.Types Multitype union def
-R9724:9728 TTSB.Types Multitype union def
-R9737:9743 TTSB.Types <> MT_Cons constr
-R9750:9757 TTSB.Types <> MT_Empty constr
-R9702:9709 TTSB.Types Multitype eq_trans thm
-R9717:9721 TTSB.Types Multitype union def
-R9724:9728 TTSB.Types Multitype union def
-R9737:9743 TTSB.Types <> MT_Cons constr
-R9750:9757 TTSB.Types <> MT_Empty constr
-R9702:9709 TTSB.Types Multitype eq_trans thm
-prf 9788:9800 Multitype eq_union_left
-R9809:9812 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R9828:9834 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 9813:9816 <> t₁:151
-binder 9818:9822 <> t₁':152
-binder 9824:9827 <> t₂:153
-R9848:9855 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9835:9836 TTSB.Types Multitype eq def
-R9838:9841 TTSB.Types <> t₁:151 var
-R9843:9847 TTSB.Types <> t₁':152 var
-R9856:9857 TTSB.Types Multitype eq def
-R9860:9864 TTSB.Types Multitype union def
-R9866:9869 TTSB.Types <> t₁:151 var
-R9871:9874 TTSB.Types <> t₂:153 var
-R9878:9882 TTSB.Types Multitype union def
-R9884:9888 TTSB.Types <> t₁':152 var
-R9890:9893 TTSB.Types <> t₂:153 var
-R9956:9957 TTSB.Types Multitype eq def
-R9956:9957 TTSB.Types Multitype eq def
-prf 10014:10027 Multitype eq_union_right
-R10036:10039 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R10055:10061 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 10040:10043 <> t₁:154
-binder 10045:10048 <> t₂:155
-binder 10050:10054 <> t₂':156
-R10075:10082 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10062:10063 TTSB.Types Multitype eq def
-R10065:10068 TTSB.Types <> t₂:155 var
-R10070:10074 TTSB.Types <> t₂':156 var
-R10083:10084 TTSB.Types Multitype eq def
-R10087:10091 TTSB.Types Multitype union def
-R10093:10096 TTSB.Types <> t₁:154 var
-R10098:10101 TTSB.Types <> t₂:155 var
-R10105:10109 TTSB.Types Multitype union def
-R10111:10114 TTSB.Types <> t₁:154 var
-R10116:10120 TTSB.Types <> t₂':156 var
-R10149:10161 TTSB.Types Multitype eq_union_left thm
-R10164:10173 TTSB.Types Multitype union_comm thm
-R10210:10211 TTSB.Types Multitype eq def
-R10258:10262 TTSB.Types Multitype union def
-R10243:10250 TTSB.Types Multitype eq_trans thm
-R10258:10262 TTSB.Types Multitype union def
-R10243:10250 TTSB.Types Multitype eq_trans thm
-R10303:10307 TTSB.Types Multitype union def
-R10288:10295 TTSB.Types Multitype eq_trans thm
-R10303:10307 TTSB.Types Multitype union def
-R10288:10295 TTSB.Types Multitype eq_trans thm
-prf 10340:10347 Multitype eq_union
-R10356:10359 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R10381:10387 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 10360:10363 <> t₁:157
-binder 10365:10369 <> t₁':158
-binder 10371:10374 <> t₂:159
-binder 10376:10380 <> t₂':160
-R10401:10409 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10388:10389 TTSB.Types Multitype eq def
-R10391:10394 TTSB.Types <> t₁:157 var
-R10396:10400 TTSB.Types <> t₁':158 var
-R10423:10431 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10410:10411 TTSB.Types Multitype eq def
-R10413:10416 TTSB.Types <> t₂:159 var
-R10418:10422 TTSB.Types <> t₂':160 var
-R10432:10433 TTSB.Types Multitype eq def
-R10436:10440 TTSB.Types Multitype union def
-R10442:10445 TTSB.Types <> t₁:157 var
-R10447:10450 TTSB.Types <> t₂:159 var
-R10454:10458 TTSB.Types Multitype union def
-R10460:10464 TTSB.Types <> t₁':158 var
-R10466:10470 TTSB.Types <> t₂':160 var
-R10499:10511 TTSB.Types Multitype eq_union_left thm
-R10514:10527 TTSB.Types Multitype eq_union_right thm
-R10569:10570 TTSB.Types Multitype eq def
-R10633:10637 TTSB.Types Multitype union def
-R10618:10625 TTSB.Types Multitype eq_trans thm
-R10633:10637 TTSB.Types Multitype union def
-R10618:10625 TTSB.Types Multitype eq_trans thm
-R10569:10570 TTSB.Types Multitype eq def
-R10668:10676 TTSB.Types Multitype <> mod
-R10704:10712 TTSB.Types MULTITYPE <> mod
-mod 10690:10696 <> Context
-def 10729:10729 Context t
-R10734:10737 Coq.Init.Datatypes <> list ind
-R10739:10742 TTSB.Types MT T defax
-ind 10758:10762 Context union
-constr 10792:10800 Context Union_Nil
-constr 10824:10833 Context Union_Cons
-R10767:10770 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10766:10766 TTSB.Types Context t def
-R10772:10775 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10771:10771 TTSB.Types Context t def
-R10777:10780 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10776:10776 TTSB.Types Context t def
-R10804:10808 TTSB.Types <> union:161 ind
-R10816:10817 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R10813:10814 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R10810:10811 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R10842:10846 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R10880:10886 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 10847:10851 <> Γ₁:163
-binder 10853:10857 <> Γ₂:164
-binder 10859:10863 <> Γᵣ:165
-binder 10865:10869 <> mt₁:166
-binder 10871:10875 <> mt₂:167
-binder 10877:10879 <> mtu:168
-R10910:10918 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10887:10891 TTSB.Types <> union:161 ind
-R10905:10909 TTSB.Types <> Γᵣ:165 var
-R10899:10903 TTSB.Types <> Γ₂:164 var
-R10893:10897 TTSB.Types <> Γ₁:163 var
-R10952:10959 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10919:10923 TTSB.Types MT eq defax
-R10926:10933 TTSB.Types MT union defax
-R10936:10940 TTSB.Types <> mt₁:166 var
-R10942:10946 TTSB.Types <> mt₂:167 var
-R10949:10951 TTSB.Types <> mtu:168 var
-R10960:10964 TTSB.Types <> union:161 ind
-R11004:11007 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R11001:11003 TTSB.Types <> mtu:168 var
-R11008:11012 TTSB.Types <> Γᵣ:165 var
-R10989:10992 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R10984:10988 TTSB.Types <> mt₂:167 var
-R10993:10997 TTSB.Types <> Γ₂:164 var
-R10972:10975 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R10967:10971 TTSB.Types <> mt₁:166 var
-R10976:10980 TTSB.Types <> Γ₁:163 var
-scheme 10758:10762 Context union_rect
-scheme 10758:10762 Context union_ind
-scheme 10758:10762 Context union_rec
-scheme 10758:10762 Context union_sind
-R11039:11043 TTSB.Types <> union ind
-def 11065:11066 Context eq
-R11083:11083 TTSB.Types Context t def
-binder 11069:11073 <> Γ₁:169
-binder 11075:11079 <> Γ₂:170
-R11112:11116 TTSB.Types <> Γ₂:170 var
-R11105:11109 TTSB.Types <> Γ₁:169 var
-R11130:11131 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R11134:11135 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R11140:11143 Coq.Init.Logic <> True ind
-R11151:11152 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R11156:11157 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R11163:11164 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R11168:11169 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R11174:11178 Coq.Init.Logic <> False ind
-R11174:11178 Coq.Init.Logic <> False ind
-R11190:11191 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R11202:11203 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R11212:11218 TTSB.LogicSet <> and_set ind
-R11221:11225 TTSB.Types MT eq defax
-R11239:11240 TTSB.Types <> eq:171 def
-R11276:11277 TTSB.Types Context eq def
-prf 11297:11306 Context eq_empty_l
-R11310:11313 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R11316:11317 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 11314:11315 <> Γ:174
-R11326:11329 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11318:11319 TTSB.Types Context eq def
-R11321:11322 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R11324:11325 TTSB.Types <> Γ:174 var
-R11332:11334 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R11330:11331 TTSB.Types <> Γ:174 var
-R11335:11336 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-prf 11420:11429 Context eq_empty_r
-R11433:11436 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R11439:11440 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 11437:11438 <> Γ:175
-R11449:11452 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11441:11442 TTSB.Types Context eq def
-R11444:11445 TTSB.Types <> Γ:175 var
-R11447:11448 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R11455:11457 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R11453:11454 TTSB.Types <> Γ:175 var
-R11458:11459 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-prf 11543:11549 Context eq_refl
-R11553:11556 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R11559:11560 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 11557:11558 <> Γ:176
-R11561:11562 TTSB.Types Context eq def
-R11564:11565 TTSB.Types <> Γ:176 var
-R11567:11568 TTSB.Types <> Γ:176 var
-R11628:11640 TTSB.LogicSet <> and_set_intro constr
-R11628:11640 TTSB.LogicSet <> and_set_intro constr
-R11655:11664 TTSB.Types MT eq_refl prfax
-R11655:11664 TTSB.Types MT eq_refl prfax
-prf 11683:11688 Context eq_sym
-R11697:11701 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R11717:11723 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R11716:11716 TTSB.Types Context t def
-binder 11702:11706 <> Γ₁:177
-R11716:11716 TTSB.Types Context t def
-binder 11708:11712 <> Γ₂:178
-R11738:11745 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11724:11725 TTSB.Types Context eq def
-R11727:11731 TTSB.Types <> Γ₁:177 var
-R11733:11737 TTSB.Types <> Γ₂:178 var
-R11746:11747 TTSB.Types Context eq def
-R11749:11753 TTSB.Types <> Γ₂:178 var
-R11755:11759 TTSB.Types <> Γ₁:177 var
-R11898:11906 TTSB.Types MT eq_sym prfax
-R11898:11906 TTSB.Types MT eq_sym prfax
-prf 11928:11935 Context eq_trans
-R11944:11948 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R11969:11975 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R11968:11968 TTSB.Types Context t def
-binder 11949:11953 <> Γ₁:179
-R11968:11968 TTSB.Types Context t def
-binder 11955:11959 <> Γ₂:180
-R11968:11968 TTSB.Types Context t def
-binder 11961:11965 <> Γ₃:181
-R11990:11997 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11976:11977 TTSB.Types Context eq def
-R11979:11983 TTSB.Types <> Γ₁:179 var
-R11985:11989 TTSB.Types <> Γ₂:180 var
-R12012:12019 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11998:11999 TTSB.Types Context eq def
-R12001:12005 TTSB.Types <> Γ₂:180 var
-R12007:12011 TTSB.Types <> Γ₃:181 var
-R12020:12021 TTSB.Types Context eq def
-R12023:12027 TTSB.Types <> Γ₁:179 var
-R12029:12033 TTSB.Types <> Γ₃:181 var
-R12216:12226 TTSB.Types MT eq_trans prfax
-R12216:12226 TTSB.Types MT eq_trans prfax
-prf 12249:12258 Context union_comm
-R12267:12271 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R12304:12310 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R12303:12303 TTSB.Types Context t def
-binder 12272:12276 <> Γ₁:182
-R12303:12303 TTSB.Types Context t def
-binder 12278:12282 <> Γ₂:183
-R12303:12303 TTSB.Types Context t def
-binder 12284:12291 <> Γᵣ₁:184
-R12303:12303 TTSB.Types Context t def
-binder 12293:12300 <> Γᵣ₂:185
-R12337:12345 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R12311:12315 TTSB.Types Context union ind
-R12317:12321 TTSB.Types <> Γ₁:182 var
-R12323:12327 TTSB.Types <> Γ₂:183 var
-R12329:12336 TTSB.Types <> Γᵣ₁:184 var
-R12372:12380 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R12346:12350 TTSB.Types Context union ind
-R12352:12356 TTSB.Types <> Γ₂:183 var
-R12358:12362 TTSB.Types <> Γ₁:182 var
-R12364:12371 TTSB.Types <> Γᵣ₂:185 var
-R12381:12382 TTSB.Types Context eq def
-R12384:12391 TTSB.Types <> Γᵣ₁:184 var
-R12393:12400 TTSB.Types <> Γᵣ₂:185 var
-R12570:12582 TTSB.LogicSet <> and_set_intro constr
-R12570:12582 TTSB.LogicSet <> and_set_intro constr
-R12598:12608 TTSB.Types MT eq_trans prfax
-R12598:12608 TTSB.Types MT eq_trans prfax
-R12623:12631 TTSB.Types MT eq_sym prfax
-R12623:12631 TTSB.Types MT eq_sym prfax
-R12662:12669 TTSB.Types MT union defax
-R12644:12654 TTSB.Types MT eq_trans prfax
-R12662:12669 TTSB.Types MT union defax
-R12644:12654 TTSB.Types MT eq_trans prfax
-R12697:12709 TTSB.Types MT union_comm prfax
-R12697:12709 TTSB.Types MT union_comm prfax
-prf 12730:12740 Context union_assoc
-R12749:12753 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R12819:12825 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R12818:12818 TTSB.Types Context t def
-binder 12754:12758 <> Γ₁:186
-R12818:12818 TTSB.Types Context t def
-binder 12760:12764 <> Γ₂:187
-R12818:12818 TTSB.Types Context t def
-binder 12766:12770 <> Γ₃:188
-R12818:12818 TTSB.Types Context t def
-binder 12772:12779 <> Γ₁₂:189
-R12818:12818 TTSB.Types Context t def
-binder 12781:12792 <> Γ₁₂_₃:190
-R12818:12818 TTSB.Types Context t def
-binder 12794:12801 <> Γ₂₃:191
-R12818:12818 TTSB.Types Context t def
-binder 12803:12814 <> Γ₁_₂₃:192
-R12852:12860 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R12826:12830 TTSB.Types Context union ind
-R12832:12836 TTSB.Types <> Γ₁:186 var
-R12838:12842 TTSB.Types <> Γ₂:187 var
-R12844:12851 TTSB.Types <> Γ₁₂:189 var
-R12894:12902 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R12861:12865 TTSB.Types Context union ind
-R12867:12874 TTSB.Types <> Γ₁₂:189 var
-R12876:12880 TTSB.Types <> Γ₃:188 var
-R12882:12893 TTSB.Types <> Γ₁₂_₃:190 var
-R12929:12937 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R12903:12907 TTSB.Types Context union ind
-R12909:12913 TTSB.Types <> Γ₂:187 var
-R12915:12919 TTSB.Types <> Γ₃:188 var
-R12921:12928 TTSB.Types <> Γ₂₃:191 var
-R12971:12979 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R12938:12942 TTSB.Types Context union ind
-R12944:12948 TTSB.Types <> Γ₁:186 var
-R12950:12957 TTSB.Types <> Γ₂₃:191 var
-R12959:12970 TTSB.Types <> Γ₁_₂₃:192 var
-R12980:12981 TTSB.Types Context eq def
-R12983:12994 TTSB.Types <> Γ₁₂_₃:190 var
-R12996:13007 TTSB.Types <> Γ₁_₂₃:192 var
-R13035:13044 TTSB.Types MT eq_refl prfax
-R13047:13055 TTSB.Types MT eq_sym prfax
-R13058:13068 TTSB.Types MT eq_trans prfax
-R13071:13084 TTSB.Types MT union_assoc prfax
-R13087:13097 TTSB.Types MT eq_union prfax
-R13114:13115 TTSB.Types Context eq def
-R13495:13507 TTSB.LogicSet <> and_set_intro constr
-R13495:13507 TTSB.LogicSet <> and_set_intro constr
-R13602:13609 TTSB.Types MT union defax
-R13584:13594 TTSB.Types MT eq_trans prfax
-R13602:13609 TTSB.Types MT union defax
-R13584:13594 TTSB.Types MT eq_trans prfax
-R13652:13659 TTSB.Types MT union defax
-R13634:13644 TTSB.Types MT eq_trans prfax
-R13652:13659 TTSB.Types MT union defax
-R13634:13644 TTSB.Types MT eq_trans prfax
-R13702:13709 TTSB.Types MT union defax
-R13718:13725 TTSB.Types MT union defax
-R13684:13694 TTSB.Types MT eq_trans prfax
-R13702:13709 TTSB.Types MT union defax
-R13718:13725 TTSB.Types MT union defax
-R13684:13694 TTSB.Types MT eq_trans prfax
-R13114:13115 TTSB.Types Context eq def
-prf 13761:13773 Context eq_union_left
-R13782:13785 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R13810:13816 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 13786:13790 <> Γ₁:193
-binder 13792:13797 <> Γ₁':194
-binder 13799:13803 <> Γ₂:195
-binder 13805:13809 <> Γᵣ:196
-R13832:13839 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R13817:13818 TTSB.Types Context eq def
-R13820:13824 TTSB.Types <> Γ₁:193 var
-R13826:13831 TTSB.Types <> Γ₁':194 var
-R13863:13871 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R13840:13844 TTSB.Types Context union ind
-R13846:13850 TTSB.Types <> Γ₁:193 var
-R13852:13856 TTSB.Types <> Γ₂:195 var
-R13858:13862 TTSB.Types <> Γᵣ:196 var
-R13872:13876 TTSB.Types Context union ind
-R13878:13883 TTSB.Types <> Γ₁':194 var
-R13885:13889 TTSB.Types <> Γ₂:195 var
-R13891:13895 TTSB.Types <> Γᵣ:196 var
-R13930:13940 TTSB.Types MT eq_union prfax
-R13943:13951 TTSB.Types MT eq_sym prfax
-R13954:13963 TTSB.Types MT eq_refl prfax
-R13966:13976 TTSB.Types MT eq_trans prfax
-R13979:13988 TTSB.Types Context Union_Cons constr
-prf 14214:14227 Context eq_union_right
-R14236:14239 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R14264:14270 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 14240:14244 <> Γ₁:197
-binder 14246:14250 <> Γ₂:198
-binder 14252:14257 <> Γ₂':199
-binder 14259:14263 <> Γᵣ:200
-R14286:14293 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R14271:14272 TTSB.Types Context eq def
-R14274:14278 TTSB.Types <> Γ₂:198 var
-R14280:14285 TTSB.Types <> Γ₂':199 var
-R14317:14325 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R14294:14298 TTSB.Types Context union ind
-R14300:14304 TTSB.Types <> Γ₁:197 var
-R14306:14310 TTSB.Types <> Γ₂:198 var
-R14312:14316 TTSB.Types <> Γᵣ:200 var
-R14326:14330 TTSB.Types Context union ind
-R14332:14336 TTSB.Types <> Γ₁:197 var
-R14338:14343 TTSB.Types <> Γ₂':199 var
-R14345:14349 TTSB.Types <> Γᵣ:200 var
-R14384:14394 TTSB.Types MT eq_union prfax
-R14397:14405 TTSB.Types MT eq_sym prfax
-R14408:14417 TTSB.Types MT eq_refl prfax
-R14420:14430 TTSB.Types MT eq_trans prfax
-R14433:14442 TTSB.Types Context Union_Cons constr
-prf 14668:14675 Context eq_union
-R14684:14687 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R14719:14725 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 14688:14692 <> Γ₁:201
-binder 14694:14699 <> Γ₁':202
-binder 14701:14705 <> Γ₂:203
-binder 14707:14712 <> Γ₂':204
-binder 14714:14718 <> Γᵣ:205
-R14741:14748 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R14726:14727 TTSB.Types Context eq def
-R14729:14733 TTSB.Types <> Γ₁:201 var
-R14735:14740 TTSB.Types <> Γ₁':202 var
-R14764:14771 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R14749:14750 TTSB.Types Context eq def
-R14752:14756 TTSB.Types <> Γ₂:203 var
-R14758:14763 TTSB.Types <> Γ₂':204 var
-R14795:14803 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R14772:14776 TTSB.Types Context union ind
-R14778:14782 TTSB.Types <> Γ₁:201 var
-R14784:14788 TTSB.Types <> Γ₂:203 var
-R14790:14794 TTSB.Types <> Γᵣ:205 var
-R14804:14808 TTSB.Types Context union ind
-R14810:14815 TTSB.Types <> Γ₁':202 var
-R14817:14822 TTSB.Types <> Γ₂':204 var
-R14824:14828 TTSB.Types <> Γᵣ:205 var
-R14856:14863 TTSB.Types Context eq_trans thm
-R14866:14878 TTSB.Types Context eq_union_left thm
-R14881:14894 TTSB.Types Context eq_union_right thm
-R14856:14863 TTSB.Types Context eq_trans thm
-R14866:14878 TTSB.Types Context eq_union_left thm
-R14881:14894 TTSB.Types Context eq_union_right thm
-R14936:14942 TTSB.Types Context <> mod
-R14960:14966 TTSB.Types Context <> modtype
-R14968:14976 TTSB.Types Multitype <> modtype
-mod 14953:14955 <> Ctx
-def 14990:15005 <> is_tight_context
-R15012:15016 TTSB.Types <> t def
-binder 15007:15008 <> Γ:206
-R15036:15037 TTSB.Types <> Γ:206 var
-R15049:15050 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R15055:15058 Coq.Init.Logic <> True ind
-R15066:15067 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R15073:15079 TTSB.LogicSet <> and_set ind
-R15082:15099 TTSB.Types <> is_tight_multitype def
-R15105:15120 TTSB.Types <> is_tight_context:207 def
-R15147:15159 TTSB.Types <> is_tight_type def
-R15161:15178 TTSB.Types <> is_tight_multitype def
-R15180:15195 TTSB.Types <> is_tight_context def
-R15229:15243 TTSB.Types <> union def
-not 15215:15215 <> :::x_'⊎'_x
-R15296:15304 TTSB.Types <> union ind
-not 15273:15273 <> :::x_'⊎c'_x_'≡'_x
-not 15371:15371 <> :::'{{'_x_'}}'
-not 15432:15432 <> :multitype::'('_x_')'
-R15506:15513 TTSB.Types <> MT_Empty constr
-not 15495:15495 <> :multitype::'nil'
-not 15558:15558 <> :multitype::x
-not 15631:15631 <> :multitype::'`'_x_'`'
-R15722:15728 TTSB.Types <> MT_Cons constr
-not 15708:15708 <> :multitype::x_';'_x
-R15849:15854 TTSB.Types <> Ty_Fun constr
-not 15834:15834 <> :::x_'|->'_x
-R15928:15933 TTSB.Types <> Ty_Fun constr
-not 15907:15907 <> :multitype::'{{'_x_'}}'_'|->'_x
-ind 16008:16013 <> or_set
-constr 16038:16051 <> or_set_intro_l
-constr 16074:16087 <> or_set_intro_r
-binder 16016:16016 <> A:209
-binder 16018:16018 <> B:210
-R16056:16059 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R16055:16055 TTSB.Types <> A:209 var
-R16060:16065 TTSB.Types <> or_set:211 ind
-R16069:16069 TTSB.Types <> B:210 var
-R16067:16067 TTSB.Types <> A:209 var
-R16092:16095 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R16091:16091 TTSB.Types <> B:210 var
-R16096:16101 TTSB.Types <> or_set:211 ind
-R16105:16105 TTSB.Types <> B:210 var
-R16103:16103 TTSB.Types <> A:209 var
-scheme 16008:16013 <> or_set_rect
-scheme 16008:16013 <> or_set_ind
-scheme 16008:16013 <> or_set_rec
-scheme 16008:16013 <> or_set_sind
-def 16121:16122 <> In
-R16129:16132 TTSB.Types <> type ind
-binder 16125:16125 <> t:213
-R16141:16149 TTSB.Types <> multitype ind
-binder 16136:16137 <> mt:214
-R16169:16170 TTSB.Types <> mt:214 var
+R8631:8635 TTSB.Types Multitype union def
+R8637:8641 TTSB.Types <> mt₁:138 var
+R8644:8650 TTSB.Types <> MT_Cons constr
+R8652:8652 TTSB.Types <> t:142 var
+R8654:8658 TTSB.Types <> mt₂:140 var
+R8669:8673 TTSB.Types Multitype union def
+R8675:8680 TTSB.Types <> mt₁':139 var
+R8683:8689 TTSB.Types <> MT_Cons constr
+R8691:8692 TTSB.Types <> t':143 var
+R8694:8699 TTSB.Types <> mt₂':141 var
+R8729:8730 TTSB.Types Multitype eq def
+R8776:8777 TTSB.Types Multitype eq def
+R8843:8856 TTSB.Types Multitype union_perm_app thm
+R8843:8856 TTSB.Types Multitype union_perm_app thm
+R8843:8856 TTSB.Types Multitype union_perm_app thm
+R8843:8856 TTSB.Types Multitype union_perm_app thm
+R8843:8856 TTSB.Types Multitype union_perm_app thm
+prf 8877:8886 Multitype union_cons
+R8895:8899 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R8925:8931 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R8905:8913 TTSB.Types <> multitype ind
+binder 8900:8901 <> mt:144
+R8921:8924 TTSB.Types <> type ind
+binder 8917:8917 <> t:145
+R8932:8933 TTSB.Types Multitype eq def
+R8936:8942 TTSB.Types <> MT_Cons constr
+R8944:8944 TTSB.Types <> t:145 var
+R8946:8947 TTSB.Types <> mt:144 var
+R8951:8955 TTSB.Types Multitype union def
+R8957:8958 TTSB.Types <> mt:144 var
+R8961:8967 TTSB.Types <> MT_Cons constr
+R8969:8969 TTSB.Types <> t:145 var
+R8971:8978 TTSB.Types <> MT_Empty constr
+R9003:9004 TTSB.Types Multitype eq def
+prf 9088:9098 Multitype union_assoc
+R9107:9111 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R9141:9147 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R9132:9140 TTSB.Types <> multitype ind
+binder 9112:9116 <> mt₁:146
+R9132:9140 TTSB.Types <> multitype ind
+binder 9118:9122 <> mt₂:147
+R9132:9140 TTSB.Types <> multitype ind
+binder 9124:9128 <> mt₃:148
+R9148:9149 TTSB.Types Multitype eq def
+R9159:9163 TTSB.Types Multitype union def
+R9166:9170 TTSB.Types Multitype union def
+R9172:9176 TTSB.Types <> mt₁:146 var
+R9178:9182 TTSB.Types <> mt₂:147 var
+R9185:9189 TTSB.Types <> mt₃:148 var
+R9199:9203 TTSB.Types Multitype union def
+R9205:9209 TTSB.Types <> mt₁:146 var
+R9212:9216 TTSB.Types Multitype union def
+R9218:9222 TTSB.Types <> mt₂:147 var
+R9224:9228 TTSB.Types <> mt₃:148 var
+R9287:9288 TTSB.Types Multitype eq def
+prf 9345:9354 Multitype union_comm
+R9358:9361 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R9373:9374 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 9362:9366 <> mt₁:149
+binder 9368:9372 <> mt₂:150
+R9375:9376 TTSB.Types Multitype eq def
+R9379:9383 TTSB.Types Multitype union def
+R9385:9389 TTSB.Types <> mt₁:149 var
+R9391:9395 TTSB.Types <> mt₂:150 var
+R9399:9403 TTSB.Types Multitype union def
+R9405:9409 TTSB.Types <> mt₂:150 var
+R9411:9415 TTSB.Types <> mt₁:149 var
+R9460:9465 TTSB.Types Multitype eq_sym thm
+R9468:9475 TTSB.Types Multitype eq_trans thm
+R9478:9484 TTSB.Types Multitype eq_refl thm
+R9493:9505 TTSB.Types Multitype union_empty_r thm
+R9508:9518 TTSB.Types Multitype union_assoc thm
+R9521:9530 TTSB.Types Multitype union_cons thm
+R9539:9553 TTSB.Types Multitype union_perm_head thm
+R9594:9595 TTSB.Types Multitype eq def
+R9671:9676 TTSB.Types Multitype eq_sym thm
+R9671:9676 TTSB.Types Multitype eq_sym thm
+R9687:9699 TTSB.Types Multitype union_empty_r thm
+R9687:9699 TTSB.Types Multitype union_empty_r thm
+R9687:9699 TTSB.Types Multitype union_empty_r thm
+R9732:9738 TTSB.Types <> MT_Cons constr
+R9746:9750 TTSB.Types Multitype union def
+R9717:9724 TTSB.Types Multitype eq_trans thm
+R9732:9738 TTSB.Types <> MT_Cons constr
+R9746:9750 TTSB.Types Multitype union def
+R9717:9724 TTSB.Types Multitype eq_trans thm
+R9784:9792 TTSB.Types <> P_MT_Cons constr
+R9784:9792 TTSB.Types <> P_MT_Cons constr
+R9826:9830 TTSB.Types Multitype union def
+R9833:9837 TTSB.Types Multitype union def
+R9846:9852 TTSB.Types <> MT_Cons constr
+R9859:9866 TTSB.Types <> MT_Empty constr
+R9811:9818 TTSB.Types Multitype eq_trans thm
+R9826:9830 TTSB.Types Multitype union def
+R9833:9837 TTSB.Types Multitype union def
+R9846:9852 TTSB.Types <> MT_Cons constr
+R9859:9866 TTSB.Types <> MT_Empty constr
+R9811:9818 TTSB.Types Multitype eq_trans thm
+prf 9897:9909 Multitype eq_union_left
+R9918:9921 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R9937:9943 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 9922:9925 <> t₁:151
+binder 9927:9931 <> t₁':152
+binder 9933:9936 <> t₂:153
+R9957:9964 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9944:9945 TTSB.Types Multitype eq def
+R9947:9950 TTSB.Types <> t₁:151 var
+R9952:9956 TTSB.Types <> t₁':152 var
+R9965:9966 TTSB.Types Multitype eq def
+R9969:9973 TTSB.Types Multitype union def
+R9975:9978 TTSB.Types <> t₁:151 var
+R9980:9983 TTSB.Types <> t₂:153 var
+R9987:9991 TTSB.Types Multitype union def
+R9993:9997 TTSB.Types <> t₁':152 var
+R9999:10002 TTSB.Types <> t₂:153 var
+R10065:10066 TTSB.Types Multitype eq def
+R10065:10066 TTSB.Types Multitype eq def
+prf 10123:10136 Multitype eq_union_right
+R10145:10148 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R10164:10170 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 10149:10152 <> t₁:154
+binder 10154:10157 <> t₂:155
+binder 10159:10163 <> t₂':156
+R10184:10191 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10171:10172 TTSB.Types Multitype eq def
+R10174:10177 TTSB.Types <> t₂:155 var
+R10179:10183 TTSB.Types <> t₂':156 var
+R10192:10193 TTSB.Types Multitype eq def
+R10196:10200 TTSB.Types Multitype union def
+R10202:10205 TTSB.Types <> t₁:154 var
+R10207:10210 TTSB.Types <> t₂:155 var
+R10214:10218 TTSB.Types Multitype union def
+R10220:10223 TTSB.Types <> t₁:154 var
+R10225:10229 TTSB.Types <> t₂':156 var
+R10258:10270 TTSB.Types Multitype eq_union_left thm
+R10273:10282 TTSB.Types Multitype union_comm thm
+R10319:10320 TTSB.Types Multitype eq def
+R10367:10371 TTSB.Types Multitype union def
+R10352:10359 TTSB.Types Multitype eq_trans thm
+R10367:10371 TTSB.Types Multitype union def
+R10352:10359 TTSB.Types Multitype eq_trans thm
+R10412:10416 TTSB.Types Multitype union def
+R10397:10404 TTSB.Types Multitype eq_trans thm
+R10412:10416 TTSB.Types Multitype union def
+R10397:10404 TTSB.Types Multitype eq_trans thm
+prf 10449:10456 Multitype eq_union
+R10465:10468 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R10490:10496 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 10469:10472 <> t₁:157
+binder 10474:10478 <> t₁':158
+binder 10480:10483 <> t₂:159
+binder 10485:10489 <> t₂':160
+R10510:10518 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10497:10498 TTSB.Types Multitype eq def
+R10500:10503 TTSB.Types <> t₁:157 var
+R10505:10509 TTSB.Types <> t₁':158 var
+R10532:10540 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10519:10520 TTSB.Types Multitype eq def
+R10522:10525 TTSB.Types <> t₂:159 var
+R10527:10531 TTSB.Types <> t₂':160 var
+R10541:10542 TTSB.Types Multitype eq def
+R10545:10549 TTSB.Types Multitype union def
+R10551:10554 TTSB.Types <> t₁:157 var
+R10556:10559 TTSB.Types <> t₂:159 var
+R10563:10567 TTSB.Types Multitype union def
+R10569:10573 TTSB.Types <> t₁':158 var
+R10575:10579 TTSB.Types <> t₂':160 var
+R10608:10620 TTSB.Types Multitype eq_union_left thm
+R10623:10636 TTSB.Types Multitype eq_union_right thm
+R10678:10679 TTSB.Types Multitype eq def
+R10742:10746 TTSB.Types Multitype union def
+R10727:10734 TTSB.Types Multitype eq_trans thm
+R10742:10746 TTSB.Types Multitype union def
+R10727:10734 TTSB.Types Multitype eq_trans thm
+R10678:10679 TTSB.Types Multitype eq def
+R10777:10785 TTSB.Types Multitype <> mod
+R10813:10821 TTSB.Types MULTITYPE <> mod
+mod 10799:10805 <> Context
+def 10838:10838 Context t
+R10843:10846 Coq.Init.Datatypes <> list ind
+R10848:10851 TTSB.Types MT T defax
+ind 10867:10871 Context union
+constr 10902:10910 Context Union_Nil
+constr 10934:10943 Context Union_Cons
+R10876:10879 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10875:10875 TTSB.Types Context t def
+R10881:10884 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10880:10880 TTSB.Types Context t def
+R10886:10889 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10885:10885 TTSB.Types Context t def
+R10914:10918 TTSB.Types <> union:161 ind
+R10926:10927 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R10923:10924 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R10920:10921 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R10952:10956 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R10990:10996 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 10957:10961 <> Γ₁:163
+binder 10963:10967 <> Γ₂:164
+binder 10969:10973 <> Γᵣ:165
+binder 10975:10979 <> mt₁:166
+binder 10981:10985 <> mt₂:167
+binder 10987:10989 <> mtu:168
+R11020:11028 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10997:11001 TTSB.Types <> union:161 ind
+R11015:11019 TTSB.Types <> Γᵣ:165 var
+R11009:11013 TTSB.Types <> Γ₂:164 var
+R11003:11007 TTSB.Types <> Γ₁:163 var
+R11062:11069 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11029:11033 TTSB.Types MT eq defax
+R11036:11043 TTSB.Types MT union defax
+R11046:11050 TTSB.Types <> mt₁:166 var
+R11052:11056 TTSB.Types <> mt₂:167 var
+R11059:11061 TTSB.Types <> mtu:168 var
+R11070:11074 TTSB.Types <> union:161 ind
+R11114:11117 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R11111:11113 TTSB.Types <> mtu:168 var
+R11118:11122 TTSB.Types <> Γᵣ:165 var
+R11099:11102 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R11094:11098 TTSB.Types <> mt₂:167 var
+R11103:11107 TTSB.Types <> Γ₂:164 var
+R11082:11085 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R11077:11081 TTSB.Types <> mt₁:166 var
+R11086:11090 TTSB.Types <> Γ₁:163 var
+scheme 10867:10871 Context union_ind
+scheme 10867:10871 Context union_sind
+R11149:11153 TTSB.Types <> union ind
+def 11175:11176 Context eq
+R11193:11193 TTSB.Types Context t def
+binder 11179:11183 <> Γ₁:169
+binder 11185:11189 <> Γ₂:170
+R11223:11227 TTSB.Types <> Γ₂:170 var
+R11216:11220 TTSB.Types <> Γ₁:169 var
+R11241:11242 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R11245:11246 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R11251:11254 Coq.Init.Logic <> True ind
+R11262:11263 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R11267:11268 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R11274:11275 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R11279:11280 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R11285:11289 Coq.Init.Logic <> False ind
+R11285:11289 Coq.Init.Logic <> False ind
+R11301:11302 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R11313:11314 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R11323:11323 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R11339:11344 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R11357:11357 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R11324:11328 TTSB.Types MT eq defax
+R11345:11346 TTSB.Types <> eq:171 def
+R11382:11383 TTSB.Types Context eq def
+prf 11403:11412 Context eq_empty_l
+R11416:11419 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R11422:11423 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 11420:11421 <> Γ:174
+R11432:11435 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11424:11425 TTSB.Types Context eq def
+R11427:11428 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R11430:11431 TTSB.Types <> Γ:174 var
+R11438:11440 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11436:11437 TTSB.Types <> Γ:174 var
+R11441:11442 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+prf 11526:11535 Context eq_empty_r
+R11539:11542 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R11545:11546 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 11543:11544 <> Γ:175
+R11555:11558 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11547:11548 TTSB.Types Context eq def
+R11550:11551 TTSB.Types <> Γ:175 var
+R11553:11554 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R11561:11563 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11559:11560 TTSB.Types <> Γ:175 var
+R11564:11565 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+prf 11649:11655 Context eq_refl
+R11659:11662 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R11665:11666 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 11663:11664 <> Γ:176
+R11667:11668 TTSB.Types Context eq def
+R11670:11671 TTSB.Types <> Γ:176 var
+R11673:11674 TTSB.Types <> Γ:176 var
+R11747:11756 TTSB.Types MT eq_refl prfax
+R11747:11756 TTSB.Types MT eq_refl prfax
+prf 11778:11783 Context eq_sym
+R11792:11796 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R11812:11818 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R11811:11811 TTSB.Types Context t def
+binder 11797:11801 <> Γ₁:177
+R11811:11811 TTSB.Types Context t def
+binder 11803:11807 <> Γ₂:178
+R11833:11840 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11819:11820 TTSB.Types Context eq def
+R11822:11826 TTSB.Types <> Γ₁:177 var
+R11828:11832 TTSB.Types <> Γ₂:178 var
+R11841:11842 TTSB.Types Context eq def
+R11844:11848 TTSB.Types <> Γ₂:178 var
+R11850:11854 TTSB.Types <> Γ₁:177 var
+R11989:11997 TTSB.Types MT eq_sym prfax
+R11989:11997 TTSB.Types MT eq_sym prfax
+prf 12019:12026 Context eq_trans
+R12035:12039 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R12060:12066 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R12059:12059 TTSB.Types Context t def
+binder 12040:12044 <> Γ₁:179
+R12059:12059 TTSB.Types Context t def
+binder 12046:12050 <> Γ₂:180
+R12059:12059 TTSB.Types Context t def
+binder 12052:12056 <> Γ₃:181
+R12081:12088 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12067:12068 TTSB.Types Context eq def
+R12070:12074 TTSB.Types <> Γ₁:179 var
+R12076:12080 TTSB.Types <> Γ₂:180 var
+R12103:12110 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12089:12090 TTSB.Types Context eq def
+R12092:12096 TTSB.Types <> Γ₂:180 var
+R12098:12102 TTSB.Types <> Γ₃:181 var
+R12111:12112 TTSB.Types Context eq def
+R12114:12118 TTSB.Types <> Γ₁:179 var
+R12120:12124 TTSB.Types <> Γ₃:181 var
+R12303:12313 TTSB.Types MT eq_trans prfax
+R12303:12313 TTSB.Types MT eq_trans prfax
+prf 12336:12345 Context union_comm
+R12354:12358 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R12391:12397 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R12390:12390 TTSB.Types Context t def
+binder 12359:12363 <> Γ₁:182
+R12390:12390 TTSB.Types Context t def
+binder 12365:12369 <> Γ₂:183
+R12390:12390 TTSB.Types Context t def
+binder 12371:12378 <> Γᵣ₁:184
+R12390:12390 TTSB.Types Context t def
+binder 12380:12387 <> Γᵣ₂:185
+R12424:12432 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12398:12402 TTSB.Types Context union ind
+R12404:12408 TTSB.Types <> Γ₁:182 var
+R12410:12414 TTSB.Types <> Γ₂:183 var
+R12416:12423 TTSB.Types <> Γᵣ₁:184 var
+R12459:12467 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12433:12437 TTSB.Types Context union ind
+R12439:12443 TTSB.Types <> Γ₂:183 var
+R12445:12449 TTSB.Types <> Γ₁:182 var
+R12451:12458 TTSB.Types <> Γᵣ₂:185 var
+R12468:12469 TTSB.Types Context eq def
+R12471:12478 TTSB.Types <> Γᵣ₁:184 var
+R12480:12487 TTSB.Types <> Γᵣ₂:185 var
+R12671:12681 TTSB.Types MT eq_trans prfax
+R12671:12681 TTSB.Types MT eq_trans prfax
+R12696:12704 TTSB.Types MT eq_sym prfax
+R12696:12704 TTSB.Types MT eq_sym prfax
+R12735:12742 TTSB.Types MT union defax
+R12717:12727 TTSB.Types MT eq_trans prfax
+R12735:12742 TTSB.Types MT union defax
+R12717:12727 TTSB.Types MT eq_trans prfax
+R12770:12782 TTSB.Types MT union_comm prfax
+R12770:12782 TTSB.Types MT union_comm prfax
+R12860:12862 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12855:12858 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R12864:12867 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R12860:12862 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12855:12858 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R12864:12867 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+prf 12927:12937 Context union_assoc
+R12946:12950 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R13016:13022 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R13015:13015 TTSB.Types Context t def
+binder 12951:12955 <> Γ₁:186
+R13015:13015 TTSB.Types Context t def
+binder 12957:12961 <> Γ₂:187
+R13015:13015 TTSB.Types Context t def
+binder 12963:12967 <> Γ₃:188
+R13015:13015 TTSB.Types Context t def
+binder 12969:12976 <> Γ₁₂:189
+R13015:13015 TTSB.Types Context t def
+binder 12978:12989 <> Γ₁₂_₃:190
+R13015:13015 TTSB.Types Context t def
+binder 12991:12998 <> Γ₂₃:191
+R13015:13015 TTSB.Types Context t def
+binder 13000:13011 <> Γ₁_₂₃:192
+R13049:13057 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13023:13027 TTSB.Types Context union ind
+R13029:13033 TTSB.Types <> Γ₁:186 var
+R13035:13039 TTSB.Types <> Γ₂:187 var
+R13041:13048 TTSB.Types <> Γ₁₂:189 var
+R13091:13099 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13058:13062 TTSB.Types Context union ind
+R13064:13071 TTSB.Types <> Γ₁₂:189 var
+R13073:13077 TTSB.Types <> Γ₃:188 var
+R13079:13090 TTSB.Types <> Γ₁₂_₃:190 var
+R13126:13134 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13100:13104 TTSB.Types Context union ind
+R13106:13110 TTSB.Types <> Γ₂:187 var
+R13112:13116 TTSB.Types <> Γ₃:188 var
+R13118:13125 TTSB.Types <> Γ₂₃:191 var
+R13168:13176 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13135:13139 TTSB.Types Context union ind
+R13141:13145 TTSB.Types <> Γ₁:186 var
+R13147:13154 TTSB.Types <> Γ₂₃:191 var
+R13156:13167 TTSB.Types <> Γ₁_₂₃:192 var
+R13177:13178 TTSB.Types Context eq def
+R13180:13191 TTSB.Types <> Γ₁₂_₃:190 var
+R13193:13204 TTSB.Types <> Γ₁_₂₃:192 var
+R13232:13241 TTSB.Types MT eq_refl prfax
+R13244:13252 TTSB.Types MT eq_sym prfax
+R13255:13265 TTSB.Types MT eq_trans prfax
+R13268:13281 TTSB.Types MT union_assoc prfax
+R13284:13294 TTSB.Types MT eq_union prfax
+R13311:13312 TTSB.Types Context eq def
+R13755:13762 TTSB.Types MT union defax
+R13737:13747 TTSB.Types MT eq_trans prfax
+R13755:13762 TTSB.Types MT union defax
+R13737:13747 TTSB.Types MT eq_trans prfax
+R13805:13812 TTSB.Types MT union defax
+R13787:13797 TTSB.Types MT eq_trans prfax
+R13805:13812 TTSB.Types MT union defax
+R13787:13797 TTSB.Types MT eq_trans prfax
+R13855:13862 TTSB.Types MT union defax
+R13871:13878 TTSB.Types MT union defax
+R13837:13847 TTSB.Types MT eq_trans prfax
+R13855:13862 TTSB.Types MT union defax
+R13871:13878 TTSB.Types MT union defax
+R13837:13847 TTSB.Types MT eq_trans prfax
+R13311:13312 TTSB.Types Context eq def
+prf 13914:13926 Context eq_union_left
+R13935:13938 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R13963:13969 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 13939:13943 <> Γ₁:193
+binder 13945:13950 <> Γ₁':194
+binder 13952:13956 <> Γ₂:195
+binder 13958:13962 <> Γᵣ:196
+R13985:13992 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13970:13971 TTSB.Types Context eq def
+R13973:13977 TTSB.Types <> Γ₁:193 var
+R13979:13984 TTSB.Types <> Γ₁':194 var
+R14016:14024 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13993:13997 TTSB.Types Context union ind
+R13999:14003 TTSB.Types <> Γ₁:193 var
+R14005:14009 TTSB.Types <> Γ₂:195 var
+R14011:14015 TTSB.Types <> Γᵣ:196 var
+R14025:14029 TTSB.Types Context union ind
+R14031:14036 TTSB.Types <> Γ₁':194 var
+R14038:14042 TTSB.Types <> Γ₂:195 var
+R14044:14048 TTSB.Types <> Γᵣ:196 var
+R14083:14093 TTSB.Types MT eq_union prfax
+R14096:14104 TTSB.Types MT eq_sym prfax
+R14107:14116 TTSB.Types MT eq_refl prfax
+R14119:14129 TTSB.Types MT eq_trans prfax
+R14132:14141 TTSB.Types Context Union_Cons constr
+prf 14348:14361 Context eq_union_right
+R14370:14373 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R14398:14404 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 14374:14378 <> Γ₁:197
+binder 14380:14384 <> Γ₂:198
+binder 14386:14391 <> Γ₂':199
+binder 14393:14397 <> Γᵣ:200
+R14420:14427 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14405:14406 TTSB.Types Context eq def
+R14408:14412 TTSB.Types <> Γ₂:198 var
+R14414:14419 TTSB.Types <> Γ₂':199 var
+R14451:14459 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14428:14432 TTSB.Types Context union ind
+R14434:14438 TTSB.Types <> Γ₁:197 var
+R14440:14444 TTSB.Types <> Γ₂:198 var
+R14446:14450 TTSB.Types <> Γᵣ:200 var
+R14460:14464 TTSB.Types Context union ind
+R14466:14470 TTSB.Types <> Γ₁:197 var
+R14472:14477 TTSB.Types <> Γ₂':199 var
+R14479:14483 TTSB.Types <> Γᵣ:200 var
+R14518:14528 TTSB.Types MT eq_union prfax
+R14531:14539 TTSB.Types MT eq_sym prfax
+R14542:14551 TTSB.Types MT eq_refl prfax
+R14554:14564 TTSB.Types MT eq_trans prfax
+R14567:14576 TTSB.Types Context Union_Cons constr
+prf 14783:14790 Context eq_union
+R14799:14802 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R14834:14840 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 14803:14807 <> Γ₁:201
+binder 14809:14814 <> Γ₁':202
+binder 14816:14820 <> Γ₂:203
+binder 14822:14827 <> Γ₂':204
+binder 14829:14833 <> Γᵣ:205
+R14856:14863 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14841:14842 TTSB.Types Context eq def
+R14844:14848 TTSB.Types <> Γ₁:201 var
+R14850:14855 TTSB.Types <> Γ₁':202 var
+R14879:14886 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14864:14865 TTSB.Types Context eq def
+R14867:14871 TTSB.Types <> Γ₂:203 var
+R14873:14878 TTSB.Types <> Γ₂':204 var
+R14910:14918 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14887:14891 TTSB.Types Context union ind
+R14893:14897 TTSB.Types <> Γ₁:201 var
+R14899:14903 TTSB.Types <> Γ₂:203 var
+R14905:14909 TTSB.Types <> Γᵣ:205 var
+R14919:14923 TTSB.Types Context union ind
+R14925:14930 TTSB.Types <> Γ₁':202 var
+R14932:14937 TTSB.Types <> Γ₂':204 var
+R14939:14943 TTSB.Types <> Γᵣ:205 var
+R14971:14978 TTSB.Types Context eq_trans thm
+R14981:14993 TTSB.Types Context eq_union_left thm
+R14996:15009 TTSB.Types Context eq_union_right thm
+R14971:14978 TTSB.Types Context eq_trans thm
+R14981:14993 TTSB.Types Context eq_union_left thm
+R14996:15009 TTSB.Types Context eq_union_right thm
+R15051:15057 TTSB.Types Context <> mod
+R15075:15081 TTSB.Types Context <> modtype
+R15083:15091 TTSB.Types Multitype <> modtype
+mod 15068:15070 <> Ctx
+def 15105:15120 <> is_tight_context
+R15127:15131 TTSB.Types <> t def
+binder 15122:15123 <> Γ:206
+R15152:15153 TTSB.Types <> Γ:206 var
+R15165:15166 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R15171:15174 Coq.Init.Logic <> True ind
+R15182:15183 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R15189:15189 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R15210:15215 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R15234:15234 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R15190:15207 TTSB.Types <> is_tight_multitype def
+R15216:15231 TTSB.Types <> is_tight_context:207 def
+R15258:15270 TTSB.Types <> is_tight_type def
+R15272:15289 TTSB.Types <> is_tight_multitype def
+R15291:15306 TTSB.Types <> is_tight_context def
+R15340:15354 TTSB.Types <> union def
+not 15326:15326 <> :::x_'⊎'_x
+R15407:15415 TTSB.Types <> union ind
+not 15384:15384 <> :::x_'⊎c'_x_'≡'_x
+not 15482:15482 <> :::'{{'_x_'}}'
+not 15543:15543 <> :multitype::'('_x_')'
+R15617:15624 TTSB.Types <> MT_Empty constr
+not 15606:15606 <> :multitype::'nil'
+not 15669:15669 <> :multitype::x
+not 15742:15742 <> :multitype::'`'_x_'`'
+R15833:15839 TTSB.Types <> MT_Cons constr
+not 15819:15819 <> :multitype::x_';'_x
+R15960:15965 TTSB.Types <> Ty_Fun constr
+not 15945:15945 <> :::x_'|->'_x
+R16039:16044 TTSB.Types <> Ty_Fun constr
+not 16018:16018 <> :multitype::'{{'_x_'}}'_'|->'_x
+def 16120:16121 <> In
+R16128:16131 TTSB.Types <> type ind
+binder 16124:16124 <> t:209
+R16140:16148 TTSB.Types <> multitype ind
+binder 16135:16136 <> mt:210
+R16169:16170 TTSB.Types <> mt:210 var
 R16182:16184 TTSB.Types <> :::'{{'_x_'}}' not
 R16188:16190 TTSB.Types <> :::'{{'_x_'}}' not
 R16185:16187 TTSB.Types <> :multitype::'nil' not
@@ -1372,328 +1357,311 @@ R16195:16199 Coq.Init.Logic <> False ind
 R16205:16207 TTSB.Types <> :::'{{'_x_'}}' not
 R16214:16216 TTSB.Types <> :::'{{'_x_'}}' not
 R16209:16211 TTSB.Types <> :multitype::x_';'_x not
-R16221:16226 TTSB.Types <> or_set ind
-R16229:16242 TTSB.Types <> permutationₜ ind
-R16244:16244 TTSB.Types <> t:213 var
-R16250:16251 TTSB.Types <> In:215 def
-R16255:16256 TTSB.Types <> mt:214 var
-R16253:16253 TTSB.Types <> t:213 var
-prf 16273:16280 <> mt_eq_in
-R16287:16291 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R16326:16330 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R16296:16299 TTSB.Types <> type ind
-binder 16292:16292 <> t:217
-R16317:16325 TTSB.Types <> multitype ind
-binder 16303:16307 <> mt₁:218
-R16317:16325 TTSB.Types <> multitype ind
-binder 16309:16313 <> mt₂:219
-R16355:16361 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R16331:16342 TTSB.Types <> eq def
-R16344:16348 TTSB.Types <> mt₁:218 var
-R16350:16354 TTSB.Types <> mt₂:219 var
-R16372:16377 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R16362:16363 TTSB.Types <> In def
-R16365:16365 TTSB.Types <> t:217 var
-R16367:16371 TTSB.Types <> mt₁:218 var
-R16378:16379 TTSB.Types <> In def
-R16381:16381 TTSB.Types <> t:217 var
-R16383:16387 TTSB.Types <> mt₂:219 var
-R16694:16715 TTSB.Types <> permutationₜ_mut_ind scheme
-R16823:16844 TTSB.Types <> permutationₘ_mut_ind scheme
-prf 16890:16897 <> eq_tight
-R16904:16907 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R16917:16921 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 16908:16911 <> t₁:220
-binder 16913:16916 <> t₂:221
-R16946:16951 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R16922:16935 TTSB.Types <> permutationₜ ind
-R16937:16940 TTSB.Types <> t₁:220 var
-R16942:16945 TTSB.Types <> t₂:221 var
-R16970:16976 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R16952:16964 TTSB.Types <> is_tight_type def
-R16966:16969 TTSB.Types <> t₁:220 var
-R16977:16989 TTSB.Types <> is_tight_type def
-R16991:16994 TTSB.Types <> t₂:221 var
-R17020:17027 TTSB.Types <> mt_eq_in thm
-R17098:17106 TTSB.Types <> multitype ind
-binder 17084:17088 <> mt₁:222
-binder 17090:17094 <> mt₂:223
-R17122:17135 TTSB.Types <> permutationₘ ind
-R17137:17141 TTSB.Types <> mt₁:222 var
-R17143:17147 TTSB.Types <> mt₂:223 var
-binder 17110:17118 <> H_permₘ:224
-R17177:17180 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R17153:17170 TTSB.Types <> is_tight_multitype def
-R17172:17176 TTSB.Types <> mt₁:222 var
-R17181:17198 TTSB.Types <> is_tight_multitype def
-R17200:17204 TTSB.Types <> mt₂:223 var
-R17098:17106 TTSB.Types <> multitype ind
-binder 17084:17088 <> mt₁:225
-binder 17090:17094 <> mt₂:226
-R17122:17135 TTSB.Types <> permutationₘ ind
-R17137:17141 TTSB.Types <> mt₁:225 var
-R17143:17147 TTSB.Types <> mt₂:226 var
-binder 17110:17118 <> H_permₘ:227
-R17177:17180 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R17153:17170 TTSB.Types <> is_tight_multitype def
-R17172:17176 TTSB.Types <> mt₁:225 var
-R17181:17198 TTSB.Types <> is_tight_multitype def
-R17200:17204 TTSB.Types <> mt₂:226 var
-R17331:17343 TTSB.LogicSet <> and_set_intro constr
-R17384:17391 TTSB.Types <> mt_eq_in thm
-R17331:17343 TTSB.LogicSet <> and_set_intro constr
-R17331:17343 TTSB.LogicSet <> and_set_intro constr
-R17384:17391 TTSB.Types <> mt_eq_in thm
-R17384:17391 TTSB.Types <> mt_eq_in thm
-R17331:17343 TTSB.LogicSet <> and_set_intro constr
-R17331:17343 TTSB.LogicSet <> and_set_intro constr
-R17331:17343 TTSB.LogicSet <> and_set_intro constr
-R17331:17343 TTSB.LogicSet <> and_set_intro constr
-R17384:17391 TTSB.Types <> mt_eq_in thm
-R17384:17391 TTSB.Types <> mt_eq_in thm
-R17384:17391 TTSB.Types <> mt_eq_in thm
-prf 17438:17455 <> eq_tight_multitype
-R17462:17465 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R17477:17481 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-binder 17466:17470 <> mt₁:228
-binder 17472:17476 <> mt₂:229
-R17508:17513 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R17482:17495 TTSB.Types <> permutationₘ ind
-R17497:17501 TTSB.Types <> mt₁:228 var
-R17503:17507 TTSB.Types <> mt₂:229 var
-R17538:17544 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R17514:17531 TTSB.Types <> is_tight_multitype def
-R17533:17537 TTSB.Types <> mt₁:228 var
-R17545:17562 TTSB.Types <> is_tight_multitype def
-R17564:17568 TTSB.Types <> mt₂:229 var
-R17594:17601 TTSB.Types <> mt_eq_in thm
-R17669:17672 TTSB.Types <> type ind
-binder 17657:17660 <> t₁:230
-binder 17662:17665 <> t₂:231
-R17688:17701 TTSB.Types <> permutationₜ ind
-R17703:17706 TTSB.Types <> t₁:230 var
-R17708:17711 TTSB.Types <> t₂:231 var
-binder 17676:17684 <> H_permₜ:232
-R17735:17738 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R17717:17729 TTSB.Types <> is_tight_type def
-R17731:17734 TTSB.Types <> t₁:230 var
-R17739:17751 TTSB.Types <> is_tight_type def
-R17753:17756 TTSB.Types <> t₂:231 var
-R17669:17672 TTSB.Types <> type ind
-binder 17657:17660 <> t₁:233
-binder 17662:17665 <> t₂:234
-R17688:17701 TTSB.Types <> permutationₜ ind
-R17703:17706 TTSB.Types <> t₁:233 var
-R17708:17711 TTSB.Types <> t₂:234 var
-binder 17676:17684 <> H_permₜ:235
-R17735:17738 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R17717:17729 TTSB.Types <> is_tight_type def
-R17731:17734 TTSB.Types <> t₁:233 var
-R17739:17751 TTSB.Types <> is_tight_type def
-R17753:17756 TTSB.Types <> t₂:234 var
-R17908:17920 TTSB.LogicSet <> and_set_intro constr
-R17935:17942 TTSB.Types <> mt_eq_in thm
-R17908:17920 TTSB.LogicSet <> and_set_intro constr
-R17908:17920 TTSB.LogicSet <> and_set_intro constr
-R17935:17942 TTSB.Types <> mt_eq_in thm
-R17935:17942 TTSB.Types <> mt_eq_in thm
-R17908:17920 TTSB.LogicSet <> and_set_intro constr
-R17908:17920 TTSB.LogicSet <> and_set_intro constr
-R17908:17920 TTSB.LogicSet <> and_set_intro constr
-R17908:17920 TTSB.LogicSet <> and_set_intro constr
-R17935:17942 TTSB.Types <> mt_eq_in thm
-R17935:17942 TTSB.Types <> mt_eq_in thm
-R17935:17942 TTSB.Types <> mt_eq_in thm
-prf 17990:18001 <> Ctx_eq_tight
-R18007:18011 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R18031:18033 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R18026:18030 TTSB.Types <> t def
-binder 18012:18016 <> Γ₁:236
-R18026:18030 TTSB.Types <> t def
-binder 18018:18022 <> Γ₂:237
-R18052:18055 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R18034:18039 TTSB.Types <> eq def
-R18041:18045 TTSB.Types <> Γ₁:236 var
-R18047:18051 TTSB.Types <> Γ₂:237 var
-R18078:18081 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R18056:18071 TTSB.Types <> is_tight_context def
-R18073:18077 TTSB.Types <> Γ₁:236 var
-R18082:18097 TTSB.Types <> is_tight_context def
-R18099:18103 TTSB.Types <> Γ₂:237 var
-R18129:18136 TTSB.Types <> mt_eq_in thm
-R18139:18146 TTSB.Types <> eq_tight thm
-R18149:18166 TTSB.Types <> eq_tight_multitype thm
-R18273:18285 TTSB.LogicSet <> and_set_intro constr
-R18273:18285 TTSB.LogicSet <> and_set_intro constr
-R18273:18285 TTSB.LogicSet <> and_set_intro constr
-prf 18303:18316 <> mt_union_tight
-R18322:18326 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R18353:18360 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R18344:18352 TTSB.Types <> multitype ind
-binder 18327:18331 <> mt₁:238
-R18344:18352 TTSB.Types <> multitype ind
-binder 18333:18337 <> mt₂:239
-R18344:18352 TTSB.Types <> multitype ind
-binder 18339:18340 <> mt:240
-R18394:18402 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R18361:18372 TTSB.Types <> eq def
-R18380:18384 TTSB.Types <> :::x_'⊎'_x not
-R18375:18379 TTSB.Types <> mt₁:238 var
-R18385:18389 TTSB.Types <> mt₂:239 var
-R18392:18393 TTSB.Types <> mt:240 var
-R18424:18432 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R18403:18420 TTSB.Types <> is_tight_multitype def
-R18422:18423 TTSB.Types <> mt:240 var
-R18457:18462 TTSB.LogicSet <> :::x_'∧a'_x not
-R18433:18450 TTSB.Types <> is_tight_multitype def
-R18452:18456 TTSB.Types <> mt₁:238 var
-R18463:18480 TTSB.Types <> is_tight_multitype def
-R18482:18486 TTSB.Types <> mt₂:239 var
-R18512:18519 TTSB.Types <> mt_eq_in thm
-R18522:18529 TTSB.Types <> eq_tight thm
-R18532:18549 TTSB.Types <> eq_tight_multitype thm
-R18633:18634 TTSB.Types <> :::'{{'_x_'}}' not
-R18651:18652 TTSB.Types <> :::'{{'_x_'}}' not
-R18640:18641 TTSB.Types <> :multitype::x_';'_x not
-R18635:18636 TTSB.Types <> :multitype::'`'_x_'`' not
-R18638:18639 TTSB.Types <> :multitype::'`'_x_'`' not
-R18642:18643 TTSB.Types <> :multitype::'`'_x_'`' not
-R18649:18650 TTSB.Types <> :multitype::'`'_x_'`' not
-R18660:18674 TTSB.Types <> union def
-R18676:18677 TTSB.Types <> :::'{{'_x_'}}' not
-R18685:18686 TTSB.Types <> :::'{{'_x_'}}' not
-R18679:18681 TTSB.Types <> :multitype::x_';'_x not
-R18682:18684 TTSB.Types <> :multitype::'nil' not
-R18633:18634 TTSB.Types <> :::'{{'_x_'}}' not
-R18651:18652 TTSB.Types <> :::'{{'_x_'}}' not
-R18640:18641 TTSB.Types <> :multitype::x_';'_x not
-R18635:18636 TTSB.Types <> :multitype::'`'_x_'`' not
-R18638:18639 TTSB.Types <> :multitype::'`'_x_'`' not
-R18642:18643 TTSB.Types <> :multitype::'`'_x_'`' not
-R18649:18650 TTSB.Types <> :multitype::'`'_x_'`' not
-R18660:18674 TTSB.Types <> union def
-R18676:18677 TTSB.Types <> :::'{{'_x_'}}' not
-R18685:18686 TTSB.Types <> :::'{{'_x_'}}' not
-R18679:18681 TTSB.Types <> :multitype::x_';'_x not
-R18682:18684 TTSB.Types <> :multitype::'nil' not
-R18713:18724 TTSB.Types <> eq def
-R18732:18736 TTSB.Types <> :::x_'⊎'_x not
-R18737:18739 TTSB.Types <> :::'{{'_x_'}}' not
-R18749:18750 TTSB.Types <> :::'{{'_x_'}}' not
-R18741:18743 TTSB.Types <> :multitype::x_';'_x not
-R18713:18724 TTSB.Types <> eq def
-R18732:18736 TTSB.Types <> :::x_'⊎'_x not
-R18737:18739 TTSB.Types <> :::'{{'_x_'}}' not
-R18749:18750 TTSB.Types <> :::'{{'_x_'}}' not
-R18741:18743 TTSB.Types <> :multitype::x_';'_x not
-R18778:18779 TTSB.Types <> :::'{{'_x_'}}' not
-R18796:18797 TTSB.Types <> :::'{{'_x_'}}' not
-R18785:18786 TTSB.Types <> :multitype::x_';'_x not
-R18780:18781 TTSB.Types <> :multitype::'`'_x_'`' not
-R18783:18784 TTSB.Types <> :multitype::'`'_x_'`' not
-R18787:18788 TTSB.Types <> :multitype::'`'_x_'`' not
-R18794:18795 TTSB.Types <> :multitype::'`'_x_'`' not
-R18805:18819 TTSB.Types <> union def
-R18821:18822 TTSB.Types <> :::'{{'_x_'}}' not
-R18830:18831 TTSB.Types <> :::'{{'_x_'}}' not
-R18824:18826 TTSB.Types <> :multitype::x_';'_x not
-R18827:18829 TTSB.Types <> :multitype::'nil' not
-R18778:18779 TTSB.Types <> :::'{{'_x_'}}' not
-R18796:18797 TTSB.Types <> :::'{{'_x_'}}' not
-R18785:18786 TTSB.Types <> :multitype::x_';'_x not
-R18780:18781 TTSB.Types <> :multitype::'`'_x_'`' not
-R18783:18784 TTSB.Types <> :multitype::'`'_x_'`' not
-R18787:18788 TTSB.Types <> :multitype::'`'_x_'`' not
-R18794:18795 TTSB.Types <> :multitype::'`'_x_'`' not
-R18805:18819 TTSB.Types <> union def
-R18821:18822 TTSB.Types <> :::'{{'_x_'}}' not
-R18830:18831 TTSB.Types <> :::'{{'_x_'}}' not
-R18824:18826 TTSB.Types <> :multitype::x_';'_x not
-R18827:18829 TTSB.Types <> :multitype::'nil' not
-R18883:18883 TTSB.Types <> :::x_'⊎'_x not
-R18905:18910 TTSB.Types <> :::x_'⊎'_x not
-R18889:18893 TTSB.Types <> :::x_'⊎'_x not
-R18894:18895 TTSB.Types <> :::'{{'_x_'}}' not
-R18903:18904 TTSB.Types <> :::'{{'_x_'}}' not
-R18897:18899 TTSB.Types <> :multitype::x_';'_x not
-R18900:18902 TTSB.Types <> :multitype::'nil' not
-R18858:18875 TTSB.Types <> eq_trans thm
-R18883:18883 TTSB.Types <> :::x_'⊎'_x not
-R18905:18910 TTSB.Types <> :::x_'⊎'_x not
-R18889:18893 TTSB.Types <> :::x_'⊎'_x not
-R18894:18895 TTSB.Types <> :::'{{'_x_'}}' not
-R18903:18904 TTSB.Types <> :::'{{'_x_'}}' not
-R18897:18899 TTSB.Types <> :multitype::x_';'_x not
-R18900:18902 TTSB.Types <> :multitype::'nil' not
-R18858:18875 TTSB.Types <> eq_trans thm
-R18935:18950 TTSB.Types <> eq_sym thm
-R18935:18950 TTSB.Types <> eq_sym thm
-R18959:18979 TTSB.Types <> union_assoc thm
-R18959:18979 TTSB.Types <> union_assoc thm
-R19021:19021 TTSB.Types <> :::x_'⊎'_x not
-R19046:19051 TTSB.Types <> :::x_'⊎'_x not
-R19036:19040 TTSB.Types <> :::x_'⊎'_x not
-R19022:19023 TTSB.Types <> :::'{{'_x_'}}' not
-R19034:19035 TTSB.Types <> :::'{{'_x_'}}' not
-R19029:19030 TTSB.Types <> :multitype::x_';'_x not
-R19024:19025 TTSB.Types <> :multitype::'`'_x_'`' not
-R19027:19028 TTSB.Types <> :multitype::'`'_x_'`' not
-R19031:19033 TTSB.Types <> :multitype::'nil' not
-R18996:19013 TTSB.Types <> eq_trans thm
-R19021:19021 TTSB.Types <> :::x_'⊎'_x not
-R19046:19051 TTSB.Types <> :::x_'⊎'_x not
-R19036:19040 TTSB.Types <> :::x_'⊎'_x not
-R19022:19023 TTSB.Types <> :::'{{'_x_'}}' not
-R19034:19035 TTSB.Types <> :::'{{'_x_'}}' not
-R19029:19030 TTSB.Types <> :multitype::x_';'_x not
-R19024:19025 TTSB.Types <> :multitype::'`'_x_'`' not
-R19027:19028 TTSB.Types <> :multitype::'`'_x_'`' not
-R19031:19033 TTSB.Types <> :multitype::'nil' not
-R18996:19013 TTSB.Types <> eq_trans thm
-R19076:19098 TTSB.Types <> eq_union_left thm
-R19076:19098 TTSB.Types <> eq_union_left thm
-R19115:19134 TTSB.Types <> union_comm thm
-R19115:19134 TTSB.Types <> union_comm thm
-prf 19221:19235 <> Ctx_union_tight
-R19242:19246 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R19269:19271 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R19264:19268 TTSB.Types <> t def
-binder 19247:19251 <> Γ₁:241
-R19264:19268 TTSB.Types <> t def
-binder 19253:19257 <> Γ₂:242
-R19264:19268 TTSB.Types <> t def
-binder 19259:19260 <> Δ:243
-R19295:19298 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R19277:19282 TTSB.Types <> :::x_'⊎c'_x_'≡'_x not
-R19288:19292 TTSB.Types <> :::x_'⊎c'_x_'≡'_x not
-R19272:19276 TTSB.Types <> Γ₁:241 var
-R19283:19287 TTSB.Types <> Γ₂:242 var
-R19293:19294 TTSB.Types <> Δ:243 var
-R19318:19321 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R19299:19314 TTSB.Types <> is_tight_context def
-R19316:19317 TTSB.Types <> Δ:243 var
-R19344:19349 TTSB.LogicSet <> :::x_'∧a'_x not
-R19322:19337 TTSB.Types <> is_tight_context def
-R19339:19343 TTSB.Types <> Γ₁:241 var
-R19350:19365 TTSB.Types <> is_tight_context def
-R19367:19371 TTSB.Types <> Γ₂:242 var
-R19397:19410 TTSB.Types <> mt_union_tight thm
-R19413:19426 TTSB.Types <> mt_union_tight thm
-R19429:19436 TTSB.Types <> mt_eq_in thm
-R19439:19446 TTSB.Types <> eq_tight thm
-R19449:19466 TTSB.Types <> eq_tight_multitype thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
-R19793:19806 TTSB.Types <> mt_union_tight thm
+R16221:16221 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R16240:16245 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R16253:16253 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R16222:16235 TTSB.Types <> permutationₜ ind
+R16237:16237 TTSB.Types <> t:209 var
+R16246:16247 TTSB.Types <> In:211 def
+R16251:16252 TTSB.Types <> mt:210 var
+R16249:16249 TTSB.Types <> t:209 var
+prf 16269:16276 <> mt_eq_in
+R16283:16287 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R16322:16326 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R16292:16295 TTSB.Types <> type ind
+binder 16288:16288 <> t:213
+R16313:16321 TTSB.Types <> multitype ind
+binder 16299:16303 <> mt₁:214
+R16313:16321 TTSB.Types <> multitype ind
+binder 16305:16309 <> mt₂:215
+R16351:16357 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16327:16338 TTSB.Types <> eq def
+R16340:16344 TTSB.Types <> mt₁:214 var
+R16346:16350 TTSB.Types <> mt₂:215 var
+R16368:16373 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16358:16359 TTSB.Types <> In def
+R16361:16361 TTSB.Types <> t:213 var
+R16363:16367 TTSB.Types <> mt₁:214 var
+R16374:16375 TTSB.Types <> In def
+R16377:16377 TTSB.Types <> t:213 var
+R16379:16383 TTSB.Types <> mt₂:215 var
+R16690:16711 TTSB.Types <> permutationₜ_mut_ind scheme
+R16819:16840 TTSB.Types <> permutationₘ_mut_ind scheme
+prf 16886:16893 <> eq_tight
+R16900:16903 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R16913:16917 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 16904:16907 <> t₁:216
+binder 16909:16912 <> t₂:217
+R16942:16947 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16918:16931 TTSB.Types <> permutationₜ ind
+R16933:16936 TTSB.Types <> t₁:216 var
+R16938:16941 TTSB.Types <> t₂:217 var
+R16966:16972 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16948:16960 TTSB.Types <> is_tight_type def
+R16962:16965 TTSB.Types <> t₁:216 var
+R16973:16985 TTSB.Types <> is_tight_type def
+R16987:16990 TTSB.Types <> t₂:217 var
+R17016:17023 TTSB.Types <> mt_eq_in thm
+R17094:17102 TTSB.Types <> multitype ind
+binder 17080:17084 <> mt₁:218
+binder 17086:17090 <> mt₂:219
+R17118:17131 TTSB.Types <> permutationₘ ind
+R17133:17137 TTSB.Types <> mt₁:218 var
+R17139:17143 TTSB.Types <> mt₂:219 var
+binder 17106:17114 <> H_permₘ:220
+R17173:17176 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R17149:17166 TTSB.Types <> is_tight_multitype def
+R17168:17172 TTSB.Types <> mt₁:218 var
+R17177:17194 TTSB.Types <> is_tight_multitype def
+R17196:17200 TTSB.Types <> mt₂:219 var
+R17094:17102 TTSB.Types <> multitype ind
+binder 17080:17084 <> mt₁:221
+binder 17086:17090 <> mt₂:222
+R17118:17131 TTSB.Types <> permutationₘ ind
+R17133:17137 TTSB.Types <> mt₁:221 var
+R17139:17143 TTSB.Types <> mt₂:222 var
+binder 17106:17114 <> H_permₘ:223
+R17173:17176 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R17149:17166 TTSB.Types <> is_tight_multitype def
+R17168:17172 TTSB.Types <> mt₁:221 var
+R17177:17194 TTSB.Types <> is_tight_multitype def
+R17196:17200 TTSB.Types <> mt₂:222 var
+R17352:17359 TTSB.Types <> mt_eq_in thm
+R17352:17359 TTSB.Types <> mt_eq_in thm
+R17352:17359 TTSB.Types <> mt_eq_in thm
+R17352:17359 TTSB.Types <> mt_eq_in thm
+R17352:17359 TTSB.Types <> mt_eq_in thm
+prf 17406:17423 <> eq_tight_multitype
+R17430:17433 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R17445:17449 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 17434:17438 <> mt₁:224
+binder 17440:17444 <> mt₂:225
+R17476:17481 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R17450:17463 TTSB.Types <> permutationₘ ind
+R17465:17469 TTSB.Types <> mt₁:224 var
+R17471:17475 TTSB.Types <> mt₂:225 var
+R17506:17512 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R17482:17499 TTSB.Types <> is_tight_multitype def
+R17501:17505 TTSB.Types <> mt₁:224 var
+R17513:17530 TTSB.Types <> is_tight_multitype def
+R17532:17536 TTSB.Types <> mt₂:225 var
+R17562:17569 TTSB.Types <> mt_eq_in thm
+R17637:17640 TTSB.Types <> type ind
+binder 17625:17628 <> t₁:226
+binder 17630:17633 <> t₂:227
+R17656:17669 TTSB.Types <> permutationₜ ind
+R17671:17674 TTSB.Types <> t₁:226 var
+R17676:17679 TTSB.Types <> t₂:227 var
+binder 17644:17652 <> H_permₜ:228
+R17703:17706 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R17685:17697 TTSB.Types <> is_tight_type def
+R17699:17702 TTSB.Types <> t₁:226 var
+R17707:17719 TTSB.Types <> is_tight_type def
+R17721:17724 TTSB.Types <> t₂:227 var
+R17637:17640 TTSB.Types <> type ind
+binder 17625:17628 <> t₁:229
+binder 17630:17633 <> t₂:230
+R17656:17669 TTSB.Types <> permutationₜ ind
+R17671:17674 TTSB.Types <> t₁:229 var
+R17676:17679 TTSB.Types <> t₂:230 var
+binder 17644:17652 <> H_permₜ:231
+R17703:17706 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R17685:17697 TTSB.Types <> is_tight_type def
+R17699:17702 TTSB.Types <> t₁:229 var
+R17707:17719 TTSB.Types <> is_tight_type def
+R17721:17724 TTSB.Types <> t₂:230 var
+R17903:17910 TTSB.Types <> mt_eq_in thm
+R17903:17910 TTSB.Types <> mt_eq_in thm
+R17903:17910 TTSB.Types <> mt_eq_in thm
+R17903:17910 TTSB.Types <> mt_eq_in thm
+R17903:17910 TTSB.Types <> mt_eq_in thm
+prf 17958:17969 <> Ctx_eq_tight
+R17975:17979 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R17999:18001 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R17994:17998 TTSB.Types <> t def
+binder 17980:17984 <> Γ₁:232
+R17994:17998 TTSB.Types <> t def
+binder 17986:17990 <> Γ₂:233
+R18020:18023 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18002:18007 TTSB.Types <> eq def
+R18009:18013 TTSB.Types <> Γ₁:232 var
+R18015:18019 TTSB.Types <> Γ₂:233 var
+R18046:18049 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18024:18039 TTSB.Types <> is_tight_context def
+R18041:18045 TTSB.Types <> Γ₁:232 var
+R18050:18065 TTSB.Types <> is_tight_context def
+R18067:18071 TTSB.Types <> Γ₂:233 var
+R18097:18104 TTSB.Types <> mt_eq_in thm
+R18107:18114 TTSB.Types <> eq_tight thm
+R18117:18134 TTSB.Types <> eq_tight_multitype thm
+prf 18246:18259 <> mt_union_tight
+R18265:18269 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R18296:18303 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R18287:18295 TTSB.Types <> multitype ind
+binder 18270:18274 <> mt₁:234
+R18287:18295 TTSB.Types <> multitype ind
+binder 18276:18280 <> mt₂:235
+R18287:18295 TTSB.Types <> multitype ind
+binder 18282:18283 <> mt:236
+R18337:18345 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18304:18315 TTSB.Types <> eq def
+R18323:18327 TTSB.Types <> :::x_'⊎'_x not
+R18318:18322 TTSB.Types <> mt₁:234 var
+R18328:18332 TTSB.Types <> mt₂:235 var
+R18335:18336 TTSB.Types <> mt:236 var
+R18367:18375 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18346:18363 TTSB.Types <> is_tight_multitype def
+R18365:18366 TTSB.Types <> mt:236 var
+R18400:18403 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R18376:18393 TTSB.Types <> is_tight_multitype def
+R18395:18399 TTSB.Types <> mt₁:234 var
+R18404:18421 TTSB.Types <> is_tight_multitype def
+R18423:18427 TTSB.Types <> mt₂:235 var
+R18453:18460 TTSB.Types <> mt_eq_in thm
+R18463:18470 TTSB.Types <> eq_tight thm
+R18473:18490 TTSB.Types <> eq_tight_multitype thm
+R18574:18575 TTSB.Types <> :::'{{'_x_'}}' not
+R18592:18593 TTSB.Types <> :::'{{'_x_'}}' not
+R18581:18582 TTSB.Types <> :multitype::x_';'_x not
+R18576:18577 TTSB.Types <> :multitype::'`'_x_'`' not
+R18579:18580 TTSB.Types <> :multitype::'`'_x_'`' not
+R18583:18584 TTSB.Types <> :multitype::'`'_x_'`' not
+R18590:18591 TTSB.Types <> :multitype::'`'_x_'`' not
+R18601:18615 TTSB.Types <> union def
+R18617:18618 TTSB.Types <> :::'{{'_x_'}}' not
+R18626:18627 TTSB.Types <> :::'{{'_x_'}}' not
+R18620:18622 TTSB.Types <> :multitype::x_';'_x not
+R18623:18625 TTSB.Types <> :multitype::'nil' not
+R18574:18575 TTSB.Types <> :::'{{'_x_'}}' not
+R18592:18593 TTSB.Types <> :::'{{'_x_'}}' not
+R18581:18582 TTSB.Types <> :multitype::x_';'_x not
+R18576:18577 TTSB.Types <> :multitype::'`'_x_'`' not
+R18579:18580 TTSB.Types <> :multitype::'`'_x_'`' not
+R18583:18584 TTSB.Types <> :multitype::'`'_x_'`' not
+R18590:18591 TTSB.Types <> :multitype::'`'_x_'`' not
+R18601:18615 TTSB.Types <> union def
+R18617:18618 TTSB.Types <> :::'{{'_x_'}}' not
+R18626:18627 TTSB.Types <> :::'{{'_x_'}}' not
+R18620:18622 TTSB.Types <> :multitype::x_';'_x not
+R18623:18625 TTSB.Types <> :multitype::'nil' not
+R18654:18665 TTSB.Types <> eq def
+R18673:18677 TTSB.Types <> :::x_'⊎'_x not
+R18678:18680 TTSB.Types <> :::'{{'_x_'}}' not
+R18690:18691 TTSB.Types <> :::'{{'_x_'}}' not
+R18682:18684 TTSB.Types <> :multitype::x_';'_x not
+R18654:18665 TTSB.Types <> eq def
+R18673:18677 TTSB.Types <> :::x_'⊎'_x not
+R18678:18680 TTSB.Types <> :::'{{'_x_'}}' not
+R18690:18691 TTSB.Types <> :::'{{'_x_'}}' not
+R18682:18684 TTSB.Types <> :multitype::x_';'_x not
+R18719:18720 TTSB.Types <> :::'{{'_x_'}}' not
+R18737:18738 TTSB.Types <> :::'{{'_x_'}}' not
+R18726:18727 TTSB.Types <> :multitype::x_';'_x not
+R18721:18722 TTSB.Types <> :multitype::'`'_x_'`' not
+R18724:18725 TTSB.Types <> :multitype::'`'_x_'`' not
+R18728:18729 TTSB.Types <> :multitype::'`'_x_'`' not
+R18735:18736 TTSB.Types <> :multitype::'`'_x_'`' not
+R18746:18760 TTSB.Types <> union def
+R18762:18763 TTSB.Types <> :::'{{'_x_'}}' not
+R18771:18772 TTSB.Types <> :::'{{'_x_'}}' not
+R18765:18767 TTSB.Types <> :multitype::x_';'_x not
+R18768:18770 TTSB.Types <> :multitype::'nil' not
+R18719:18720 TTSB.Types <> :::'{{'_x_'}}' not
+R18737:18738 TTSB.Types <> :::'{{'_x_'}}' not
+R18726:18727 TTSB.Types <> :multitype::x_';'_x not
+R18721:18722 TTSB.Types <> :multitype::'`'_x_'`' not
+R18724:18725 TTSB.Types <> :multitype::'`'_x_'`' not
+R18728:18729 TTSB.Types <> :multitype::'`'_x_'`' not
+R18735:18736 TTSB.Types <> :multitype::'`'_x_'`' not
+R18746:18760 TTSB.Types <> union def
+R18762:18763 TTSB.Types <> :::'{{'_x_'}}' not
+R18771:18772 TTSB.Types <> :::'{{'_x_'}}' not
+R18765:18767 TTSB.Types <> :multitype::x_';'_x not
+R18768:18770 TTSB.Types <> :multitype::'nil' not
+R18824:18824 TTSB.Types <> :::x_'⊎'_x not
+R18846:18851 TTSB.Types <> :::x_'⊎'_x not
+R18830:18834 TTSB.Types <> :::x_'⊎'_x not
+R18835:18836 TTSB.Types <> :::'{{'_x_'}}' not
+R18844:18845 TTSB.Types <> :::'{{'_x_'}}' not
+R18838:18840 TTSB.Types <> :multitype::x_';'_x not
+R18841:18843 TTSB.Types <> :multitype::'nil' not
+R18799:18816 TTSB.Types <> eq_trans thm
+R18824:18824 TTSB.Types <> :::x_'⊎'_x not
+R18846:18851 TTSB.Types <> :::x_'⊎'_x not
+R18830:18834 TTSB.Types <> :::x_'⊎'_x not
+R18835:18836 TTSB.Types <> :::'{{'_x_'}}' not
+R18844:18845 TTSB.Types <> :::'{{'_x_'}}' not
+R18838:18840 TTSB.Types <> :multitype::x_';'_x not
+R18841:18843 TTSB.Types <> :multitype::'nil' not
+R18799:18816 TTSB.Types <> eq_trans thm
+R18876:18891 TTSB.Types <> eq_sym thm
+R18876:18891 TTSB.Types <> eq_sym thm
+R18900:18920 TTSB.Types <> union_assoc thm
+R18900:18920 TTSB.Types <> union_assoc thm
+R18962:18962 TTSB.Types <> :::x_'⊎'_x not
+R18987:18992 TTSB.Types <> :::x_'⊎'_x not
+R18977:18981 TTSB.Types <> :::x_'⊎'_x not
+R18963:18964 TTSB.Types <> :::'{{'_x_'}}' not
+R18975:18976 TTSB.Types <> :::'{{'_x_'}}' not
+R18970:18971 TTSB.Types <> :multitype::x_';'_x not
+R18965:18966 TTSB.Types <> :multitype::'`'_x_'`' not
+R18968:18969 TTSB.Types <> :multitype::'`'_x_'`' not
+R18972:18974 TTSB.Types <> :multitype::'nil' not
+R18937:18954 TTSB.Types <> eq_trans thm
+R18962:18962 TTSB.Types <> :::x_'⊎'_x not
+R18987:18992 TTSB.Types <> :::x_'⊎'_x not
+R18977:18981 TTSB.Types <> :::x_'⊎'_x not
+R18963:18964 TTSB.Types <> :::'{{'_x_'}}' not
+R18975:18976 TTSB.Types <> :::'{{'_x_'}}' not
+R18970:18971 TTSB.Types <> :multitype::x_';'_x not
+R18965:18966 TTSB.Types <> :multitype::'`'_x_'`' not
+R18968:18969 TTSB.Types <> :multitype::'`'_x_'`' not
+R18972:18974 TTSB.Types <> :multitype::'nil' not
+R18937:18954 TTSB.Types <> eq_trans thm
+R19017:19039 TTSB.Types <> eq_union_left thm
+R19017:19039 TTSB.Types <> eq_union_left thm
+R19056:19075 TTSB.Types <> union_comm thm
+R19056:19075 TTSB.Types <> union_comm thm
+prf 19158:19172 <> Ctx_union_tight
+R19179:19183 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R19206:19208 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R19201:19205 TTSB.Types <> t def
+binder 19184:19188 <> Γ₁:237
+R19201:19205 TTSB.Types <> t def
+binder 19190:19194 <> Γ₂:238
+R19201:19205 TTSB.Types <> t def
+binder 19196:19197 <> Δ:239
+R19232:19235 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19214:19219 TTSB.Types <> :::x_'⊎c'_x_'≡'_x not
+R19225:19229 TTSB.Types <> :::x_'⊎c'_x_'≡'_x not
+R19209:19213 TTSB.Types <> Γ₁:237 var
+R19220:19224 TTSB.Types <> Γ₂:238 var
+R19230:19231 TTSB.Types <> Δ:239 var
+R19255:19258 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19236:19251 TTSB.Types <> is_tight_context def
+R19253:19254 TTSB.Types <> Δ:239 var
+R19281:19284 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R19259:19274 TTSB.Types <> is_tight_context def
+R19276:19280 TTSB.Types <> Γ₁:237 var
+R19285:19300 TTSB.Types <> is_tight_context def
+R19302:19306 TTSB.Types <> Γ₂:238 var
+R19332:19345 TTSB.Types <> mt_union_tight thm
+R19348:19361 TTSB.Types <> mt_union_tight thm
+R19364:19371 TTSB.Types <> mt_eq_in thm
+R19374:19381 TTSB.Types <> eq_tight thm
+R19384:19401 TTSB.Types <> eq_tight_multitype thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
+R19724:19737 TTSB.Types <> mt_union_tight thm
