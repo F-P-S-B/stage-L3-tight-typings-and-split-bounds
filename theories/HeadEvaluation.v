@@ -6,14 +6,19 @@
   https://arxiv.org/pdf/1807.02358.pdf
 *)
 Set Default Goal Selector "!".
-Require Import String.
-Require Import PeanoNat.
-Require Import Arith.
+From Coq Require Import String.
+From Coq Require Import PeanoNat.
+From Coq Require Import Arith.
 From Coq Require Import Unicode.Utf8.
+From Coq Require Import Lia.
+From Coq Require Import Lists.ListSet.
+From Coq Require Import List.
+From Coq Require Import Classes.Equivalence.
 Require Import EvaluationSystem.
 Require Import Tactics.
-Require Import LogicSet.
 Require Import Syntax.
+Require Import Types.Types.
+Import ListNotations.
 
 
 
@@ -126,13 +131,6 @@ Proof with myauto contra_neutral_abs.
   - intro. inversion H; subst; inversion H0. 
 Qed.
 
-From Coq Require Import Lia.
-From Coq Require Import Lists.ListSet.
-From Coq Require Import List.
-Import ListNotations.
-From Coq Require Import Classes.Equivalence.
-
-Require Import Types.
 
 
 Section HeadTypingSystem.
@@ -158,11 +156,11 @@ Section HeadTypingSystem.
         ∀ {A: type} {Γ : Ctx.t} {x : nat},
         Γ |(0, 0)- <{#x}> ∈ A ->
         {{nil}}::Γ |(0, 0)- <{#`S x`}> ∈ A
-    | T_Many_Inv :
-        ∀ {Γ: Ctx.t} {t : term} {A : type} {M : multitype} {b₁ b₂ r₁ r₂ : nat},
+    (* | T_Many_Inv :
+        ∀ {Γ: Ctx.t} {t : term} {A : type} {b r : nat},
          
-        Γ |(b₁ + b₂, r₁ + r₂)- t ∈ₘ {{A ; nil}} -> 
-        Γ |(b₁, r₁)- t ∈ A
+        Γ |(b, r)- t ∈ₘ {{A ; nil}} -> 
+        Γ |(b, r)- t ∈ A *)
     | T_Fun_b :
         ∀ {t : term} {mt : multitype} {A : type} {Γ : Ctx.t} {b r : nat},
         mt :: Γ |(b, r)- t ∈ A -> 
@@ -186,16 +184,19 @@ Section HeadTypingSystem.
     where 
       "Γ '|(' b ',' r ')-' t '∈' T" := (has_type Γ b r t T)
     with has_many_types : Ctx.t -> nat -> nat -> term -> multitype -> Type :=
+    (* | ManyT_Empty : 
+      ∀ t, 
+      [] |(0, 0)- t ∈ₘ {{nil}} *)
     | ManyT_Singleton :
       ∀ {Γ : Ctx.t} {t : term} {A : type} {b r : nat},
         Γ |(b, r)- t ∈ A ->
         Γ |(b, r)- t ∈ₘ {{ A ; nil }} 
-    | ManyT_Cons :
-        ∀ {Γ₁ Γ₂ Δ: Ctx.t} {t : term} {A : type} {mt : multitype} {b₁ b₂ r₁ r₂ : nat},
+    | ManyT_Union :
+        ∀ {Γ₁ Γ₂ Δ: Ctx.t} {t : term} {mt₁ mt₂ : multitype} {b₁ b₂ r₁ r₂ : nat},
         Γ₁ ⊎c Γ₂ ≡ Δ ->
-        Γ₁ |(b₁, r₁)- t ∈  A ->
-        Γ₂ |(b₂, r₂)- t ∈ₘ mt ->
-        Δ |(b₁ + b₂, r₁ + r₂)- t ∈ₘ {{ A ; mt }}
+        Γ₁ |(b₁, r₁)- t ∈ₘ mt₁ ->
+        Γ₂ |(b₂, r₂)- t ∈ₘ mt₂ ->
+        Δ |(b₁ + b₂, r₁ + r₂)- t ∈ₘ (mt₁ ⊎ mt₂)
     | ManyT_Inv :
       ∀ {Γ₁ Γ₂ Δ : Ctx.t} {t : term} {A : type} {mt₁ mt₂ mtᵤ : multitype} {b₁ b₂ r₁ r₂ : nat},
         Γ₁ ⊎c Γ₂ ≡ Δ ->
@@ -214,14 +215,15 @@ Section HeadTypingSystem.
     Scheme has_type_mut_rec := Induction for has_type Sort Set
     with has_many_types_mut_rec := Induction for has_many_types Sort Set.
 
-   
+  
+
 
   Fixpoint size_typing_derivation {b r : nat} {Γ : Ctx.t} {t : term} {T : type} (der : Γ |( b , r )- t ∈ T) : nat :=
     match der with 
       | T_Ax0  => 0
       | T_Ax0_Empty _ => 0
       | T_AxS _  => 0
-      | T_Many_Inv der => size_many_typing_derivation der
+      (* | T_Many_Inv der => size_many_typing_derivation der *)
       | T_Fun_b der' => S (size_typing_derivation der')
       | T_Fun_r _ der' => S (size_typing_derivation der')
       | T_App_b _ der₁ der₂ => 
@@ -231,8 +233,9 @@ Section HeadTypingSystem.
   with 
     size_many_typing_derivation {b r : nat} {Γ : Ctx.t} {t : term} {M : multitype} (der : Γ |( b , r )- t ∈ₘ M) : nat :=
     match der with 
+    (* | ManyT_Empty _ => 0 *)
     | ManyT_Singleton der => size_typing_derivation der
-    | ManyT_Cons _ der₁ der₂ => size_typing_derivation der₁ + size_many_typing_derivation der₂
+    | ManyT_Union _ der₁ der₂ => size_many_typing_derivation der₁ + size_many_typing_derivation der₂
     | ManyT_Inv _ _ der _ => size_many_typing_derivation der
     end
   .
@@ -311,25 +314,110 @@ Proof with eauto.
   - unfold Id.
     change 1 with (1 + 0) at 2.
     change 1 with (0 + 1) at 1.
-    eapply ManyT_Cons; unfold abs_abs...
+    eapply @ManyT_Union with (mt₁ := {{`Ty_Tight TC_Abs`; nil}}) (mt₂ := {{ `abs_abs` ; nil }}); unfold abs_abs...
     + apply Ctx.Union_Nil.
-    + eapply @T_Fun_r with (T := Ty_Tight TC_Abs) (A := Ty_Tight TC_Abs)...
+    + apply ManyT_Singleton. eapply @T_Fun_r with (T := Ty_Tight TC_Abs) (A := Ty_Tight TC_Abs)...
 Qed.
 
 
-Lemma tigh_spreading_on_neutral_terms : 
+(* 
+
+
+Lemma tigh_spreading_on_neutral_terms_v1 : 
   ∀ (t : term), neutral t ->
   ∀ (Γ : Ctx.t) (b r : nat)  (A : type)
   (φ : Γ |(b, r)- t ∈ A), (is_tight_context Γ) -> (is_tight_type A).
 Proof with eauto.
   intros t H_neutral.
   induction H_neutral as [ x | p u H_neutral_p IH]; intros Γ b r A φ H_tight.
-  - admit. 
+  - eapply tight_spreading_var... 
   - inversion φ; subst...
-    + admit.
+    apply Ctx_union_tight in H1 as [H_tight_Γ₁ H_tight_Γ₂]...
+    apply IH in H5; simpl in H5; try contradiction...
+Qed. *)
+
+Definition last_rule_is_appb 
+    {b r : nat} {Γ : Ctx.t} {t : term} {T : type} 
+    (der : Γ |( b , r )- t ∈ T) : Prop := 
+  match der with 
+  | T_Ax0 => False
+  | T_Ax0_Empty _ => False
+  | T_AxS _ => False
+  | T_Fun_b _ => False
+  | T_Fun_r _ _ => False
+  | T_App_b _ _ _ => True
+  | T_App_hd_r _ => False
+  end.
+Definition last_rule_is_app_hd_r 
+    {b r : nat} {Γ : Ctx.t} {t : term} {T : type} 
+    (der : Γ |( b , r )- t ∈ T) : Prop := 
+  match der with 
+  | T_Ax0 => False
+  | T_Ax0_Empty _ => False
+  | T_AxS _ => False
+  | T_Fun_b _ => False
+  | T_Fun_r _ _ => False
+  | T_App_b _ _ _ => False
+  | T_App_hd_r _ => True
+  end.
+
+
+Lemma tight_spreading_var :  
+  ∀ x Γ b r A
+  (φ : Γ |( b, r )- Trm_Bound_Var x ∈ A), 
+  is_tight_context Γ -> 
+  is_tight_type A /\ ¬ last_rule_is_appb φ.
+Proof with eauto.
+  intros * H_tight.
+  split.
+  + generalize dependent Γ.
+    generalize dependent b. 
+    generalize dependent r. 
+    generalize dependent A. 
+    induction x; intros * φ H_tight.
+    - remember (Trm_Bound_Var 0) as t.
+      induction φ; subst; simpl in *; repeat split_and;
+      try (inversion Heqt; fail)...
+    - remember (Trm_Bound_Var (S x)) as t. 
+      induction φ; subst; simpl in *; repeat split_and;
+      inversion Heqt; subst...
+  + intros * H_contra.
+    remember (Trm_Bound_Var x) as t.
+    destruct φ eqn:H_eq...
+    inversion Heqt. 
+Qed.
+
+Lemma apphd_is_not_appb : ∀ Γ b r t A (φ : Γ |(b, r)- t ∈ A), 
+  last_rule_is_app_hd_r φ ->
+  ¬ last_rule_is_appb φ.
+Proof with eauto.
+  intros.
+  destruct φ...
+Qed.
+
+
+  
+Lemma tigh_spreading_on_neutral_terms : 
+  ∀ (t : term), neutral t ->
+  ∀ (Γ : Ctx.t) (b r : nat)  (A : type)
+  (φ : Γ |(b, r)- t ∈ A), 
+  is_tight_context Γ ->
+  ((is_tight_type A) /\ ¬ last_rule_is_appb φ).
+Proof with eauto.
+  intros t H_neutral.
+  induction H_neutral as [ x | p u H_neutral_p IH]; intros Γ b r A φ H_tight.
+  - eapply tight_spreading_var...
+  - inversion φ; subst...
     + apply Ctx_union_tight in H1 as [H_tight_Γ₁ H_tight_Γ₂]...
       apply IH in H5; simpl in H5; try contradiction...
+    + split...
+      remember <{ ` p ` ` u ` }> as t.
+      remember (Ty_Tight TC_Neutral) as T.
+      destruct φ eqn:Heq; simpl; inversion Heqt; subst...
+      apply Ctx_union_tight in u0 as H_tight'...
+      destruct H_tight' as [H_tight_Γ₁ H_tight_Γ₂].
+      apply IH with (φ := h) in H_tight_Γ₁ as [H_contra _]; simpl in *; contradiction.
+Qed.
 
-Admitted.
 
 End HeadTypingSystem.

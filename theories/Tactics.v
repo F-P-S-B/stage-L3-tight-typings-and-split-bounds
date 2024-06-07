@@ -10,3 +10,10 @@ Ltac myauto t :=
             || eauto.
 
 Tactic Notation "'myauto'" := myauto idtac.
+
+
+Ltac split_and := 
+  match goal with 
+  | [ |- _ /\ _ ] => split
+  | [H : _ /\ _ |- _] => destruct H
+  end.

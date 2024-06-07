@@ -1,23 +1,3 @@
-DIGEST 005cbecbe965963dfab8034f52f78439
+DIGEST 860d613af5445fcedbc2d36c10b87d7e
 FTTSB.LogicSet
 R15:31 Coq.Unicode.Utf8_core <> <> lib
-ind 133:138 <> ex_set
-constr 178:189 <> ex_set_intro
-binder 141:141 <> A:1
-R157:160 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R156:156 TTSB.LogicSet <> A:1 var
-binder 152:152 <> P:2
-R193:196 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R202:203 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
-R201:201 TTSB.LogicSet <> A:1 var
-binder 197:197 <> x:5
-R207:210 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R204:204 TTSB.LogicSet <> P:2 var
-R206:206 TTSB.LogicSet <> x:5 var
-R211:216 TTSB.LogicSet <> ex_set:3 ind
-R221:221 TTSB.LogicSet <> P:2 var
-R218:218 TTSB.LogicSet <> A:1 var
-scheme 133:138 <> ex_set_rect
-scheme 133:138 <> ex_set_ind
-scheme 133:138 <> ex_set_rec
-scheme 133:138 <> ex_set_sind

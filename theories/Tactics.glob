@@ -1,2 +1,6 @@
-DIGEST bce83b7ea5c6ed0e2a9862fdc67cd088
+DIGEST bc7b84526ea4393a056644f1125acb7b
 FTTSB.Tactics
+R297:300 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R297:300 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R324:327 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R324:327 Coq.Init.Logic <> ::type_scope:x_'/\'_x not

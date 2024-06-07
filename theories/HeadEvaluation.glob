@@ -1,0 +1,1504 @@
+DIGEST 425a0257d1c9296d50174c55005b261f
+FTTSB.HeadEvaluation
+R205:210 Coq.Strings.String <> <> lib
+R237:244 Coq.Arith.PeanoNat <> <> lib
+R271:275 Coq.Arith.Arith <> <> lib
+R302:313 Coq.Unicode.Utf8 <> <> lib
+R340:342 Coq.micromega.Lia <> <> lib
+R369:381 Coq.Lists.ListSet <> <> lib
+R408:411 Coq.Lists.List <> <> lib
+R438:456 Coq.Classes.Equivalence <> <> lib
+R474:489 TTSB.EvaluationSystem <> <> lib
+R507:513 TTSB.Tactics <> <> lib
+R531:536 TTSB.Syntax <> <> lib
+R554:564 TTSB.Types.Types <> <> lib
+R574:586 Coq.Lists.List ListNotations <> mod
+ind 602:608 <> neutral
+constr 630:640 <> Neutral_Var
+constr 676:686 <> Neutral_App
+R616:619 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R612:615 TTSB.Syntax <> term ind
+R644:648 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R656:658 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R653:655 Coq.Init.Datatypes <> nat ind
+binder 649:649 <> n:3
+R659:665 TTSB.HeadEvaluation <> neutral:1 ind
+R667:668 TTSB.Syntax <> :::'<{'_x_'}>' not
+R671:672 TTSB.Syntax <> :::'<{'_x_'}>' not
+R669:669 TTSB.Syntax <> :term::'#'_x not
+R670:670 TTSB.HeadEvaluation <> n:3 var
+R690:694 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R711:713 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R707:710 TTSB.Syntax <> term ind
+binder 695:698 <> t₁:4
+R707:710 TTSB.Syntax <> term ind
+binder 700:703 <> t₂:5
+R726:729 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R714:720 TTSB.HeadEvaluation <> neutral:1 ind
+R722:725 TTSB.HeadEvaluation <> t₁:4 var
+R730:736 TTSB.HeadEvaluation <> neutral:1 ind
+R738:739 TTSB.Syntax <> :::'<{'_x_'}>' not
+R749:750 TTSB.Syntax <> :::'<{'_x_'}>' not
+R744:744 TTSB.Syntax <> :term::x_x not
+R740:743 TTSB.HeadEvaluation <> t₁:4 var
+R745:748 TTSB.HeadEvaluation <> t₂:5 var
+scheme 602:608 <> neutral_ind
+scheme 602:608 <> neutral_sind
+ind 764:769 <> normal
+constr 792:805 <> Normal_Neutral
+constr 850:859 <> Normal_Abs
+R777:780 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R773:776 TTSB.Syntax <> term ind
+R809:813 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R822:824 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R818:821 TTSB.Syntax <> term ind
+binder 814:814 <> t:8
+R834:837 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R825:831 TTSB.HeadEvaluation <> neutral ind
+R833:833 TTSB.HeadEvaluation <> t:8 var
+R838:843 TTSB.HeadEvaluation <> normal:6 ind
+R845:845 TTSB.HeadEvaluation <> t:8 var
+R863:867 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R876:878 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R872:875 TTSB.Syntax <> term ind
+binder 868:868 <> t:9
+R887:890 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R879:884 TTSB.HeadEvaluation <> normal:6 ind
+R886:886 TTSB.HeadEvaluation <> t:9 var
+R891:896 TTSB.HeadEvaluation <> normal:6 ind
+R898:899 TTSB.Syntax <> :::'<{'_x_'}>' not
+R904:905 TTSB.Syntax <> :::'<{'_x_'}>' not
+R900:902 TTSB.Syntax <> :term::'λ'_x not
+R903:903 TTSB.HeadEvaluation <> t:9 var
+scheme 764:769 <> normal_ind
+scheme 764:769 <> normal_sind
+R928:934 TTSB.HeadEvaluation <> neutral ind
+R962:967 TTSB.HeadEvaluation <> normal ind
+ind 988:990 <> abs
+constr 1013:1015 <> Abs
+R998:1001 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R994:997 TTSB.Syntax <> term ind
+R1019:1023 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1032:1034 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1028:1031 TTSB.Syntax <> term ind
+binder 1024:1024 <> t:12
+R1035:1037 TTSB.HeadEvaluation <> abs:10 ind
+R1039:1041 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1046:1048 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1042:1044 TTSB.Syntax <> :term::'λ'_x not
+R1045:1045 TTSB.HeadEvaluation <> t:12 var
+scheme 988:990 <> abs_ind
+scheme 988:990 <> abs_sind
+R1070:1072 TTSB.HeadEvaluation <> abs ind
+R1154:1157 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1139:1141 TTSB.HeadEvaluation <> abs ind
+R1144:1150 TTSB.Syntax <> Trm_Abs constr
+R1158:1162 Coq.Init.Logic <> False ind
+R1154:1157 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1139:1141 TTSB.HeadEvaluation <> abs ind
+R1144:1150 TTSB.Syntax <> Trm_Abs constr
+R1158:1162 Coq.Init.Logic <> False ind
+R1210:1216 TTSB.HeadEvaluation <> neutral ind
+R1219:1225 TTSB.Syntax <> Trm_Abs constr
+R1210:1216 TTSB.HeadEvaluation <> neutral ind
+R1219:1225 TTSB.Syntax <> Trm_Abs constr
+R1197:1199 TTSB.HeadEvaluation <> Abs constr
+ind 1328:1331 <> step
+constr 1361:1367 <> ST_Beta
+constr 1444:1449 <> ST_Abs
+constr 1520:1525 <> ST_App
+R1339:1342 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1335:1338 TTSB.Syntax <> term ind
+R1347:1350 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1343:1346 TTSB.Syntax <> term ind
+R1642:1645 TTSB.HeadEvaluation <> step:14 ind
+R1376:1380 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1391:1398 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1387:1390 TTSB.Syntax <> term ind
+binder 1381:1381 <> u:15
+R1387:1390 TTSB.Syntax <> term ind
+binder 1383:1383 <> q:16
+R1413:1418 TTSB.HeadEvaluation <> :::x_'-->'_x not
+R1440:1440 TTSB.HeadEvaluation <> :::x_'-->'_x not
+R1399:1401 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1410:1412 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1408:1408 TTSB.Syntax <> :term::x_x not
+R1402:1402 TTSB.Syntax <> :term::'('_x_')' not
+R1407:1407 TTSB.Syntax <> :term::'('_x_')' not
+R1403:1405 TTSB.Syntax <> :term::'λ'_x not
+R1406:1406 TTSB.HeadEvaluation <> u:15 var
+R1409:1409 TTSB.HeadEvaluation <> q:16 var
+R1419:1423 TTSB.Syntax <> lower def
+R1427:1428 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1438:1439 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1430:1430 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1432:1435 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1437:1437 TTSB.Syntax <> :term::x_'['_x_'<-'_x_']' not
+R1429:1429 TTSB.HeadEvaluation <> u:15 var
+R1436:1436 TTSB.HeadEvaluation <> q:16 var
+R1458:1462 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1473:1479 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1469:1472 TTSB.Syntax <> term ind
+binder 1463:1463 <> t:17
+R1469:1472 TTSB.Syntax <> term ind
+binder 1465:1465 <> p:18
+R1487:1495 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1481:1485 TTSB.HeadEvaluation <> :::x_'-->'_x not
+R1480:1480 TTSB.HeadEvaluation <> t:17 var
+R1486:1486 TTSB.HeadEvaluation <> p:18 var
+R1504:1508 TTSB.HeadEvaluation <> :::x_'-->'_x not
+R1496:1497 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1502:1503 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1498:1500 TTSB.Syntax <> :term::'λ'_x not
+R1501:1501 TTSB.HeadEvaluation <> t:17 var
+R1509:1510 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1515:1516 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1511:1513 TTSB.Syntax <> :term::'λ'_x not
+R1514:1514 TTSB.HeadEvaluation <> p:18 var
+R1534:1538 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1551:1558 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1547:1550 TTSB.Syntax <> term ind
+binder 1539:1539 <> t:19
+R1547:1550 TTSB.Syntax <> term ind
+binder 1541:1541 <> p:20
+R1547:1550 TTSB.Syntax <> term ind
+binder 1543:1543 <> u:21
+R1559:1559 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1574:1583 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1565:1568 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1560:1562 TTSB.HeadEvaluation <> abs ind
+R1564:1564 TTSB.HeadEvaluation <> t:19 var
+R1569:1573 Coq.Init.Logic <> False ind
+R1591:1598 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1585:1589 TTSB.HeadEvaluation <> :::x_'-->'_x not
+R1584:1584 TTSB.HeadEvaluation <> t:19 var
+R1590:1590 TTSB.HeadEvaluation <> p:20 var
+R1606:1610 TTSB.HeadEvaluation <> :::x_'-->'_x not
+R1599:1600 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1604:1605 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1602:1602 TTSB.Syntax <> :term::x_x not
+R1601:1601 TTSB.HeadEvaluation <> t:19 var
+R1603:1603 TTSB.HeadEvaluation <> u:21 var
+R1611:1612 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1616:1617 TTSB.Syntax <> :::'<{'_x_'}>' not
+R1614:1614 TTSB.Syntax <> :term::x_x not
+R1613:1613 TTSB.HeadEvaluation <> p:20 var
+R1615:1615 TTSB.HeadEvaluation <> u:21 var
+scheme 1328:1331 <> step_ind
+scheme 1328:1331 <> step_sind
+R1642:1645 TTSB.HeadEvaluation <> step ind
+not 1628:1628 <> :::x_'-->'_x
+R1672:1675 TTSB.HeadEvaluation <> step ind
+prf 1694:1711 <> deterministic_step
+R1715:1727 TTSB.EvaluationSystem <> deterministic def
+R1729:1732 TTSB.HeadEvaluation <> step ind
+R1784:1796 TTSB.EvaluationSystem <> deterministic def
+R1893:1896 TTSB.HeadEvaluation <> step ind
+R1893:1896 TTSB.HeadEvaluation <> step ind
+def 2060:2068 <> multistep
+R2076:2079 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2072:2075 TTSB.Syntax <> term ind
+R2084:2087 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2080:2083 TTSB.Syntax <> term ind
+R2095:2111 TTSB.EvaluationSystem <> reflexive_closure ind
+R2114:2131 TTSB.EvaluationSystem <> transitive_closure ind
+R2133:2136 TTSB.HeadEvaluation <> step ind
+R2164:2172 TTSB.HeadEvaluation <> multistep def
+not 2149:2149 <> :::x_'-->*'_x
+def 2203:2206 <> size
+R2213:2216 TTSB.Syntax <> term ind
+binder 2209:2209 <> t:22
+R2221:2223 Coq.Init.Datatypes <> nat ind
+R2237:2237 TTSB.HeadEvaluation <> t:22 var
+R2248:2250 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2253:2255 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2251:2251 TTSB.Syntax <> :term::'#'_x not
+R2267:2268 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2273:2274 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2269:2271 TTSB.Syntax <> :term::'λ'_x not
+R2281:2283 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2287:2289 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2285:2285 TTSB.Syntax <> :term::x_x not
+R2295:2297 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R2298:2301 TTSB.HeadEvaluation <> size:23 def
+R2303:2303 TTSB.HeadEvaluation <> t:22 var
+R2295:2297 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R2298:2301 TTSB.HeadEvaluation <> size:23 def
+R2303:2303 TTSB.HeadEvaluation <> t:22 var
+R2325:2328 TTSB.HeadEvaluation <> size def
+def 2352:2403 <> Unnamed_thm
+R2382:2386 TTSB.HeadEvaluation <> :::x_'-->'_x not
+R2357:2358 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2380:2381 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2372:2372 TTSB.Syntax <> :term::x_x not
+R2359:2359 TTSB.Syntax <> :term::'('_x_')' not
+R2371:2371 TTSB.Syntax <> :term::'('_x_')' not
+R2360:2362 TTSB.Syntax <> :term::'λ'_x not
+R2363:2365 TTSB.Syntax <> :term::'λ'_x not
+R2368:2368 TTSB.Syntax <> :term::x_x not
+R2366:2366 TTSB.Syntax <> :term::'#'_x not
+R2369:2369 TTSB.Syntax <> :term::'#'_x not
+R2373:2373 TTSB.Syntax <> :term::'('_x_')' not
+R2379:2379 TTSB.Syntax <> :term::'('_x_')' not
+R2374:2376 TTSB.Syntax <> :term::'λ'_x not
+R2377:2377 TTSB.Syntax <> :term::'#'_x not
+R2387:2388 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2402:2403 TTSB.Syntax <> :::'<{'_x_'}>' not
+R2389:2391 TTSB.Syntax <> :term::'λ'_x not
+R2399:2399 TTSB.Syntax <> :term::x_x not
+R2392:2392 TTSB.Syntax <> :term::'('_x_')' not
+R2398:2398 TTSB.Syntax <> :term::'('_x_')' not
+R2393:2395 TTSB.Syntax <> :term::'λ'_x not
+R2396:2396 TTSB.Syntax <> :term::'#'_x not
+R2400:2400 TTSB.Syntax <> :term::'#'_x not
+R2412:2418 TTSB.HeadEvaluation <> ST_Beta constr
+R2412:2418 TTSB.HeadEvaluation <> ST_Beta constr
+prf 2435:2459 <> neutral_is_normal_not_abs
+R2463:2466 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R2468:2469 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 2467:2467 <> t:25
+R2492:2495 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2478:2482 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2491:2491 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2470:2475 TTSB.HeadEvaluation <> normal ind
+R2477:2477 TTSB.HeadEvaluation <> t:25 var
+R2483:2485 Coq.Unicode.Utf8_core <> ::type_scope:'¬'_x not
+R2486:2488 TTSB.HeadEvaluation <> abs ind
+R2490:2490 TTSB.HeadEvaluation <> t:25 var
+R2496:2502 TTSB.HeadEvaluation <> neutral ind
+R2504:2504 TTSB.HeadEvaluation <> t:25 var
+prf 2676:2695 <> head_red_eval_system
+R2701:2717 TTSB.EvaluationSystem <> evaluation_system def
+R2744:2746 TTSB.HeadEvaluation <> abs ind
+R2736:2742 TTSB.HeadEvaluation <> neutral ind
+R2729:2734 TTSB.HeadEvaluation <> normal ind
+R2724:2727 TTSB.HeadEvaluation <> step ind
+R2719:2722 TTSB.Syntax <> term ind
+R2840:2849 TTSB.EvaluationSystem <> rel_normal def
+R2912:2925 TTSB.HeadEvaluation <> Normal_Neutral constr
+R2912:2925 TTSB.HeadEvaluation <> Normal_Neutral constr
+R2934:2944 TTSB.HeadEvaluation <> Neutral_App constr
+R2934:2944 TTSB.HeadEvaluation <> Neutral_App constr
+R2962:2986 TTSB.HeadEvaluation <> neutral_is_normal_not_abs thm
+R2962:2986 TTSB.HeadEvaluation <> neutral_is_normal_not_abs thm
+R3087:3088 TTSB.Syntax <> :::'<{'_x_'}>' not
+R3094:3095 TTSB.Syntax <> :::'<{'_x_'}>' not
+R3091:3091 TTSB.Syntax <> :term::x_x not
+R3087:3088 TTSB.Syntax <> :::'<{'_x_'}>' not
+R3094:3095 TTSB.Syntax <> :::'<{'_x_'}>' not
+R3091:3091 TTSB.Syntax <> :term::x_x not
+R3114:3119 TTSB.HeadEvaluation <> ST_App constr
+R3114:3119 TTSB.HeadEvaluation <> ST_App constr
+R3136:3145 TTSB.HeadEvaluation <> Normal_Abs constr
+R3136:3145 TTSB.HeadEvaluation <> Normal_Abs constr
+sec 3421:3436 <> HeadTypingSystem
+ind 3755:3762 <> has_type
+constr 3819:3823 <> T_Ax0
+constr 3907:3917 <> T_Ax0_Empty
+constr 4064:4068 <> T_AxS
+constr 4374:4380 <> T_Fun_b
+constr 4554:4560 <> T_Fun_r
+constr 4771:4777 <> T_App_b
+constr 5107:5116 <> T_App_hd_r
+ind 5376:5389 <> has_many_types
+constr 5527:5541 <> ManyT_Singleton
+constr 5684:5694 <> ManyT_Union
+constr 6002:6010 <> ManyT_Inv
+R3771:3774 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3766:3770 TTSB.Types.Types Ctx t def
+R3778:3781 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3775:3777 Coq.Init.Datatypes <> nat ind
+R3785:3788 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3782:3784 Coq.Init.Datatypes <> nat ind
+R3793:3796 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3789:3792 TTSB.Syntax <> term ind
+R3801:3804 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3797:3800 TTSB.Types.Types <> type ind
+R5398:5401 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5393:5397 TTSB.Types.Types Ctx t def
+R5405:5408 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5402:5404 Coq.Init.Datatypes <> nat ind
+R5412:5415 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5409:5411 Coq.Init.Datatypes <> nat ind
+R5420:5423 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5416:5419 TTSB.Syntax <> term ind
+R5433:5436 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5424:5432 TTSB.Types.Types <> multitype ind
+R5346:5353 TTSB.HeadEvaluation <> has_type:28 ind
+R6423:6436 TTSB.HeadEvaluation <> has_many_types:29 ind
+R3835:3839 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R3848:3858 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R3844:3847 TTSB.Types.Types <> type ind
+binder 3840:3840 <> A:30
+R3876:3878 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R3880:3881 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R3883:3885 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R3894:3898 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R3859:3860 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R3874:3875 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R3861:3863 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R3871:3873 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R3865:3867 TTSB.Types.Types <> :multitype::x_';'_x not
+R3864:3864 TTSB.HeadEvaluation <> A:30 var
+R3868:3870 TTSB.Types.Types <> :multitype::'nil' not
+R3886:3888 TTSB.Syntax <> :::'<{'_x_'}>' not
+R3891:3893 TTSB.Syntax <> :::'<{'_x_'}>' not
+R3889:3889 TTSB.Syntax <> :term::'#'_x not
+R3899:3899 TTSB.HeadEvaluation <> A:30 var
+R3930:3934 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R3971:3981 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R3938:3941 TTSB.Types.Types <> type ind
+binder 3935:3935 <> A:31
+R3949:3957 TTSB.Types.Types <> multitype ind
+binder 3945:3945 <> h:32
+R3966:3970 TTSB.Types.Types Ctx t def
+binder 3961:3962 <> Γ:33
+R4009:4020 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3987:3989 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R3991:3992 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R3994:3996 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4003:4007 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R3983:3984 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R3982:3982 TTSB.HeadEvaluation <> h:32 var
+R3985:3986 TTSB.HeadEvaluation <> Γ:33 var
+R3997:3998 TTSB.Syntax <> :::'<{'_x_'}>' not
+R4001:4002 TTSB.Syntax <> :::'<{'_x_'}>' not
+R3999:3999 TTSB.Syntax <> :term::'#'_x not
+R4008:4008 TTSB.HeadEvaluation <> A:31 var
+R4035:4037 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4039:4040 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4042:4044 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4051:4055 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4022:4023 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R4021:4021 TTSB.HeadEvaluation <> h:32 var
+R4031:4032 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R4024:4025 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R4029:4030 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R4026:4028 TTSB.Types.Types <> :multitype::'nil' not
+R4033:4034 TTSB.HeadEvaluation <> Γ:33 var
+R4045:4046 TTSB.Syntax <> :::'<{'_x_'}>' not
+R4049:4050 TTSB.Syntax <> :::'<{'_x_'}>' not
+R4047:4047 TTSB.Syntax <> :term::'#'_x not
+R4056:4056 TTSB.HeadEvaluation <> A:31 var
+R4081:4085 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R4116:4126 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R4089:4092 TTSB.Types.Types <> type ind
+binder 4086:4086 <> A:34
+R4101:4105 TTSB.Types.Types Ctx t def
+binder 4096:4097 <> Γ:35
+R4113:4115 Coq.Init.Datatypes <> nat ind
+binder 4109:4109 <> x:36
+R4151:4162 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4129:4131 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4133:4134 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4136:4138 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4145:4149 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4127:4128 TTSB.HeadEvaluation <> Γ:35 var
+R4139:4140 TTSB.Syntax <> :::'<{'_x_'}>' not
+R4143:4144 TTSB.Syntax <> :::'<{'_x_'}>' not
+R4141:4141 TTSB.Syntax <> :term::'#'_x not
+R4142:4142 TTSB.HeadEvaluation <> x:36 var
+R4150:4150 TTSB.HeadEvaluation <> A:34 var
+R4174:4176 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4178:4179 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4181:4183 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4194:4198 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4170:4171 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R4163:4164 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R4168:4169 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R4165:4167 TTSB.Types.Types <> :multitype::'nil' not
+R4172:4173 TTSB.HeadEvaluation <> Γ:35 var
+R4184:4185 TTSB.Syntax <> :::'<{'_x_'}>' not
+R4192:4193 TTSB.Syntax <> :::'<{'_x_'}>' not
+R4186:4186 TTSB.Syntax <> :term::'#'_x not
+R4187:4187 TTSB.Syntax <> :term::'`'_x_'`' not
+R4191:4191 TTSB.Syntax <> :term::'`'_x_'`' not
+R4188:4188 Coq.Init.Datatypes <> S constr
+R4190:4190 TTSB.HeadEvaluation <> x:36 var
+R4199:4199 TTSB.HeadEvaluation <> A:34 var
+R4392:4396 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R4458:4468 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R4401:4404 TTSB.Syntax <> term ind
+binder 4397:4397 <> t:37
+R4413:4421 TTSB.Types.Types <> multitype ind
+binder 4408:4409 <> mt:38
+R4429:4432 TTSB.Types.Types <> type ind
+binder 4425:4425 <> A:39
+R4441:4445 TTSB.Types.Types Ctx t def
+binder 4436:4437 <> Γ:40
+R4455:4457 Coq.Init.Datatypes <> nat ind
+binder 4449:4449 <> b:41
+R4455:4457 Coq.Init.Datatypes <> nat ind
+binder 4451:4451 <> r:42
+R4494:4506 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4477:4479 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4481:4482 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4484:4486 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4488:4492 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4471:4474 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R4469:4470 TTSB.HeadEvaluation <> mt:38 var
+R4475:4476 TTSB.HeadEvaluation <> Γ:40 var
+R4480:4480 TTSB.HeadEvaluation <> b:41 var
+R4483:4483 TTSB.HeadEvaluation <> r:42 var
+R4487:4487 TTSB.HeadEvaluation <> t:37 var
+R4493:4493 TTSB.HeadEvaluation <> A:39 var
+R4509:4511 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4515:4516 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4518:4520 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4531:4535 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4507:4508 TTSB.HeadEvaluation <> Γ:40 var
+R4512:4512 Coq.Init.Datatypes <> S constr
+R4514:4514 TTSB.HeadEvaluation <> b:41 var
+R4517:4517 TTSB.HeadEvaluation <> r:42 var
+R4521:4523 TTSB.Syntax <> :::'<{'_x_'}>' not
+R4528:4530 TTSB.Syntax <> :::'<{'_x_'}>' not
+R4524:4526 TTSB.Syntax <> :term::'λ'_x not
+R4527:4527 TTSB.HeadEvaluation <> t:37 var
+R4536:4541 TTSB.Types.Types <> Ty_Fun constr
+R4543:4544 TTSB.HeadEvaluation <> mt:38 var
+R4546:4546 TTSB.HeadEvaluation <> A:39 var
+R4573:4577 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R4624:4634 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R4582:4585 TTSB.Syntax <> term ind
+binder 4578:4578 <> t:43
+R4595:4598 TTSB.Types.Types <> type ind
+binder 4589:4589 <> T:44
+R4595:4598 TTSB.Types.Types <> type ind
+binder 4591:4591 <> A:45
+R4607:4611 TTSB.Types.Types Ctx t def
+binder 4602:4603 <> Γ:46
+R4621:4623 Coq.Init.Datatypes <> nat ind
+binder 4615:4615 <> b:47
+R4621:4623 Coq.Init.Datatypes <> nat ind
+binder 4617:4617 <> r:48
+R4650:4661 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4635:4647 TTSB.Types.Types <> is_tight_type def
+R4649:4649 TTSB.HeadEvaluation <> A:45 var
+R4705:4717 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4688:4690 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4692:4693 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4695:4697 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4699:4703 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4662:4662 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R4681:4685 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R4663:4669 TTSB.Types.Types <> MT_Cons constr
+R4671:4671 TTSB.HeadEvaluation <> T:44 var
+R4673:4680 TTSB.Types.Types <> MT_Empty constr
+R4686:4687 TTSB.HeadEvaluation <> Γ:46 var
+R4691:4691 TTSB.HeadEvaluation <> b:47 var
+R4694:4694 TTSB.HeadEvaluation <> r:48 var
+R4698:4698 TTSB.HeadEvaluation <> t:43 var
+R4704:4704 TTSB.HeadEvaluation <> A:45 var
+R4720:4722 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4724:4725 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4729:4732 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4743:4747 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4718:4719 TTSB.HeadEvaluation <> Γ:46 var
+R4723:4723 TTSB.HeadEvaluation <> b:47 var
+R4726:4726 Coq.Init.Datatypes <> S constr
+R4728:4728 TTSB.HeadEvaluation <> r:48 var
+R4733:4735 TTSB.Syntax <> :::'<{'_x_'}>' not
+R4740:4742 TTSB.Syntax <> :::'<{'_x_'}>' not
+R4736:4738 TTSB.Syntax <> :term::'λ'_x not
+R4739:4739 TTSB.HeadEvaluation <> t:43 var
+R4748:4755 TTSB.Types.Types <> Ty_Tight constr
+R4757:4762 TTSB.Types.Types <> TC_Abs constr
+R4789:4793 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R4900:4911 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R4811:4815 TTSB.Types.Types Ctx t def
+binder 4794:4798 <> Γ₁:49
+R4811:4815 TTSB.Types.Types Ctx t def
+binder 4800:4804 <> Γ₂:50
+R4811:4815 TTSB.Types.Types Ctx t def
+binder 4806:4807 <> Δ:51
+R4823:4831 TTSB.Types.Types <> multitype ind
+binder 4819:4819 <> M:52
+R4839:4842 TTSB.Types.Types <> type ind
+binder 4835:4835 <> A:53
+R4878:4880 Coq.Init.Datatypes <> nat ind
+binder 4856:4859 <> b₁:54
+R4878:4880 Coq.Init.Datatypes <> nat ind
+binder 4861:4864 <> b₂:55
+R4878:4880 Coq.Init.Datatypes <> nat ind
+binder 4866:4869 <> r₁:56
+R4878:4880 Coq.Init.Datatypes <> nat ind
+binder 4871:4874 <> r₂:57
+R4896:4899 TTSB.Syntax <> term ind
+binder 4884:4887 <> t₁:58
+R4896:4899 TTSB.Syntax <> term ind
+binder 4889:4892 <> t₂:59
+R4935:4946 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4917:4922 TTSB.Types.Types <> :::x_'⊎c'_x_'≡'_x not
+R4928:4932 TTSB.Types.Types <> :::x_'⊎c'_x_'≡'_x not
+R4912:4916 TTSB.HeadEvaluation <> Γ₁:49 var
+R4923:4927 TTSB.HeadEvaluation <> Γ₂:50 var
+R4933:4934 TTSB.HeadEvaluation <> Δ:51 var
+R4987:4998 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4952:4954 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4959:4960 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4965:4967 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4972:4976 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R4947:4951 TTSB.HeadEvaluation <> Γ₁:49 var
+R4955:4958 TTSB.HeadEvaluation <> b₁:54 var
+R4961:4964 TTSB.HeadEvaluation <> r₁:56 var
+R4968:4971 TTSB.HeadEvaluation <> t₁:58 var
+R4977:4982 TTSB.Types.Types <> Ty_Fun constr
+R4984:4984 TTSB.HeadEvaluation <> M:52 var
+R4986:4986 TTSB.HeadEvaluation <> A:53 var
+R5033:5046 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5004:5006 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5011:5012 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5017:5019 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5024:5031 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R4999:5003 TTSB.HeadEvaluation <> Γ₂:50 var
+R5007:5010 TTSB.HeadEvaluation <> b₂:55 var
+R5013:5016 TTSB.HeadEvaluation <> r₂:57 var
+R5020:5023 TTSB.HeadEvaluation <> t₂:59 var
+R5032:5032 TTSB.HeadEvaluation <> M:52 var
+R5049:5051 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5063:5064 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5076:5078 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5094:5098 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5047:5048 TTSB.HeadEvaluation <> Δ:51 var
+R5056:5058 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R5052:5055 TTSB.HeadEvaluation <> b₁:54 var
+R5059:5062 TTSB.HeadEvaluation <> b₂:55 var
+R5069:5071 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R5065:5068 TTSB.HeadEvaluation <> r₁:56 var
+R5072:5075 TTSB.HeadEvaluation <> r₂:57 var
+R5079:5081 TTSB.Syntax <> :::'<{'_x_'}>' not
+R5091:5093 TTSB.Syntax <> :::'<{'_x_'}>' not
+R5086:5086 TTSB.Syntax <> :term::x_x not
+R5082:5085 TTSB.HeadEvaluation <> t₁:58 var
+R5087:5090 TTSB.HeadEvaluation <> t₂:59 var
+R5099:5099 TTSB.HeadEvaluation <> A:53 var
+R5128:5132 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5174:5184 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5138:5142 TTSB.Types.Types Ctx t def
+binder 5133:5134 <> Γ:60
+R5158:5161 TTSB.Syntax <> term ind
+binder 5146:5149 <> t₁:61
+R5158:5161 TTSB.Syntax <> term ind
+binder 5151:5154 <> t₂:62
+R5171:5173 Coq.Init.Datatypes <> nat ind
+binder 5165:5165 <> b:63
+R5171:5173 Coq.Init.Datatypes <> nat ind
+binder 5167:5167 <> r:64
+R5225:5237 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5187:5189 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5191:5192 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5194:5196 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5201:5205 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5185:5186 TTSB.HeadEvaluation <> Γ:60 var
+R5190:5190 TTSB.HeadEvaluation <> b:63 var
+R5193:5193 TTSB.HeadEvaluation <> r:64 var
+R5197:5200 TTSB.HeadEvaluation <> t₁:61 var
+R5206:5213 TTSB.Types.Types <> Ty_Tight constr
+R5215:5224 TTSB.Types.Types <> TC_Neutral constr
+R5240:5242 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5244:5245 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5249:5251 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5267:5271 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5238:5239 TTSB.HeadEvaluation <> Γ:60 var
+R5243:5243 TTSB.HeadEvaluation <> b:63 var
+R5246:5246 Coq.Init.Datatypes <> S constr
+R5248:5248 TTSB.HeadEvaluation <> r:64 var
+R5252:5254 TTSB.Syntax <> :::'<{'_x_'}>' not
+R5264:5266 TTSB.Syntax <> :::'<{'_x_'}>' not
+R5259:5259 TTSB.Syntax <> :term::x_x not
+R5255:5258 TTSB.HeadEvaluation <> t₁:61 var
+R5260:5263 TTSB.HeadEvaluation <> t₂:62 var
+R5272:5279 TTSB.Types.Types <> Ty_Tight constr
+R5281:5290 TTSB.Types.Types <> TC_Neutral constr
+R5551:5555 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5600:5610 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5561:5565 TTSB.Types.Types Ctx t def
+binder 5556:5557 <> Γ:65
+R5573:5576 TTSB.Syntax <> term ind
+binder 5569:5569 <> t:66
+R5584:5587 TTSB.Types.Types <> type ind
+binder 5580:5580 <> A:67
+R5597:5599 Coq.Init.Datatypes <> nat ind
+binder 5591:5591 <> b:68
+R5597:5599 Coq.Init.Datatypes <> nat ind
+binder 5593:5593 <> r:69
+R5630:5641 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5613:5615 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5617:5618 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5620:5622 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5624:5628 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R5611:5612 TTSB.HeadEvaluation <> Γ:65 var
+R5616:5616 TTSB.HeadEvaluation <> b:68 var
+R5619:5619 TTSB.HeadEvaluation <> r:69 var
+R5623:5623 TTSB.HeadEvaluation <> t:66 var
+R5629:5629 TTSB.HeadEvaluation <> A:67 var
+R5644:5646 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5648:5649 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5651:5653 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5655:5662 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5642:5643 TTSB.HeadEvaluation <> Γ:65 var
+R5647:5647 TTSB.HeadEvaluation <> b:68 var
+R5650:5650 TTSB.HeadEvaluation <> r:69 var
+R5654:5654 TTSB.HeadEvaluation <> t:66 var
+R5663:5665 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R5673:5675 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R5667:5669 TTSB.Types.Types <> :multitype::x_';'_x not
+R5666:5666 TTSB.HeadEvaluation <> A:67 var
+R5670:5672 TTSB.Types.Types <> :multitype::'nil' not
+R5706:5710 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5797:5807 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5727:5731 TTSB.Types.Types Ctx t def
+binder 5711:5715 <> Γ₁:70
+R5727:5731 TTSB.Types.Types Ctx t def
+binder 5717:5721 <> Γ₂:71
+R5727:5731 TTSB.Types.Types Ctx t def
+binder 5723:5724 <> Δ:72
+R5739:5742 TTSB.Syntax <> term ind
+binder 5735:5735 <> t:73
+R5760:5768 TTSB.Types.Types <> multitype ind
+binder 5746:5750 <> mt₁:74
+R5760:5768 TTSB.Types.Types <> multitype ind
+binder 5752:5756 <> mt₂:75
+R5794:5796 Coq.Init.Datatypes <> nat ind
+binder 5772:5775 <> b₁:76
+R5794:5796 Coq.Init.Datatypes <> nat ind
+binder 5777:5780 <> b₂:77
+R5794:5796 Coq.Init.Datatypes <> nat ind
+binder 5782:5785 <> r₁:78
+R5794:5796 Coq.Init.Datatypes <> nat ind
+binder 5787:5790 <> r₂:79
+R5831:5842 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5813:5818 TTSB.Types.Types <> :::x_'⊎c'_x_'≡'_x not
+R5824:5828 TTSB.Types.Types <> :::x_'⊎c'_x_'≡'_x not
+R5808:5812 TTSB.HeadEvaluation <> Γ₁:70 var
+R5819:5823 TTSB.HeadEvaluation <> Γ₂:71 var
+R5829:5830 TTSB.HeadEvaluation <> Δ:72 var
+R5878:5889 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5848:5850 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5855:5856 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5861:5863 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5865:5872 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5843:5847 TTSB.HeadEvaluation <> Γ₁:70 var
+R5851:5854 TTSB.HeadEvaluation <> b₁:76 var
+R5857:5860 TTSB.HeadEvaluation <> r₁:78 var
+R5864:5864 TTSB.HeadEvaluation <> t:73 var
+R5873:5877 TTSB.HeadEvaluation <> mt₁:74 var
+R5925:5936 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5895:5897 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5902:5903 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5908:5910 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5912:5919 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5890:5894 TTSB.HeadEvaluation <> Γ₂:71 var
+R5898:5901 TTSB.HeadEvaluation <> b₂:77 var
+R5904:5907 TTSB.HeadEvaluation <> r₂:79 var
+R5911:5911 TTSB.HeadEvaluation <> t:73 var
+R5920:5924 TTSB.HeadEvaluation <> mt₂:75 var
+R5939:5941 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5953:5954 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5966:5968 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5970:5978 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5994:5994 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R5937:5938 TTSB.HeadEvaluation <> Δ:72 var
+R5946:5948 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R5942:5945 TTSB.HeadEvaluation <> b₁:76 var
+R5949:5952 TTSB.HeadEvaluation <> b₂:77 var
+R5959:5961 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R5955:5958 TTSB.HeadEvaluation <> r₁:78 var
+R5962:5965 TTSB.HeadEvaluation <> r₂:79 var
+R5969:5969 TTSB.HeadEvaluation <> t:73 var
+R5984:5988 TTSB.Types.Types <> :::x_'⊎'_x not
+R5979:5983 TTSB.HeadEvaluation <> mt₁:74 var
+R5989:5993 TTSB.HeadEvaluation <> mt₂:75 var
+R6020:6024 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6129:6139 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6042:6046 TTSB.Types.Types Ctx t def
+binder 6025:6029 <> Γ₁:80
+R6042:6046 TTSB.Types.Types Ctx t def
+binder 6031:6035 <> Γ₂:81
+R6042:6046 TTSB.Types.Types Ctx t def
+binder 6037:6038 <> Δ:82
+R6054:6057 TTSB.Syntax <> term ind
+binder 6050:6050 <> t:83
+R6065:6068 TTSB.Types.Types <> type ind
+binder 6061:6061 <> A:84
+R6092:6100 TTSB.Types.Types <> multitype ind
+binder 6072:6076 <> mt₁:85
+R6092:6100 TTSB.Types.Types <> multitype ind
+binder 6078:6082 <> mt₂:86
+R6092:6100 TTSB.Types.Types <> multitype ind
+binder 6084:6088 <> mtᵤ:87
+R6126:6128 Coq.Init.Datatypes <> nat ind
+binder 6104:6107 <> b₁:88
+R6126:6128 Coq.Init.Datatypes <> nat ind
+binder 6109:6112 <> b₂:89
+R6126:6128 Coq.Init.Datatypes <> nat ind
+binder 6114:6117 <> r₁:90
+R6126:6128 Coq.Init.Datatypes <> nat ind
+binder 6119:6122 <> r₂:91
+R6163:6174 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6145:6150 TTSB.Types.Types <> :::x_'⊎c'_x_'≡'_x not
+R6156:6160 TTSB.Types.Types <> :::x_'⊎c'_x_'≡'_x not
+R6140:6144 TTSB.HeadEvaluation <> Γ₁:80 var
+R6151:6155 TTSB.HeadEvaluation <> Γ₂:81 var
+R6161:6162 TTSB.HeadEvaluation <> Δ:82 var
+R6211:6222 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6175:6186 TTSB.Types.Types Multitype eq def
+R6194:6198 TTSB.Types.Types <> :::x_'⊎'_x not
+R6189:6193 TTSB.HeadEvaluation <> mt₁:85 var
+R6199:6203 TTSB.HeadEvaluation <> mt₂:86 var
+R6206:6210 TTSB.HeadEvaluation <> mtᵤ:87 var
+R6270:6281 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6225:6228 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R6240:6241 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R6253:6255 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R6257:6264 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R6223:6224 TTSB.HeadEvaluation <> Δ:82 var
+R6233:6235 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6229:6232 TTSB.HeadEvaluation <> b₁:88 var
+R6236:6239 TTSB.HeadEvaluation <> b₂:89 var
+R6246:6248 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6242:6245 TTSB.HeadEvaluation <> r₁:90 var
+R6249:6252 TTSB.HeadEvaluation <> r₂:91 var
+R6256:6256 TTSB.HeadEvaluation <> t:83 var
+R6265:6269 TTSB.HeadEvaluation <> mtᵤ:87 var
+R6317:6328 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6287:6289 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R6294:6295 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R6300:6302 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R6304:6311 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R6282:6286 TTSB.HeadEvaluation <> Γ₁:80 var
+R6290:6293 TTSB.HeadEvaluation <> b₁:88 var
+R6296:6299 TTSB.HeadEvaluation <> r₁:90 var
+R6303:6303 TTSB.HeadEvaluation <> t:83 var
+R6312:6316 TTSB.HeadEvaluation <> mt₁:85 var
+R6334:6336 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R6341:6342 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R6347:6349 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R6351:6358 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R6329:6333 TTSB.HeadEvaluation <> Γ₂:81 var
+R6337:6340 TTSB.HeadEvaluation <> b₂:89 var
+R6343:6346 TTSB.HeadEvaluation <> r₂:91 var
+R6350:6350 TTSB.HeadEvaluation <> t:83 var
+R6359:6363 TTSB.HeadEvaluation <> mt₂:86 var
+scheme 3755:3762 <> has_type_rect
+scheme 3755:3762 <> has_type_ind
+scheme 3755:3762 <> has_type_rec
+scheme 3755:3762 <> has_type_sind
+scheme 5376:5389 <> has_many_types_rect
+scheme 5376:5389 <> has_many_types_ind
+scheme 5376:5389 <> has_many_types_rec
+scheme 5376:5389 <> has_many_types_sind
+R5346:5353 TTSB.HeadEvaluation <> has_type ind
+not 5309:5309 HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x
+R6423:6436 TTSB.HeadEvaluation <> has_many_types ind
+not 6383:6383 HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x
+R6479:6486 TTSB.HeadEvaluation <> has_type ind
+R6488:6501 TTSB.HeadEvaluation <> has_many_types ind
+def 6522:6537 <> has_type_mut_ind
+def 6584:6605 <> has_many_types_mut_ind
+R6624:6637 TTSB.HeadEvaluation <> has_many_types ind
+R6556:6563 TTSB.HeadEvaluation <> has_type ind
+def 6661:6676 <> has_type_mut_rec
+def 6722:6743 <> has_many_types_mut_rec
+R6762:6775 TTSB.HeadEvaluation <> has_many_types ind
+R6695:6702 TTSB.HeadEvaluation <> has_type ind
+def 6804:6825 <> size_typing_derivation
+def 7383:7409 <> size_many_typing_derivation
+R6834:6836 Coq.Init.Datatypes <> nat ind
+binder 6828:6828 <> b:92
+binder 6830:6830 <> r:93
+R6845:6849 TTSB.Types.Types Ctx t def
+binder 6840:6841 <> Γ:94
+R6857:6860 TTSB.Syntax <> term ind
+binder 6853:6853 <> t:95
+R6868:6871 TTSB.Types.Types <> type ind
+binder 6864:6864 <> T:96
+R6883:6886 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R6888:6890 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R6892:6895 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R6897:6901 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R6881:6882 TTSB.HeadEvaluation <> Γ:94 var
+R6887:6887 TTSB.HeadEvaluation <> b:92 var
+R6891:6891 TTSB.HeadEvaluation <> r:93 var
+R6896:6896 TTSB.HeadEvaluation <> t:95 var
+R6902:6902 TTSB.HeadEvaluation <> T:96 var
+binder 6875:6877 <> der:97
+R7418:7420 Coq.Init.Datatypes <> nat ind
+binder 7412:7412 <> b:98
+binder 7414:7414 <> r:99
+R7429:7433 TTSB.Types.Types Ctx t def
+binder 7424:7425 <> Γ:100
+R7441:7444 TTSB.Syntax <> term ind
+binder 7437:7437 <> t:101
+R7452:7460 TTSB.Types.Types <> multitype ind
+binder 7448:7448 <> M:102
+R7472:7475 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R7477:7479 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R7481:7484 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R7486:7493 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈ₘ'_x not
+R7470:7471 TTSB.HeadEvaluation <> Γ:100 var
+R7476:7476 TTSB.HeadEvaluation <> b:98 var
+R7480:7480 TTSB.HeadEvaluation <> r:99 var
+R7485:7485 TTSB.HeadEvaluation <> t:101 var
+R7494:7494 TTSB.HeadEvaluation <> M:102 var
+binder 7464:7466 <> der:103
+R6907:6909 Coq.Init.Datatypes <> nat ind
+R7499:7501 Coq.Init.Datatypes <> nat ind
+R6924:6926 TTSB.HeadEvaluation <> der:97 var
+R6942:6946 TTSB.HeadEvaluation <> T_Ax0 constr
+R6962:6972 TTSB.HeadEvaluation <> T_Ax0_Empty constr
+R6989:6993 TTSB.HeadEvaluation <> T_AxS constr
+R7075:7081 TTSB.HeadEvaluation <> T_Fun_b constr
+R7091:7091 Coq.Init.Datatypes <> S constr
+R7094:7115 TTSB.HeadEvaluation <> size_typing_derivation:104 def
+R7131:7137 TTSB.HeadEvaluation <> T_Fun_r constr
+R7149:7149 Coq.Init.Datatypes <> S constr
+R7152:7173 TTSB.HeadEvaluation <> size_typing_derivation:104 def
+R7189:7195 TTSB.HeadEvaluation <> T_App_b constr
+R7227:7227 Coq.Init.Datatypes <> S constr
+R7230:7230 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7260:7264 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7299:7299 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7231:7252 TTSB.HeadEvaluation <> size_typing_derivation:104 def
+R7265:7291 TTSB.HeadEvaluation <> size_many_typing_derivation:105 def
+R7310:7319 TTSB.HeadEvaluation <> T_App_hd_r constr
+R7329:7329 Coq.Init.Datatypes <> S constr
+R7332:7353 TTSB.HeadEvaluation <> size_typing_derivation:104 def
+R7516:7518 TTSB.HeadEvaluation <> der:103 var
+R7563:7577 TTSB.HeadEvaluation <> ManyT_Singleton constr
+R7586:7607 TTSB.HeadEvaluation <> size_typing_derivation:104 def
+R7609:7611 TTSB.HeadEvaluation <> der:103 var
+R7619:7629 TTSB.HeadEvaluation <> ManyT_Union constr
+R7684:7686 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7650:7676 TTSB.HeadEvaluation <> size_many_typing_derivation:105 def
+R7687:7713 TTSB.HeadEvaluation <> size_many_typing_derivation:105 def
+R7728:7736 TTSB.HeadEvaluation <> ManyT_Inv constr
+R7751:7777 TTSB.HeadEvaluation <> size_many_typing_derivation:105 def
+R7779:7781 TTSB.HeadEvaluation <> der:103 var
+def 7809:7827 <> is_tight_derivation
+R7843:7845 Coq.Init.Datatypes <> nat ind
+binder 7835:7835 <> n:108
+binder 7837:7837 <> b:109
+binder 7839:7839 <> r:110
+R7854:7858 TTSB.Types.Types Ctx t def
+binder 7849:7850 <> Γ:111
+R7866:7869 TTSB.Syntax <> term ind
+binder 7862:7862 <> t:112
+R7877:7880 TTSB.Types.Types <> type ind
+binder 7873:7873 <> T:113
+R7897:7900 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R7902:7904 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R7906:7909 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R7911:7915 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R7895:7896 TTSB.HeadEvaluation <> Γ:111 var
+R7901:7901 TTSB.HeadEvaluation <> b:109 var
+R7905:7905 TTSB.HeadEvaluation <> r:110 var
+R7910:7910 TTSB.HeadEvaluation <> t:112 var
+R7916:7916 TTSB.HeadEvaluation <> T:113 var
+binder 7889:7891 <> der:114
+R7937:7937 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R7953:7959 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R7979:7979 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R7938:7950 TTSB.Types.Types <> is_tight_type def
+R7952:7952 TTSB.HeadEvaluation <> T:113 var
+R7960:7975 TTSB.Types.Types <> is_tight_context def
+R7977:7978 TTSB.HeadEvaluation <> Γ:111 var
+R7997:8012 TTSB.HeadEvaluation <> has_type_mut_ind scheme
+R8075:8090 TTSB.HeadEvaluation <> has_type_mut_ind scheme
+prf 8140:8152 <> permₘ_empty
+R8156:8159 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R8162:8163 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 8160:8161 <> mt:115
+R8189:8192 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8164:8177 TTSB.Types.Types <> permutationₘ ind
+R8179:8180 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R8184:8185 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R8181:8183 TTSB.Types.Types <> :multitype::'nil' not
+R8187:8188 TTSB.HeadEvaluation <> mt:115 var
+R8195:8197 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8193:8194 TTSB.HeadEvaluation <> mt:115 var
+R8198:8199 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R8203:8204 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R8200:8202 TTSB.Types.Types <> :multitype::'nil' not
+R8269:8270 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R8274:8275 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R8271:8273 TTSB.Types.Types <> :multitype::'nil' not
+R8269:8270 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R8274:8275 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R8271:8273 TTSB.Types.Types <> :multitype::'nil' not
+def 8382:8383 <> Id
+R8388:8390 TTSB.Syntax <> :::'<{'_x_'}>' not
+R8396:8398 TTSB.Syntax <> :::'<{'_x_'}>' not
+R8391:8393 TTSB.Syntax <> :term::'λ'_x not
+R8394:8394 TTSB.Syntax <> :term::'#'_x not
+def 8412:8423 <> example_term
+R8428:8430 TTSB.Syntax <> :::'<{'_x_'}>' not
+R8456:8458 TTSB.Syntax <> :::'<{'_x_'}>' not
+R8451:8451 TTSB.Syntax <> :term::x_x not
+R8431:8431 TTSB.Syntax <> :term::'('_x_')' not
+R8450:8450 TTSB.Syntax <> :term::'('_x_')' not
+R8432:8434 TTSB.Syntax <> :term::'λ'_x not
+R8435:8435 TTSB.Syntax <> :term::'('_x_')' not
+R8449:8449 TTSB.Syntax <> :term::'('_x_')' not
+R8446:8446 TTSB.Syntax <> :term::x_x not
+R8436:8436 TTSB.Syntax <> :term::'('_x_')' not
+R8445:8445 TTSB.Syntax <> :term::'('_x_')' not
+R8437:8439 TTSB.Syntax <> :term::'λ'_x not
+R8442:8442 TTSB.Syntax <> :term::x_x not
+R8440:8440 TTSB.Syntax <> :term::'#'_x not
+R8443:8443 TTSB.Syntax <> :term::'#'_x not
+R8447:8447 TTSB.Syntax <> :term::'#'_x not
+R8452:8452 TTSB.Syntax <> :term::'`'_x_'`' not
+R8455:8455 TTSB.Syntax <> :term::'`'_x_'`' not
+R8453:8454 TTSB.HeadEvaluation <> Id def
+def 8461:8485 <> Unnamed_thm0
+R8478:8483 TTSB.HeadEvaluation <> :::x_'-->*'_x not
+R8466:8477 TTSB.HeadEvaluation <> example_term def
+R8484:8485 TTSB.HeadEvaluation <> Id def
+R8504:8515 TTSB.HeadEvaluation <> example_term def
+R8526:8532 TTSB.EvaluationSystem <> RC_self constr
+R8526:8532 TTSB.EvaluationSystem <> RC_self constr
+R8544:8551 TTSB.EvaluationSystem <> TC_trans constr
+R8544:8551 TTSB.EvaluationSystem <> TC_trans constr
+R8565:8571 TTSB.EvaluationSystem <> TC_self constr
+R8565:8571 TTSB.EvaluationSystem <> TC_self constr
+R8580:8586 TTSB.HeadEvaluation <> ST_Beta constr
+R8580:8586 TTSB.HeadEvaluation <> ST_Beta constr
+R8607:8614 TTSB.EvaluationSystem <> TC_trans constr
+R8607:8614 TTSB.EvaluationSystem <> TC_trans constr
+R8630:8636 TTSB.EvaluationSystem <> TC_self constr
+R8630:8636 TTSB.EvaluationSystem <> TC_self constr
+R8646:8652 TTSB.HeadEvaluation <> ST_Beta constr
+R8646:8652 TTSB.HeadEvaluation <> ST_Beta constr
+R8676:8682 TTSB.EvaluationSystem <> TC_self constr
+R8676:8682 TTSB.EvaluationSystem <> TC_self constr
+R8692:8698 TTSB.HeadEvaluation <> ST_Beta constr
+R8692:8698 TTSB.HeadEvaluation <> ST_Beta constr
+def 8719:8725 <> abs_abs
+R8761:8765 TTSB.Types.Types <> :::x_'|->'_x not
+R8730:8732 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R8758:8760 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R8752:8754 TTSB.Types.Types <> :multitype::x_';'_x not
+R8733:8734 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R8750:8751 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R8735:8742 TTSB.Types.Types <> Ty_Tight constr
+R8744:8749 TTSB.Types.Types <> TC_Abs constr
+R8755:8757 TTSB.Types.Types <> :multitype::'nil' not
+R8766:8773 TTSB.Types.Types <> Ty_Tight constr
+R8775:8780 TTSB.Types.Types <> TC_Abs constr
+def 8792:8807 <> first_derivation
+R8813:8815 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R8817:8818 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R8820:8822 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R8835:8840 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R8856:8856 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R8811:8812 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R8823:8834 TTSB.HeadEvaluation <> example_term def
+R8841:8848 TTSB.Types.Types <> Ty_Tight constr
+R8850:8855 TTSB.Types.Types <> TC_Abs constr
+R8886:8897 TTSB.HeadEvaluation <> example_term def
+R8918:8920 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R8918:8920 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R8943:8945 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R8943:8945 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R8992:8993 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R9010:9011 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R9030:9041 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9101:9112 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9061:9072 TTSB.Types.Types <> :multitype::x_';'_x not
+R9042:9043 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9059:9060 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9044:9051 TTSB.Types.Types <> Ty_Tight constr
+R9053:9058 TTSB.Types.Types <> TC_Abs constr
+R9084:9097 TTSB.Types.Types <> :multitype::x_';'_x not
+R9073:9074 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9082:9083 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9075:9081 TTSB.HeadEvaluation <> abs_abs def
+R9098:9100 TTSB.Types.Types <> :multitype::'nil' not
+R8964:8970 TTSB.HeadEvaluation <> T_App_b constr
+R8992:8993 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R9010:9011 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R9030:9041 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9101:9112 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9061:9072 TTSB.Types.Types <> :multitype::x_';'_x not
+R9042:9043 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9059:9060 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9044:9051 TTSB.Types.Types <> Ty_Tight constr
+R9053:9058 TTSB.Types.Types <> TC_Abs constr
+R9084:9097 TTSB.Types.Types <> :multitype::x_';'_x not
+R9073:9074 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9082:9083 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9075:9081 TTSB.HeadEvaluation <> abs_abs def
+R9098:9100 TTSB.Types.Types <> :multitype::'nil' not
+R8964:8970 TTSB.HeadEvaluation <> T_App_b constr
+R9132:9144 TTSB.Types.Types Ctx Union_Nil constr
+R9132:9144 TTSB.Types.Types Ctx Union_Nil constr
+R9157:9163 TTSB.HeadEvaluation <> T_Fun_b constr
+R9157:9163 TTSB.HeadEvaluation <> T_Fun_b constr
+R9207:9207 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R9239:9239 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R9208:9210 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9236:9238 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9230:9232 TTSB.Types.Types <> :multitype::x_';'_x not
+R9211:9212 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9228:9229 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9213:9220 TTSB.Types.Types <> Ty_Tight constr
+R9222:9227 TTSB.Types.Types <> TC_Abs constr
+R9233:9235 TTSB.Types.Types <> :multitype::'nil' not
+R9259:9259 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R9283:9283 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R9260:9262 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9280:9282 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9274:9276 TTSB.Types.Types <> :multitype::x_';'_x not
+R9263:9264 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9272:9273 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9265:9271 TTSB.HeadEvaluation <> abs_abs def
+R9277:9279 TTSB.Types.Types <> :multitype::'nil' not
+R9375:9377 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9391:9392 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9385:9387 TTSB.Types.Types <> :multitype::x_';'_x not
+R9378:9384 TTSB.HeadEvaluation <> abs_abs def
+R9388:9390 TTSB.Types.Types <> :multitype::'nil' not
+R9177:9183 TTSB.HeadEvaluation <> T_App_b constr
+R9207:9207 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R9239:9239 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R9208:9210 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9236:9238 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9230:9232 TTSB.Types.Types <> :multitype::x_';'_x not
+R9211:9212 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9228:9229 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9213:9220 TTSB.Types.Types <> Ty_Tight constr
+R9222:9227 TTSB.Types.Types <> TC_Abs constr
+R9233:9235 TTSB.Types.Types <> :multitype::'nil' not
+R9259:9259 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R9283:9283 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R9260:9262 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9280:9282 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9274:9276 TTSB.Types.Types <> :multitype::x_';'_x not
+R9263:9264 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9272:9273 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9265:9271 TTSB.HeadEvaluation <> abs_abs def
+R9277:9279 TTSB.Types.Types <> :multitype::'nil' not
+R9375:9377 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9391:9392 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9385:9387 TTSB.Types.Types <> :multitype::x_';'_x not
+R9378:9384 TTSB.HeadEvaluation <> abs_abs def
+R9388:9390 TTSB.Types.Types <> :multitype::'nil' not
+R9177:9183 TTSB.HeadEvaluation <> T_App_b constr
+R9410:9423 TTSB.Types.Types Ctx Union_Cons constr
+R9410:9423 TTSB.Types.Types Ctx Union_Cons constr
+R9440:9452 TTSB.Types.Types Ctx Union_Nil constr
+R9440:9452 TTSB.Types.Types Ctx Union_Nil constr
+R9484:9500 TTSB.Types.Types Multitype eq_refl thm
+R9484:9500 TTSB.Types.Types Multitype eq_refl thm
+R9515:9521 TTSB.HeadEvaluation <> T_Fun_b constr
+R9515:9521 TTSB.HeadEvaluation <> T_Fun_b constr
+R9537:9543 TTSB.HeadEvaluation <> abs_abs def
+R9589:9590 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9614:9616 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9624:9624 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9591:9593 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9611:9613 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9605:9607 TTSB.Types.Types <> :multitype::x_';'_x not
+R9594:9595 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9603:9604 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9596:9602 TTSB.HeadEvaluation <> abs_abs def
+R9608:9610 TTSB.Types.Types <> :multitype::'nil' not
+R9617:9618 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9622:9623 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9619:9621 TTSB.Types.Types <> :multitype::'nil' not
+R9643:9644 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9652:9653 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9685:9686 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9645:9646 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9650:9651 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9647:9649 TTSB.Types.Types <> :multitype::'nil' not
+R9654:9656 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9682:9684 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9676:9678 TTSB.Types.Types <> :multitype::x_';'_x not
+R9657:9658 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9674:9675 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9659:9666 TTSB.Types.Types <> Ty_Tight constr
+R9668:9673 TTSB.Types.Types <> TC_Abs constr
+R9679:9681 TTSB.Types.Types <> :multitype::'nil' not
+R9749:9751 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9777:9779 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9771:9773 TTSB.Types.Types <> :multitype::x_';'_x not
+R9752:9753 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9769:9770 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9754:9761 TTSB.Types.Types <> Ty_Tight constr
+R9763:9768 TTSB.Types.Types <> TC_Abs constr
+R9774:9776 TTSB.Types.Types <> :multitype::'nil' not
+R9559:9565 TTSB.HeadEvaluation <> T_App_b constr
+R9790:9796 TTSB.HeadEvaluation <> abs_abs def
+R9589:9590 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9614:9616 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9624:9624 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9591:9593 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9611:9613 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9605:9607 TTSB.Types.Types <> :multitype::x_';'_x not
+R9594:9595 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9603:9604 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9596:9602 TTSB.HeadEvaluation <> abs_abs def
+R9608:9610 TTSB.Types.Types <> :multitype::'nil' not
+R9617:9618 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9622:9623 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9619:9621 TTSB.Types.Types <> :multitype::'nil' not
+R9643:9644 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9652:9653 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9685:9686 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R9645:9646 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9650:9651 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9647:9649 TTSB.Types.Types <> :multitype::'nil' not
+R9654:9656 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9682:9684 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9676:9678 TTSB.Types.Types <> :multitype::x_';'_x not
+R9657:9658 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9674:9675 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9659:9666 TTSB.Types.Types <> Ty_Tight constr
+R9668:9673 TTSB.Types.Types <> TC_Abs constr
+R9679:9681 TTSB.Types.Types <> :multitype::'nil' not
+R9749:9751 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9777:9779 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R9771:9773 TTSB.Types.Types <> :multitype::x_';'_x not
+R9752:9753 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9769:9770 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R9754:9761 TTSB.Types.Types <> Ty_Tight constr
+R9763:9768 TTSB.Types.Types <> TC_Abs constr
+R9774:9776 TTSB.Types.Types <> :multitype::'nil' not
+R9559:9565 TTSB.HeadEvaluation <> T_App_b constr
+R9820:9833 TTSB.Types.Types Ctx Union_Cons constr
+R9853:9869 TTSB.Types.Types Multitype eq_refl thm
+R9820:9833 TTSB.Types.Types Ctx Union_Cons constr
+R9820:9833 TTSB.Types.Types Ctx Union_Cons constr
+R9820:9833 TTSB.Types.Types Ctx Union_Cons constr
+R9820:9833 TTSB.Types.Types Ctx Union_Cons constr
+R9820:9833 TTSB.Types.Types Ctx Union_Cons constr
+R9853:9869 TTSB.Types.Types Multitype eq_refl thm
+R9853:9869 TTSB.Types.Types Multitype eq_refl thm
+R9853:9869 TTSB.Types.Types Multitype eq_refl thm
+R9884:9896 TTSB.Types.Types Ctx Union_Nil constr
+R9884:9896 TTSB.Types.Types Ctx Union_Nil constr
+R9910:9911 TTSB.HeadEvaluation <> Id def
+R9934:9936 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R9934:9936 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R9966:9968 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R9966:9968 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R10017:10018 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R10041:10042 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R10036:10037 TTSB.Types.Types <> :multitype::x_';'_x not
+R10019:10019 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R10035:10035 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R10020:10027 TTSB.Types.Types <> Ty_Tight constr
+R10029:10034 TTSB.Types.Types <> TC_Abs constr
+R10038:10040 TTSB.Types.Types <> :multitype::'nil' not
+R10055:10057 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R10073:10075 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R10067:10069 TTSB.Types.Types <> :multitype::x_';'_x not
+R10058:10058 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R10066:10066 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R10059:10065 TTSB.HeadEvaluation <> abs_abs def
+R10070:10072 TTSB.Types.Types <> :multitype::'nil' not
+R9990:10000 TTSB.HeadEvaluation <> ManyT_Union constr
+R10086:10092 TTSB.HeadEvaluation <> abs_abs def
+R10017:10018 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R10041:10042 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R10036:10037 TTSB.Types.Types <> :multitype::x_';'_x not
+R10019:10019 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R10035:10035 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R10020:10027 TTSB.Types.Types <> Ty_Tight constr
+R10029:10034 TTSB.Types.Types <> TC_Abs constr
+R10038:10040 TTSB.Types.Types <> :multitype::'nil' not
+R10055:10057 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R10073:10075 TTSB.Types.Types <> :::'{{'_x_'}}' not
+R10067:10069 TTSB.Types.Types <> :multitype::x_';'_x not
+R10058:10058 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R10066:10066 TTSB.Types.Types <> :multitype::'`'_x_'`' not
+R10059:10065 TTSB.HeadEvaluation <> abs_abs def
+R10070:10072 TTSB.Types.Types <> :multitype::'nil' not
+R9990:10000 TTSB.HeadEvaluation <> ManyT_Union constr
+R10109:10121 TTSB.Types.Types Ctx Union_Nil constr
+R10109:10121 TTSB.Types.Types Ctx Union_Nil constr
+R10136:10150 TTSB.HeadEvaluation <> ManyT_Singleton constr
+R10136:10150 TTSB.HeadEvaluation <> ManyT_Singleton constr
+R10180:10187 TTSB.Types.Types <> Ty_Tight constr
+R10189:10194 TTSB.Types.Types <> TC_Abs constr
+R10203:10210 TTSB.Types.Types <> Ty_Tight constr
+R10212:10217 TTSB.Types.Types <> TC_Abs constr
+R10161:10167 TTSB.HeadEvaluation <> T_Fun_r constr
+R10180:10187 TTSB.Types.Types <> Ty_Tight constr
+R10189:10194 TTSB.Types.Types <> TC_Abs constr
+R10203:10210 TTSB.Types.Types <> Ty_Tight constr
+R10212:10217 TTSB.Types.Types <> TC_Abs constr
+R10161:10167 TTSB.HeadEvaluation <> T_Fun_r constr
+def 10752:10768 <> last_rule_is_appb
+R10782:10784 Coq.Init.Datatypes <> nat ind
+binder 10776:10776 <> b:116
+binder 10778:10778 <> r:117
+R10793:10797 TTSB.Types.Types Ctx t def
+binder 10788:10789 <> Γ:118
+R10805:10808 TTSB.Syntax <> term ind
+binder 10801:10801 <> t:119
+R10816:10819 TTSB.Types.Types <> type ind
+binder 10812:10812 <> T:120
+R10836:10839 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R10841:10843 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R10845:10848 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R10850:10854 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R10834:10835 TTSB.HeadEvaluation <> Γ:118 var
+R10840:10840 TTSB.HeadEvaluation <> b:116 var
+R10844:10844 TTSB.HeadEvaluation <> r:117 var
+R10849:10849 TTSB.HeadEvaluation <> t:119 var
+R10855:10855 TTSB.HeadEvaluation <> T:120 var
+binder 10828:10830 <> der:121
+R10877:10879 TTSB.HeadEvaluation <> der:121 var
+R10891:10895 TTSB.HeadEvaluation <> T_Ax0 constr
+R10900:10904 Coq.Init.Logic <> False ind
+R10910:10920 TTSB.HeadEvaluation <> T_Ax0_Empty constr
+R10927:10931 Coq.Init.Logic <> False ind
+R10937:10941 TTSB.HeadEvaluation <> T_AxS constr
+R10948:10952 Coq.Init.Logic <> False ind
+R10958:10964 TTSB.HeadEvaluation <> T_Fun_b constr
+R10971:10975 Coq.Init.Logic <> False ind
+R10981:10987 TTSB.HeadEvaluation <> T_Fun_r constr
+R10996:11000 Coq.Init.Logic <> False ind
+R11006:11012 TTSB.HeadEvaluation <> T_App_b constr
+R11023:11026 Coq.Init.Logic <> True ind
+R11032:11041 TTSB.HeadEvaluation <> T_App_hd_r constr
+R11048:11052 Coq.Init.Logic <> False ind
+def 11072:11092 <> last_rule_is_app_hd_r
+R11106:11108 Coq.Init.Datatypes <> nat ind
+binder 11100:11100 <> b:123
+binder 11102:11102 <> r:124
+R11117:11121 TTSB.Types.Types Ctx t def
+binder 11112:11113 <> Γ:125
+R11129:11132 TTSB.Syntax <> term ind
+binder 11125:11125 <> t:126
+R11140:11143 TTSB.Types.Types <> type ind
+binder 11136:11136 <> T:127
+R11160:11163 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R11165:11167 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R11169:11172 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R11174:11178 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R11158:11159 TTSB.HeadEvaluation <> Γ:125 var
+R11164:11164 TTSB.HeadEvaluation <> b:123 var
+R11168:11168 TTSB.HeadEvaluation <> r:124 var
+R11173:11173 TTSB.HeadEvaluation <> t:126 var
+R11179:11179 TTSB.HeadEvaluation <> T:127 var
+binder 11152:11154 <> der:128
+R11201:11203 TTSB.HeadEvaluation <> der:128 var
+R11215:11219 TTSB.HeadEvaluation <> T_Ax0 constr
+R11224:11228 Coq.Init.Logic <> False ind
+R11234:11244 TTSB.HeadEvaluation <> T_Ax0_Empty constr
+R11251:11255 Coq.Init.Logic <> False ind
+R11261:11265 TTSB.HeadEvaluation <> T_AxS constr
+R11272:11276 Coq.Init.Logic <> False ind
+R11282:11288 TTSB.HeadEvaluation <> T_Fun_b constr
+R11295:11299 Coq.Init.Logic <> False ind
+R11305:11311 TTSB.HeadEvaluation <> T_Fun_r constr
+R11320:11324 Coq.Init.Logic <> False ind
+R11330:11336 TTSB.HeadEvaluation <> T_App_b constr
+R11347:11351 Coq.Init.Logic <> False ind
+R11357:11366 TTSB.HeadEvaluation <> T_App_hd_r constr
+R11373:11376 Coq.Init.Logic <> True ind
+prf 11393:11411 <> tight_spreading_var
+R11419:11422 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R11477:11482 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 11423:11423 <> x:130
+binder 11425:11426 <> Γ:131
+binder 11428:11428 <> b:132
+binder 11430:11430 <> r:133
+binder 11432:11432 <> A:134
+R11444:11447 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R11449:11450 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R11452:11455 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R11471:11475 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R11442:11443 TTSB.HeadEvaluation <> Γ:131 var
+R11448:11448 TTSB.HeadEvaluation <> b:132 var
+R11451:11451 TTSB.HeadEvaluation <> r:133 var
+R11456:11468 TTSB.Syntax <> Trm_Bound_Var constr
+R11470:11470 TTSB.HeadEvaluation <> x:130 var
+R11476:11476 TTSB.HeadEvaluation <> A:134 var
+binder 11437:11438 <> φ:135
+R11502:11508 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11483:11498 TTSB.Types.Types <> is_tight_context def
+R11500:11501 TTSB.HeadEvaluation <> Γ:131 var
+R11524:11527 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R11509:11521 TTSB.Types.Types <> is_tight_type def
+R11523:11523 TTSB.HeadEvaluation <> A:134 var
+R11528:11530 Coq.Unicode.Utf8_core <> ::type_scope:'¬'_x not
+R11531:11547 TTSB.HeadEvaluation <> last_rule_is_appb def
+R11549:11550 TTSB.HeadEvaluation <> φ:135 var
+R11770:11782 TTSB.Syntax <> Trm_Bound_Var constr
+R11770:11782 TTSB.Syntax <> Trm_Bound_Var constr
+R11902:11914 TTSB.Syntax <> Trm_Bound_Var constr
+R11917:11917 Coq.Init.Datatypes <> S constr
+R11902:11914 TTSB.Syntax <> Trm_Bound_Var constr
+R11917:11917 Coq.Init.Datatypes <> S constr
+R12055:12067 TTSB.Syntax <> Trm_Bound_Var constr
+R12055:12067 TTSB.Syntax <> Trm_Bound_Var constr
+prf 12139:12155 <> apphd_is_not_appb
+R12159:12162 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R12199:12204 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 12163:12164 <> Γ:136
+binder 12166:12166 <> b:137
+binder 12168:12168 <> r:138
+binder 12170:12170 <> t:139
+binder 12172:12172 <> A:140
+R12182:12184 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12186:12187 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12189:12191 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12193:12197 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12180:12181 TTSB.HeadEvaluation <> Γ:136 var
+R12185:12185 TTSB.HeadEvaluation <> b:137 var
+R12188:12188 TTSB.HeadEvaluation <> r:138 var
+R12192:12192 TTSB.HeadEvaluation <> t:139 var
+R12198:12198 TTSB.HeadEvaluation <> A:140 var
+binder 12175:12176 <> φ:141
+R12229:12234 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12205:12225 TTSB.HeadEvaluation <> last_rule_is_app_hd_r def
+R12227:12228 TTSB.HeadEvaluation <> φ:141 var
+R12235:12237 Coq.Unicode.Utf8_core <> ::type_scope:'¬'_x not
+R12238:12254 TTSB.HeadEvaluation <> last_rule_is_appb def
+R12256:12257 TTSB.HeadEvaluation <> φ:141 var
+prf 12320:12340 <> ty_neutral_is_neutral
+R12344:12347 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R12349:12350 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 12348:12348 <> t:142
+R12351:12351 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R12415:12420 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R12352:12355 Coq.Unicode.Utf8_core <> ::type_scope:'∃'_x_'..'_x_','_x not
+R12407:12410 Coq.Unicode.Utf8_core <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 12356:12357 <> Γ:143
+binder 12359:12359 <> b:144
+binder 12361:12361 <> r:145
+R12372:12374 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12376:12377 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12379:12381 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12383:12387 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12370:12371 TTSB.HeadEvaluation <> Γ:143 var
+R12375:12375 TTSB.HeadEvaluation <> b:144 var
+R12378:12378 TTSB.HeadEvaluation <> r:145 var
+R12382:12382 TTSB.HeadEvaluation <> t:142 var
+R12388:12395 TTSB.Types.Types <> Ty_Tight constr
+R12397:12406 TTSB.Types.Types <> TC_Neutral constr
+binder 12364:12365 <> φ:146
+R12411:12414 Coq.Init.Logic <> True ind
+R12421:12427 TTSB.HeadEvaluation <> neutral ind
+R12429:12429 TTSB.HeadEvaluation <> t:142 var
+def 12461:12545 <> Unnamed_thm1
+R12466:12469 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R12471:12472 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 12470:12470 <> t:147
+R12482:12485 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12473:12479 TTSB.HeadEvaluation <> neutral ind
+R12481:12481 TTSB.HeadEvaluation <> t:147 var
+R12486:12488 Coq.Unicode.Utf8_core <> ::type_scope:'¬'_x not
+R12489:12492 Coq.Unicode.Utf8_core <> ::type_scope:'∃'_x_'..'_x_','_x not
+R12539:12541 Coq.Unicode.Utf8_core <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 12493:12494 <> Γ:148
+binder 12496:12496 <> b:149
+binder 12498:12498 <> r:150
+binder 12500:12501 <> mt:151
+binder 12503:12503 <> T:152
+R12513:12515 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12517:12518 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12520:12522 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12524:12529 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12538:12538 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12511:12512 TTSB.HeadEvaluation <> Γ:148 var
+R12516:12516 TTSB.HeadEvaluation <> b:149 var
+R12519:12519 TTSB.HeadEvaluation <> r:150 var
+R12523:12523 TTSB.HeadEvaluation <> t:147 var
+R12532:12536 TTSB.Types.Types <> :::x_'|->'_x not
+R12530:12531 TTSB.HeadEvaluation <> mt:151 var
+R12537:12537 TTSB.HeadEvaluation <> T:152 var
+binder 12506:12507 <> φ:153
+R12542:12545 Coq.Init.Logic <> True ind
+prf 12666:12690 <> not_neutral_endswith_appb
+R12694:12697 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R12770:12772 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 12698:12699 <> Γ:154
+binder 12701:12701 <> b:155
+binder 12703:12703 <> r:156
+binder 12705:12708 <> t₁:157
+binder 12710:12713 <> t₂:158
+R12723:12725 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12727:12728 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12730:12732 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12746:12750 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R12721:12722 TTSB.HeadEvaluation <> Γ:154 var
+R12726:12726 TTSB.HeadEvaluation <> b:155 var
+R12729:12729 TTSB.HeadEvaluation <> r:156 var
+R12733:12734 TTSB.Syntax <> :::'<{'_x_'}>' not
+R12744:12745 TTSB.Syntax <> :::'<{'_x_'}>' not
+R12739:12739 TTSB.Syntax <> :term::x_x not
+R12735:12738 TTSB.HeadEvaluation <> t₁:157 var
+R12740:12743 TTSB.HeadEvaluation <> t₂:158 var
+R12751:12758 TTSB.Types.Types <> Ty_Tight constr
+R12760:12769 TTSB.Types.Types <> TC_Neutral constr
+binder 12716:12717 <> φ:159
+R12773:12775 Coq.Unicode.Utf8_core <> ::type_scope:'¬'_x not
+R12776:12792 TTSB.HeadEvaluation <> last_rule_is_appb def
+R12794:12795 TTSB.HeadEvaluation <> φ:159 var
+R13182:13183 TTSB.Syntax <> :::'<{'_x_'}>' not
+R13193:13194 TTSB.Syntax <> :::'<{'_x_'}>' not
+R13188:13188 TTSB.Syntax <> :term::x_x not
+R13182:13183 TTSB.Syntax <> :::'<{'_x_'}>' not
+R13193:13194 TTSB.Syntax <> :::'<{'_x_'}>' not
+R13188:13188 TTSB.Syntax <> :term::x_x not
+R13182:13183 TTSB.Syntax <> :::'<{'_x_'}>' not
+R13193:13194 TTSB.Syntax <> :::'<{'_x_'}>' not
+R13188:13188 TTSB.Syntax <> :term::x_x not
+R13219:13239 TTSB.HeadEvaluation <> ty_neutral_is_neutral prfax
+R13219:13239 TTSB.HeadEvaluation <> ty_neutral_is_neutral prfax
+R13278:13284 TTSB.HeadEvaluation <> neutral ind
+R13278:13284 TTSB.HeadEvaluation <> neutral ind
+R13434:13441 TTSB.Types.Types <> Ty_Tight constr
+R13443:13452 TTSB.Types.Types <> TC_Neutral constr
+R13434:13441 TTSB.Types.Types <> Ty_Tight constr
+R13443:13452 TTSB.Types.Types <> TC_Neutral constr
+prf 13547:13577 <> tigh_spreading_on_neutral_terms
+R13584:13588 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R13597:13599 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R13593:13596 TTSB.Syntax <> term ind
+binder 13589:13589 <> t:160
+R13609:13614 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13600:13606 TTSB.HeadEvaluation <> neutral ind
+R13608:13608 TTSB.HeadEvaluation <> t:160 var
+R13615:13619 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R13683:13688 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R13625:13629 TTSB.Types.Types Ctx t def
+binder 13620:13621 <> Γ:161
+R13639:13641 Coq.Init.Datatypes <> nat ind
+binder 13633:13633 <> b:162
+R13639:13641 Coq.Init.Datatypes <> nat ind
+binder 13635:13635 <> r:163
+R13650:13653 TTSB.Types.Types <> type ind
+binder 13646:13646 <> A:164
+R13666:13668 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R13670:13671 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R13673:13675 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R13677:13681 TTSB.HeadEvaluation HeadTypingSystem :::x_'|('_x_','_x_')-'_x_'∈'_x not
+R13664:13665 TTSB.HeadEvaluation <> Γ:161 var
+R13669:13669 TTSB.HeadEvaluation <> b:162 var
+R13672:13672 TTSB.HeadEvaluation <> r:163 var
+R13676:13676 TTSB.HeadEvaluation <> t:160 var
+R13682:13682 TTSB.HeadEvaluation <> A:164 var
+binder 13659:13660 <> φ:165
+R13708:13714 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13759:13759 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13689:13704 TTSB.Types.Types <> is_tight_context def
+R13706:13707 TTSB.HeadEvaluation <> Γ:161 var
+R13715:13715 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R13731:13735 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R13716:13728 TTSB.Types.Types <> is_tight_type def
+R13730:13730 TTSB.HeadEvaluation <> A:164 var
+R13736:13738 Coq.Unicode.Utf8_core <> ::type_scope:'¬'_x not
+R13739:13755 TTSB.HeadEvaluation <> last_rule_is_appb def
+R13757:13758 TTSB.HeadEvaluation <> φ:165 var
+R13893:13911 TTSB.HeadEvaluation <> tight_spreading_var thm
+R13893:13911 TTSB.HeadEvaluation <> tight_spreading_var thm
+R13955:13969 TTSB.Types.Types <> Ctx_union_tight thm
+R13955:13969 TTSB.Types.Types <> Ctx_union_tight thm
+R14099:14114 TTSB.HeadEvaluation HeadTypingSystem <> sec
