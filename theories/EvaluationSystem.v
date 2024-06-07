@@ -7,7 +7,7 @@ Definition deterministic {A} (relation : A -> A -> Prop) : Prop :=
   ∀ (a a₁ a₂ : A), relation a a₁ -> relation a a₂ -> a₁ = a₂. 
 
 Definition rel_normal {A} (relation : A -> A -> Prop) (a : A) : Prop := 
-  (∃(a' : A), relation a a') -> False.
+  ¬ (∃ (a' : A), relation a a').
 
 (* 
   Definition 2.1 (Evaluation system)

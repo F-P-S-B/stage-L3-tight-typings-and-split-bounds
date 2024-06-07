@@ -40,7 +40,7 @@ Hint Constructors abs : core.
 
 Ltac contra_neutral_abs := 
   match goal with 
-  | [H : abs (Trm_Abs _) -> False |- _] => exfalso; apply H; apply Abs
+  | [H : ¬ abs (Trm_Abs _) |- _] => exfalso; apply H; apply Abs
   | [H : neutral (Trm_Abs _) |- _] => inversion H 
   | _ => idtac
   end.
@@ -100,9 +100,12 @@ Qed.
 
 
 
-Lemma neutral_is_normal_not_abs : ∀ t, normal t /\ (¬ abs t) -> neutral t.
+Lemma neutral_is_normal_not_abs : 
+  ∀ (t : term), 
+  normal t -> (¬ abs t) -> 
+  neutral t.
 Proof with myauto contra_neutral_abs.
-  intros * [H_normal_t H_not_abs_t].
+  intros * H_normal_t H_not_abs_t.
   inversion H_normal_t; subst...
 Qed.
 Hint Resolve neutral_is_normal_not_abs : core.
@@ -116,7 +119,7 @@ Proof with myauto contra_neutral_abs.
     induction t...
     + induction t1...
       * apply Normal_Neutral. apply Neutral_App. 
-        apply neutral_is_normal_not_abs. split...
+        apply neutral_is_normal_not_abs...
         apply IHt1.
         intros [a' H_st].
         apply H_rel_normal.
@@ -128,7 +131,8 @@ Proof with myauto contra_neutral_abs.
     + induction H_neutral; intros [a Hst]; inversion Hst; subst...
     + intros [a H_st].
       inversion H_st; subst... 
-  - intro. inversion H; subst; inversion H0. 
+  - intro H_contra. inversion H; subst; inversion H_contra.
+  - intros [H_normal_t H_not_abs_t]...  
 Qed.
 
 
@@ -168,6 +172,7 @@ Section HeadTypingSystem.
     | T_Fun_r : 
         ∀ {t : term} {T A : type} {Γ : Ctx.t} {b r : nat},
         is_tight_type A ->
+        is_tight_type T ->
         (MT_Cons T MT_Empty) :: Γ |(b, r)- t ∈ A -> 
         Γ |(b, S r)-  <{ λ t }> ∈ Ty_Tight TC_Abs 
     | T_App_b :
@@ -225,7 +230,7 @@ Section HeadTypingSystem.
       | T_AxS _  => 0
       (* | T_Many_Inv der => size_many_typing_derivation der *)
       | T_Fun_b der' => S (size_typing_derivation der')
-      | T_Fun_r _ der' => S (size_typing_derivation der')
+      | T_Fun_r _ _ der' => S (size_typing_derivation der')
       | T_App_b _ der₁ der₂ => 
           S ((size_typing_derivation der₁) + (size_many_typing_derivation der₂))
       | T_App_hd_r der' => S (size_typing_derivation der')
@@ -241,7 +246,7 @@ Section HeadTypingSystem.
   .
 
   Definition is_tight_derivation 
-    {n b r : nat} {Γ : Ctx.t} {t : term} {T : type} 
+    {b r : nat} {Γ : Ctx.t} {t : term} {T : type} 
     (der : Γ |( b , r )- t ∈ T) : Prop 
   := 
     (is_tight_type T) /\  (is_tight_context Γ).
@@ -251,35 +256,31 @@ Section HeadTypingSystem.
 Ltac derivation_induction der P0 := 
   induction der using has_type_mut_ind with (P0:=P0); unfold P0 in *; clear P0.
 
-Lemma permₘ_empty : ∀ mt, permutationₘ {{nil}} mt -> mt = {{nil}}.
-Proof with eauto with permutation_hints.
-  intros.
-  remember {{nil}} as mt'.
-  induction H; subst; try inversion Heqmt'...
-  rewrite <- IHpermutationₘ1...
-Qed.
+
 
 Definition Id := <{ λ #0 }>.
 Definition example_term := <{ (λ ((λ #0 #1) #0)) `Id` }>.
-Goal example_term -->* Id.
+Example example_1_is_Id : example_term -->* Id.
 Proof.
   unfold example_term.
   apply RC_self.
   eapply TC_trans.
   - eapply TC_self. apply ST_Beta.
-  - simpl. eapply TC_trans.
-    + eapply TC_self. eapply ST_Beta. 
-    + simpl. eapply TC_self. eapply ST_Beta.
+  - simpl. eapply TC_trans; simpl; eapply TC_self.
+    + eapply ST_Beta. 
+    + eapply ST_Beta.
 Qed. 
 
 Definition abs_abs := {{ ` Ty_Tight TC_Abs ` ; nil }} |-> Ty_Tight TC_Abs.
 
 Example first_derivation : [] |(3, 1)- example_term ∈ (Ty_Tight TC_Abs).
-Proof with eauto.
+Proof with eauto using Ctx.Union_Nil, Ctx.Union_Cons, Multitype.eq_refl.
   unfold example_term.
-  change 3 with (2 + 1).
-  change 1 with (0 + 1) at 3.
   apply @T_App_b with 
+    (b₁ := 2)
+    (b₂ := 1)
+    (r₁ := 0)
+    (r₂ := 1)
     (Γ₁ := []) 
     (Γ₂ :=[]) 
     (
@@ -288,8 +289,7 @@ Proof with eauto.
         ` abs_abs ` ; 
           nil 
         }}
-    ). 
-  - apply Ctx.Union_Nil.
+    )...
   - apply T_Fun_b.
     apply @T_App_b with 
       (Γ₁ := [{{ ` Ty_Tight TC_Abs ` ; nil }}]) 
@@ -299,42 +299,22 @@ Proof with eauto.
       (r₁ := 0) 
       (r₂ := 0)
        (M := {{ abs_abs ; nil}})...
-    + apply Ctx.Union_Cons.
-      * apply Ctx.Union_Nil.
-      * simpl.
-        apply Multitype.eq_refl.
-    + apply T_Fun_b.
-      unfold abs_abs.
-      apply @T_App_b with 
-      (Γ₁ := [ {{ ` abs_abs ` ; nil }} ; {{nil}}])
-      (Γ₂ := [ {{nil}}; {{ ` Ty_Tight TC_Abs ` ; nil }} ])
-      (b₁ := 0) (b₂ := 0) (r₁ := 0) (r₂ := 0) (M := {{ ` Ty_Tight TC_Abs ` ; nil }}); unfold abs_abs...
-      repeat apply Ctx.Union_Cons; simpl; try apply Multitype.eq_refl.
-      apply Ctx.Union_Nil.
+    apply T_Fun_b.
+    unfold abs_abs.
+    apply @T_App_b with 
+    (Γ₁ := [ {{ ` abs_abs ` ; nil }} ; {{nil}}])
+    (Γ₂ := [ {{nil}}; {{ ` Ty_Tight TC_Abs ` ; nil }} ])
+    (b₁ := 0) (b₂ := 0) (r₁ := 0) (r₂ := 0) (M := {{ ` Ty_Tight TC_Abs ` ; nil }}); unfold abs_abs...
   - unfold Id.
     change 1 with (1 + 0) at 2.
     change 1 with (0 + 1) at 1.
     eapply @ManyT_Union with (mt₁ := {{`Ty_Tight TC_Abs`; nil}}) (mt₂ := {{ `abs_abs` ; nil }}); unfold abs_abs...
-    + apply Ctx.Union_Nil.
-    + apply ManyT_Singleton. eapply @T_Fun_r with (T := Ty_Tight TC_Abs) (A := Ty_Tight TC_Abs)...
+    apply ManyT_Singleton...
+    eapply @T_Fun_r 
+      with (T := Ty_Tight TC_Abs) (A := Ty_Tight TC_Abs)...
 Qed.
 
 
-(* 
-
-
-Lemma tigh_spreading_on_neutral_terms_v1 : 
-  ∀ (t : term), neutral t ->
-  ∀ (Γ : Ctx.t) (b r : nat)  (A : type)
-  (φ : Γ |(b, r)- t ∈ A), (is_tight_context Γ) -> (is_tight_type A).
-Proof with eauto.
-  intros t H_neutral.
-  induction H_neutral as [ x | p u H_neutral_p IH]; intros Γ b r A φ H_tight.
-  - eapply tight_spreading_var... 
-  - inversion φ; subst...
-    apply Ctx_union_tight in H1 as [H_tight_Γ₁ H_tight_Γ₂]...
-    apply IH in H5; simpl in H5; try contradiction...
-Qed. *)
 
 Definition last_rule_is_appb 
     {b r : nat} {Γ : Ctx.t} {t : term} {T : type} 
@@ -344,27 +324,15 @@ Definition last_rule_is_appb
   | T_Ax0_Empty _ => False
   | T_AxS _ => False
   | T_Fun_b _ => False
-  | T_Fun_r _ _ => False
+  | T_Fun_r _ _ _ => False
   | T_App_b _ _ _ => True
   | T_App_hd_r _ => False
-  end.
-Definition last_rule_is_app_hd_r 
-    {b r : nat} {Γ : Ctx.t} {t : term} {T : type} 
-    (der : Γ |( b , r )- t ∈ T) : Prop := 
-  match der with 
-  | T_Ax0 => False
-  | T_Ax0_Empty _ => False
-  | T_AxS _ => False
-  | T_Fun_b _ => False
-  | T_Fun_r _ _ => False
-  | T_App_b _ _ _ => False
-  | T_App_hd_r _ => True
   end.
 
 
 Lemma tight_spreading_var :  
-  ∀ x Γ b r A
-  (φ : Γ |( b, r )- Trm_Bound_Var x ∈ A), 
+  ∀ {Γ : Ctx.t} {b r : nat} {x : nat} {A : type}
+    (φ : Γ |( b, r )- Trm_Bound_Var x ∈ A), 
   is_tight_context Γ -> 
   is_tight_type A /\ ¬ last_rule_is_appb φ.
 Proof with eauto.
@@ -387,22 +355,14 @@ Proof with eauto.
     inversion Heqt. 
 Qed.
 
-Lemma apphd_is_not_appb : ∀ Γ b r t A (φ : Γ |(b, r)- t ∈ A), 
-  last_rule_is_app_hd_r φ ->
-  ¬ last_rule_is_appb φ.
-Proof with eauto.
-  intros.
-  destruct φ...
-Qed.
 
 
-  
 Lemma tigh_spreading_on_neutral_terms : 
-  ∀ (t : term), neutral t ->
-  ∀ (Γ : Ctx.t) (b r : nat)  (A : type)
-  (φ : Γ |(b, r)- t ∈ A), 
+  ∀ {t : term}, neutral t ->
+  ∀ {Γ : Ctx.t} {b r : nat} {A : type}
+    (φ : Γ |(b, r)- t ∈ A), 
   is_tight_context Γ ->
-  ((is_tight_type A) /\ ¬ last_rule_is_appb φ).
+  is_tight_type A /\ ¬ last_rule_is_appb φ.
 Proof with eauto.
   intros t H_neutral.
   induction H_neutral as [ x | p u H_neutral_p IH]; intros Γ b r A φ H_tight.
@@ -420,4 +380,76 @@ Proof with eauto.
 Qed.
 
 
+Lemma normal_size_derivation : 
+  ∀ {t : term} {Γ : Ctx.t} {b r : nat} {A : type} 
+    (φ : Γ |(b, r)- t ∈ A), 
+  normal t -> 
+  size t <= size_typing_derivation φ.
+Proof with try lia.
+  intros * H_normal_t.
+  induction φ; inversion H_normal_t; subst; contra_neutral_abs; simpl; try apply IHφ in H0...
+  - inversion H; subst.
+    apply Normal_Neutral in H1.
+    apply IHφ in H1... 
+  - inversion H; subst.
+    apply Normal_Neutral in H1.
+    apply IHφ in H1... 
+Qed.
+
+Theorem normal_tight_der_b_is_0 :
+  ∀ {t : term} {Γ : Ctx.t} {b r : nat} {A : type} 
+    (φ : Γ |(b, r)- t ∈ A), 
+  normal t -> 
+  is_tight_derivation φ -> 
+  b = 0.
+Proof with try lia; eauto.
+  induction t; intros * H_normal_t H_tight_der; destruct H_tight_der as [H_tight_A H_tight_Γ]; inversion φ; subst; simpl; try (inversion H_tight_A; fail)...
+  - destruct (Ctx_union_tight _ _ _ H1)...
+    inversion H_normal_t; inversion H2; subst.
+    apply tigh_spreading_on_neutral_terms in H5; eauto; subst.
+    inversion H5. 
+  - inversion H_normal_t; inversion H; subst.
+    apply Normal_Neutral in H2.
+    eapply IHt1 with (φ := H5) in H2; try split...
+  - inversion H_normal_t; contra_neutral_abs; subst.
+    apply IHt with (φ := H5) in H2; try split...
+Qed.
+
+Ltac use_type_spreading Γ :=
+  match goal with 
+  | [ H : Γ |(_, _)- _ ∈ {{ {{_}} |-> _}} |- _] => 
+      apply tigh_spreading_on_neutral_terms in H; eauto; subst; inversion H
+  end. 
+
+Theorem normal_tight_der_is_size_r :
+  ∀ {t : term} {Γ : Ctx.t} {b r : nat} {A : type} 
+    (φ : Γ |(b, r)- t ∈ A), 
+  normal t -> 
+  is_tight_derivation φ -> 
+  r = size t.
+Proof with try lia; eauto.
+  induction t; intros * H_normal_t H_tight_der; destruct H_tight_der as [H_tight_A H_tight_Γ]; inversion φ; subst; simpl; try (inversion H_tight_A; fail)...
+  - assert (is_tight_context Γ₁ /\ is_tight_context Γ₂) 
+      as [H_tight_Γ₁ H_tight_Γ₂].
+    { eapply Ctx_union_tight... }
+    inversion H_normal_t. inversion H; subst.
+    use_type_spreading Γ₁.
+  - inversion H_normal_t; inversion H; subst.
+    apply Normal_Neutral in H2.
+    eapply IHt1 with (φ := H5) in H2; try split...
+  - inversion H_normal_t; contra_neutral_abs; subst.
+    f_equal. eapply IHt with (φ := H5); try split...
+Qed.  
+
+Theorem normal_neutral_type_is_neutral : 
+  ∀ {t : term} {Γ : Ctx.t} {b r : nat} 
+    (φ : Γ |(b, r)- t ∈ Ty_Tight TC_Neutral), 
+  normal t -> 
+  neutral t.
+Proof with eauto.
+  induction t; intros * φ H_normal_t; inversion H_normal_t; inversion φ...
+Qed.
+
 End HeadTypingSystem.
+
+
