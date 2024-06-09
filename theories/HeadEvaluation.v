@@ -33,6 +33,11 @@ Inductive normal : term -> Prop :=
 Hint Constructors neutral : core.
 Hint Constructors normal : core.
 
+Ltac neutral_to_normal t := 
+  match goal with 
+  | [H : neutral t |- _] => let H_normal := fresh "H_normal" in apply Normal_Neutral in H 
+  end.  
+
 Inductive abs : term -> Prop := 
 | Abs : ∀ (t : term), abs <{ λ t }>
 .
@@ -131,7 +136,7 @@ Proof with myauto contra_neutral_abs.
     + induction H_neutral; intros [a Hst]; inversion Hst; subst...
     + intros [a H_st].
       inversion H_st; subst... 
-  - intro H_contra. inversion H; subst; inversion H_contra.
+  - inversion H; subst...
   - intros [H_normal_t H_not_abs_t]...  
 Qed.
 
@@ -355,6 +360,14 @@ Proof with eauto.
     inversion Heqt. 
 Qed.
 
+Ltac tight_union Δ :=
+  match goal with 
+  | [H : ?Γ₁ ⊎c ?Γ₂ ≡ Δ |- _] => 
+    let H_tight_Γ₁ := fresh "H_tight_Γ₁" in 
+    let H_tight_Γ₂ := fresh "H_tight_Γ₂" in 
+      apply Ctx_union_tight in H as  [H_tight_Γ₁ H_tight_Γ₂]; eauto 
+  end.
+
 
 
 Lemma tigh_spreading_on_neutral_terms : 
@@ -368,14 +381,13 @@ Proof with eauto.
   induction H_neutral as [ x | p u H_neutral_p IH]; intros Γ b r A φ H_tight.
   - eapply tight_spreading_var...
   - inversion φ; subst...
-    + apply Ctx_union_tight in H1 as [H_tight_Γ₁ H_tight_Γ₂]...
+    + tight_union Γ.
       apply IH in H5; simpl in H5; try contradiction...
     + split...
       remember <{ ` p ` ` u ` }> as t.
       remember (Ty_Tight TC_Neutral) as T.
       destruct φ eqn:Heq; simpl; inversion Heqt; subst...
-      apply Ctx_union_tight in u0 as H_tight'...
-      destruct H_tight' as [H_tight_Γ₁ H_tight_Γ₂].
+      tight_union Δ.
       apply IH with (φ := h) in H_tight_Γ₁ as [H_contra _]; simpl in *; contradiction.
 Qed.
 
@@ -387,32 +399,12 @@ Lemma normal_size_derivation :
   size t <= size_typing_derivation φ.
 Proof with try lia.
   intros * H_normal_t.
-  induction φ; inversion H_normal_t; subst; contra_neutral_abs; simpl; try apply IHφ in H0...
-  - inversion H; subst.
-    apply Normal_Neutral in H1.
-    apply IHφ in H1... 
-  - inversion H; subst.
-    apply Normal_Neutral in H1.
-    apply IHφ in H1... 
-Qed.
-
-Theorem normal_tight_der_b_is_0 :
-  ∀ {t : term} {Γ : Ctx.t} {b r : nat} {A : type} 
-    (φ : Γ |(b, r)- t ∈ A), 
-  normal t -> 
-  is_tight_derivation φ -> 
-  b = 0.
-Proof with try lia; eauto.
-  induction t; intros * H_normal_t H_tight_der; destruct H_tight_der as [H_tight_A H_tight_Γ]; inversion φ; subst; simpl; try (inversion H_tight_A; fail)...
-  - destruct (Ctx_union_tight _ _ _ H1)...
-    inversion H_normal_t; inversion H2; subst.
-    apply tigh_spreading_on_neutral_terms in H5; eauto; subst.
-    inversion H5. 
-  - inversion H_normal_t; inversion H; subst.
-    apply Normal_Neutral in H2.
-    eapply IHt1 with (φ := H5) in H2; try split...
-  - inversion H_normal_t; contra_neutral_abs; subst.
-    apply IHt with (φ := H5) in H2; try split...
+  induction φ; inversion H_normal_t; subst; contra_neutral_abs; simpl; try apply IHφ in H0; 
+  try (
+    inversion H; subst;
+    neutral_to_normal t₁;
+    apply IHφ in H1; lia
+  )...
 Qed.
 
 Ltac use_type_spreading Γ :=
@@ -421,24 +413,23 @@ Ltac use_type_spreading Γ :=
       apply tigh_spreading_on_neutral_terms in H; eauto; subst; inversion H
   end. 
 
-Theorem normal_tight_der_is_size_r :
+Theorem normal_tight_der_size_b_r :
   ∀ {t : term} {Γ : Ctx.t} {b r : nat} {A : type} 
     (φ : Γ |(b, r)- t ∈ A), 
   normal t -> 
   is_tight_derivation φ -> 
-  r = size t.
-Proof with try lia; eauto.
+  b = 0 /\ r = size t.
+Proof with try lia; eauto using Ctx_union_tight.
   induction t; intros * H_normal_t H_tight_der; destruct H_tight_der as [H_tight_A H_tight_Γ]; inversion φ; subst; simpl; try (inversion H_tight_A; fail)...
   - assert (is_tight_context Γ₁ /\ is_tight_context Γ₂) 
-      as [H_tight_Γ₁ H_tight_Γ₂].
-    { eapply Ctx_union_tight... }
+      as [H_tight_Γ₁ H_tight_Γ₂]...
     inversion H_normal_t. inversion H; subst.
     use_type_spreading Γ₁.
   - inversion H_normal_t; inversion H; subst.
     apply Normal_Neutral in H2.
     eapply IHt1 with (φ := H5) in H2; try split...
-  - inversion H_normal_t; contra_neutral_abs; subst.
-    f_equal. eapply IHt with (φ := H5); try split...
+  - inversion H_normal_t; contra_neutral_abs; subst; 
+    destruct (IHt _ _ _ _ H5); try split...
 Qed.  
 
 Theorem normal_neutral_type_is_neutral : 
