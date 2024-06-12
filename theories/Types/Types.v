@@ -375,6 +375,12 @@ Module Multitype <: MULTITYPE.
     intros * H_eq_1 H_eq_2.
     apply eq_trans with (union t₁ t₂')...
   Qed.
+
+  Fixpoint size (mt : multitype) :=
+  match mt with 
+  | MT_Empty => 0 
+  | MT_Cons _ mt' => 1 + size mt'
+  end.
   
 End Multitype.
 
@@ -384,7 +390,7 @@ End Multitype.
 Module Context (MT : MULTITYPE).
   Definition t := list MT.T.
 
-  Inductive union : t -> t -> t -> Prop :=
+  Inductive union : t -> t -> t -> Type :=
   | Union_Nil : union [] [] [] 
   | Union_Cons : 
     ∀  Γ₁ Γ₂ Γᵣ mt₁ mt₂ mtu, 

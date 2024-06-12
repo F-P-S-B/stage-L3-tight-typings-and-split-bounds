@@ -43,13 +43,31 @@ Inductive abs : term -> Prop :=
 .
 Hint Constructors abs : core.
 
-Ltac contra_neutral_abs := 
+Hint Extern 1 False =>
   match goal with 
   | [H : ¬ abs (Trm_Abs _) |- _] => exfalso; apply H; apply Abs
   | [H : neutral (Trm_Abs _) |- _] => inversion H 
   | _ => idtac
-  end.
+  end : core.
 
+Hint Extern 1 (¬ neutral (Trm_Abs _)) =>
+  let H := fresh in 
+  intro H;
+  inversion H 
+: core.
+
+
+Hint Extern 1 (¬ abs (Trm_App _ _)) => 
+  let H := fresh in 
+  intro H;
+  inversion H 
+ : core.
+
+Hint Extern 1 (¬ abs (Trm_Bound_Var _)) => 
+  let H := fresh in 
+  intro H;
+  inversion H 
+ : core.
 
 Reserved Notation "a --> b" (at level 0).
 Inductive step : term -> term -> Prop :=
@@ -71,7 +89,7 @@ where
 Hint Constructors step : core.
 
 Theorem deterministic_step : deterministic step.
-Proof with (myauto contra_neutral_abs).
+Proof with (myauto idtac).
   unfold deterministic.
   intros * H.
   generalize dependent a₂.
@@ -79,8 +97,9 @@ Proof with (myauto contra_neutral_abs).
   match goal with 
   | [H : step _ _ |- _] => 
       inversion H; subst; 
-      try f_equal; try contra_neutral_abs
-  end; myauto idtac.
+      try f_equal; auto;
+      try (exfalso; auto; fail)
+  end. 
 Qed.
 Hint Resolve deterministic_step : core.
 
@@ -109,15 +128,16 @@ Lemma neutral_is_normal_not_abs :
   ∀ (t : term), 
   normal t -> (¬ abs t) -> 
   neutral t.
-Proof with myauto contra_neutral_abs.
+Proof with auto.
   intros * H_normal_t H_not_abs_t.
   inversion H_normal_t; subst...
+  exfalso...
 Qed.
 Hint Resolve neutral_is_normal_not_abs : core.
 
 Theorem head_red_eval_system :
   evaluation_system term step normal neutral abs.
-Proof with myauto contra_neutral_abs.
+Proof with eauto.
   repeat split...
   - intro H_rel_normal.
     unfold rel_normal in *.
@@ -130,6 +150,9 @@ Proof with myauto contra_neutral_abs.
         apply H_rel_normal.
         exists <{a' t2}>...
         apply ST_App...
+        intro.
+        inversion H.
+      * exfalso...
     + apply Normal_Abs. apply IHt. intros [a' Hst]...
   - intro.
     induction H as [t H_neutral | t H_norm IH].
@@ -137,7 +160,7 @@ Proof with myauto contra_neutral_abs.
     + intros [a H_st].
       inversion H_st; subst... 
   - inversion H; subst...
-  - intros [H_normal_t H_not_abs_t]...  
+  - intros [H_norm H_nabs]... 
 Qed.
 
 
@@ -165,11 +188,7 @@ Section HeadTypingSystem.
         ∀ {A: type} {Γ : Ctx.t} {x : nat},
         Γ |(0, 0)- <{#x}> ∈ A ->
         {{nil}}::Γ |(0, 0)- <{#`S x`}> ∈ A
-    (* | T_Many_Inv :
-        ∀ {Γ: Ctx.t} {t : term} {A : type} {b r : nat},
-         
-        Γ |(b, r)- t ∈ₘ {{A ; nil}} -> 
-        Γ |(b, r)- t ∈ A *)
+    
     | T_Fun_b :
         ∀ {t : term} {mt : multitype} {A : type} {Γ : Ctx.t} {b r : nat},
         mt :: Γ |(b, r)- t ∈ A -> 
@@ -194,30 +213,43 @@ Section HeadTypingSystem.
     where 
       "Γ '|(' b ',' r ')-' t '∈' T" := (has_type Γ b r t T)
     with has_many_types : Ctx.t -> nat -> nat -> term -> multitype -> Type :=
-    (* | ManyT_Empty : 
-      ∀ t, 
-      [] |(0, 0)- t ∈ₘ {{nil}} *)
+    | ManyT_Empty : [] |(0, 0)- <{#0}> ∈ₘ {{nil}}
     | ManyT_Singleton :
       ∀ {Γ : Ctx.t} {t : term} {A : type} {b r : nat},
         Γ |(b, r)- t ∈ A ->
         Γ |(b, r)- t ∈ₘ {{ A ; nil }} 
     | ManyT_Union :
-        ∀ {Γ₁ Γ₂ Δ: Ctx.t} {t : term} {mt₁ mt₂ : multitype} {b₁ b₂ r₁ r₂ : nat},
+        ∀ {Γ₁ Γ₂ Δ: Ctx.t} {t : term} {A : type} {mt : multitype} {b₁ b₂ r₁ r₂ : nat},
         Γ₁ ⊎c Γ₂ ≡ Δ ->
-        Γ₁ |(b₁, r₁)- t ∈ₘ mt₁ ->
-        Γ₂ |(b₂, r₂)- t ∈ₘ mt₂ ->
-        Δ |(b₁ + b₂, r₁ + r₂)- t ∈ₘ (mt₁ ⊎ mt₂)
+        Γ₁ |(b₁, r₁)- t ∈ₘ mt ->
+        Γ₂ |(b₂, r₂)- t ∈ A ->
+        Δ |(b₁ + b₂, r₁ + r₂)- t ∈ₘ {{A; mt}}
     | ManyT_Inv :
-      ∀ {Γ₁ Γ₂ Δ : Ctx.t} {t : term} {A : type} {mt₁ mt₂ mtᵤ : multitype} {b₁ b₂ r₁ r₂ : nat},
+      ∀ {Γ₁ Γ₂ Δ : Ctx.t} {t : term} {A : type} {mt : multitype} {b₁ b₂ r₁ r₂ : nat},
         Γ₁ ⊎c Γ₂ ≡ Δ ->
-        Multitype.eq (mt₁ ⊎ mt₂) mtᵤ ->
-        Δ  |(b₁ + b₂, r₁ + r₂)- t ∈ₘ mtᵤ ->
-        Γ₁ |(b₁, r₁)- t ∈ₘ mt₁ ->
-        Γ₂ |(b₂, r₂)- t ∈ₘ mt₂
+        (* Multitype.eq (mt₁ ⊎ mt₂) mtᵤ -> *)
+        Δ  |(b₁ + b₂, r₁ + r₂)- t ∈ₘ {{A; mt}} ->
+        Γ₁ |(b₁, r₁)- t ∈ A ->
+        Γ₂ |(b₂, r₂)- t ∈ₘ mt
 
     where 
       "Γ '|(' b ',' r ')-' t '∈ₘ' T" := (has_many_types Γ b r t T)
     .
+
+
+    Lemma T_Many_Inv :
+        ∀ {Γ: Ctx.t} {t : term} {A : type} {b r : nat},
+        Γ |(b, r)- t ∈ₘ {{A ; nil}} -> 
+        Γ |(b, r)- t ∈ A.
+    Proof with eauto.
+      intros * φ.
+      remember {{A; nil}} as M.
+      induction φ.
+      - inversion HeqM.
+      - inversion HeqM; subst...
+      - inversion HeqM; subst...
+
+    Admitted.
 
     Hint Constructors has_type has_many_types : core.
     Scheme has_type_mut_ind := Induction for has_type Sort Type
@@ -240,13 +272,13 @@ Section HeadTypingSystem.
           S ((size_typing_derivation der₁) + (size_many_typing_derivation der₂))
       | T_App_hd_r der' => S (size_typing_derivation der')
       end
-  with 
+  with
     size_many_typing_derivation {b r : nat} {Γ : Ctx.t} {t : term} {M : multitype} (der : Γ |( b , r )- t ∈ₘ M) : nat :=
     match der with 
-    (* | ManyT_Empty _ => 0 *)
+    | ManyT_Empty => 0
     | ManyT_Singleton der => size_typing_derivation der
-    | ManyT_Union _ der₁ der₂ => size_many_typing_derivation der₁ + size_many_typing_derivation der₂
-    | ManyT_Inv _ _ der _ => size_many_typing_derivation der
+    | ManyT_Union _ der₁ der₂ => size_many_typing_derivation der₁ + size_typing_derivation der₂
+    | ManyT_Inv _ mder der =>size_many_typing_derivation mder +  size_typing_derivation der
     end
   .
 
@@ -261,7 +293,14 @@ Section HeadTypingSystem.
 Ltac derivation_induction der P0 := 
   induction der using has_type_mut_ind with (P0:=P0); unfold P0 in *; clear P0.
 
-
+        
+Goal ∀ {Γ: Ctx.t} {t : term} {A : type} {b r : nat} (φ : Γ |(b, r)- t ∈ A),
+  b + r <= size_typing_derivation φ.
+  Proof.
+    intros.
+    pose (P0 (Γ: Ctx.t) (b r : nat) (t : term) (M : multitype) (φ : Γ |(b, r)- t ∈ₘ M) := b + r <= size_many_typing_derivation φ).
+    derivation_induction φ P0; simpl; lia.
+  Qed.
 
 Definition Id := <{ λ #0 }>.
 Definition example_term := <{ (λ ((λ #0 #1) #0)) `Id` }>.
@@ -441,6 +480,20 @@ Proof with eauto.
   induction t; intros * φ H_normal_t; inversion H_normal_t; inversion φ...
 Qed.
 
+
+Lemma substitution_typing :
+  ∀ 
+    (Γ₁ Γ₂ Δ : Ctx.t) (H_u : Γ₁ ⊎c Γ₂ ≡ Δ) (M : multitype) 
+    (b r b' r' : nat) (t p : term) (A : type) 
+    (φₜ : M :: Γ₁ |(b, r)- t ∈ A) (φₚ : Γ₂ |(b', r')- p ∈ₘ M),
+    ∃ (φ : Δ |(b + b', r + r')- lower 0 <{t[0 <- p]}> ∈ A),
+    size_typing_derivation φ = size_many_typing_derivation φₚ + size_typing_derivation φₜ - Multitype.size M
+  .
+Proof with eauto with arith.
+  intros.
+
+  
+Admitted.
 End HeadTypingSystem.
 
 
