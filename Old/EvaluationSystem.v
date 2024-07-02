@@ -1,6 +1,5 @@
 From Coq Require Import Unicode.Utf8.
 
-Require Import LogicSet.
 
 
 Definition deterministic {A} (relation : A -> A -> Prop) : Prop :=
@@ -21,7 +20,7 @@ Variable (normal neutral abs : T -> Prop).
 
 Definition evaluation_system : Type :=
             (deterministic relation)
-        /\  (∀ (t : T),(rel_normal relation t <-> normal t))
+        /\  (∀ (t : T), (rel_normal relation t <-> normal t))
         /\ (∀ (t : T), (neutral t <-> ((normal t) /\ (¬ abs t))))
 .
 
@@ -56,3 +55,4 @@ Inductive n_iteration {A} (rel : A -> A -> Set) : nat -> A -> A -> Type :=
       n_iteration rel n a₂ a₃ ->
       n_iteration rel (S n) a₁ a₃
 .
+
