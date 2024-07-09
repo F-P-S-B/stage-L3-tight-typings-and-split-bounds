@@ -12,6 +12,7 @@ Inductive term :=
   | TmApp : term -> term -> term 
 .
 
+
 Reserved Notation "[{ k ~> u }] t" (at level 67).
 Fixpoint open' (k : nat) (u : term) (t : term) : term :=
   match t with 
@@ -40,8 +41,8 @@ Inductive lc : term -> Prop :=
       ∀ (x : var), 
       lc (TmFVar x) 
   | LCAbs : 
-      ∀ (L : vars) (t : term), 
-      (∀ (x : var), (x \notin L) -> lc (t ^ x)) -> 
+      ∀ (t : term), 
+      (∀ (x : var), lc (t ^ x)) -> 
       lc (TmAbs t)
   | LCApp : 
       ∀ (t1 t2 : term),

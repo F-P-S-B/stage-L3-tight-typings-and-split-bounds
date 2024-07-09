@@ -1,0 +1,121 @@
+%% Lettres Ensembles
+    \def\bA{\mathbb{A}}
+    \def\bB{\mathbb{B}}
+    \def\bC{\mathbb{C}}
+    \def\bD{\mathbb{D}}
+    \def\bE{\mathbb{E}}
+    \def\bF{\mathbb{F}}
+    \def\bG{\mathbb{G}}
+    \def\bH{\mathbb{H}}
+    \def\bI{\mathbb{I}}
+    \def\bJ{\mathbb{J}}
+    \def\bK{\mathbb{K}}
+    \def\bL{\mathbb{L}}
+    \def\bM{\mathbb{M}}
+    \def\bN{\mathbb{N}}
+    \def\bO{\mathbb{O}}
+    \def\bP{\mathbb{P}}
+    \def\bQ{\mathbb{Q}}
+    \def\bR{\mathbb{R}}
+    \def\bS{\mathbb{S}}
+    \def\bT{\mathbb{T}}
+    \def\bU{\mathbb{U}}
+    \def\bV{\mathbb{V}}
+    \def\bW{\mathbb{W}}
+    \def\bX{\mathbb{X}}
+    \def\bY{\mathbb{Y}}
+    \def\bZ{\mathbb{Z}}
+%%
+
+%% Lettres cal
+    \def\cA{\mathcal{A}}
+    \def\cB{\mathcal{B}}
+    \def\cC{\mathcal{C}}
+    \def\cD{\mathcal{D}}
+    \def\cE{\mathcal{E}}
+    \def\cF{\mathcal{F}}
+    \def\cG{\mathcal{G}}
+    \def\cH{\mathcal{H}}
+    \def\cI{\mathcal{I}}
+    \def\cJ{\mathcal{J}}
+    \def\cK{\mathcal{K}}
+    \def\cL{\mathcal{L}}
+    \def\cM{\mathcal{M}}
+    \def\cN{\mathcal{N}}
+    \def\cO{\mathcal{O}}
+    \def\cP{\mathcal{P}}
+    \def\cQ{\mathcal{Q}}
+    \def\cR{\mathcal{R}}
+    \def\cS{\mathcal{S}}
+    \def\cT{\mathcal{T}}
+    \def\cU{\mathcal{U}}
+    \def\cV{\mathcal{V}}
+    \def\cW{\mathcal{W}}
+    \def\cX{\mathcal{X}}
+    \def\cY{\mathcal{Y}}
+    \def\cZ{\mathcal{Z}}
+%%
+
+%% Lettres gras
+    \def\fA{\mathbf{A}}
+    \def\fB{\mathbf{B}}
+    \def\fC{\mathbf{C}}
+    \def\fD{\mathbf{D}}
+    \def\fE{\mathbf{E}}
+    \def\fF{\mathbf{F}}
+    \def\fG{\mathbf{G}}
+    \def\fH{\mathbf{H}}
+    \def\fI{\mathbf{I}}
+    \def\fJ{\mathbf{J}}
+    \def\fK{\mathbf{K}}
+    \def\fL{\mathbf{L}}
+    \def\fM{\mathbf{M}}
+    \def\fN{\mathbf{N}}
+    \def\fO{\mathbf{O}}
+    \def\fP{\mathbf{P}}
+    \def\fQ{\mathbf{Q}}
+    \def\fR{\mathbf{R}}
+    \def\fS{\mathbf{S}}
+    \def\fT{\mathbf{T}}
+    \def\fU{\mathbf{U}}
+    \def\fV{\mathbf{V}}
+    \def\fW{\mathbf{W}}
+    \def\fX{\mathbf{X}}
+    \def\fY{\mathbf{Y}}
+    \def\fZ{\mathbf{Z}}
+%%
+
+
+%% Rajout des limits
+    \let\oldsum\sum
+    \renewcommand{\sum}[0]{\oldsum\limits}
+    \let\oldprod\prod
+    \renewcommand{\prod}[0]{\oldprod\limits}
+    \let\oldbigcap\bigcap
+    \renewcommand{\bigcap}[0]{\oldbigcap\limits}
+    \let\oldbigcup\bigcup
+    \renewcommand{\bigcup}[0]{\oldbigcup\limits}
+    \let\oldlim\lim
+    \renewcommand{\lim}[0]{\oldlim\limits}
+    \let\oldsup\sup
+    \renewcommand{\sup}[0]{\oldsup\limits}
+    \let\oldinf\inf
+    \renewcommand{\inf}[0]{\oldinf\limits}
+%%
+
+
+%% Important
+    % \let\important\underline
+    \let\important\textbf
+%%
+
+%% Divers
+    \def\cad{c'est-à-dire}
+    \newcommand{\todo}[1]{\textbf{TODO\@: #1}}
+    \newcommand{\precise}[2]{\underset{#1}{\underbrace{#2}}}
+    %% Ensemble d'entiers
+        \renewenvironment{displaymath}{$$}{$$}
+        \def\[{\llbracket}
+        \def\]{\rrbracket}
+    %%
+%%
