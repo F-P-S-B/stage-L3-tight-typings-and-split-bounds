@@ -265,7 +265,6 @@ Proof.
   - induction* t.
 Qed.
 
-(* TODO: Passer en paramètres les variables interdites *)
 
 Reserved Notation "Γ '|(' b ',' r ')-' t '∈' T" (at level 70).
 Reserved Notation "Γ '|(' b ',' r ')-' t '∈ₘ' T" (at level 70).
@@ -341,22 +340,22 @@ with has_many_types_mut_ind := Induction for has_many_types Sort Type.
 
 
 
-Program Fixpoint size_typing_derivation {b r : nat} {Γ : ctx} {t : term} {T : type} (der : Γ |( b , r )- t ∈ T) : nat :=
+Fixpoint size_typing_derivation {b r : nat} {Γ : ctx} {t : term} {T : type} (der : Γ |( b , r )- t ∈ T) : nat :=
     match der with 
-      | T_Ax _ => 0
-      (* | T_Many_Inv der => size_many_typing_derivation der *)
-      | @T_Fun_b L Γ t _ _ _ _ _ der' => 
-        let E := L \u fv t \u dom Γ in
-        S (size_typing_derivation (der' (var_gen E) ((@var_gen_spec E))))
-      | @T_Fun_r L Γ t _ _ _ _ _ _ _ der' =>
-        let E := L \u fv t \u dom Γ in
-        S (size_typing_derivation (der' (var_gen E) (@var_gen_spec E)))
-      | T_App_b _ _ _ der₁ der₂ => 
-          S ((size_typing_derivation der₁) + (size_many_typing_derivation der₂))
-      | T_App_hd_r der' => S (size_typing_derivation der')
-      (* | T_Many_Inv _ _ _ mder _ => 
-        size_many_typing_derivation mder *)
-      end
+    | T_Ax _ => 1
+    (* | T_Many_Inv der => size_many_typing_derivation der *)
+    | @T_Fun_b L Γ t _ _ _ _ _ der' => 
+      let E := L \u fv t \u dom Γ in
+      S (size_typing_derivation (der' (var_gen E) ((@var_gen_spec E))))
+    | @T_Fun_r L Γ t _ _ _ _ _ _ _ der' =>
+      let E := L \u fv t \u dom Γ in
+      S (size_typing_derivation (der' (var_gen E) (@var_gen_spec E)))
+    | T_App_b _ _ _ der₁ der₂ => 
+        S ((size_typing_derivation der₁) + (size_many_typing_derivation der₂))
+    | T_App_hd_r der' => S (size_typing_derivation der')
+    (* | T_Many_Inv _ _ _ mder _ => 
+      size_many_typing_derivation mder *)
+    end
   with
     size_many_typing_derivation {b r : nat} {Γ : ctx} {t : term} {M : multitype} (der : Γ |( b , r )- t ∈ₘ M) : nat :=
     match der with 
@@ -405,7 +404,7 @@ Qed. *)
 
 
 Lemma typed_empty :
-  ∀ Γ b r t
+  ∀ {Γ b r t}
   (φ : Γ |(b, r)- t ∈ₘ {{nil}}),
   Γ = empty /\ b = 0 /\ r = 0 /\ size φ = 0.
 Proof.
@@ -418,7 +417,7 @@ Qed.
 Lemma size_typed_var :
   ∀ Γ b r x A
   (φ : Γ |(b, r)- TmFVar x ∈ A),
-  size φ = 0.
+  size φ = 1.
 Proof.
   introv.
   inversion φ; substs*; autos.
@@ -426,8 +425,9 @@ Proof.
 Qed.
 
 
-Lemma typed_ok : ∀ {Γ b r t A}, 
-Γ |(b, r)- t ∈ A -> ok Γ.
+Lemma typed_ok : 
+  ∀ {Γ b r t A}, 
+  Γ |(b, r)- t ∈ A -> ok Γ.
 Proof.
   introv φ.
   induction φ; autos*; eauto with context_hints.
@@ -436,8 +436,9 @@ Proof.
   - apply ok_add, ok_empty. 
 Qed.
 
-Lemma multityped_ok : ∀ {Γ b r t M}, 
-Γ |(b, r)- t ∈ₘ M -> ok Γ.
+Lemma multityped_ok :
+  ∀ {Γ b r t M}, 
+  Γ |(b, r)- t ∈ₘ M -> ok Γ.
 Proof.
   introv φ.
   induction φ; autos*; eauto with context_hints.
@@ -463,10 +464,6 @@ Proof.
   unfold "^^". simpls; repeat case_if; unfold Id; autos*.
   apply MS_Self.
 Qed.
-
-Ltac replace_empty_union :=
-  replace (\{}) with (@FsetImpl.union var \{} \{}); try solve[ simpl_unions; reflexivity].
-
 
 Definition abs_abs := {{ ` Ty_Tight TC_Abs ` ; nil }} |-> Ty_Tight TC_Abs.
 Example first_derivation : empty |(3, 1)- example_term ∈ (Ty_Tight TC_Abs).
@@ -657,7 +654,8 @@ Proof.
 Qed.
 
 
-Lemma normal_open_var_irrelevant : ∀ t x y, normal (t ^ x) -> normal (t ^ y).
+Lemma normal_open_var_irrelevant : 
+  ∀ t x y, normal (t ^ x) -> normal (t ^ y).
 Proof.
   unfold "^". generalize 0; intros n t; gen n.
   induction t using term_size_ind; destruct t; introv Hnorm; simpls*.
@@ -766,8 +764,8 @@ Theorem normal_neutral_type_is_neutral :
     (φ : Γ |(b, r)- t ∈ Ty_Tight TC_Neutral), 
   normal t -> 
   neutral t.
-Proof with eauto.
-  induction t; intros * φ H_normal_t; inversion H_normal_t; inversion φ...
+Proof.
+  induction t; introv φ H_normal_t; inverts* H_normal_t; inverts φ.
 Qed.
 
 
@@ -821,44 +819,6 @@ Proof.
   - apply IHt2 in Hin; reduce_max; autos*.
 Qed.
 
-Inductive or_type A B : Type :=
-| ort_intro_l : A -> or_type A B
-| ort_intro_r : B -> or_type A B
-.
-
-
-
-
-(* Lemma vars_eq_typed : 
-  ∀ Γ V V' b r p A (φ : Γ |(b, r)- p ∈ A),
-  V = V' ->
-  ∃ φ' : Γ |(b, r)- p ∈ A, size φ = size φ'.
-Proof.
-  introv Heq.
-  gen V'.
-  inductions φ; intros.
-  - unshelve exists.
-    + apply T_Ax. assumption.
-    + simpls~.  
-  - destruct (IHφ (V' \u \{x})) as [φ' Hsizeφ']; substs*.
-  - destruct (IHφ V₁) as [φ' Hsizeφ']; substs*.
-  - destruct (IHφ (V' \u \{x})) as [φ' Hsizeφ']; substs*.
-  - destruct (IHφ V) as [φ' Hsizeφ']; substs*.
-Qed. *)
-(*   
-Lemma vars_eq_multityped : 
-  ∀ Γ V V' b r p M (φ : Γ |(b, r)- p ∈ₘ M),
-  V = V' ->
-  ∃ φ' : Γ |(b, r)- p ∈ₘ M, size φ = size φ'.
-Proof.
-  introv Heq.
-  gen V'.
-  inductions φ; intros.
-  - unshelve exists; autos*. 
-  - destruct (IHφ V₁) as [φ' Hsizeφ']; substs*.
-Qed.   *)
-Locate "{ _ | _ }".
-
 Check @T_Fun_b.
 Lemma T_Fun_proof_irrelevant :
   ∀ {L : vars} {Γ : ctx} {t : term} {M : multitype} {A : type} {b r : nat}
@@ -908,7 +868,7 @@ Lemma open_eq_free_typed :
   (y \notin dom Γ \u fv p) ->
   { φ' : add Γ y M |(b, r)- p ^ y ∈ A | size φ = size φ' }.
 Proof.
-  unfold "^"; generalize 0.
+  (* unfold "^"; generalize 0.
   (* Voir pour généraliser le 0 du open *)
   introv Hok Hxnotin Hynotin.
   (* remember ([{n ~> TmFVar x}] p) as term.
@@ -943,7 +903,7 @@ Proof.
         clear x.
         substs.
         rewrite add_nil in e.
-        rewrite (ok_get_equals _ ((add empty x1 {{` A `; nil}})) Hok ltac:(hint ok_add, ok_empty; autos*)) in e.
+        rewrite (ok_get_equals _ ((add empty x1 {{` A `; nil}})) Hok ltac:(hint ok_add, ok_empty; autos* )) in e.
         specialize e with x1; unfolds add, empty; repeat (simpls || case_if).
         assumption.
       }
@@ -996,7 +956,7 @@ Proof.
     admit.
   - inverts x1. admit.
   - admit.
-  - admit.  
+  - admit.   *)
 Admitted.
 
 Lemma typed_subst :
@@ -1041,7 +1001,7 @@ Proof.
       * assumption.
       * intros x1 Hx1notin.
         destruct (open_eq_free_typed x0 x1);
-        try assumption; abstract (reduce_max; autos). 
+        try assumption; reduce_max; autos. 
     + simpls*. fequals.
       match goal with 
       | [ |- context[let (_, _) := ?r in _]] => destruct r
@@ -1076,7 +1036,7 @@ Proof.
       ].
       intros x1 Hx1notin.
       destruct (open_eq_free_typed x0 x1);
-      try assumption; abstract (try ( reduce_max; autos)).
+      try assumption; reduce_max; autos.
     + simpls*. fequals.
       match goal with 
       | [ |- context[let (_, _) := ?r in _]] => destruct r
@@ -1192,261 +1152,275 @@ Proof.
     use_equivalences; autos.
 Qed.
 
-(* Lemma substitution_typing :
-  ∀ (V₁ V₂ : vars)
-    (Γ₁ Γ₂ Γ₂' Δ : ctx) (y : var) (M : multitype) 
-    (t p : term) (A : type)
-    (b b' r r' : nat)
-    
-    (φₜ : Γ₂' |(b, r)- t ∈ A)
-    (φₚ : Γ₁ |(b', r')- p ∈ₘ M),
-    ok Γ₁ -> ok Γ₂ -> lc p ->
-    (V₂ \u dom Γ₁ \u dom Γ₂ \u fv p) \c V₁ ->
-    (* (V₂ \u dom Γ₁ \u dom Γ₂ \u fv t \u fv p) \c V₁ -> *)
-    y \notin V₁ ->
-    equals (add Γ₂ y M) Γ₂' -> 
-    equals Γ₂ ⊎c Γ₁ Δ ->
-    ∃ (φ : Δ |(b + b', r + r')- [y ~> p] t ∈ A), 
-    (* True *)
-    size φ = size φₜ + size φₚ - size M
-    .
-Proof.
-  (* introv φₜ.
-  remember (V₁ \u \{ y}) as V.
-  gen b' r' Γ₁ Γ₂ Δ M p V₁ V₂ y.
-  induction φₜ eqn:Heqφₜ; simpls. introv Heq φₚ HokΓ₁ HokΓ₂ Hlcp Hsub Hnotin HeqΓ₂ HeqΔ;
-  rewrite Heq in *; clear Heq.
-  (* inductions φₜ; simpls; introv φₚ HokΓ₁ HokΓ₂ Hlcp Hsub Hfree HeqΓ₂ HeqΔ. *)
-  - case_if.
-    + asserts [HM_Anil | HM_nil] : ((eq_multitype M {{A ; nil}}) \/ (M = {{nil}})).
-      { substs.
-        asserts Heq_get : 
-          (∀ z, eq_multitype (get (add Γ₂ x M) z) (get (add empty x {{` A `; nil}}) z)).
-        { 
-          asserts Heq_get1 : 
-            (∀ z : var, eq_multitype (get (add Γ₂ x M) z) (get Δ z));
-          asserts Heq_get2 : 
-            (∀ z : var, eq_multitype (get Δ z) (get (add empty x {{` A `; nil}}) z));
-            try solve[apply ok_get_equals; hint ok_union, ok_add, ok_eq; autos; apply* ok_eq].
-          use_equivalences; autos*. 
-        }
-        specialize Heq_get with x.
-        repeat rewrite get_add_eq in Heq_get. rewrite get_empty in Heq_get; simpls.
-        destruct M; simpls*.
-        destruct (Types.union M (get Γ₂ x)) eqn:HeqU; simpls*.
-        + destruct* M; solve[inversion HeqU]. 
-        + apply eq_size in Heq_get. simpls; lia. 
-      }
-      * lets Hφ _ : (multitype_eq_typed _ _ _ _ _  _ _ HM_Anil φₚ).
-        inverts Hφ.
-        lets h : (typed_empty _ _ _ _ _ X); reduce_max; substs.
-        exists*.
-        apply ctx_eq_typed with (Γ := Γ₂0); autos.
-        asserts H_empty_Γ₂ : (Γ₂ = empty).
-        {
-          repeat match goal with
-          | [H : _ \c _ |- _] => clear H 
-          | [H : _ \notin _ |- _] => clear H 
-          | [H : _ |(_, _)- _ ∈ _ |- _] => clear H 
-          | [H : _ |( _ , _ )- _ ∈ₘ _ |- _] => clear H 
-          | [H : vars |- _] => clear H 
-          | [H : nat |- _] => clear H 
-          end.
-          clear h4 X H8 H7 H1 HeqΔ Hlcp HokΓ₁ V₁0 p.
-          apply equals_empty_is_empty.
-          apply ok_get_equals; 
-          destruct (ok_get_equals (add Γ₂ x M) Δ); try solve[use_equivalences; hint ok_eq, ok_empty, ok_add; autos*].
-          intro z.
-          apply H with (x := z) in HeqΓ₂.
-          simpls.
-          destruct Γ₂, Δ.
-          unfolds get, add; repeat case_if; unfolds empty; simpls; reduce_max.
-          - substs; hint eq_empty_is_empty; use_equivalences; false*.
-          - specialize e1 with z; case_if. 
-            asserts Heq_contra : (eq_multitype (Types.union (m z) M) M). {
-              use_equivalences; hint Types.union_comm; autos*.
-            }
-            destruct (m z). try solve[use_equivalences; autos].
-            apply eq_size in Heq_contra; simpls. rewrite size_union in Heq_contra.
-            simpls; lia.
-          - specialize e1 with z; use_equivalences; case_if*. 
-        }
-        substs. rewrites union_empty_l in *. use_equivalences; autos*.
-        admit.
-      * substs. 
-      asserts Hcontra: (eq_multitype M {{A; nil}} ).  admit.
-        
-    + asserts HMnil :  (M = {{nil}}). {
-        clear  HeqΔ Hlcp Hnotin Hsub φₚ p V₂ V₁ b' r' Δ0.
-        substs. 
-        hint (ok_get_equals Δ (add empty x {{` A `; nil}})), ok_add, ok_union, ok_eq. 
-        destruct* Hint as [Heq_get _].
-        eapply Heq_get with (x := y) in e.
-        unfolds get, add, empty; destruct Δ as [sΔ fΔ]; destruct Γ₂ as [sΓ₂ fΓ₂].
-        repeat case_if*.
-        unfolds equals; reduce_max.
-        specialize HeqΓ₂1 with y; case_if.
-        apply eq_empty_is_empty in e.
-        clear Heq_get Hint1 Hint2 Hint0. rewrite e in HeqΓ₂1.
-        apply eq_empty_is_empty in HeqΓ₂1.
-        destruct* M.
-        simpls. inversion HeqΓ₂1.
-      }
-      asserts φ : (Δ0 |( b', r' )- TmFVar x ∈ A). {
-        substs.
-        inverts φₚ. rewrite union_empty_r in HeqΔ.
-        replace (add Γ₂ y {{nil}}) with Γ₂ in * by (unfold add; case_if* ).
-        constructor;
-        use_equivalences;
-        autos*.
-      }
-      eexists.
-      exists*. intros z Hinz; autos.
-  - asserts IHφ IH: (
-    (* (V₁ \u \{ x}) \u \{y} *)
-      ∃ (φ : add Δ x M |( b + b', r + r' )- [y ~> p] t ^ x ∈ A), True
-    ). {
-      exists*.
-      eapply IHφₜ with (Γ₁ := Γ₁) (Γ₂ := add Γ₂ x M) (M := M0) (V₁ := (V₁ \u \{x})) (V₂ := V₂); reduce_max; autos*.
-      - hint ok_add; autos.
-      - destruct M; try rewrite add_nil; try rewrite dom_add; try absurd; 
-        intros z Hinz; reduce_max; try apply fv_open in Hinz; autos*.
-      - rewrite ok_get_equals; try solve[hint ok_add; autos].
-        intros z. 
-        destruct Γ₁, Γ₂, Γ, Δ. unfolds get, add; repeat (case_if || simpls || reduce_max || substs); hint union_perm_tail; autos*;
-        try solve[
-          match goal with 
-          | [ |- context[m1 ?x]] => specialize HeqΓ₂1 with x; case_if*
-          end
-        ].
-      - rewrite ok_get_equals; try solve[hint ok_add, ok_union, ok_eq; autos*].
-        intros z. 
-        destruct Γ₁, Γ₂, Γ, Δ. unfolds get, add; repeat (case_if || simpls || reduce_max || substs); use_equivalences; autos*;
-        repeat match goal with 
-        | [ H: context[_ \c _] |- _ ] => clear H 
-        | [ H: context[_ \notin _] |- _ ] => clear H 
-        | [ H: context[ _ |(_, _)- _ ∈ _ ] |- _ ] => clear H 
-        | [ H: context[ _ |(_, _)- _ ∈ₘ _ ] |- _ ] => clear H 
-        end;
-        hint Types.union_assoc, union_perm_tail; autos*.
-    }
-    asserts Vf φ : (∃ Vf (φ : Δ |( S (b + b'), r + r' )- TmAbs ([y ~> p] t) ∈ {{{{` M `}}|-> ` A `}}), True).
-    {
-      exists (V₁ \u \{y}).
-      exists*.
-      apply @T_Fun_b with (x := x); reduce_max; autos*; try solve[
-          intro;
-          asserts H_contra: (x \in fv p \u fv t);
-          try solve[apply var_subst with (x := y); autos*];
-          simpl_unions; try apply Hsub5 in H_contra; autos*
-      ].
-      - rewrite dom_equal with (Γ₂ := (Γ₂) ⊎c (Γ₁)); try solve[use_equivalences; autos].
-        rewrite dom_union; reduce_max; intro; apply* n1.
-      - hint ok_eq, ok_union; autos*.
-      - des 
-      replace (add (Γ₂) ⊎c (Γ₁) x M0) with ((add Γ₂ x M0) ⊎c Γ₁).
-      { admit. }
-      {  }
-      try solve[
-        abstract (
-          simpls;
-          destruct Γ₂, Γ₁;
-          unfold add, union; case_if; fequals; try solve_set_equality;
-          apply fun_ext_dep;
-          intro;
-          case_if*;
-          clear 
-            IHφ IH Hlcp Hsub HeqΔ HeqΓ₂ C0 C Hfree HokΓ₂ HokΓ₁ φₚ p v0 b' r' 
-            IHφₜ φₜ n o v x M t A b r;
-          induction* M0;
-          simpls;
-          fequals
-        )
-      ];
-      abstract (rewrite* lc_open_substs;
-      replace ((V₁ \u \{ y}) \u \{ x}) with ((V₁ \u \{ x}) \u \{ y}); 
-      try abstract solve_set_equality).
-      assumption).
-    }
-    exists* φ.
-  - admit.
-  - asserts IHφ IH: (
-      ∃ φ :  add Δ x {{` T `; nil}} |( b + b', r + r' )- [y ~> p] t ^ x ∈ A, True
-    ). {
-      apply IHφₜ with (V₂ := V₂) (Γ₁ := Γ₁) (Δ := add Δ x {{` T `; nil}}) (M := M) (Γ₂ := add Γ₂ x {{` T `; nil}}); autos*.
-      - hint ok_add; autos.
-      - intros z Hinz; reduce_max; try apply fv_open in Hinz; 
-        reduce_max; autos.
-        rewrite dom_add in Hinz; reduce_max; autos. absurd.
-      - rewrite ok_get_equals; try solve[hint ok_add; autos].
-        intros z. 
-        destruct Γ₁, Γ₂, Γ, Δ. unfolds get, add; repeat (case_if || simpls || reduce_max || substs); hint union_perm_tail, Eq_MT_Cons; use_equivalences; autos*;
-        try solve[
-          match goal with 
-          | [ |- context[m1 ?x]] => specialize HeqΓ₂1 with x; case_if*
-          end
-        ].
-      - unfolds union, add, equals.
-        repeat case_if; substs; destruct Γ₁, Γ₂, Δ, Γ; reduce_max; substs; autos*;
-        intros z; case_if; substs*; hint Eq_MT_Cons, union_assoc; use_equivalences; autos*.
-    }
-    asserts φ : (Δ |( b + b', S (r + r') )- TmAbs ([y ~> p] t) ∈ Ty_Tight TC_Abs).
-    {
-      apply @T_Fun_r with (x := x) (A := A) (T := T); autos*.
-      - hint ok_eq, ok_union; autos*.
-      - reduce_max; autos*.
-        + intro Hin. apply fv_substs in Hin; reduce_max; autos.
-        + erewrite <- dom_equal with (Γ₁ := (Γ₂) ⊎c (Γ₁)); 
-          try (rewrite dom_union; intro); 
-          reduce_max; autos.
-      - rewrite* lc_open_substs.
-        replace ((V₁ \u \{ y}) \u \{ x}) with ((V₁ \u \{ x}) \u \{ y}); try solve_set_equality.
-        assumption.
-    }
-    exists* φ. 
-  - asserts IHφ IH: (
-      ∃ φ : Δ |( b + b', r + r' )- [y ~> p0] t ∈ Ty_Tight TC_Neutral, True
-    ). {
-      eapply IHφₜ; autos*.
-      intros z Hin; reduce_max; autos*.
-    }
-    asserts φ : (Δ |( b + b', S (r + r') )- TmApp ([y ~> p0] t) ([y ~> p0] p) ∈ Ty_Tight TC_Neutral).
-    { autos*. }
-    exists* φ.
-Qed. *)
-Admitted. *)
-
-
 (* Lemma 3.5 *)
 Lemma substitution_typing :
-  ∀ {Γ₁ x M b₁ r₁ t A} 
-    (φₜ : add Γ₁ x M |(b₁, r₁)- t ∈ A)
-    {Γ₂ b₂ r₂ p} 
+  ∀ {Γ₁ Γ' x M b₁ r₁ t A} (Heq : equals Γ' (add Γ₁ x M))
+    (φₜ : Γ' |(b₁, r₁)- t ∈ A)
+    {Γ₂ b₂ r₂ p}
     (φₚ : Γ₂ |(b₂, r₂)- p ∈ₘ M),
+    ok Γ₁ -> ok Γ₂ -> lc p ->
+    x \notin dom Γ₁ \u dom Γ₂ ->
   ∃ Δ (φ : Δ |(b₁ + b₂, r₁ + r₂)- [x ~> p]t ∈ A),
       (equals Δ (Γ₁ ⊎c Γ₂))
   /\  (Z_of_nat (size φ) = (Z_of_nat (size φₜ)) + (Z_of_nat (size φₚ)) - (Z_of_nat (size M)))%Z
 .
 Proof.
-  intros Γ₁ x M b₁ r₁ t A φₜ.
-  inductions φₜ; introv.
-  - admit.
-  - admit.
-  - admit.
-  - admit.
-  - destruct IHφₜ with (φₜ0 := φₜ) (φₚ := φₚ) 
-      as [Δ [φ' [HeqΔ Hsize]]]; try solve[reflexivity].
+  intros Γ₁ Γ' x M b₁ r₁ t A Heq φₜ.
+  gen Γ₁ x M Heq.
+  inductions φₜ; introv Heq; introv HokΓ₁ HokΓ₂ Hlcp Hnotin; substs.
+  - asserts HeqΓ : (equals (add Γ₁ x0 M) (add empty x {{` A `; nil}})). {
+      use_equivalences.
+      autos*. 
+    }
+    simpl ([x0 ~> p] TmFVar x).
+    case_if.
+    + substs. 
+      asserts [HM_Anil | HM_nil] : ((eq_multitype M {{A ; nil}}) \/ (M = {{nil}})). { 
+        rewrite ok_get_equals in HeqΓ; try solve[
+          use_equivalences; hint ok_eq, ok_add, ok_empty; autos*
+        ].
+        specialize HeqΓ with x; unfolds add, get, empty; destruct Γ₁; repeat (case_if || simpls); autos.
+        destruct* M. destruct (m x).
+        2: { apply eq_size in HeqΓ; rewrite size_union in HeqΓ; simpls. lia. }
+        rewrite Types.union_empty_r in HeqΓ.
+        destruct* M.
+      }
+      * lets Hφ htemp : (multityped_subst φₚ Γ₂ b₂ r₂ p  {{A ; nil}}); 
+        try solve[use_equivalences; autos]; rewrite htemp; clear htemp.
+        asserts -> : (Γ₁ = empty). {
+          destruct Γ₁.
+          unfolds add, equals, empty; repeat case_if; substs; simpls.
+          { apply eq_size in HM_Anil. false. }
+          reduce_max.
+          fequals.
+          - apply fset_extens. 
+            + intros y Hin.
+              asserts H_v_inc : (v\c \{x}).
+              { rewrite <- HeqΓ0. repeat intro; reduce_max; left*. }
+              unfolds subset.
+              lets : H_v_inc y Hin; reduce_max; substs.
+              false.
+            + repeat intro; reduce_max.
+          - apply fun_ext_dep.
+            intro y.
+            specialize HeqΓ1 with y.
+            case_if; substs*.
+            + destruct* (m x).
+              false.
+              apply eq_size in HeqΓ1, HM_Anil.
+              rewrite size_union in HeqΓ1.
+              rewrite HM_Anil in HeqΓ1.
+              simpls.
+              lia.
+            + apply* eq_empty_is_empty.  
+        }
+        apply eq_size in HM_Anil. simpls; rewrite HM_Anil in *.
+        clear e HeqΓ Heq φₚ HM_Anil M; reduce_max.
+        exists Γ₂.
+        remember {{` A `; nil}} as M;
+        destruct Hφ; inverts HeqM; simpls.
+        lets -> -> -> Hsizeφₚ : (typed_empty Hφ); simpls; rewrite Hsizeφₚ; clear Hsizeφₚ. simpls.
+        destruct Γ₂, Δ0, Δ; repeat (simpls || reduce_max || substs).
+        lets φf Hsizeφf : (typed_subst h (v0, m0) b₂ r₂ t A);
+        try solve[use_equivalences; simpls*]; simpls; rewrite Hsizeφf in *; clear Hsizeφf.
+        exists φf. reduce_max; try solve[use_equivalences; autos]. 
+        destruct (Z.of_nat (size_typing_derivation φf)). 
+        -- lia.
+        -- destruct p; lia.
+        -- gen p.
+           repeat match goal with 
+           | [H : _ |- _] => clear H
+           end.
+           destruct p; simpls; lia.
+      * false.
+        substs.
+        rewrite add_nil in HeqΓ.
+        apply dom_equal in HeqΓ.
+        rewrite HeqΓ in *; unfolds add, empty. simpls.
+        case_if; simpls.
+        apply Hnotin.
+        reduce_max; autos.
+    + asserts -> : (M = {{nil}}). {
+        destruct* M.
+        false.
+        rewrite ok_get_equals in HeqΓ; try solve[
+          use_equivalences; apply eq_ctx_sym in HeqΓ; apply ok_eq in HeqΓ; hint ok_add, ok_empty; autos
+        ].
+        specialize HeqΓ with x0; unfolds add, get, empty; destruct Γ₁. repeat (simpls || case_if).
+        apply eq_size in HeqΓ; simpls. lia.
+      }
+      lets -> -> -> Hsizeφₚ : (typed_empty φₚ); simpls; rewrite Hsizeφₚ; clear Hsizeφₚ. simpls.
+      rewrite add_nil in HeqΓ.
+      exists Γ₁.
+      unshelve exists.
+      * apply T_Ax. assumption.
+      * simpls; split*.
+        use_equivalences; rewrite* union_empty_r.
+  - pick_fresh y.
+    asserts Hyfree : (y \notin L \u fv t \u dom Γ). { autos. }
+    asserts Heq' : (equals (add Γ y M) (add (add Γ₁ y M) x M0)). {
+      gen Heq o HokΓ₁ HokΓ₂.
+      repeat match goal with
+      | H : _ |- _ => clear H
+      end.
+      intros  Heq HokΓ HokΓ₁ HokΓ₂.
+      hint ok_add. apply* ok_get_equals.
+      intro z.
+      rewrite* ok_get_equals in Heq.
+      specialize Heq with z.
+      unfolds get, add; destruct Γ, Γ₁, Γ₂; repeat case_if; use_equivalences; hint union_perm, union_perm_head, Types.union_comm, Types.union_assoc; autos*.
+      apply eq_multitype_trans with (Types.union M (Types.union M0 (m0 z))); autos*.
+    }
+    asserts Hxfree : (x \notin dom (add Γ₁ y M) \u dom Γ₂). {
+      destruct M;
+      rewrite add_nil || rewrite dom_add;
+      reduce_max; autos*.
+    }
+    lets Δ IHφ HeqΔ IHsize : (H y Hyfree (add Γ₁ y M) x M0 Heq' _ _ _ _ φₚ (ok_add _ _ _ HokΓ₁) HokΓ₂ Hlcp Hxfree).
+    asserts HokΓ_1_2 : (ok (Γ₁) ⊎c (Γ₂)). {
+      apply* ok_union.
+    }
+    asserts IHφf HsizeIHφf : (
+      ∃ φ' : add (Γ₁) ⊎c (Γ₂) y M |( b + b₂, r + r₂ )- ([x ~> p] t) ^ y ∈ A,
+      size φ' = size IHφ
+    ). {
+      lets φ' Hsize' : (typed_subst IHφ (add (Γ₁) ⊎c (Γ₂) y M) (b + b₂) (r + r₂) (([x ~> p] t) ^ y) A); try solve[use_equivalences; autos*].
+      - gen Heq HeqΔ.
+        repeat match goal with 
+        | H : _ |- _ => clear H
+        end.
+        intros.
+        unfolds add, union, equals; destruct Γ₁, Γ₂, Γ, Δ; repeat (intro || case_if || reduce_max || substs); autos*; try solve[rewrite* HeqΔ0];
+        match goal with
+        | |- eq_multitype (?m2 ?y) _ => 
+          specialize HeqΔ1 with y; specialize Heq1 with y;
+          use_equivalences; hint Types.union_assoc; case_if*
+        end.
+      - symmetry; apply* lc_open_substs.
+    }
+    asserts Hyfree' : (y \notin dom (Γ₁) ⊎c (Γ₂) \u fv ([x ~> p] t) ). {
+      rewrite dom_union; intros Hin; reduce_max; autos.
+      apply fv_substs in Hin; reduce_max; autos.
+    }
+    simpls ([x ~> p] TmAbs t), (S b + b₂).
+    exists (Γ₁ ⊎c Γ₂).
+    asserts φf Hsizeφf : (∃ φ : (Γ₁) ⊎c (Γ₂) |( S (b + b₂), r + r₂ )- TmAbs ([x ~> p] t) ∈ {{{{` M `}}|-> ` A `}}, size φ = S (size IHφf)). {
+      unshelve exists.
+      - let l := gather_vars in apply @T_Fun_b with (L := l); 
+        try assumption.
+        intros x0 Hx0notin.
+        lets φf' Hsizeφf' : (open_eq_free_typed IHφf x0 HokΓ_1_2 Hyfree' (ltac:(reduce_max; auto))).
+        assumption.
+      - simpls. match goal with 
+        | [ |- context[let (_, _) := ?r in _]] => destruct r
+        end. simpls.
+        lia.
+    }
+    exists φf.
+    reduce_max. { use_equivalences; auto. }
+    rewrite Hsizeφf, HsizeIHφf.
+    asserts -> : (Z.of_nat (S (size IHφ)) = (1 + Z.of_nat (size IHφ))%Z). lia.
+    rewrite IHsize.
+    repeat match goal with 
+    | H : context[size ?x] |- _ => simpls (size x)
+    | |- context[size ?x] => simpls (size x)
+    end. 
+    asserts <- : (size_typing_derivation (h y Hyfree) = size_typing_derivation (h (var_gen (L \u fv t \u dom Γ)) (var_gen_spec (E:=L \u fv t \u dom Γ)))). {
+      apply T_Fun_proof_irrelevant.
+    }
+    lia.
+  - edestruct IHφₜ with (φₚ := φₚ) as [Δ' [IHφ [IHeq Hsize]]].
+    + admit.
+    + admit.
+    + assumption.
+    + assumption.
+    + admit.
+    + admit.
+  - pick_fresh y.
+    asserts Hyfree : (y \notin L \u fv t \u dom Γ). { autos. }
+    asserts Heq' : (equals (add Γ y M) (add (add Γ₁ y M) x M0)). {
+      gen Heq o HokΓ₁ HokΓ₂.
+      repeat match goal with
+      | H : _ |- _ => clear H
+      end.
+      intros  Heq HokΓ HokΓ₁ HokΓ₂.
+      hint ok_add. apply* ok_get_equals.
+      intro z.
+      rewrite* ok_get_equals in Heq.
+      specialize Heq with z.
+      unfolds get, add; destruct Γ, Γ₁, Γ₂; repeat case_if; use_equivalences; hint union_perm, union_perm_head, Types.union_comm, Types.union_assoc; autos*.
+      apply eq_multitype_trans with (Types.union M (Types.union M0 (m0 z))); autos*.
+    }
+    asserts Hxfree : (x \notin dom (add Γ₁ y M) \u dom Γ₂). {
+      destruct M;
+      rewrite add_nil || rewrite dom_add;
+      reduce_max; autos*.
+    }
+    lets Δ IHφ HeqΔ IHsize : (H y Hyfree (add Γ₁ y M) x M0 Heq' _ _ _ _ φₚ (ok_add _ _ _ HokΓ₁) HokΓ₂ Hlcp Hxfree).
+    asserts HokΓ_1_2 : (ok (Γ₁) ⊎c (Γ₂)). {
+      apply* ok_union.
+    }
+    asserts IHφf HsizeIHφf : (
+      ∃ φ' : add (Γ₁) ⊎c (Γ₂) y M |( b + b₂, r + r₂ )- ([x ~> p] t) ^ y ∈ A,
+      size φ' = size IHφ
+    ). {
+      lets φ' Hsize' : (typed_subst IHφ (add (Γ₁) ⊎c (Γ₂) y M) (b + b₂) (r + r₂) (([x ~> p] t) ^ y) A); try solve[use_equivalences; autos*].
+      - gen Heq HeqΔ.
+        repeat match goal with 
+        | H : _ |- _ => clear H
+        end.
+        intros.
+        unfolds add, union, equals; destruct Γ₁, Γ₂, Γ, Δ; repeat (intro || case_if || reduce_max || substs); autos*; try solve[rewrite* HeqΔ0];
+        match goal with
+        | |- eq_multitype (?m2 ?y) _ => 
+          specialize HeqΔ1 with y; specialize Heq1 with y;
+          use_equivalences; hint Types.union_assoc; case_if*
+        end.
+      - symmetry; apply* lc_open_substs.
+    }
+    asserts Hyfree' : (y \notin dom (Γ₁) ⊎c (Γ₂) \u fv ([x ~> p] t) ). {
+      rewrite dom_union; intros Hin; reduce_max; autos.
+      apply fv_substs in Hin; reduce_max; autos.
+    }
+    simpls ([x ~> p] TmAbs t), (S r + r₂).
+    exists (Γ₁ ⊎c Γ₂).
+    asserts φf Hsizeφf : (∃ φ : (Γ₁) ⊎c (Γ₂) |( b + b₂, S (r + r₂) )- TmAbs ([x ~> p] t) ∈ Ty_Tight TC_Abs, size φ = S (size IHφf)). {
+      unshelve exists.
+      - let l := gather_vars in apply @T_Fun_r with (M := M) (A := A) (L := l); 
+        try assumption.
+        intros x0 Hx0notin.
+        lets φf' Hsizeφf' : (open_eq_free_typed IHφf x0 HokΓ_1_2 Hyfree' (ltac:(reduce_max; auto))).
+        assumption.
+      - simpls. match goal with 
+        | [ |- context[let (_, _) := ?r in _]] => destruct r
+        end. simpls.
+        lia.
+    }
+    exists φf.
+    reduce_max. { use_equivalences; auto. }
+    rewrite Hsizeφf, HsizeIHφf.
+    asserts -> : (Z.of_nat (S (size IHφ)) = (1 + Z.of_nat (size IHφ))%Z). lia.
+    rewrite IHsize.
+    simpls (size (T_Fun_r o t0 t1 h)).
+    asserts <- : (size (h (var_gen (L \u fv t \u dom Γ)) (var_gen_spec (E:=L \u fv t \u dom Γ))) = size (h y Hyfree)). {
+      apply T_Fun_proof_irrelevant.
+    }
+    simpls (size (h (var_gen (L \u fv t \u dom Γ)) (var_gen_spec (E:=L \u fv t \u dom Γ)))).
+    lia.
+  - destruct IHφₜ with (Γ₁ := Γ₁) (x := x) (φₚ := φₚ) 
+      as [Δ [φ' [HeqΔ Hsize]]]; try solve[autos].
     exists Δ. unshelve exists.
     + simpls*.
     + reduce_max; autos*.
       replace (size (@T_App_hd_r Δ ([x ~> p0] t) ([x ~> p0] p) (b + b₂) (r + r₂) φ')) with 
       (1 + size φ').
       2: { simpls*. }
-      assert (size (@T_App_hd_r (add Γ₁ x M) t p b r φₜ) = 1 + size φₜ). { simpls*. }
+      assert (size (@T_App_hd_r Γ t p b r φₜ) = 1 + size φₜ). { simpls*. }
       replace (Z.of_nat (1 + size φ')) with (1 + Z.of_nat (size φ'))%Z.
       2: { lia. }
       rewrite Hsize. lia.
 Admitted.
+(* TODO *)
 
 
 
@@ -1477,14 +1451,19 @@ Proof.
         inverts Heqt; substs*.
         inverts φ.
       }
-      pose (x := var_gen (L \u fv u \u dom Γ)).
-      pose (Hxfree := (var_gen_spec (E:=L \u fv u \u dom Γ))).
+      pose (x := var_gen (L \u fv u \u dom Γ \u dom Γ₂)).
+      pose (Hxfree := (var_gen_spec (E:=L \u fv u \u dom Γ \u dom Γ₂))).
       asserts φf Hsize: (
         ∃ φ' : Δ |( b + b' - 0, r + r' )- [x ~> q](u ^ x) ∈ A, S (S (size_typing_derivation (h (var_gen (L \u fv u \u dom Γ)) (var_gen_spec (E:=L \u fv u \u dom Γ))) + size_many_typing_derivation h0)) > size_typing_derivation φ'
       ). {
-        pose (φux := h x Hxfree).
-
-        lets Δs φs HeqΔs Hsize : (substitution_typing φux h0).
+        asserts Hxfree' : (x \notin L \u fv u \u dom Γ). { reduce_max; autos*. }
+        pose (φux := h x Hxfree').
+        asserts HeqaddΓ : (equals (add Γ x M) (add Γ x M)). {
+          use_equivalences; autos.
+        }
+        lets Δs φs HeqΔs Hsize : (substitution_typing HeqaddΓ φux h0); autos.
+        { inverts* Hlct. }
+        { unfolds x, Hxfree; repeat intro. reduce_max; autos. }
         asserts : (equals Δ Δs). { use_equivalences; autos*. }
         asserts φ' Hsizeφ' : ({φ' :Δ |( b + b' - 0, r + r' )- [x ~> q] u ^ x ∈ A | size φs = size φ'}). {
           apply (typed_subst φs); use_equivalences; autos*; lia.
@@ -1492,7 +1471,9 @@ Proof.
         exists φ'.
         simpls.
         rewrite <- Hsizeφ'.
-        unfolds φux, x, Hxfree.
+        asserts htemp : (size φux = size (h (var_gen (L \u fv u \u dom Γ)) (var_gen_spec (E:=L \u fv u \u dom Γ)))). {
+          apply (T_Fun_proof_irrelevant h).
+        } simpls. rewrite <- htemp in *.
         lia.
       }
       asserts φf' Hsizeφf': ({φ' : Δ |( b + b' - 0, r + r' )- u ^^ q ∈ A | size φf = size φ'}). {
@@ -1614,49 +1595,7 @@ Theorem tight_correctness :
   /\  (tight φ -> b = k /\ size p = r /\ A = Ty_Tight TC_Neutral -> neutral p)
 .
 Proof.
-  (* TODO: Récurrence sur la taille de φ *)
-  (* induction φ.
-  - exists (TmFVar x) 0; reduce_max; autos*.
-  - pick_fresh x.
-    asserts Hxfree : (x \notin L \u fv t \u dom Γ). { autos. } 
-    lets t' k H_red_t H_k_le_b [H_norm_t' [H_size_der H_tight_imp]] : (
-      H x Hxfree
-    ).
-    exists (TmAbs ([x ~> (TmBVar 0)]t')) k; reduce_max; autos.
-      + admit.
-      + apply Normal_Abs with (L := L).
-        intros. unfold "^". admit.
-      + simpl. 
-        asserts : (size ([x ~> TmBVar 0] t') = size t'). {
-          repeat match goal with 
-          | H : _ |- _ => try clear H 
-          end.
-          gen t'.
-          repeat match goal with 
-          | H : _ |- _ => try clear H 
-          end.
-          gen x.
-          repeat match goal with 
-          | H : _ |- _ => try clear H 
-          end.
-          induction t'; simpls*.
-          case_if*.
-        }
-        simpls.
-        rewrite TEMP.
-        match goal with 
-        | [H : ?ineq<= ?size_der |- S (?ineq) <= S (?size_der2)] => asserts : (size_der = size_der2);
-        try solve[apply T_Fun_proof_irrelevant | lia]
-        end.
-      + simpls; intros [F _]; false.
-  - lets t' k H_red_t H_k_le_b [H_norm_t' [H_size_der H_tight_imp]] : IHφ. admit.
-  - pick_fresh x.
-    asserts Hxfree : (x \notin L \u fv t \u dom Γ). { autos. } 
-    lets t' k H_red_t H_k_le_b [H_norm_t' [H_size_der H_tight_imp]] : (
-      H x Hxfree
-    ).
-  - admit.
-  - admit. *)
+  (* Nécessite une récurrence sur la taille de φ *)
 Admitted.
 
 (* Prop 3.8, OK *)
@@ -1704,40 +1643,105 @@ Proof.
     pick_fresh x.
     lets Γ A φ [Htight [Hneuttight Hneutabs]] : (H0 x (ltac:(auto)) (H2 x)).
     lets H' : (H x ltac:(auto)).
-    exists Γ.
     asserts  [Hneut | Habs]: (neutral (t ^ x) \/ abs (t ^ x)). { 
         destruct* t; unfold "^" in *; simpls*;
         case_if*.
     }
     + apply Hneuttight in Hneut; substs.
-      exists (Ty_Tight TC_Abs).
       simpls.
-      asserts φ' : (add Γ x {{nil}} |( 0, size_aux_term t )- t ^ x ∈ Ty_Tight TC_Neutral). {
-        destruct (
-          typed_subst φ (add Γ x {{nil}}) 0 (size_aux_term t) (t ^ x) (Ty_Tight TC_Neutral)) as [φ' _];
-          use_equivalences; 
-          autos*;
-          try rewrite* <- size_open; 
-          try rewrite* add_nil.
+      lets HokΓ : (typed_ok φ).
+      pose (Γ' := (dom Γ \- \{x}, fun y => If x = y then {{nil}} else get Γ y)).
+      asserts Hx_nin_Γ' : (x \notin dom Γ'). {
+        reduce_max; simpls*.
+        intro; reduce_max; false.
       }
-      asserts HokΓ : (ok Γ). {
-        rewrite add_nil in *.
-        apply (typed_ok φ').
-      } 
+      asserts HokΓ' : (ok Γ'). {
+          intro y. case_if; 
+          try solve[repeat (intro || substs || reduce_max); false].
+          unfold ok in HokΓ; destruct Γ; simpls.
+          reduce_max.
+          + intros [H_y_in_dom H_y_neq_x].
+            apply* HokΓ.
+          + intro H_my_nnil; reduce_max; autos.
+            apply* HokΓ.
+        }
+      asserts HeqΓ' : (equals Γ (add Γ' x (get Γ x))). {
+        rewrite ok_get_equals; try solve[hint ok_add; autos].
+        intro y.
+        destruct Γ as [sΓ fΓ]; unfold Γ', add, get; simpls.
+        repeat (case_if || substs || simpls || reduce_max);
+        solve[
+          try rewrite Types.union_empty_r;
+          try rewrite C;
+          use_equivalences; autos
+        ].
+      }
+      asserts φ' : (add Γ' x (get Γ x) |( 0, size_aux_term t )- t ^ x ∈ Ty_Tight TC_Neutral). {
+        edestruct (typed_subst φ (add Γ' x (get Γ x)) 0 (size_aux_term t)); 
+        try rewrite* <- size_open;
+        use_equivalences; autos.
+      }
+      exists Γ' (Ty_Tight TC_Abs).
       unshelve exists.
       * apply @T_Fun_r with
-          (L := L \u fv t) 
+          (L := L \u fv t)
           (A := Ty_Tight TC_Neutral) 
-          (M := {{nil}}).
+          (M := get Γ x).
         -- assumption.
         -- simpls*.
-        -- simpls*.
-        -- intros. destruct (open_eq_free_typed φ' x0); try assumption.
-         ++ admit. (* Pas prouvable *)
-         ++ reduce_max; autos.
-      * reduce_max; autos*.    
-    + admit. 
-Admitted. 
+        -- simpls; reduce_max. destruct Γ. simpls*.
+        -- intros. destruct (open_eq_free_typed φ' x0); reduce_max; autos.
+      * reduce_max; autos*.
+        unfold Γ'.
+        intro y; case_if*. 
+        unfold get. destruct* Γ.
+    + apply Hneutabs in Habs; substs.
+      simpls.
+      lets HokΓ : (typed_ok φ).
+      pose (Γ' := (dom Γ \- \{x}, fun y => If x = y then {{nil}} else get Γ y)).
+      asserts Hx_nin_Γ' : (x \notin dom Γ'). {
+        reduce_max; simpls*.
+        intro; reduce_max; false.
+      }
+      asserts HokΓ' : (ok Γ'). {
+          intro y. case_if; 
+          try solve[repeat (intro || substs || reduce_max); false].
+          unfold ok in HokΓ; destruct Γ; simpls.
+          reduce_max.
+          + intros [H_y_in_dom H_y_neq_x].
+            apply* HokΓ.
+          + intro H_my_nnil; reduce_max; autos.
+            apply* HokΓ.
+        }
+      asserts HeqΓ' : (equals Γ (add Γ' x (get Γ x))). {
+        rewrite ok_get_equals; try solve[hint ok_add; autos].
+        intro y.
+        destruct Γ as [sΓ fΓ]; unfold Γ', add, get; simpls.
+        repeat (case_if || substs || simpls || reduce_max);
+        solve[
+          try rewrite Types.union_empty_r;
+          try rewrite C;
+          use_equivalences; autos
+        ].
+      }
+      asserts φ' : (add Γ' x (get Γ x) |( 0, size_aux_term t )- t ^ x ∈ Ty_Tight TC_Abs). {
+        edestruct (typed_subst φ (add Γ' x (get Γ x)) 0 (size_aux_term t)); 
+        try rewrite* <- size_open;
+        use_equivalences; autos.
+      }
+      exists Γ' (Ty_Tight TC_Abs).
+      unshelve exists.
+      * apply @T_Fun_r with
+          (L := L \u fv t)
+          (A := Ty_Tight TC_Abs) 
+          (M := get Γ x);
+          destruct Γ; simpls*;
+          intros; destruct (open_eq_free_typed φ' x0); reduce_max; autos.
+      * reduce_max; autos*;
+        unfold Γ';
+        intro y; case_if*; 
+        destruct* Γ.
+Qed.
 
 (* Lemme 3.9 *)
 Lemma anti_substitution_and_typing :
@@ -1787,10 +1791,15 @@ Proof.
     + admit.
     + admit.
   - inverts φ0; destruct t; simpls; try case_if; 
-    try solve[false*]; admit.
+    try solve[false*].
+    + admit.
+    + admit.
+    + admit.
+    + admit.
   - admit.
   - admit. 
 Admitted.
+(* TODO *)
 
 
 
@@ -1800,9 +1809,13 @@ Lemma freevars_step :
   fv p \c fv t.
 Proof.
   induction t using term_size_ind; destruct t; introv Hst; inverts Hst; simpls.
-  - apply* H.
-    unfold lt_type. apply le_refl.
-    admit.
+  - pick_fresh x.
+    lets : (H1 x (ltac:(reduce_max; autos))).
+    asserts : ((fv p0 \u \{x}) \c (fv t \u \{x}) -> fv p0 \c fv t). {
+      admit.
+    }
+    (* Disjonction de cas selon si #0 est dans p0 et t ou pas *)
+    admit.    
   - unfold "^^". apply fv_open.
   - intros z Hin. reduce_max; autos*.
     left.
@@ -1884,18 +1897,21 @@ Proof.
     asserts φf Hsizeφf : (∃ φ'0 : Γ |( S (bₜ + bₚ), rₜ + rₚ )- TmApp (TmAbs u) t2 ∈ A, size φ'0 > size φ). {
       unshelve exists.
       - change ( S (bₜ + bₚ)) with ( S bₜ + bₚ).
-        apply  @T_App_b with (M := M) (Γ₁ := Γₜ) (Γ₂ := Γₚ); 
+        apply  @T_App_b with (M := M) (Γ₁ := Γₜ) (Γ₂ := Γₚ);
         try assumption.
-        let l := gather_vars in eapply @T_Fun_b with (L := l). 
+        let l := gather_vars in apply @T_Fun_b with (L := l). 
         + assumption.
         + intros y Hnotin.
           apply* (open_eq_free_typed φₜ).
-          admit.
-      - simpls.
+          apply dom_equal in HeqΓ.
+          rewrite dom_union in HeqΓ; rewrite <- HeqΓ in *.
+          reduce_max; autos.
+          
+      - simpls;
         match goal with 
         | [ |- context[let (_, _) := ?r in _]] => destruct r
         end.
-        simpls; lia.
+        simpls; lia. 
     }
     lets φf' Hsizeφf' : (typed_subst φf Γ (S b) r (TmApp (TmAbs u) t2) A); try solve[use_equivalences; autos].
     exists φf'. lia.
@@ -1917,7 +1933,7 @@ Proof.
       * inverts* Hlc.
       * assumption.
       * unshelve exists; autos*. simpls. lia.
-Admitted.
+Qed.
 
 
 
@@ -1967,4 +1983,4 @@ Proof.
   apply* IHabs.
 Qed.
 Print Assumptions quantitative_subject_expansion.
-  Print Assumptions tight_completeness.
+Print Assumptions tight_completeness.

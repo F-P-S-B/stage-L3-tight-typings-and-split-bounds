@@ -26,15 +26,48 @@
 \section{État de l'art}
 \todo{Présenter indice de Bruijn}
 
+
+
 \todo{Présenter locally nameless}
 
-\todo{\href{https://bentnib.org/posts/2020-08-13-non-idempotent-intersection-types.html}{Article à présenter}}
+
+
+\todo{
+  \href
+    {https://bentnib.org/posts/2020-08-13-non-idempotent-intersection-types.html}
+    {Article à présenter}
+}
 
 \newpage
 
 \section{Problème traité et solution proposée}
+\subsection{Choix d'implémentations}
+
+\subsubsection{Termes}
+
+2 approches:
+\paragraph{Représentations avec des indices de Bruijn}
+Avantages:
+\begin{itemize}
+  \item Simples à représenter
+  \item Tout terme est bien formé, pas de distinction à faire entre fv et bv
+\end{itemize}
+
+Incovénients:
+\begin{itemize}
+  \item Parfois, distinction entre fv et bv nécessaire (par exemple pour savoir si elle est dans un contexte ou pas)
+  \item Tout terme est bien formé, pas de distinction à faire entre fv et bv
+\end{itemize}
+\paragraph{Représentations en Locally Nameless}
+
+\subsubsection{Types}
+
+\subsubsection{Contextes}
+
+
+
 \todo{
-  Expliquer différents choix d'implémentations:
+  Expliquer différents choix d'implémentations
 }
 
 \todo{

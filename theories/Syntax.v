@@ -214,6 +214,9 @@ End term_size_ind.
 Hint Extern 1 (lt_type (size_for_ind (_ ^ _))  _) => 
   rewrite <- size_for_ind_open; apply le_refl : core.
 #[global]
+Hint Extern 1 (lt_type ?s (S ?s)) => 
+  apply le_refl : core.
+#[global]
 Hint Extern 1 (lt_type _  (S (max _ _))) => 
   apply Sn_le_Sm; try solve[apply le_max_self]; rewrite max_comm; apply le_max_self : core.
 
