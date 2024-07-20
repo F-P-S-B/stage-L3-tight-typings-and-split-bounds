@@ -6,9 +6,12 @@
 \usepackage[french]{babel}
 \author{Félix SASSUS BOURDA}
 \title{
-    Rapport de stage
+    Rapport de stage \\ 
+    Formalisation d'un système de titre avec intersection non idempotente
 }
-
+\date{
+  Mai -- Juin -- Juillet 2024
+}
 \begin{document}
 \large
 \maketitle
@@ -25,6 +28,10 @@
 
 \section{État de l'art}
 \todo{Présenter indice de Bruijn}
+Les indices de Bruijn ont été inventés par Nicolaas Govert de Bruijn, dans son papier \href{http://alexandria.tue.nl/repository/freearticles/597619.pdf}{Lambda Calculus Notation with Nameless Dummies: A Tool for Automatic Formula Manipulation, with Application to the Church-Rosser Theorem}. Ils permettent de raisonner sur des termes du lambda calcul, en transformant l'$\alpha$-équivalence en une égalité structurelle simple.
+
+
+
 
 
 
@@ -56,7 +63,7 @@ Avantages:
 Incovénients:
 \begin{itemize}
   \item Parfois, distinction entre fv et bv nécessaire (par exemple pour savoir si elle est dans un contexte ou pas)
-  \item Tout terme est bien formé, pas de distinction à faire entre fv et bv
+  \item Pour les variables libres, soit on fait un contexte avec une liste indexée par la taille, difficile à manipuler, soit on garde un environnement, ce qui revient au LN mais en devant bien manipuler les changements d'indices
 \end{itemize}
 \paragraph{Représentations en Locally Nameless}
 
