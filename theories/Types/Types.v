@@ -1,5 +1,6 @@
 From Coq Require Import Unicode.Utf8_core.
 From Coq Require Import Lia.
+From Coq Require Import RelationClasses.
 From TLC Require Import LibLN LibTactics LibFset LibList LibRelation.
 From TTSB Require Import Tactics.
 From TTSB Require Import Classes.
@@ -11,9 +12,13 @@ Ltac auto_tilde :=
             | intuition auto with type_hints ]).
 
 Ltac auto_star ::= 
-  try (solve [ eauto with type_hints 
+  try (solve [ reflexivity
+             | symmetry; eauto with type_hints 
+             | etransitivity; eauto with type_hints 
+             | eauto with type_hints 
              | jauto 
-             | intuition eauto with type_hints ]).
+             | intuition eauto with type_hints]).
+
 
 Parameter AtomicType : Set.
 Parameter X : fset AtomicType.
@@ -137,50 +142,65 @@ End TypesNotations.
 Import TypesNotations.
 
 Check eq_type_mut_ind.
-
-#[global] Instance Equiv_eq_type : Equivalence eq_type.
+#[global] Instance Refl_eq_type : Reflexive eq_type.
 Proof.
-  constructor.
-  - intro t; destruct eqₐ_equiv;
-    pose (P0 mt := eq_multitype mt mt).
-    induction t
-      using type_mut_ind 
-      with (P0 := P0); unfolds P0; clear P0; autos*.
-  - intros t₁ t₂ Heq; destruct eqₐ_equiv.
+  intro t; destruct eqₐ_equiv;
+  pose (P0 mt := eq_multitype mt mt).
+  induction t
+    using type_mut_ind 
+    with (P0 := P0); unfolds P0; clear P0; autos*.
+Qed.
+
+#[global] Instance Symm_eq_type : Symmetric eq_type.
+Proof.
+  intros t₁ t₂ Heq; destruct eqₐ_equiv.
     pose (
       P0 (mt₁ mt₂ : multitype ) (Heq : eq_multitype mt₁ mt₂) := 
       eq_multitype mt₂ mt₁ 
     );
     eq_type_induction Heq P0; autos*.
-  - intros t₁ t₂ t₃ Heq; destruct eqₐ_equiv;
-    pose (
-    P0 (mt₁ mt₂ : multitype) (Heq : eq_multitype mt₁ mt₂) :=
-      ∀ (mt₃ : multitype), eq_multitype mt₂ mt₃ -> eq_multitype mt₁ mt₃
+Qed.
+
+#[global] Instance Trans_eq_type : Transitive eq_type.
+Proof.
+  intros t₁ t₂ t₃ Heq; destruct eqₐ_equiv;
+  pose (
+  P0 (mt₁ mt₂ : multitype) (Heq : eq_multitype mt₁ mt₂) :=
+    ∀ (mt₃ : multitype), eq_multitype mt₂ mt₃ -> eq_multitype mt₁ mt₃
   ).
   gen t₃.
   eq_type_induction Heq P0; 
   intros t₃ Heq2; inverts* Heq2.
 Qed.
 
-
-#[global] Instance Equiv_eq_multitype : Equivalence eq_multitype. 
+(* #[global] Instance Equiv_eq_type : Equivalence eq_type.
 Proof.
-  destruct Equiv_eq_type.
   constructor.
-  - substs.
-    intro t. 
-    induction t; autos*.
-  - intros t₁ t₂ Heq; inductions Heq; autos*.
-  - intros t₁ t₂ t₃ Heq; gen t₃; inductions Heq; autos*.
+  - reflexivity.
+  - intros. symmetry. auto.
+  - intros. etransitivity; eauto.
+Qed. *)
+
+
+#[global] Instance Refl_eq_multitype : Reflexive eq_multitype.
+Proof.
+  substs.
+  intro t. 
+  induction t; simpls*.
+  apply* Eq_MT_Cons.
 Qed.
 
-Ltac use_equivalences_type := 
-  destruct Equiv_eq_type 
-    as [eq_type_refl eq_type_sym eq_type_trans];
-  destruct Equiv_eq_multitype 
-    as [eq_multitype_refl eq_multitype_sym eq_multitype_trans].
+#[global] Instance Symm_eq_multitype : Symmetric eq_multitype.
+Proof.
+  intros t₁ t₂ Heq; inductions Heq; autos*.
+  apply* Eq_MT_Cons.
+Qed.
 
-Ltac use_equivalences ::= use_equivalences_type.
+#[global] Instance Trans_eq_multitype : Transitive eq_multitype.
+Proof.
+  intros t₁ t₂ t₃ Heq1 Heq2.
+  autos*.
+Qed.
 
 Generalizable Variables A rel.
 
@@ -234,9 +254,9 @@ Lemma union_perm_tail :
   eq_multitype mt₂ mt₂' -> 
   eq_multitype (union mt₁ mt₂) (union mt₁ mt₂').
 Proof.
-  use_equivalences.
   introv Heq.
-  inductions mt₁; autos*.
+  inductions mt₁; simpls*.
+  apply* Eq_MT_Cons.
 Qed.
 
 
@@ -245,7 +265,6 @@ Lemma union_perm_head :
   eq_multitype mt₁ mt₁' -> 
   eq_multitype (union mt₁ mt₂) (union mt₁' mt₂).
 Proof with eauto with permutation_hints.
-  use_equivalences.
   introv Heq.
   inductions Heq; simpls*.
 Qed.
@@ -256,10 +275,9 @@ Lemma union_perm :
   eq_multitype mt₂ mt₂' ->
   eq_multitype (union mt₁ mt₂) (union mt₁' mt₂').
 Proof.
-  use_equivalences.
   intros.
   unfolds trans.
-  eapply eq_multitype_trans.
+  transitivity (mt₁' ⊎ mt₂).
   - applys* union_perm_head.
   - applys* union_perm_tail.
 Qed.
@@ -276,7 +294,6 @@ Lemma union_insert :
     (union mt₁' (MT_Cons t' mt₂'))
   .
 Proof.
-  use_equivalences.
   introv Heq1 Heq2 Heqt.
   induction Heq1; applys* union_perm.
 Qed.
@@ -285,9 +302,13 @@ Lemma union_cons :
   ∀ (mt : multitype) (t : type),
   eq_multitype (MT_Cons t mt) (union mt (MT_Cons t MT_Empty)).
 Proof.
-  use_equivalences.
   intros.
   inductions mt; simpls*.
+  - transitivity {{` t `; ` t0 `; ` mt `}}.
+    + autos*.
+    + apply Eq_MT_Cons.
+      * reflexivity.
+      * autos*.
 Qed.
 
 
@@ -297,20 +318,19 @@ Theorem union_assoc :
     (union (union mt₁ mt₂) mt₃)
     (union mt₁ (union mt₂ mt₃)).
 Proof.
-  use_equivalences.
   intros.
-  inductions mt₁; autos*.
+  inductions mt₁; simpls*.
+  apply* Eq_MT_Cons.
 Qed.
 
 Theorem union_comm : 
   ∀ mt₁ mt₂, eq_multitype (union mt₁ mt₂) (union mt₂ mt₁).
-  Proof.
-    use_equivalences.
-    hint union_empty_r, union_assoc, union_cons, union_perm_head.
-    induction mt₁ as [|h₁ mt₁']; intro mt₂.
-    - rewrites* union_empty_r.
-    - autos*.
-  Qed.
+Proof.
+  hint union_empty_r, union_assoc, union_cons, union_perm_head.
+  induction mt₁ as [|h₁ mt₁']; intro mt₂.
+  - rewrites* union_empty_r.
+  - autos*.
+Qed.
 
 
 Lemma eq_union_left : 
@@ -318,9 +338,11 @@ Lemma eq_union_left :
   eq_multitype mt₁ mt₁'-> 
   eq_multitype (union mt₁ mt₂) (union mt₁' mt₂).
 Proof with eauto with permutation_hints.
-  use_equivalences.
   introv Heq.
-  inductions Heq; autos*.
+  inductions Heq; autos*;
+  try reflexivity.
+  simpls.
+  apply Eq_MT_Swap.
 Qed.
 
 
@@ -332,7 +354,7 @@ Lemma eq_union_right:
 Proof.
   introv Heq.
   hint eq_union_left, union_comm.
-  apply transitive with (a₂ := union mt₂ mt₁); autos*.
+  transitivity (mt₂ ⊎ mt₁); autos*.
 Qed.
 
 Lemma eq_union : 
@@ -362,8 +384,7 @@ Lemma eq_size :
 Proof.
   intros.
   induction* H; simpls.
-  - fequals. 
-  - etransitivity; eassumption.
+  fequals.
 Qed.
 
 Lemma size_union :
@@ -385,10 +406,11 @@ Lemma eq_in :
   In t mt₁ ->
   In t mt₂.
 Proof.
-  use_equivalences.
   intros * Heq Hin.
   induction Heq; autos*;
   inverts Hin; simpls*.
+  left.
+  transitivity t₁; assumption.
 Qed.
 
 
@@ -427,16 +449,18 @@ Lemma mt_union_tight :
     tight mt -> 
     tight mt₁ /\ tight mt₂.
 Proof.
-  use_equivalences.
   hint eq_tight_multitype.
   inductions mt₁; intros; split_and_or; try solve[ simpls* ].
+  - apply eq_tight_multitype with (mt₁ := mt); 
+    try symmetry;
+    simpls*.
   - change {{` t `; ` mt₁ `}} with (union {{t ; nil}} mt₁) in *.
     asserts Heq : (eq_multitype (union mt₁ {{ t ; mt₂}}) mt).
     { 
       change {{` t `; ` mt₂ `}} with (union {{t ; nil}} mt₂) in *.
-      apply transitive with ((union (union mt₁ {{t ; nil}})) mt₂)...
-      - apply symmetric. apply union_assoc.
-      - apply transitive with (union (union {{` t `; nil}} mt₁) mt₂); autos.
+      transitivity ((mt₁ ⊎ {{t ; nil}}) ⊎ mt₂)...
+      - symmetry. apply union_assoc.
+      - transitivity (({{` t `; nil}} ⊎ mt₁) ⊎ mt₂); autos.
         apply eq_union_left;
         apply union_comm.
     }

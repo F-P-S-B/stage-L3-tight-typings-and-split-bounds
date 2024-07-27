@@ -52,7 +52,6 @@ Ltac simpl_unions :=
 
 Ltac split_and_or_max := repeat split_and_or.
 
-Ltac use_equivalences := idtac.
 
 Ltac absurd := let H := fresh in intro H; inverts H; fail.
 

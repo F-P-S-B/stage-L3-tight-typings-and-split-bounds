@@ -1,6 +1,8 @@
 */**/*.vo*
 */**/*.glob
-formalmetacoq/*
-.vscode/*
+formalmetacoq
+.vscode
 .lia.cache
 *.pdf
+Test
+Old

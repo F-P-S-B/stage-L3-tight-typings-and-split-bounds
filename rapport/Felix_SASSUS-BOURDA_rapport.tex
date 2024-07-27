@@ -1,0 +1,182 @@
+\documentclass[10pt]{article}
+\input{./config/dependencies.tex}
+\input{./config/commandes.tex}
+\input{./config/environnements.tex}
+\input{./config/fancyhdr_config.tex}
+\usepackage[french]{babel}
+\author{Félix SASSUS BOURDA}
+\title{
+    Rapport de stage \\ 
+    Formalisation d'un système de typage avec intersection non idempotente
+}
+\date{
+  Mai -- Juin -- Juillet 2024
+}
+\begin{document}
+\large
+\maketitle
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+Les types avec intersection pour le $\lambda$-calcul ont été présentés pour la première fois dans \cite{inter-types}. Ils permettent de donner plusieurs types a un même $\lambda$-terme, qui a donc non plus un seul type mais un ensemble de types. Une particularité assez remarquable de ce système de typage est qu'il caractérise les termes dont la réduction termine. 
+
+Dans \cite{tight-typing-and-split-bounds} est présenté un système de typage qui utilise des types avec intersection, avec la particularité que cette intersection est non-idempotente, c'est-à-dire que pour un type $A$, on a $(A \cap A) \not\equiv A$. Ainsi, plutôt que d'avoir un ensemble de types, les termes sont typés par des multi-ensembles, afin d'avoir un type par utilisation. En plus de toujours caractériser les termes dont la réduction termine, cette particularité permet de déduire lors du typage à la fois le nombre de réductions nécessaires d'un terme pour arriver à sa forme normale, mais aussi la taille de celle-ci. Il permet ainsi de faire des mesures de complexité précises sur des $\lambda$-termes.
+
+Mon stage consistait à formaliser en Coq ce dernier système de typage ainsi que certains résultats. Cette formalisation était motivée par plusieurs facteurs:
+\begin{itemize}
+  \item Comme ce sytème a été présenté assez récemment, il n'avait pas encore été formalisé.
+  \item Il est assez courant de formaliser des systèmes de ce genre, à la fois pour pouvoir vérifier les résultats présentés, mais également car les preuves de ces résultats sont souvent répétitives avec un seul cas intéressant, et la formalisation permet d'automatiser le traitement de ces cas répétitifs pour se concentrer sur les cas pertinents.
+  \item Elle est dans la continuité de mon TER, qui consistait à formaliser un système de typage simples.
+\end{itemize} 
+
+
+\section{État de l'art} \label{EtatArt}
+Les indices de de Bruijn ont été présentés dans \cite{de-bruijn}. Ils permettent de raisonner sur des termes du lambda calcul, en transformant l'$\alpha$-équivalence en une égalité structurelle simple. Ils consistent à représenter les variables non plus par des noms, mais par des pointeurs vers les $\lambda$ qui les lient.
+
+Une autre représentation des $\lambda$-termes, à mi-chemin entre l'approche nommée et l'approche des indice de de Bruijn, est la représentation Locally Nameless, présentée dans \cite{locally-nameless}. Elle consiste à représenter les variables liées avec des indices de de Bruijn, tout en choisissant un nouveau nom dans un espace infini de nom lorsqu'une variable devient libre, quand on type sous une abstraction par exemple. Pour ce faire, on "ouvre" les termes en remplaçant la variable liée par le $\lambda$ qu'on passe par une variable fraiche. Une formalisation en coq de systèmes de typage utilisant cette approche a été faite dans \cite{ln-coq}, par le même auteur.
+
+
+Dans \cite{agda}, on trouve une formalisation d'un système de typage avec intersection non-idempotente et son intéraction avec une machine de Krivine. Un élément interessant de cet article et l'utilisation des permutation pour modéliser l'égalité entre les multi-ensembles de types, représentés par des listes de types.
+
+
+\section[Problème et solutions]{Problème traité et solutions proposées}
+\subsection{Choix d'implémentations}
+\subsubsection{Termes}
+Pour formaliser les $\lambda$-termes, plusieurs approches peuvent être utilisées:
+\paragraph{Représentation nommée} 
+Elle consiste à représenter les $\lambda$-termes comme on le ferait pour des raisonnement sur papier. Cependant, cette approche nécessite de prendre en compte l'$\alpha$-équivalence et l'$\alpha$-renommage, ce qui peut être assez contraignant lors d'une formalisation.
+
+\paragraph{Représentations avec des indices de Bruijn} Présentée dans l'état de l'art, c'est l'approche que j'ai utilisée au début de la formalisation. En effet, elle possède plusieurs avantages intéressants:
+\begin{itemize}
+  \item Elle est simple à représenter
+  \item Tout terme est bien formé, il n'y a pas de distinction à faire entre les variables libres et liées.
+\end{itemize}
+Cependant, elle nécessite de modéliser des contextes comme des listes avec des tailles associées, ce qui à première vue est pratique, mais impose en réalité beaucoup de contraintes et rend, dans ce cas, le développement assez complexe.
+
+\paragraph{Représentations en Locally Nameless}
+Également présentée dans l'état de l'art, c'est l'approche que j'ai finalement utilisée. Elle permet en effet de faire des contextes de façon plus classique, par une fonction qui associe à chaque variable son type, beaucoup plus simples à manipuler que ceux utilisés avec l'approche précédente. Cette approche apporte néanmoins quelques inconvénients:
+\begin{itemize}
+  \item Certains termes ne sont pas bien formés, par exemple $(\lambda . 0) 1$ n'a aucun $\lambda$ associé au $1$, il faut donc rajouter un prédicat qui permet d'assurer qu'un terme est bien formé
+  \item Dans certains cas, on ne peut pas utiliser le principe d'induction généré automatiquement par Coq, qui est structurel, et on doit utiliser un principe d'induction bien fondé, que l'on doit donc générer à la main.
+\end{itemize}
+Mais ces inconvénients sont assez négligeables vis-à-vis des avantages que cette approche offre.
+
+\subsubsection{Types}
+
+Le système de typage a deux particularités:
+\begin{itemize}
+  \item Il possède deux constantes \textsf{neutral} et \textsf{abs} qui permettent de typer les termes en forme normale. On les formalise simplement en déclarant 2 constantes lors de la définition des types.
+  \item Les abstraction sont typées en prenant en entrée un multi-ensemble de types plutôt qu'un seul type. Il a donc été nécessaire de formaliser la notion de multi-ensembles de types (ou multi-types).
+\end{itemize}
+\paragraph{Multi-types} Ma première approche a été de vouloir définir les multi-types comme des fonction \textbf{type} $\rightarrow \bN$. Cependant, comme on les définit en même temps que les types, cela créait une occurence négative de \textbf{type}, ce qui n'est pas autorisé par le système Coq, car on pourrait créer une contradiction avec. 
+
+J'ai donc eu une deuxième approche qui consiste à les représenter comme des listes, et définir une égalité qui ne prend pas l'ordre en compte. 
+
+La première définition de cette égalité consistait à compter le nombre d'occurence d'un type dans un multi-type, et de dire que 2 multi-types sont égaux si ce compte est le même pour tous les types. Cependant, les multi-types apparaissant dans les types et inversement, cette égalité nécessite une induction mutuelle sur les types et les multi-types, qui n'a pas été acceptée par le guard-checker de Coq (on remarque au passage que celui de Agda, qui utilise une vérification de terminaison plus puissante, a accepté la définition, qui semble donc bien fondée). Une autre façon de vérifier l'égalité était donc nécessaire.
+
+Mon responsable de stage m'a transmis l'article \cite{agda}, présenté dans l'état de l'art. On y trouve une formalisation d'un système utilisant également des multi-types, qui sont formalisés comme des listes de types, et 2 multi-types sont égaux si ils sont une permutation l'un de l'autre. Un inconvénient   par rapport à la précédente approche est que l'on perd la capacité à décider l'égalité, en la définissant comme une relation inductive plutôt que comme une fonction. Un avantage est que cette méthode marche.
+
+\subsubsection{Contextes}
+L'approche Locally Nameless permet de représenter les contextes de façon assez concise, comme une fonction qui associe aux variables un multi-type, avec le multi-ensemble vide par défaut, ainsi que l'ensemble des variables liées, pour des raisons techniques. On y ajoute un prédicat qui s'assure qu'un contexte est bien formé, c'est-à-dire qu'une variable est dans l'ensemble si et seulement si son image par la fonction n'est pas le multi-type vide.
+
+\subsection{Traduction et définition des énoncés}
+\subsubsection{Système d'évaluation}
+L'article donne une démarche générale sur la méthode à utiliser pour obtenir les résultats intéressants concernant la forme normale des termes. La première étape est de considérer une relation de réduction $\rightarrow$, ainsi que trois prédicats: \textbf{normal}, \textbf{neutral} et \textbf{abs} qui respectent trois conditions:
+\begin{enumerate}
+  \item $\rightarrow$ est déterministe
+  \item Pour un terme $t$, on a \textbf{normal}$(t)$ si et seulement si $t$ est normal pour $\rightarrow$, c'est à dire qu'il ne se réduit plus.
+  \item Pour un terme $t$, on a \textbf{neutral}$(t)$ si et seulement si on a \textbf{normal}$(t)$ et $\lnot$\textbf{abs}$(t)$.
+\end{enumerate}
+J'ai repris cette définition en rajoutant que les termes $t$ doivent être bien formés, c'est-à-dire ne pas avoir de variable liées sans $\lambda$ associé.
+
+Cette définition permet d'utiliser le prédicat \textbf{normal}, définit inductivement, à la place de la définition usuelle de forme normale, qui est plus dur à manipuler, et d'utiliser les prédicats \textbf{neutral} et \textbf{abs} tout en gardant une cohérence avec le prédicat \textbf{normal}.
+
+\subsubsection{Règles de typage}
+Les règles de typages se traduisent toute à l'aide d'une définition inductive de manière assez directe, à l'exception d'une:
+\begin{displaymath}
+  \frac{
+    (\Delta_i \vdash^{(b_i, r_i)} t : \tau_i)_{i\in I}
+  }{
+    \uplus_{i \in I} \Delta_i \vdash^{(+_{i \in I} b_i, +_{i \in I} r_i)} t : [\tau_i]_{i\in I}
+  }
+\end{displaymath}\\
+qui permet de fusionner plusieurs dérivations de typages d'un terme en une plus grande, et, avec $I$ vide, type par le multi-type vide tous les termes (il est important de pouvoir avoir ce cas, qui correspond à un argument qui n'est pas utilisé dans une abstraction, et comme les résultats sur les termes typables concernent les types et non les multi-types, on peut toujours déduire des choses intéressantes quand un terme est typable).
+
+Il est en effet plus simple de faire des fusions 2 à 2 ou même de rajouter dérivation par dérivation. J'ai donc choisi cette seconde approche, qui donne lieu à un meilleur principe d'induction.
+
+Une des caractéristique importantes pour les différents lemmes et théorèmes est que les dérivation de typages ne sont pas simplement des propriétés sur les termes, mais des objets qu'on manipule, qui possèdent par exemple une taille. Pour les définir, il est donc nécessaire de mettre les dérivations dans l'univers \textsf{Type} plutôt que \textsf{Prop}, dans lequel il est plus courant de les placer, car ce dernier rend difficile la différenciation entre 2 termes de même type. Ce choix, qui peut paraître un détail à première vue, a structuré la forme des preuves d'existence. En effet, quand on construit un objet dans Type, on ne peut pas faire certaines choses que l'on pourrait d'habitude, comme une disjonction de cas sur certaines propriétés inductives, telles qu'un $\lor$, ou bien l'égalité entre types.
+
+\subsubsection{Traduction des énoncés}
+Avant de pouvoir commencer à traduire et prouver les différents résultats, certains lemmes techniques sont nécessaires. Par exemple, que si deux contextes, termes... sont égaux, on peut les remplacer dans une dérivation de typage sans changer sa taille.
+
+Ensuite, la traduction est assez direct, au détail près que parfois, certains prédicats doivent être rajoutés à un énoncé, par exemple dans l'énoncé suivant, écrit d'abord tel qu'il est dans le papier, puis dans la formalisation (de façon très légèrement simplifiée, car il faut en réalité faire une conversion de $\bN$ vers $\bZ$):
+
+  Let $\varphi_t\triangleright_{hd} \Delta; x : M \vdash^{(b, r)} t : A$ and $\varphi_p\triangleright_{hd} \Gamma \vdash^{(b', r')} p : M$. Then there exists a derivation $\varphi_{t\{x \leftarrow p\}}\triangleright_{hd} \Gamma \uplus \Delta \vdash^{(b + b', r + r')} t\{x \leftarrow p\} : A$, where $|\varphi_{t\{x \leftarrow p\}}| = |\varphi_t| + |\varphi_p| - |M|$
+
+\begin{align*}
+  \forall \quad& \Gamma_1 \, \Gamma' \, x \, M \, b_1 \, r_1 \, t \, A \, (Heq : \text{equals } \Gamma' \, (\text{add } \Gamma_1 \, x \, M)) \\
+  & (\varphi_t : \Gamma' |(b_1, r_1)- t \in A) \\
+  & \Gamma_2 \, b_2 \, r_2 \, p \\
+  & (\varphi_p : \Gamma_2 |(b_2, r_2)- p \in_m M), \\
+  \text{ok } & \Gamma_1 \rightarrow \text{ok } \Gamma_2 \rightarrow \text{lc } p \rightarrow \\
+  x \notin & (\text{dom } \Gamma_1 \cup \text{dom } \Gamma_2) \rightarrow \\
+  \exists \quad &\Delta \, (\varphi : \Delta |(b_1 + b_2, r_1 + r_2)- [x ~> p]t \in A), \\
+      &(\text{equals } \Delta \, (\Gamma_1 \uplus \Gamma_2)) \\ 
+  \land \, & \text{size } \varphi = \text{size } \varphi_t + \text{size } \varphi_p - \text{size } M
+\end{align*}
+
+On remarque que certaines propriétés se sont rajoutées, afin de satisfaire les conditions de certains lemmes techniques: il faut que $\Gamma_1$ et $\Gamma_2$ soient bien formés (prédicat "ok"), de même pour $p$ (prédicat "lc", pour "locally closed"). De plus, plutôt que de travailler sur les ensembles auquels on rajoute et on fait l'union comme on veut, on travaille sur des ensembles égaux à ceux qui nous intéressent, pour faciliter la preuve, sans perdre de généralité.
+
+
+\paragraph{Propriétés sur les dérivations} Deux propriétés importantes sur les dérivation sont utilisées dans les énoncés:
+\begin{enumerate}
+  \item Leur taille, qui compte le nombre de règle utilisées pour construire une dérivation, sans prendre en compte le nombre de fois où l'on fusionne des dérivations, ce qui permet de conserver les mêmes propriétés malgré le changement expliqué plus haut.
+  \item Un résultat énonce que la dernière règle d'une dérivation n'est pas celle qui type une application. De la même façon que la définition de la taille, l'univers dans lequel vivent les dérivations permettent de simplement faire une pattern-matching sur la dérivation de typage.
+\end{enumerate}
+
+\paragraph{Correction des traductions} Lorsqu'on fait un travail de formalisation, il est important de s'assurer que les traductions sont les bonnes, car si on prouve des résultats corrects mais avec les mauvaises hypothèses de départ, ça ne sert à rien. Ici, mon maitre de stage et moi-même sommes plutôt confiants sur le fait que les énoncés ont été bien traduits, car il s'agit d'une traduction plutôt proche, avec certaines modification des problèmes liés à l'implémentation des concepts, mais dont la pertinence et la confiance sont évoquées plus haut.
+
+
+\paragraph{Ce qui a été fait et reste à faire} L'article d'origine présente plusieurs systèmes différents possédant des propriétés similaires. Durant mon stage, le premier système a été presque entièrement formalisé. Les preuve de trois résultats le concernant n'ont pas été formalisées. \\ Pour deux d'entre elles, qui prouvent des résultats concernant le typage lors de substitution, une grande partie de la preuve est faite et il faut traiter un cas manipulant plus finement les contextes de typage. Compléter ces preuves ne semble pas très compliqué et nécessite juste un peu de temps. \\
+La troisième, qui prouve la correction du système de typage, nécessite une récurrence sur la taille des dérivation, et c'est le seul endroit où une telle récurrence est nécessaire, ainsi je ne l'ai pas encore faite et il faut, avant de la commencer, définir ce principe de récurrence. \\
+En plus de ces 3 preuves, un certains nombres de lemmes techniques sont à prouver, mais ils me semblent corrects et devraient donc être prouvables de façon plutôt simple pour la majorité.
+
+
+\section{Conclusion et perspectives}
+Ce stage et ce travail de formalisation ont été très intéressants pour plusieurs raisons. \\ 
+Tout d'abord, j'ai pu découvrir le fonctionnement d'un laboratoire de recherche ainsi rencontrer et discuter avec des chercheurs, des doctorants, d'autres stagiaires. \\
+Ensuite, il m'a permis de découvrir un sujet de recherche récent en étant en quelque sorte une introduction au domaine. J'ai également eu l'occasion de rencontrer et discuter avec l'une des co-autrices de l'article que j'ai formalisé, lors d'une soutenance de thèse d'un des doctorants du LMF \\
+De plus, il m'a permi d'en apprendre plus sur la formalisation et le système Coq, en découvrant de nouvelles approches utilisées pour formaliser, avec la représentation locally nameless par exemple, mais aussi en découvrant plus en détails le fonctionnement du système Coq, que ce soit en le comparant à un autre, ou en comprenant plus en détails les différences entre les univers de types.
+
+\paragraph{Perspectives} Pour compléter le travail de ce stage, plusieurs choses pourraient être intéressantes à faire. \\ 
+Tout d'abord, compléter les preuves qui ne sont pas finies, que ce soit celles des lemmes techniques, qui sont a priori vrais et nécessitent juste de prendre le temps de les faire, ou celles des résultats de l'article, plus subtiles mais plus intéressantes. \\
+On pourrait aussi continuer sur les autres systèmes présentés dans l'article, ou même chercher un nouveau résultat qui peut être intéressant. \\
+Enfin, il pourrait être intéressant pour moi de revenir avec ces nouvelles connaissances sur mon travail de TER, portant sur la formalisation en Coq d'un système de typage plus simple, qui pourrait être complété. En particulier, certains résultats étaient moins forts qu'ils auraient pu car des problèmes d'$\alpha$-équivalence se soulevaient. Il serait donc intéressant de revenir sur ce travail avec les outils que j'ai découvert lors de mon stage.
+
+\subsection*{Remerciements}
+J'aimerai remercier tout d'abord mon encadrant de stage: Thibaut BALABONSKI. J'aimerai également remercier toute l'équipe du LMF: chercheureuses, doctorant.es et stagiaires, qui m'ont permis d'avoir un cadre de travail convivial et enrichissant.
+
+\begin{thebibliography}{9}
+  \bibitem{inter-types}
+  MARIO COPPO, MARIANGIOLA DEZANI-CIANCAGLINI. \textit{An Extension of the Basic Functionality Theory for the A-Calculus}, 1978
+
+  \bibitem{tight-typing-and-split-bounds} 
+  BENIAMINO ACCATTOLI, STÉPHANE GRAHAM-LENGRAND, DELIA KESNER. \textit{Tight Typings and Split Bounds}, 2018
+
+  \bibitem{de-bruijn}
+  NICOLAAS GOVERT de BRUIJN. \textit{Lambda Calculus Notation with Nameless Dummies: A Tool for Automatic Formula Manipulation, with Application to the Church-Rosser Theorem}, 1972
+  
+  \bibitem{locally-nameless}
+  ARTHUR CHARGUÉRAUD. \textit{The Locally Nameless Representation}, 2009
+
+  \bibitem{ln-coq}
+  ARTHUR CHARGUÉRAUD. \href{http://www.chargueraud.org/softs/ln/}{\textit{Locally nameless representation with cofinite quantification}}, 2014
+
+  \bibitem{agda}
+  BOB ATKEY. \href{https://bentnib.org/posts/2020-08-13-non-idempotent-intersection-types.html}{\textit{Quantitative Typing with Non-idempotent Intersection Types}}, 2020
+
+\end{thebibliography}
+  
+\end{document}

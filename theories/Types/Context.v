@@ -1,6 +1,7 @@
 From TLC Require Import LibLN LibTactics LibFset.
 From Coq Require Import Unicode.Utf8_core.
 From Coq Require Import Lia.
+From Coq Require Import RelationClasses.
 From TTSB Require Import Tactics.
 From TTSB Require Import Classes.
 From TTSB.Types Require Types.
@@ -75,32 +76,43 @@ Definition equals (Γ₁ Γ₂ : ctx) : Prop :=
   ∀ (x : var),  
   eq_multitype (f₁ x) (f₂ x).
 
-Instance Equiv_equals_ctx : Equivalence equals.
+
+#[global] Instance Refl_equals : Reflexive equals.
 Proof.
-  use_equivalences.
-  constructor;
-  intros;
+  repeat intro.
+  repeat match goal with 
+  | [ Γ : ctx |- _] => destruct Γ
+  end; simpls; split_and_or_max; substs*.
+Qed.
+
+#[global] Instance Symm_equals : Symmetric equals.
+Proof.
+  repeat intro.
+  repeat match goal with 
+  | [ Γ : ctx |- _] => destruct Γ
+  end; simpls; split_and_or_max; substs*.
+Qed.
+
+#[global] Instance Trans_equals : Transitive equals.
+Proof.
+  repeat intro.
   repeat match goal with 
   | [ Γ : ctx |- _] => destruct Γ
   end; simpls; split_and_or_max; substs*.
 Qed.
 
 
-Ltac use_equivalences ::= 
-  Types.use_equivalences_type;
-  destruct Equiv_equals_ctx 
-    as [eq_ctx_refl eq_ctx_sym eq_ctx_trans].
+
 
 
 Lemma equals_empty_is_empty :
   ∀ Γ, equals Γ empty <-> Γ = empty.
 Proof.
   destruct Γ; split; intros; inverts* H.
-  - fequals*. applys fun_ext_dep.
-    intro x.
-    specialize H1 with x.
-    applys* Types.eq_empty_is_empty.
-  - use_equivalences. autos*.
+  fequals*. applys fun_ext_dep.
+  intro x.
+  specialize H1 with x.
+  applys* Types.eq_empty_is_empty.
 Qed. 
 
 Lemma equals_add :
@@ -111,11 +123,13 @@ Lemma equals_add :
 Proof.
   intros [s1 f1] [s2 f2] * HeqM HeqΓ.
   unfold add; repeat case_if; substs*;
-  try solve[use_equivalences; hint Types.eq_empty_is_empty; false*].
-  simpls; reduce_max; substs*.
-  hint Types.union_perm.
-  intros.
-  case_if*.
+  try solve[hint Types.eq_empty_is_empty; false*].
+  - symmetry in HeqM. 
+    hint Types.eq_empty_is_empty; false*.
+  - simpls; reduce_max; substs*.
+    hint Types.union_perm.
+    intros.
+    case_if*.
 Qed.
 
 Lemma add_comm :
@@ -127,19 +141,24 @@ Proof.
   simpls.
   unfolds add, equals;
   repeat case_if; reduce_max; substs*;
-  try solve [intro y; hint Types.union_perm; use_equivalences; case_if*]. 
-  - rewrite union_comm, union_assoc, (union_comm \{ x₂} s₂). auto.
-  - intro. repeat case_if; 
-    try solve[ hint Types.union_perm; use_equivalences; autos* ].
-    use_equivalences.
-    hint Types.union_assoc, Types.union_perm, Types.union_comm; autos*.
+  try solve [
+      intro y; hint Types.union_perm, Types.union_perm_head, Types.union_perm_tail; case_if*
+    | solve_set_equality
+    ].
+    intro y. repeat case_if; try solve[
+      hint Types.union_perm, Types.union_perm_head, Types.union_perm_tail; autos*
+    ].
+    hint Types.union_perm_head, Types.union_comm;
+    hint Types.union_perm_tail, Types.union_assoc;
+    transitivity ((M₂ ⊎ M₁) ⊎ (f₁ y)); autos*;
+    transitivity ((M₁ ⊎ M₂) ⊎ (f₁ y)); autos;
+    transitivity (Types.union (M₁) ⊎ (M₂) (f₂ y)); autos.
 Qed.  
 
 
 Lemma union_empty_l :
   ∀ Γ, (empty ⊎c Γ) = Γ.
 Proof.
-  use_equivalences;
   intros [s f].
   simpls.
   simpl_unions.
@@ -149,8 +168,6 @@ Qed.
 Lemma union_empty_r :
   ∀ Γ, (Γ ⊎c empty) = Γ.
 Proof.
-  
-  use_equivalences;
   intros [s f].
   simpls.
   simpl_unions.
@@ -227,7 +244,6 @@ Lemma ok_eq :
   ok Γ₂.
 Proof.
   hint Types.eq_empty_is_empty.
-  use_equivalences.
   intros [s₁ f₁] [s₂ f₂] [H_eq_dom H_eq_f] Hok; simpls*.
   intro x.
   specialize Hok with x as [H_in_nnil H_nnil_in].
@@ -238,7 +254,8 @@ Proof.
   - intros H_f2x_nnil.
     apply H_nnil_in.
     destruct (f₁ x); destruct* (f₂ x).
-    absurd.
+    + apply Types.eq_size in H_eq_f; simpls. lia.
+    + absurd.
 Qed.
 
 Lemma add_eq: 
@@ -256,8 +273,44 @@ Proof.
       apply Types.eq_size in Heq2; rewrite Types.size_union in Heq2; 
       simpls; lia
     ].
-    + admit.
-    + admit.
+    + solve_set_equality.
+      * asserts Hinx0' : (x0 \in s₁ \u \{ x}). {
+          reduce_max.
+          autos*.
+        }
+        rewrite Heq0 in Hinx0'.
+        reduce_max; substs*.
+        apply Hok2. intro.
+        apply (Hok1 x);
+        assumption.
+      * asserts Hinx0' : (x0 \in s₂ \u \{ x}). {
+          reduce_max.
+          autos*.
+        }
+        rewrite <- Heq0 in Hinx0'.
+        reduce_max; substs*.
+        apply Hok1. intro.
+        apply (Hok2 x);
+        assumption.
+    + solve_set_equality. 
+      * asserts Hinx0' : (x0 \in s₁ \u \{ x}). {
+          reduce_max.
+          autos*.
+        }
+        rewrite Heq0 in Hinx0'.
+        reduce_max; substs*.
+        apply Hok2. intro.
+        rewrite H in *.
+        inversion Heqf₂x.
+      * asserts Hinx0' : (x0 \in s₂ \u \{ x}). {
+          reduce_max.
+          autos*.
+        }
+        rewrite <- Heq0 in Hinx0'.
+        reduce_max; substs*.
+        apply Hok1. intro.
+        rewrite H in *.
+        inversion Heqf₁x.
   - lets Heq2 : Heq1 x; case_if.
     destruct (f₁ x) eqn:Heqf₁x;
     destruct (f₂ x) eqn:Heqf₂x;
@@ -270,13 +323,13 @@ Proof.
       asserts H_EM : ({x = y} + {¬ x = y}).
       { apply classicT. }
       destruct H_EM.
-      * substs; use_equivalences; rewrite Heqf₁x, Heqf₂x; autos*.
+      * substs; rewrite Heqf₁x, Heqf₂x; autos*.
       * substs; specialize Heq1 with y; case_if*.
     + intro y.
       asserts H_EM : ({x = y} + {¬ x = y}).
       { apply classicT. }
       destruct H_EM.
-      * substs; use_equivalences; rewrite Heqf₁x, Heqf₂x; autos*. admit.
+      * substs; rewrite Heqf₁x, Heqf₂x; autos*. admit.
       * substs; specialize Heq1 with y; case_if*.
 Admitted.
 
@@ -387,7 +440,7 @@ Proof.
     | [H : ?mx ≠ {{nil}}, H' : eq_multitype ?mx ?mx2 |- _] => 
         apply Heqnnil with (mt2 := mx2) in H
     | [H : ?mx ≠ {{nil}}, H' : eq_multitype ?mx2 ?mx |- _] => 
-        use_equivalences; apply Heqnnil with (mt2 := mx2) in H
+        apply Heqnnil with (mt2 := mx2) in H
     end; autos*.
   }
 Qed.
