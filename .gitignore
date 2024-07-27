@@ -1,4 +1,5 @@
 */**/*.vo*
+*/**/*.aux
 */**/*.glob
 formalmetacoq
 .vscode
